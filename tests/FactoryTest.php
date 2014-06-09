@@ -22,4 +22,9 @@ class FactoryTest extends \PHPUnit_Framework_TestCase {
         $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
     }
 
+    public function testConstructSmallest() {
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest('<html><p> <span>foo bar</span> </p></html>html>');
+        $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
+    }
+
 }

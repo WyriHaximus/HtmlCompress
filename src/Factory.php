@@ -10,6 +10,12 @@
  */
 namespace WyriHaximus\HtmlCompress;
 
+use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
+use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+
 /**
  * Class Factory
  *
@@ -17,8 +23,51 @@ namespace WyriHaximus\HtmlCompress;
  */
 class Factory {
 
-    public static function construct($html) {
-        return new Parser($html);
+    public static function construct() {
+        return new Parser([
+            'compressors' => [
+                [
+                    'patterns' => [
+                        Patterns::MATCH_JSCRIPT,
+                    ],
+                    'compressor' => new JSqueezeCompressor(),
+                ],
+                [
+                    'patterns' => [
+                        Patterns::MATCH_PRE,
+                        Patterns::MATCH_TEXTAREA,
+                        Patterns::MATCH_SCRIPT,
+                    ],
+                    'compressor' => new ReturnCompressor(),
+                ],
+            ],
+        ]);
+    }
+
+    public static function constructSmallest() {
+        return new Parser([
+            'compressors' => [
+                [
+                    'patterns' => [
+                        Patterns::MATCH_JSCRIPT,
+                    ],
+                    'compressor' => new BestResultCompressor([
+                        new JSqueezeCompressor(),
+                        new JSMinCompressor(),
+                        new JavaScriptPackerCompressor(),
+                        new ReturnCompressor(), // Sometimes no compression can already be the smallest
+                    ]),
+                ],
+                [
+                    'patterns' => [
+                        Patterns::MATCH_PRE,
+                        Patterns::MATCH_TEXTAREA,
+                        Patterns::MATCH_SCRIPT,
+                    ],
+                    'compressor' => new ReturnCompressor(),
+                ],
+            ],
+        ]);
     }
 
 }
