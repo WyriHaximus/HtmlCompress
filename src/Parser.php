@@ -10,6 +10,9 @@
  */
 namespace WyriHaximus\HtmlCompress;
 
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
+
 /**
  * Class Parser
  *
@@ -17,14 +20,40 @@ namespace WyriHaximus\HtmlCompress;
  */
 class Parser {
 
-    protected $html = '';
+    protected $defaultCompressor;
+    protected $options;
 
-    public function __construct($html) {
-        $this->html = $html;
+    public function __construct(array $options, CompressorInterface $defaultCompressor = null) {
+        $this->options = $options;
+
+        if ($defaultCompressor === null) {
+            $defaultCompressor = new HtmlCompressor();
+        }
+        $this->defaultCompressor = $defaultCompressor;
     }
 
-    public function compress() {
-        return str_replace('> <', '><', $this->html);
+    public function compress($html) {
+        $tokens = $this->tokenize($html);
+
+        $compressedHtml = '';
+        do {
+            $token = array_shift($tokens);
+            $compressedHtml .= $token['compressor']->compress($token['html']);
+        } while (count($tokens) > 0);
+
+        return $compressedHtml;
+    }
+
+    public function tokenize($html) {
+        return Tokenizer::tokenize($html, $this->getCompressors(), $this->getDefaultCompressor());
+    }
+
+    public function getDefaultCompressor() {
+        return $this->defaultCompressor;
+    }
+
+    public function getCompressors() {
+        return $this->options['compressors'];
     }
 
 }
