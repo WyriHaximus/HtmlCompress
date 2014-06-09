@@ -17,6 +17,11 @@ namespace WyriHaximus\HtmlCompress\Tests;
  */
 class FactoryTest extends \PHPUnit_Framework_TestCase {
 
+    public function testConstructFastest() {
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest('<html><p> <span>foo bar</span> </p></html>html>');
+        $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
+    }
+
     public function testConstruct() {
         $parser = \WyriHaximus\HtmlCompress\Factory::construct('<html><p> <span>foo bar</span> </p></html>html>');
         $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);

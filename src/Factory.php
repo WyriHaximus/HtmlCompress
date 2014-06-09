@@ -23,6 +23,22 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
  */
 class Factory {
 
+    public static function constructFastest() {
+        return new Parser([
+            'compressors' => [
+                [
+                    'patterns' => [
+                        Patterns::MATCH_SCRIPT,
+                        Patterns::MATCH_JSCRIPT,
+                        Patterns::MATCH_PRE,
+                        Patterns::MATCH_TEXTAREA,
+                    ],
+                    'compressor' => new ReturnCompressor(),
+                ],
+            ],
+        ]);
+    }
+
     public static function construct() {
         return new Parser([
             'compressors' => [
