@@ -10,7 +10,7 @@
  */
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-class Compressor implements CompressorInterface {
+abstract class Compressor implements CompressorInterface {
 
     public function compress($source) {
         $result = $this->execute($source);
