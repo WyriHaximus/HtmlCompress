@@ -15,12 +15,12 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class ReturnCompressor implements CompressorInterface {
+class ReturnCompressor extends Compressor {
 
     /**
      * {@inheritdoc}
      */
-    public function compress($string) {
+    protected function execute($string) {
 
         return $string;
     }
