@@ -4,6 +4,7 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $parser = \WyriHaximus\HtmlCompress\Factory::construct();
 $sites = [
+    'Example.com' => 'http://example.com/',
     'Google.nl' => 'http://google.nl/',
     'Google.co.uk' => 'http://google.co.uk/',
     'Google.com' => 'http://google.com/',
@@ -23,6 +24,9 @@ $sites = [
     'BF3 Battlelog' => 'http://battlelog.battlefield.com/bf3/',
     'EU BattleNet' => 'http://eu.battle.net/',
     'US BattleNet' => 'http://us.battle.net/',
+    'WyriMaps' => 'http://wyrimaps.net/',
+    'WyriMaps Map' => 'http://wyrimaps.net/wow',
+    'WyriHaximus' => 'http://wyrihaximus.net/',
 ];
 $line = str_pad('', 83, '-');
 
