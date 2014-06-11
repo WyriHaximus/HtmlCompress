@@ -13,12 +13,20 @@ namespace WyriHaximus\HtmlCompress\Frameworks;
 use WyriHaximus\HtmlCompress\Factory;
 use Sculpin\Core\Event\SourceSetEvent;
 
-class SymfonyListener {
+class SculpinListener {
 
-    public function onKernelResponse(SourceSetEvent $event) {
+    public function onAfterFormat(SourceSetEvent $event) {
         $parser = Factory::construct();
         foreach ($event->allSources() as $source) {
-            $source->setFormattedContent($parser->compress($source->formattedContent()));
+            $ext = explode('.', $source->filename());
+            $ext = $ext[(count($ext) - 1)];
+            if (in_array($ext, [
+                'html',
+                'md',
+                'markdown',
+            ])) {
+                $source->setFormattedContent($parser->compress($source->formattedContent()));
+            }
         }
     }
 
