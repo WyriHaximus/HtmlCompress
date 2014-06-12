@@ -10,13 +10,28 @@
  */
 namespace WyriHaximus\HtmlCompress\Frameworks;
 
-use WyriHaximus\HtmlCompress\Factory;
 use Sculpin\Core\Event\SourceSetEvent;
+use WyriHaximus\HtmlCompress\Factory;
+use WyriHaximus\HtmlCompress\Parser;
 
 class SculpinListener {
 
+    public function onAfterFormatFastest(SourceSetEvent $event) {
+        $parser = Factory::constructFastest();
+        $this->compress($parser, $event);
+    }
+
     public function onAfterFormat(SourceSetEvent $event) {
         $parser = Factory::construct();
+        $this->compress($parser, $event);
+    }
+
+    public function onAfterFormatSmallest(SourceSetEvent $event) {
+        $parser = Factory::constructSmallest();
+        $this->compress($parser, $event);
+    }
+
+    protected function compress(Parser $parser, SourceSetEvent $event) {
         foreach ($event->allSources() as $source) {
             $ext = explode('.', $source->filename());
             $ext = $ext[(count($ext) - 1)];
