@@ -34,8 +34,6 @@ require dirname(__DIR__) . '/vendor/autoload.php';
 
 $parser = \WyriHaximus\HtmlCompress\Factory::construct();
 $compressedHtml = $parser->compress($sourceHtml);
-
-
 ```
 
 
