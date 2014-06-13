@@ -36,6 +36,19 @@ $parser = \WyriHaximus\HtmlCompress\Factory::construct();
 $compressedHtml = $parser->compress($sourceHtml);
 ```
 
+## Framework integration ##
+
+### Sculpin ###
+
+[Sculpin](https://sculpin.io/) is a static site generator based on Symfony. Adding the following to `app/config/sculpin_kernel.yml` will compress the generated HTML.
+
+```yml
+services:
+    wyrihaximus.html_compress.compress:
+        class: \WyriHaximus\HtmlCompress\Frameworks\SculpinListener
+        tags:
+            - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatSmallest }
+```
 
 ## License ##
 
