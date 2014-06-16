@@ -28,6 +28,7 @@ class Factory {
             'compressors' => [
                 [
                     'patterns' => [
+                        Patterns::MATCH_STYLE,
                         Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_JSCRIPT,
                         Patterns::MATCH_PRE,
@@ -51,6 +52,7 @@ class Factory {
                 ],
                 [
                     'patterns' => [
+                        Patterns::MATCH_STYLE,
                         Patterns::MATCH_PRE,
                         Patterns::MATCH_TEXTAREA,
                     ],
@@ -77,6 +79,7 @@ class Factory {
                 ],
                 [
                     'patterns' => [
+                        Patterns::MATCH_STYLE,
                         Patterns::MATCH_PRE,
                         Patterns::MATCH_TEXTAREA,
                     ],
