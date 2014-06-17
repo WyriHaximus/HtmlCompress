@@ -4,8 +4,102 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "d128b865d5531ce36735ad02d031466e",
+    "hash": "f8f1c0b94a1a6d12e543b70b6d2f4a17",
     "packages": [
+        {
+            "name": "linkorb/jsmin-php",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/linkorb/jsmin-php.git",
+                "reference": "be85d87fc9c27730e7e9ced742b13010dafc1026"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/linkorb/jsmin-php/zipball/be85d87fc9c27730e7e9ced742b13010dafc1026",
+                "reference": "be85d87fc9c27730e7e9ced742b13010dafc1026",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.0.0"
+            },
+            "type": "library",
+            "autoload": {
+                "classmap": [
+                    "src/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joost Faassen",
+                    "email": "j.faassen@linkorb.com",
+                    "role": "Packaging for composer"
+                },
+                {
+                    "name": "Douglas Crockford",
+                    "email": "douglas@crockford.com"
+                },
+                {
+                    "name": "Ryan Grove",
+                    "email": "ryan@wonko.com",
+                    "role": "PHP port"
+                },
+                {
+                    "name": "Adam Gofort",
+                    "email": "aag@adamgoforth.com",
+                    "role": "Updates to the PHP port"
+                }
+            ],
+            "description": "Unofficial package of jsmin-php",
+            "homepage": "http://www.github.com/linkorb/jsmin-php",
+            "keywords": [
+                "javascript",
+                "jsmin",
+                "minify"
+            ],
+            "time": "2013-03-15 13:16:35"
+        },
+        {
+            "name": "meenie/javascript-packer",
+            "version": "1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/meenie/javascript-packer.git",
+                "reference": "dcab0159ae1ed9d7535c034fb8afe1e4c3495d22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/meenie/javascript-packer/zipball/dcab0159ae1ed9d7535c034fb8afe1e4c3495d22",
+                "reference": "dcab0159ae1ed9d7535c034fb8afe1e4c3495d22",
+                "shasum": ""
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "class.JavaScriptPacker.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL 2.1"
+            ],
+            "authors": [
+                {
+                    "name": "Nicolas Martin",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Composer hosted mirror of the PHP Version of Dean Edwards' JavaScript Packer",
+            "homepage": "http://joliclic.free.fr/php/javascript-packer/en/",
+            "keywords": [
+                "javascript packer"
+            ],
+            "time": "2013-03-25 21:54:33"
+        },
         {
             "name": "patchwork/jsqueeze",
             "version": "v1.0",
@@ -142,100 +236,6 @@
                 "web service"
             ],
             "time": "2014-01-28 22:29:15"
-        },
-        {
-            "name": "linkorb/jsmin-php",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/linkorb/jsmin-php.git",
-                "reference": "be85d87fc9c27730e7e9ced742b13010dafc1026"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/linkorb/jsmin-php/zipball/be85d87fc9c27730e7e9ced742b13010dafc1026",
-                "reference": "be85d87fc9c27730e7e9ced742b13010dafc1026",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.0.0"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "src/"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Joost Faassen",
-                    "email": "j.faassen@linkorb.com",
-                    "role": "Packaging for composer"
-                },
-                {
-                    "name": "Douglas Crockford",
-                    "email": "douglas@crockford.com"
-                },
-                {
-                    "name": "Ryan Grove",
-                    "email": "ryan@wonko.com",
-                    "role": "PHP port"
-                },
-                {
-                    "name": "Adam Gofort",
-                    "email": "aag@adamgoforth.com",
-                    "role": "Updates to the PHP port"
-                }
-            ],
-            "description": "Unofficial package of jsmin-php",
-            "homepage": "http://www.github.com/linkorb/jsmin-php",
-            "keywords": [
-                "javascript",
-                "jsmin",
-                "minify"
-            ],
-            "time": "2013-03-15 13:16:35"
-        },
-        {
-            "name": "meenie/javascript-packer",
-            "version": "1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/meenie/javascript-packer.git",
-                "reference": "dcab0159ae1ed9d7535c034fb8afe1e4c3495d22"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/meenie/javascript-packer/zipball/dcab0159ae1ed9d7535c034fb8afe1e4c3495d22",
-                "reference": "dcab0159ae1ed9d7535c034fb8afe1e4c3495d22",
-                "shasum": ""
-            },
-            "type": "library",
-            "autoload": {
-                "files": [
-                    "class.JavaScriptPacker.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "LGPL 2.1"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolas Martin",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Composer hosted mirror of the PHP Version of Dean Edwards' JavaScript Packer",
-            "homepage": "http://joliclic.free.fr/php/javascript-packer/en/",
-            "keywords": [
-                "javascript packer"
-            ],
-            "time": "2013-03-25 21:54:33"
         },
         {
             "name": "phake/phake",
@@ -1278,9 +1278,17 @@
             "time": "2014-01-07 13:28:54"
         }
     ],
-    "aliases": [],
+    "aliases": [
+
+    ],
     "minimum-stability": "stable",
-    "stability-flags": [],
-    "platform": [],
-    "platform-dev": []
+    "stability-flags": [
+
+    ],
+    "platform": {
+        "php": ">=5.4.0"
+    },
+    "platform-dev": [
+
+    ]
 }
