@@ -87,6 +87,72 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ),
                 ),
             ),
+            array(
+                Patterns::MATCH_TEXTAREA,
+                '<textarea>awkef8227h9r8r23</textarea>',
+                array(
+                    '',
+                    '',
+                ),
+                array(
+                    array(
+                        '<textarea>awkef8227h9r8r23</textarea>',
+                    ),
+                    array(
+                        '<textarea>',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</textarea>',
+                    ),
+                ),
+            ),
+            array(
+                Patterns::MATCH_TEXTAREA,
+                'o <textarea>awkef8227h9r8r23</textarea> 0',
+                array(
+                    'o ',
+                    ' 0',
+                ),
+                array(
+                    array(
+                        '<textarea>awkef8227h9r8r23</textarea>',
+                    ),
+                    array(
+                        '<textarea>',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</textarea>',
+                    ),
+                ),
+            ),
+            array(
+                Patterns::MATCH_TEXTAREA,
+                'o <textarea attribute="bar">awkef8227h9r8r23</textarea> 0',
+                array(
+                    'o ',
+                    ' 0',
+                ),
+                array(
+                    array(
+                        '<textarea attribute="bar">awkef8227h9r8r23</textarea>',
+                    ),
+                    array(
+                        '<textarea attribute="bar">',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</textarea>',
+                    ),
+                ),
+            ),
         );
     }
 
