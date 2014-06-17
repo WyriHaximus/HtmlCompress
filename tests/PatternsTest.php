@@ -153,6 +153,72 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ),
                 ),
             ),
+            array(
+                Patterns::MATCH_STYLE,
+                '<style>awkef8227h9r8r23</style>',
+                array(
+                    '',
+                    '',
+                ),
+                array(
+                    array(
+                        '<style>awkef8227h9r8r23</style>',
+                    ),
+                    array(
+                        '<style>',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</style>',
+                    ),
+                ),
+            ),
+            array(
+                Patterns::MATCH_STYLE,
+                'o <style>awkef8227h9r8r23</style> 0',
+                array(
+                    'o ',
+                    ' 0',
+                ),
+                array(
+                    array(
+                        '<style>awkef8227h9r8r23</style>',
+                    ),
+                    array(
+                        '<style>',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</style>',
+                    ),
+                ),
+            ),
+            array(
+                Patterns::MATCH_STYLE,
+                'o <style attribute="bar">awkef8227h9r8r23</style> 0',
+                array(
+                    'o ',
+                    ' 0',
+                ),
+                array(
+                    array(
+                        '<style attribute="bar">awkef8227h9r8r23</style>',
+                    ),
+                    array(
+                        '<style attribute="bar">',
+                    ),
+                    array(
+                        'awkef8227h9r8r23',
+                    ),
+                    array(
+                        '</style>',
+                    ),
+                ),
+            ),
         );
     }
 
