@@ -219,6 +219,107 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                '<script>awkef8227h9r8r23</script>',
+                [
+                    '',
+                    '',
+                ],
+                [
+                    [
+                        '<script>awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                'o <script>awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script>awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                'o <script attribute="bar">awkef8227h9r8r23</script> 0',
+                [
+                    'o <script attribute="bar">awkef8227h9r8r23</script> 0',
+                ],
+                [
+                    [],
+                    [],
+                    [],
+                    [],
+                ],
+            ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                'o <script type="text/javascript">awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script type="text/javascript">awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script type="text/javascript">',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                'o <script type="text/JavaScript">awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script type="text/JavaScript">awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script type="text/JavaScript">',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
         ];
     }
 
