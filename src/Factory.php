@@ -29,8 +29,8 @@ class Factory {
                 [
                     'patterns' => [
                         Patterns::MATCH_STYLE,
-                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_JSCRIPT,
+                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_PRE,
                         Patterns::MATCH_TEXTAREA,
                     ],
@@ -45,13 +45,13 @@ class Factory {
             'compressors' => [
                 [
                     'patterns' => [
-                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_JSCRIPT,
                     ],
                     'compressor' => new JSqueezeCompressor(),
                 ],
                 [
                     'patterns' => [
+                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_STYLE,
                         Patterns::MATCH_PRE,
                         Patterns::MATCH_TEXTAREA,
@@ -67,7 +67,6 @@ class Factory {
             'compressors' => [
                 [
                     'patterns' => [
-                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_JSCRIPT,
                     ],
                     'compressor' => new BestResultCompressor([
@@ -79,6 +78,7 @@ class Factory {
                 ],
                 [
                     'patterns' => [
+                        Patterns::MATCH_SCRIPT,
                         Patterns::MATCH_STYLE,
                         Patterns::MATCH_PRE,
                         Patterns::MATCH_TEXTAREA,
