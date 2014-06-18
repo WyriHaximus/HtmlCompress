@@ -19,7 +19,7 @@ use WyriHaximus\HtmlCompress\Patterns;
  */
 class PatternsTest extends \PHPUnit_Framework_TestCase {
 
-    public function testPreProvider() {
+    public function testPatternProvider() {
         return [
             [
                 Patterns::MATCH_PRE,
@@ -223,7 +223,7 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
     }
 
     /**
-     * @dataProvider testPreProvider
+     * @dataProvider testPatternProvider
      */
     public function testPattern($pattern, $input, $expectedHtml, $expectedBits) {
         $html = preg_split($pattern, $input);
