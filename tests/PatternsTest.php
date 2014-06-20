@@ -452,6 +452,72 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+            [
+                Patterns::MATCH_SCRIPT,
+                '<script>awkef8227h9r8r23</script>',
+                [
+                    '',
+                    '',
+                ],
+                [
+                    [
+                        '<script>awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_SCRIPT,
+                'o <script>awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script>awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_SCRIPT,
+                'o <script attribute="bar">awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script attribute="bar">awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script attribute="bar">',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
         ];
     }
 
