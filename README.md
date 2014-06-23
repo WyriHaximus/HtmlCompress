@@ -50,6 +50,10 @@ services:
             - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatSmallest }
 ```
 
+## require-dev ##
+
+As you might have noticed require-dev contains some `odd` entries. (`composer/composer`, `dflydev/embedded-composer-core` and `dflydev/embedded-composer-console`) They are for `sculpin/sculpin` tests.
+
 ## License ##
 
 Copyright 2014 [Cees-Jan Kiewiet](http://wyrihaximus.net/)

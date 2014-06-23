@@ -22,7 +22,11 @@
     "require-dev": {
         "satooshi/php-coveralls": "~0.6",
         "phpunit/phpunit": "4.0.*",
-        "phake/phake": "1.0.*"
+        "phake/phake": "1.0.*",
+        "composer/composer": "@dev",
+        "dflydev/embedded-composer-core": "@dev",
+        "dflydev/embedded-composer-console": "@dev",
+        "sculpin/sculpin": "2.*@dev"
     },
     "autoload": {
         "psr-4": {
