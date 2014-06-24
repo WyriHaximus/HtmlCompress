@@ -50,6 +50,11 @@ services:
             - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatSmallest }
 ```
 
+The `method` field has 3 possible values:
+* onAfterFormatFastest - For HTML compression only
+* onAfterFormat - For HTML and JavaScript compression
+* onAfterFormatSmallest - For HTML and JavaScript compression where it lets all known JavaScript minifiers compete who can produce the smallest result
+
 ## require-dev ##
 
 As you might have noticed require-dev contains some `odd` entries. (`composer/composer`, `dflydev/embedded-composer-core` and `dflydev/embedded-composer-console`) They are for `sculpin/sculpin` tests.
