@@ -57,7 +57,7 @@ The `method` field has 3 possible values:
 
 ## require-dev ##
 
-As you might have noticed require-dev contains some `odd` entries. (`composer/composer`, `dflydev/embedded-composer-core` and `dflydev/embedded-composer-console`) They are for `sculpin/sculpin` tests.
+As you might have noticed require-dev contains some `odd` entries. (`composer/composer`, `dflydev/embedded-composer-core` and `dflydev/embedded-composer-console`) They are for `SculpinListener` tests.
 
 ## License ##
 
