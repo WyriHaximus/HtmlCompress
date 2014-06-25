@@ -518,6 +518,29 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+
+            [
+                Patterns::MATCH_SCRIPT,
+                'o <script type="text/javascript">awkef8227h9r8r23</script> 0',
+                [
+                    'o ',
+                    ' 0',
+                ],
+                [
+                    [
+                        '<script type="text/javascript">awkef8227h9r8r23</script>',
+                    ],
+                    [
+                        '<script type="text/javascript">',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
         ];
     }
 
