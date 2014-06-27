@@ -30,7 +30,11 @@
     },
     "autoload": {
         "psr-4": {
-            "WyriHaximus\\HtmlCompress\\": "src/",
+            "WyriHaximus\\HtmlCompress\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
             "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
         }
     }

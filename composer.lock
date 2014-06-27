@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0a8739221bf61bd4195f862c392d2898",
+    "hash": "c27c563df2f0dbc29dbfb3292beddb20",
     "packages": [
         {
             "name": "linkorb/jsmin-php",
