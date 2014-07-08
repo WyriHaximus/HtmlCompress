@@ -19,6 +19,11 @@ use WyriHaximus\HtmlCompress\Patterns;
  */
 class PatternsTest extends \PHPUnit_Framework_TestCase {
 
+    /**
+     * Nasty long method, but this is the best way (I can think of) to do this
+     *
+     * @return array
+     */
     public function testPatternProvider() {
         return [
             [
