@@ -90,7 +90,7 @@ class Tokenizer {
 
     /**
      * @param array $bits
-     * @param string $html
+     * @param array $html
      * @param CompressorInterface $compressor
      * @return array
      */
