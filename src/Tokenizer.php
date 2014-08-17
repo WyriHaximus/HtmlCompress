@@ -79,7 +79,7 @@ class Tokenizer {
                     $html = preg_split($pattern, $token['html']);
                     preg_match_all($pattern, $token['html'], $bits);
 
-                    $newTokens = $this->walkBits($bits, $html, $compressor);
+                    $newTokens = $this->walkBits($bits, $html, $compressor['compressor']);
                     $tokens = $this->replaceToken($tokens, $index, $newTokens);
                 }
             }
@@ -104,7 +104,7 @@ class Tokenizer {
             ];
             $newTokens[] = [
                 'html' => $bits[2][$i],
-                'compressor'=> $compressor['compressor'],
+                'compressor'=> $compressor,
             ];
             $prepend = $bits[3][$i];
         }
