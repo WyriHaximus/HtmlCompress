@@ -30,7 +30,7 @@ class Tokenizer {
     protected $defaultCompressor;
 
     /**
-     * @param $html
+     * @param string $html
      * @param array $compressors
      * @param CompressorInterface $defaultCompressor
      * @return array
