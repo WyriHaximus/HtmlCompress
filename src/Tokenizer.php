@@ -20,6 +20,16 @@ use \WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 class Tokenizer {
 
     /**
+     * @var array
+     */
+    protected $compressors;
+
+    /**
+     * @var Compressor\CompressorInterface
+     */
+    protected $defaultCompressor;
+
+    /**
      * @param $html
      * @param array $compressors
      * @param CompressorInterface $defaultCompressor
