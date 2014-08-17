@@ -19,16 +19,30 @@ use \WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
  */
 class Tokenizer {
 
+    /**
+     * @param $html
+     * @param array $compressors
+     * @param CompressorInterface $defaultCompressor
+     * @return array
+     */
     public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null) {
         $self = new self($compressors, $defaultCompressor);
         return $self->parse($html);
     }
 
+    /**
+     * @param array $compressors
+     * @param CompressorInterface $defaultCompressor
+     */
     public function __construct(array $compressors, CompressorInterface $defaultCompressor = null) {
         $this->compressors = $compressors;
         $this->defaultCompressor = $defaultCompressor;
     }
 
+    /**
+     * @param string $html
+     * @return array
+     */
     public function parse($html) {
         $tokens = [
             [
@@ -43,6 +57,11 @@ class Tokenizer {
         return $tokens;
     }
 
+    /**
+     * @param array $tokens
+     * @param array $compressor
+     * @return array
+     */
     protected function split(array $tokens, array $compressor) {
         foreach ($compressor['patterns'] as $pattern) {
             foreach ($tokens as $index => $token) {
@@ -59,6 +78,12 @@ class Tokenizer {
         return $tokens;
     }
 
+    /**
+     * @param $bits
+     * @param $html
+     * @param $compressor
+     * @return array
+     */
     protected function walkBits($bits, $html, $compressor) {
         $newTokens = [];
         $prepend = '';
@@ -82,6 +107,12 @@ class Tokenizer {
         return $newTokens;
     }
 
+    /**
+     * @param $tokens
+     * @param $index
+     * @param $newTokens
+     * @return array
+     */
     protected function replaceToken($tokens, $index, $newTokens) {
         return array_merge(array_slice($tokens, 0, $index), $newTokens, array_slice($tokens, $index + 1));
     }
