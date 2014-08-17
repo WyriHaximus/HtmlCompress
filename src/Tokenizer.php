@@ -89,9 +89,9 @@ class Tokenizer {
     }
 
     /**
-     * @param $bits
-     * @param $html
-     * @param $compressor
+     * @param array $bits
+     * @param string $html
+     * @param CompressorInterface $compressor
      * @return array
      */
     protected function walkBits($bits, $html, $compressor) {
@@ -118,9 +118,9 @@ class Tokenizer {
     }
 
     /**
-     * @param $tokens
-     * @param $index
-     * @param $newTokens
+     * @param array $tokens
+     * @param int $index
+     * @param array $newTokens
      * @return array
      */
     protected function replaceToken($tokens, $index, $newTokens) {
