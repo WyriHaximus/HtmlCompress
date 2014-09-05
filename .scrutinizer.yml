@@ -3,7 +3,6 @@ filter:
     excluded_paths: [tests/* examples/*]
 tools:
     php_analyzer: true
-    php_cpd: true
     php_hhvm: true
     php_sim: true
     php_code_sniffer:
