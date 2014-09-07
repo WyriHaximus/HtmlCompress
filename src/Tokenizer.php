@@ -17,8 +17,8 @@ use \WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Tokenizer {
-
+class Tokenizer
+{
     /**
      * @var array
      */
@@ -35,7 +35,8 @@ class Tokenizer {
      * @param CompressorInterface $defaultCompressor
      * @return array
      */
-    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null) {
+    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null)
+    {
         $self = new self($compressors, $defaultCompressor);
         return $self->parse($html);
     }
@@ -44,7 +45,8 @@ class Tokenizer {
      * @param array $compressors
      * @param CompressorInterface $defaultCompressor
      */
-    public function __construct(array $compressors, CompressorInterface $defaultCompressor = null) {
+    public function __construct(array $compressors, CompressorInterface $defaultCompressor = null)
+    {
         $this->compressors = $compressors;
         $this->defaultCompressor = $defaultCompressor;
     }
@@ -53,7 +55,8 @@ class Tokenizer {
      * @param string $html
      * @return array
      */
-    public function parse($html) {
+    public function parse($html)
+    {
         $tokens = [
             [
                 'html' => $html,
@@ -72,7 +75,8 @@ class Tokenizer {
      * @param array $compressor
      * @return array
      */
-    protected function split(array $tokens, array $compressor) {
+    protected function split(array $tokens, array $compressor)
+    {
         foreach ($compressor['patterns'] as $pattern) {
             foreach ($tokens as $index => $token) {
                 if ($token['compressor'] === $this->defaultCompressor) {
@@ -94,7 +98,8 @@ class Tokenizer {
      * @param CompressorInterface $compressor
      * @return array
      */
-    protected function walkBits($bits, $html, $compressor) {
+    protected function walkBits($bits, $html, $compressor)
+    {
         $newTokens = [];
         $prepend = '';
         for ($i = 0; $i < count($bits[0]); $i++) {
@@ -123,7 +128,8 @@ class Tokenizer {
      * @param array $newTokens
      * @return array
      */
-    protected function replaceToken($tokens, $index, $newTokens) {
+    protected function replaceToken($tokens, $index, $newTokens)
+    {
         return array_merge(array_slice($tokens, 0, $index), $newTokens, array_slice($tokens, $index + 1));
     }
 

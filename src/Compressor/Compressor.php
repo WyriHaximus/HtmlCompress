@@ -10,9 +10,10 @@
  */
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-abstract class Compressor implements CompressorInterface {
-
-    public function compress($source) {
+abstract class Compressor implements CompressorInterface
+{
+    public function compress($source)
+    {
         $result = $this->execute($source);
 
         if (strlen($source) > strlen($result)) {
