@@ -5,18 +5,21 @@ tools:
     php_analyzer: true
     php_hhvm: true
     php_sim: true
+    php_pdepend: true
+    sensiolabs_security_checker: true
+    php_changetracking: true
     php_code_sniffer:
-        extensions:
-            - php
         enabled: true
         config:
             tab_width: 0
             encoding: utf8
             ruleset: ~
             standard: "PSR2"
+    php_cs_fixer:
+        enabled: true
+        config:
+            level: psr2
     php_mess_detector:
-        extensions:
-            - php
         enabled: true
         config:
             ruleset:              ~
