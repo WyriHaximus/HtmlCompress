@@ -15,12 +15,13 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class JSMinCompressor extends Compressor {
-
+class JSMinCompressor extends Compressor
+{
     /**
      * {@inheritdoc}
      */
-    protected function execute($string) {
+    protected function execute($string)
+    {
         try {
             return \JSMin::minify($string);
         } catch (\JSMinException $exception) {

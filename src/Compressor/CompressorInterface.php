@@ -14,8 +14,8 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  * Interface CompressorInterface
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-interface CompressorInterface {
-
+interface CompressorInterface
+{
     /**
      * @param $string
      *

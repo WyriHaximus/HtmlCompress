@@ -15,12 +15,13 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class JavaScriptPackerCompressor extends Compressor {
-
+class JavaScriptPackerCompressor extends Compressor
+{
     /**
      * {@inheritdoc}
      */
-    protected function execute($string) {
+    protected function execute($string)
+    {
         $parser = new \JavaScriptPacker($string);
         return $parser->pack();
     }

@@ -15,12 +15,13 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class HtmlCompressor extends Compressor {
-
+class HtmlCompressor extends Compressor
+{
     /**
      * {@inheritdoc}
      */
-    protected function execute($string) {
+    protected function execute($string)
+    {
         // Replace newlines, returns and tabs with nothing
         $string = str_replace(["\r", "\n", "\t"], '', $string);
         // Replace multiple spaces with a single space
