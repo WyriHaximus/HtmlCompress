@@ -9,20 +9,10 @@ HtmlCompress
 
 ## Installation ##
 
-Installation is easy with composer just add HtmlCompress to your composer.json.
+To install via [Composer](http://getcomposer.org/), use the command below, it will automatically detect the latest version and bind it with `~`.
 
-```json
-{
-	"require": {
-		"wyrihaximus/html-compress": "dev-master"
-	}
-}
 ```
-
-Or use composer it self to add it:
-
-```bash
-composer require "wyrihaximus/html-compress:dev-master"
+composer require wyrihaximus/html-compress 
 ```
 
 ## Basic Usage ##
