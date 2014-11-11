@@ -26,7 +26,8 @@
         "composer/composer": "@dev",
         "dflydev/embedded-composer-core": "@dev",
         "dflydev/embedded-composer-console": "@dev",
-        "sculpin/sculpin": "2.*@dev"
+        "sculpin/sculpin": "2.*@dev",
+        "vectorface/dunit": "~1.0"
     },
     "autoload": {
         "psr-4": {
