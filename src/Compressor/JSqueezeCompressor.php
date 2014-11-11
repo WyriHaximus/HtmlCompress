@@ -15,12 +15,13 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class JSqueezeCompressor extends Compressor {
-
+class JSqueezeCompressor extends Compressor
+{
     /**
      * {@inheritdoc}
      */
-    protected function execute($string) {
+    protected function execute($string)
+    {
         $parser = new \JSqueeze();
         return $parser->squeeze($string);
     }

@@ -1,0 +1,9 @@
+# Ignoring files for distribution archieves
+examples/ export-ignore
+tests/ export-ignore
+.travis.yml export-ignore
+.gitignore export-ignore
+.gitattributes export-ignore
+.coveralls.yml
+.scrutinizer.yml export-ignore
+phpunit.xml.dist export-ignore

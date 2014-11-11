@@ -21,12 +21,13 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Factory {
-
+class Factory
+{
     /**
      * @return Parser
      */
-    public static function constructFastest() {
+    public static function constructFastest()
+    {
         return new Parser([
             'compressors' => [
                 [
@@ -46,7 +47,8 @@ class Factory {
     /**
      * @return Parser
      */
-    public static function construct() {
+    public static function construct()
+    {
         return new Parser([
             'compressors' => [
                 [
@@ -71,7 +73,8 @@ class Factory {
     /**
      * @return Parser
      */
-    public static function constructSmallest() {
+    public static function constructSmallest()
+    {
         return new Parser([
             'compressors' => [
                 [

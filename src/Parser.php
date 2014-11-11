@@ -18,8 +18,8 @@ use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Parser {
-
+class Parser
+{
     /**
      * @var Compressor\CompressorInterface|Compressor\HtmlCompressor
      */
@@ -34,7 +34,8 @@ class Parser {
      * @param array $options
      * @param CompressorInterface $defaultCompressor
      */
-    public function __construct(array $options, CompressorInterface $defaultCompressor = null) {
+    public function __construct(array $options, CompressorInterface $defaultCompressor = null)
+    {
         $this->options = $options;
 
         if ($defaultCompressor === null) {
@@ -47,7 +48,8 @@ class Parser {
      * @param string $html
      * @return string
      */
-    public function compress($html) {
+    public function compress($html)
+    {
         $tokens = $this->tokenize($html);
 
         $compressedHtml = '';
@@ -63,21 +65,24 @@ class Parser {
      * @param string $html
      * @return array
      */
-    public function tokenize($html) {
+    public function tokenize($html)
+    {
         return Tokenizer::tokenize($html, $this->getCompressors(), $this->getDefaultCompressor());
     }
 
     /**
      * @return CompressorInterface|HtmlCompressor
      */
-    public function getDefaultCompressor() {
+    public function getDefaultCompressor()
+    {
         return $this->defaultCompressor;
     }
 
     /**
      * @return mixed
      */
-    public function getCompressors() {
+    public function getCompressors()
+    {
         return $this->options['compressors'];
     }
 

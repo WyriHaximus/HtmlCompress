@@ -15,19 +15,20 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class BestResultCompressor extends Compressor {
-
+class BestResultCompressor extends Compressor
+{
     protected $compressors = [];
 
-    public function __construct(array $compressors) {
+    public function __construct(array $compressors)
+    {
         $this->compressors = $compressors;
     }
 
     /**
      * {@inheritdoc}
      */
-    protected function execute($string) {
-
+    protected function execute($string)
+    {
         $result = $string;
         foreach ($this->compressors as $compressor) {
             $currentResult = $compressor->compress($string);
