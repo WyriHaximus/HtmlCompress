@@ -17,10 +17,10 @@ namespace WyriHaximus\HtmlCompress;
  */
 class Patterns
 {
-    const MATCH_PRE       = '!(<pre[^>]*>?)(.*?)(</pre>)!is';
-    const MATCH_TEXTAREA  = '!(<textarea[^>]*>?)(.*?)(</textarea>)!is';
-    const MATCH_STYLE     = '!(<style>|<style[^>]*>?)(.*?)(</style>)!is';
-    const MATCH_JSCRIPT   = '!(<script>|<script[^>]*type="text/javascript"[^>]*>|<script[^>]*type=\'text/javascript\'[^>]*>)(.*?)(</script>)!is';
-    const MATCH_SCRIPT    = '!(<script[^>]*>?)(.*?)(</script>)!is';
-
+    const MATCH_PRE        = '!(<pre[^>]*>?)(.*?)(</pre>)!is';
+    const MATCH_TEXTAREA   = '!(<textarea[^>]*>?)(.*?)(</textarea>)!is';
+    const MATCH_STYLE      = '!(<style>|<style[^>]*>?)(.*?)(</style>)!is';
+    const MATCH_JSCRIPT    = '!(<script>|<script[^>]*type="text/javascript"[^>]*>|<script[^>]*type=\'text/javascript\'[^>]*>)(.*?)(</script>)!is';
+    const MATCH_SCRIPT     = '!(<script[^>]*>?)(.*?)(</script>)!is';
+    const MATCH_NOCOMPRESS = '!(<nocompress>)(.*?)(</nocompress>)!is';
 }

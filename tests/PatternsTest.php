@@ -1139,6 +1139,28 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+            [
+                Patterns::MATCH_NOCOMPRESS,
+                '<nocompress>awkef8227h9r8r23</nocompress>',
+                [
+                    '',
+                    '',
+                ],
+                [
+                    [
+                        '<nocompress>awkef8227h9r8r23</nocompress>',
+                    ],
+                    [
+                        '<nocompress>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</nocompress>',
+                    ],
+                ],
+            ],
         ];
     }
 
