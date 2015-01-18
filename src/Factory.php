@@ -32,6 +32,7 @@ class Factory
             'compressors' => [
                 [
                     'patterns' => [
+                        Patterns::MATCH_NOCOMPRESS,
                         Patterns::MATCH_STYLE,
                         Patterns::MATCH_JSCRIPT,
                         Patterns::MATCH_SCRIPT,
@@ -51,6 +52,12 @@ class Factory
     {
         return new Parser([
             'compressors' => [
+                [
+                    'patterns' => [
+                        Patterns::MATCH_NOCOMPRESS,
+                    ],
+                    'compressor' => new ReturnCompressor(),
+                ],
                 [
                     'patterns' => [
                         Patterns::MATCH_JSCRIPT,
@@ -77,6 +84,12 @@ class Factory
     {
         return new Parser([
             'compressors' => [
+                [
+                    'patterns' => [
+                        Patterns::MATCH_NOCOMPRESS,
+                    ],
+                    'compressor' => new ReturnCompressor(),
+                ],
                 [
                     'patterns' => [
                         Patterns::MATCH_JSCRIPT,
