@@ -85,5 +85,4 @@ class Parser
     {
         return $this->options['compressors'];
     }
-
 }

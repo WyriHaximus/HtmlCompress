@@ -132,5 +132,4 @@ class Tokenizer
     {
         return array_merge(array_slice($tokens, 0, $index), $newTokens, array_slice($tokens, $index + 1));
     }
-
 }
