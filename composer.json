@@ -20,14 +20,16 @@
         "patchwork/jsqueeze": "v1.0"
     },
     "require-dev": {
-        "satooshi/php-coveralls": "~0.6",
-        "phpunit/phpunit": "4.0.*",
-        "phake/phake": "1.0.*",
+        "satooshi/php-coveralls": "^0.6",
+        "phpunit/phpunit": "^4.0",
+        "phake/phake": "^1.0",
         "composer/composer": "@dev",
         "dflydev/embedded-composer-core": "@dev",
         "dflydev/embedded-composer-console": "@dev",
         "sculpin/sculpin": "2.*@dev",
-        "vectorface/dunit": "~1.0"
+        "vectorface/dunit": "^2.0",
+        "squizlabs/php_codesniffer": "^1.0",
+        "object-calisthenics/phpcs-calisthenics-rules": "^1.0"
     },
     "autoload": {
         "psr-4": {
