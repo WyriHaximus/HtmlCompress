@@ -1161,6 +1161,50 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+            [
+                Patterns::MATCH_STYLE,
+                '<style>awkef8227h9r8r23</style><script>alert(\'bla\');</script>',
+                [
+                    '',
+                    '<script>alert(\'bla\');</script>',
+                ],
+                [
+                    [
+                        '<style>awkef8227h9r8r23</style>',
+                    ],
+                    [
+                        '<style>',
+                    ],
+                    [
+                        'awkef8227h9r8r23',
+                    ],
+                    [
+                        '</style>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_SCRIPT,
+                '<style>awkef8227h9r8r23</style><script>alert(\'bla\');</script>',
+                [
+                    '<style>awkef8227h9r8r23</style>',
+                    '',
+                ],
+                [
+                    [
+                        '<script>alert(\'bla\');</script>',
+                    ],
+                    [
+                        '<script>',
+                    ],
+                    [
+                        'alert(\'bla\');',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
         ];
     }
 
