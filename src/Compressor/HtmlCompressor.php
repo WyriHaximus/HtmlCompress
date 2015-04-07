@@ -28,9 +28,9 @@ class HtmlCompressor extends Compressor
         $string = preg_replace('/(\s+)/m', ' ', $string);
 
         // Remove spaces that are followed by either > or <
-        $string = preg_replace('/ ([<>])/', '$1', $string);
+        $string = preg_replace('/ (>)/', '$1', $string);
         // Remove spaces that are preceded by either > or <
-        $string = preg_replace('/([<>]) /', '$1', $string);
+        $string = preg_replace('/(<) /', '$1', $string);
 
         return trim($string);
     }
