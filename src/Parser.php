@@ -55,7 +55,7 @@ class Parser
         $compressedHtml = '';
         do {
             $token = array_shift($tokens);
-            $compressedHtml .= $token['compressor']->compress($token['html']);
+            $compressedHtml .= $token->getCompressor()->compress($token->getCombinedHtml());
         } while (count($tokens) > 0);
 
         return $compressedHtml;

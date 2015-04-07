@@ -58,10 +58,7 @@ class Tokenizer
     public function parse($html)
     {
         $tokens = [
-            [
-                'html' => $html,
-                'compressor'=> $this->defaultCompressor,
-            ]
+            new Token('', '', $html, $this->defaultCompressor),
         ];
         do {
             $compressor = array_shift($this->compressors);
@@ -79,9 +76,13 @@ class Tokenizer
     {
         foreach ($compressor['patterns'] as $pattern) {
             foreach ($tokens as $index => $token) {
-                if ($token['compressor'] === $this->defaultCompressor) {
-                    $html = preg_split($pattern, $token['html']);
-                    preg_match_all($pattern, $token['html'], $bits);
+                if ($token->getCompressor() === $this->defaultCompressor) {
+                    $html = preg_split($pattern, $token->getCombinedHtml());
+                    preg_match_all($pattern, $token->getCombinedHtml(), $bits);
+
+                    if (count($bits[0]) == 0) {
+                        continue;
+                    }
 
                     $newTokens = $this->walkBits($bits, $html, $compressor['compressor']);
                     $tokens = $this->replaceToken($tokens, $index, $newTokens);
@@ -103,21 +104,12 @@ class Tokenizer
         $newTokens = [];
         $prepend = '';
         for ($i = 0; $i < count($bits[0]); $i++) {
-            $newTokens[] = [
-                'html' => $prepend . $html[$i] . $bits[1][$i],
-                'compressor'=> $this->defaultCompressor,
-            ];
-            $newTokens[] = [
-                'html' => $bits[2][$i],
-                'compressor'=> $compressor,
-            ];
+            $newTokens[] = new Token($prepend, $bits[1][$i], $html[$i], $this->defaultCompressor);
+            $newTokens[] = new Token('', '', $bits[2][$i], $compressor);
             $prepend = $bits[3][$i];
         }
 
-        $newTokens[] = [
-            'html' => $prepend . $html[$i],
-            'compressor'=> $this->defaultCompressor,
-        ];
+        $newTokens[] = new Token($prepend, '', $html[$i], $this->defaultCompressor);
 
         return $newTokens;
     }
