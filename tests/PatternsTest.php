@@ -1205,6 +1205,50 @@ class PatternsTest extends \PHPUnit_Framework_TestCase {
                     ],
                 ],
             ],
+            [
+                Patterns::MATCH_JSCRIPT,
+                '<pre>b;aejdhjd d2</pre><script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async></script><pre>wohef oqh2uhif2q</pre>',
+                [
+                    '<pre>b;aejdhjd d2</pre>',
+                    '<pre>wohef oqh2uhif2q</pre>',
+                ],
+                [
+                    [
+                        '<script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async></script>',
+                    ],
+                    [
+                        '<script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async>',
+                    ],
+                    [
+                        '',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
+            [
+                Patterns::MATCH_SCRIPT,
+                '<pre>b;aejdhjd d2</pre><script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async></script><pre>wohef oqh2uhif2q</pre>',
+                [
+                    '<pre>b;aejdhjd d2</pre>',
+                    '<pre>wohef oqh2uhif2q</pre>',
+                ],
+                [
+                    [
+                        '<script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async></script>',
+                    ],
+                    [
+                        '<script type="text/javascript" src="https://asciinema.org/a/18487.js" id="asciicast-18487" async>',
+                    ],
+                    [
+                        '',
+                    ],
+                    [
+                        '</script>',
+                    ],
+                ],
+            ],
         ];
     }
 
