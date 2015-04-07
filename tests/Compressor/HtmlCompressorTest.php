@@ -52,11 +52,11 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         return [
           [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
-            '<html><body><h1>h oi</h1></body></html>',
+            '<html> <body> <h1>h oi</h1> </body></html>',
           ],
           [
             '<html>   </html>',
-            '<html></html>',
+            '<html> </html>',
           ],
         ];
     }
@@ -72,12 +72,12 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
     public function providerSpaceAfterGt() {
         return [
           [
+            '<html> <body> <h1>hoi</h1>   </body> </html>',
             '<html> <body> <h1>hoi</h1> </body> </html>',
-            '<html><body><h1>hoi</h1></body></html>',
           ],
           [
+            '<html>  a',
             '<html> a',
-            '<html>a',
           ],
         ];
     }
@@ -93,12 +93,12 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
     public function providerSpaceBeforeLt() {
         return [
           [
-            "<html> <body> <h1>hoi</h1> </body> </html> ",
-            '<html><body><h1>hoi</h1></body></html>',
+            "<html> <body>   <h1>hoi</h1></body> </html> ",
+            '<html> <body> <h1>hoi</h1></body> </html>',
           ],
           [
+            'a     <html>',
             'a <html>',
-            'a<html>',
           ],
         ];
     }
