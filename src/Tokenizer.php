@@ -78,7 +78,7 @@ class Tokenizer
             foreach ($tokens as $index => $token) {
                 if ($token->getCompressor() === $this->defaultCompressor) {
                     $html = preg_split($pattern, $token->getCombinedHtml());
-                    preg_match_all($pattern, $token->getHtml(), $bits);
+                    preg_match_all($pattern, $token->getCombinedHtml(), $bits);
 
                     if (count($bits[0]) == 0) {
                         continue;
@@ -104,7 +104,7 @@ class Tokenizer
         $newTokens = [];
         $prepend = '';
         for ($i = 0; $i < count($bits[0]); $i++) {
-            if ($bits[2][$i] === '') {
+            if ($bits[1][$i] === '' && $bits[2][$i] === '' && $bits[3][$i] === '') {
                 continue;
             }
             $newTokens[] = new Token($prepend, $bits[1][$i], $html[$i], $this->defaultCompressor);
