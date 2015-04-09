@@ -115,7 +115,7 @@ class Tokenizer
         }
 
         if ($prepend !== '' || $html[$i] !== '') {
-            $newTokens[] = new Token($prepend, '', $html[$i], clone $this->defaultCompressor);
+            $newTokens[] = new Token($prepend, '', '', clone $this->defaultCompressor);
         }
 
         return $newTokens;
