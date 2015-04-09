@@ -119,8 +119,8 @@ class Tokenizer
             $prepend = $bits[3][$i];
         }
 
-        if ($prepend !== '') {
-            $newTokens[] = new Token($prepend, '', '', $this->defaultCompressorClone);
+        if ($prepend !== '' || $html[$i] !== '') {
+            $newTokens[] = new Token($prepend, '', $html[$i], $this->defaultCompressorClone);
         }
 
         return $newTokens;
