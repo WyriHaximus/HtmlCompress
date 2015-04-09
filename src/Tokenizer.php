@@ -85,7 +85,9 @@ class Tokenizer
                     }
 
                     $newTokens = $this->walkBits($bits, $html, $compressor['compressor']);
-                    $tokens = $this->replaceToken($tokens, $index, $newTokens);
+                    if (count($newTokens) > 0) {
+                        $tokens = $this->replaceToken($tokens, $index, $newTokens);
+                    }
                 }
             }
         }
@@ -112,7 +114,9 @@ class Tokenizer
             $prepend = $bits[3][$i];
         }
 
-        $newTokens[] = new Token($prepend, '', $html[$i], $this->defaultCompressor);
+        if ($prepend !== '' || $html[$i] !== '') {
+            $newTokens[] = new Token($prepend, '', $html[$i], $this->defaultCompressor);
+        }
 
         return $newTokens;
     }
