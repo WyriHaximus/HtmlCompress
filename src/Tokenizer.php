@@ -28,6 +28,10 @@ class Tokenizer
      * @var Compressor\CompressorInterface
      */
     protected $defaultCompressor;
+    /**
+     * @var Compressor\CompressorInterface
+     */
+    protected $defaultCompressorClone;
 
     /**
      * @param string $html
@@ -49,6 +53,7 @@ class Tokenizer
     {
         $this->compressors = $compressors;
         $this->defaultCompressor = $defaultCompressor;
+        $this->defaultCompressorClone = clone $defaultCompressor;
     }
 
     /**
@@ -58,7 +63,7 @@ class Tokenizer
     public function parse($html)
     {
         $tokens = [
-            new Token('', '', $html, $this->defaultCompressor),
+        new Token('', '', $html, $this->defaultCompressor),
         ];
         do {
             $compressor = array_shift($this->compressors);
@@ -109,13 +114,13 @@ class Tokenizer
             if ($bits[1][$i] === '' && $bits[2][$i] === '' && $bits[3][$i] === '') {
                 continue;
             }
-            $newTokens[] = new Token($prepend, $bits[1][$i], $html[$i], clone $this->defaultCompressor);
+            $newTokens[] = new Token($prepend, $bits[1][$i], $html[$i], $this->defaultCompressorClone);
             $newTokens[] = new Token('', '', $bits[2][$i], $compressor);
             $prepend = $bits[3][$i];
         }
 
         if ($prepend !== '') {
-            $newTokens[] = new Token($prepend, '', '', clone $this->defaultCompressor);
+            $newTokens[] = new Token($prepend, '', '', $this->defaultCompressorClone);
         }
 
         return $newTokens;
