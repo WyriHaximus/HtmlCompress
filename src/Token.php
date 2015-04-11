@@ -24,10 +24,10 @@ class Token
     protected $html;
     protected $compressor;
 
-    public function __construct($prefix, $suffix, $html, CompressorInterface $compressor) {
+    public function __construct($prefix, $html, $suffix, CompressorInterface $compressor) {
         $this->prefix = $prefix;
-        $this->suffix = $suffix;
         $this->html = $html;
+        $this->suffix = $suffix;
         $this->compressor = $compressor;
     }
 

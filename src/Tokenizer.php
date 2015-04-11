@@ -42,7 +42,7 @@ class Tokenizer
     public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null)
     {
         $self = new self($compressors, $defaultCompressor);
-        return $self->parse($html);
+        return $self->parse($html)->getTokens();
     }
 
     /**
@@ -58,26 +58,28 @@ class Tokenizer
 
     /**
      * @param string $html
-     * @return array
+     * @return Tokens
      */
     public function parse($html)
     {
-        $tokens = [
-        new Token('', '', $html, $this->defaultCompressor),
-        ];
+        $tokens = new Tokens([
+            new Token('', $html, '', $this->defaultCompressor),
+        ]);
+
         do {
             $compressor = array_shift($this->compressors);
             $tokens = $this->split($tokens, $compressor);
         } while (count($this->compressors) > 0);
+
         return $tokens;
     }
 
     /**
-     * @param array $tokens
+     * @param Tokens $tokens
      * @param array $compressor
-     * @return array
+     * @return Tokens
      */
-    protected function split(array $tokens, array $compressor)
+    protected function split(Tokens $tokens, array $compressor)
     {
         foreach ($compressor['patterns'] as $pattern) {
             $tokens = $this->walkTokens($tokens, $pattern, $compressor['compressor']);
@@ -87,12 +89,12 @@ class Tokenizer
     }
 
     /**
-     * @param array $tokens
-     * @param $pattern
+     * @param Tokens $tokens
+     * @param string $pattern
      * @param CompressorInterface $compressor
-     * @return array
+     * @return Tokens
      */
-    protected function walkTokens(array $tokens, $pattern, CompressorInterface $compressor)
+    protected function walkTokens(Tokens $tokens, $pattern, CompressorInterface $compressor)
     {
         foreach ($tokens as $index => $token) {
             if ($token->getCompressor() === $this->defaultCompressor) {
@@ -101,8 +103,9 @@ class Tokenizer
 
                 if (count($bits[0]) > 0) {
                     $newTokens = $this->walkBits($bits, $html, $compressor);
-                    if (count($newTokens) > 0) {
-                        return $this->walkTokens($this->replaceToken($tokens, $index, $newTokens), $pattern, $compressor);
+                    if ($newTokens->count() > 0) {
+                        $tokens->replace($index, $newTokens);
+                        return $this->walkTokens($tokens, $pattern, $compressor);
                     }
                 }
             }
@@ -115,7 +118,7 @@ class Tokenizer
      * @param array $bits
      * @param array $html
      * @param CompressorInterface $compressor
-     * @return array
+     * @return Tokens
      */
     protected function walkBits($bits, $html, $compressor)
     {
@@ -125,26 +128,15 @@ class Tokenizer
             if ($bits[1][$i] === '' && $bits[2][$i] === '' && $bits[3][$i] === '') {
                 continue;
             }
-            $newTokens[] = new Token($prepend, $bits[1][$i], $html[$i], $this->defaultCompressorClone);
-            $newTokens[] = new Token('', '', $bits[2][$i], $compressor);
+            $newTokens[] = new Token($prepend, $html[$i], $bits[1][$i], $this->defaultCompressorClone);
+            $newTokens[] = new Token('', $bits[2][$i], '', $compressor);
             $prepend = $bits[3][$i];
         }
 
         if ($prepend !== '' || $html[$i] !== '') {
-            $newTokens[] = new Token($prepend, '', $html[$i], $this->defaultCompressorClone);
+            $newTokens[] = new Token($prepend, $html[$i], '', $this->defaultCompressorClone);
         }
 
-        return $newTokens;
-    }
-
-    /**
-     * @param array $tokens
-     * @param int $index
-     * @param array $newTokens
-     * @return array
-     */
-    protected function replaceToken($tokens, $index, $newTokens)
-    {
-        return array_merge(array_slice($tokens, 0, $index), $newTokens, array_slice($tokens, $index + 1));
+        return new Tokens($newTokens);
     }
 }
