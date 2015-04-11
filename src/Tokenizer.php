@@ -80,18 +80,29 @@ class Tokenizer
     protected function split(array $tokens, array $compressor)
     {
         foreach ($compressor['patterns'] as $pattern) {
-            foreach ($tokens as $index => $token) {
-                if ($token->getCompressor() === $this->defaultCompressor) {
-                    $html = preg_split($pattern, $token->getCombinedHtml());
-                    preg_match_all($pattern, $token->getCombinedHtml(), $bits);
+            $tokens = $this->walkTokens($tokens, $pattern, $compressor['compressor']);
+        }
 
-                    if (count($bits[0]) == 0) {
-                        continue;
-                    }
+        return $tokens;
+    }
 
-                    $newTokens = $this->walkBits($bits, $html, $compressor['compressor']);
+    /**
+     * @param array $tokens
+     * @param $pattern
+     * @param CompressorInterface $compressor
+     * @return array
+     */
+    protected function walkTokens(array $tokens, $pattern, CompressorInterface $compressor)
+    {
+        foreach ($tokens as $index => $token) {
+            if ($token->getCompressor() === $this->defaultCompressor) {
+                $html = preg_split($pattern, $token->getHtml());
+                preg_match_all($pattern, $token->getHtml(), $bits);
+
+                if (count($bits[0]) > 0) {
+                    $newTokens = $this->walkBits($bits, $html, $compressor);
                     if (count($newTokens) > 0) {
-                        $tokens = $this->replaceToken($tokens, $index, $newTokens);
+                        return $this->walkTokens($this->replaceToken($tokens, $index, $newTokens), $pattern, $compressor);
                     }
                 }
             }
