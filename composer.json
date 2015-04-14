@@ -28,8 +28,7 @@
         "dflydev/embedded-composer-console": "@dev",
         "sculpin/sculpin": "2.*@dev",
         "vectorface/dunit": "^2.0",
-        "squizlabs/php_codesniffer": "^1.0",
-        "object-calisthenics/phpcs-calisthenics-rules": "^1.0"
+        "squizlabs/php_codesniffer": "^1.0"
     },
     "autoload": {
         "psr-4": {
