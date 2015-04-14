@@ -77,5 +77,4 @@ class ParserTest extends \PHPUnit_Framework_TestCase {
         ]);
         $this->assertSame($compressedHtml, $parser->compress($compressedHtml));
     }
-
 }
