@@ -96,7 +96,7 @@ class Tokenizer
      */
     protected function walkTokens(Tokens $tokens, $pattern, CompressorInterface $compressor)
     {
-        foreach ($tokens as $index => $token) {
+        foreach ($tokens->getTokens() as $index => $token) {
             if ($token->getCompressor() === $this->defaultCompressor) {
                 $html = preg_split($pattern, $token->getHtml());
                 preg_match_all($pattern, $token->getHtml(), $bits);
