@@ -100,6 +100,7 @@ class Tokenizer
                     $newTokens = $this->walkBits($bits, $html, $compressor);
                     if ($newTokens->count() > 0) {
                         $tokens->replace($index, $newTokens);
+                        return $this->walkTokens($tokens, $pattern, $compressor);
                     }
                 }
             }
