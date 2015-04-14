@@ -131,5 +131,4 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
-
 }
