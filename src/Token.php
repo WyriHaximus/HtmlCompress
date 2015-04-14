@@ -24,7 +24,8 @@ class Token
     protected $html;
     protected $compressor;
 
-    public function __construct($prefix, $html, $suffix, CompressorInterface $compressor) {
+    public function __construct($prefix, $html, $suffix, CompressorInterface $compressor)
+    {
         $this->prefix = $prefix;
         $this->html = $html;
         $this->suffix = $suffix;

@@ -19,7 +19,11 @@ class Tokens
      */
     public function replace($index, Tokens $tokens)
     {
-        $this->tokens = array_merge(array_slice($this->tokens, 0, $index), $tokens->getTokens(), array_slice($this->tokens, $index + 1));
+        $this->tokens = array_merge(
+            array_slice($this->tokens, 0, $index),
+            $tokens->getTokens(),
+            array_slice($this->tokens, $index + 1)
+        );
     }
 
     /**
