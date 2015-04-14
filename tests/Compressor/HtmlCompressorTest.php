@@ -52,11 +52,11 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         return [
           [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
-            '<html> <body> <h1>h oi</h1> </body></html>',
+            '<html><body><h1>h oi</h1></body></html>',
           ],
           [
             '<html>   </html>',
-            '<html> </html>',
+            '<html></html>',
           ],
         ];
     }
@@ -73,7 +73,7 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         return [
           [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
-            '<html> <body> <h1>hoi</h1> </body> </html>',
+            '<html><body><h1>hoi</h1></body></html>',
           ],
           [
             '<html>  a',
@@ -94,7 +94,7 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         return [
           [
             "<html> <body>   <h1>hoi</h1></body> </html> ",
-            '<html> <body> <h1>hoi</h1></body> </html>',
+            '<html><body><h1>hoi</h1></body></html>',
           ],
           [
             'a     <html>',
