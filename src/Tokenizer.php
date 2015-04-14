@@ -93,14 +93,13 @@ class Tokenizer
     {
         foreach ($tokens->getTokens() as $index => $token) {
             if ($token->getCompressor() === $this->defaultCompressor) {
-                $html = preg_split($pattern, $token->getHtml());
-                preg_match_all($pattern, $token->getHtml(), $bits);
+                $html = preg_split($pattern, $token->getCombinedHtml());
+                preg_match_all($pattern, $token->getCombinedHtml(), $bits);
 
                 if (count($bits[0]) > 0) {
                     $newTokens = $this->walkBits($bits, $html, $compressor);
                     if ($newTokens->count() > 0) {
                         $tokens->replace($index, $newTokens);
-                        return $this->walkTokens($tokens, $pattern, $compressor);
                     }
                 }
             }
