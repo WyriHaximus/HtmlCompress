@@ -2,7 +2,7 @@
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-$parser = \WyriHaximus\HtmlCompress\Factory::construct();
+$parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
 $sites = [
     'Example.com' => 'http://example.com/',
     'Google.nl' => 'http://google.nl/',
