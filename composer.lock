@@ -1,10 +1,10 @@
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
-        "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1a01ee585cd77d64bd1c47246afe3d83",
+    "hash": "f5f83286f877283b54665498c7d61fea",
     "packages": [
         {
             "name": "linkorb/jsmin-php",
@@ -155,7 +155,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/composer/composer/zipball/4d134ce8a2aacb9566fee8deb8c514248fd2a983",
+                "url": "https://api.github.com/repos/composer/composer/zipball/c36d2a2e501315934b6968efa3cea41dd27f2511",
                 "reference": "4d134ce8a2aacb9566fee8deb8c514248fd2a983",
                 "shasum": ""
             },
@@ -1947,7 +1947,7 @@
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/f99d3a164cf004c7a6e26b212165940552a7e116",
+                "url": "https://api.github.com/repos/sculpin/sculpin/zipball/3c651b91883e29883c5498b775b7dd4f4b9894d5",
                 "reference": "f99d3a164cf004c7a6e26b212165940552a7e116",
                 "shasum": ""
             },
