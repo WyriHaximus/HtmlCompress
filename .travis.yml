@@ -1,28 +1,48 @@
 language: php
-sudo: false
-cache: composer
 
+## PHP versions we test against
 php:
   - 5.4
   - 5.5
   - 5.6
   - 7
   - hhvm
-  - hhvm-nightly
 
+## Build matrix for lowest and highest possible targets
 matrix:
+  include:
+    - php: 5.4
+      env: dependencies=lowest
+    - php: 5.5
+      env: dependencies=lowest
+    - php: 5.6
+      env: dependencies=lowest
+    - php: 7
+      env: dependencies=lowest
+    - php: hhvm
+      env: dependencies=lowest
+    - php: 5.4
+      env: dependencies=highest
+    - php: 5.5
+      env: dependencies=highest
+    - php: 5.6
+      env: dependencies=highest
+    - php: 7
+      env: dependencies=highest
+    - php: hhvm
+      env: dependencies=highest
   allow_failures:
     - php: 7
-    - php: hhvm-nightly
 
-branches:
-  only:
-    - master
-
+## Update composer and run the appropriate composer command
 before_script:
-  - composer self-update
-  - composer install
+  - composer self-update -q
+  - if [ -z "$dependencies" ]; then composer install; fi;
+  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
+  - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
+  - composer show -i
 
+## Run the actual test
 script: make travis
 
 notifications:
