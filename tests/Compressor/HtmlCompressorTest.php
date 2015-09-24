@@ -37,6 +37,10 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
               "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html>",
               '<html><h1>hoi</h1></html>',
             ],
+            [
+              "<html><p>abc\r\ndef</p></html>",
+              '<html><p>abc def</p></html>'
+            ]
         ];
     }
 
@@ -58,6 +62,10 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
             '<html>   </html>',
             '<html></html>',
           ],
+          [
+            "<html><body>  pre \r\n  suf\r\n  </body>",
+            '<html><body> pre suf </body>',
+          ]
         ];
     }
 
