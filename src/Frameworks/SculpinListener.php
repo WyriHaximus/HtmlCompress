@@ -56,11 +56,14 @@ class SculpinListener
         foreach ($event->allSources() as $source) {
             $ext = explode('.', $source->filename());
             $ext = $ext[(count($ext) - 1)];
-            if (in_array($ext, [
-                'html',
-                'md',
-                'markdown',
-            ])) {
+            if (in_array(
+                $ext,
+                [
+                    'html',
+                    'md',
+                    'markdown',
+                ]
+            )) {
                 $source->setFormattedContent($parser->compress($source->formattedContent()));
             }
         }

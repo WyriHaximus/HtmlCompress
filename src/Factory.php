@@ -28,21 +28,23 @@ class Factory
      */
     public static function constructFastest()
     {
-        return new Parser([
-            'compressors' => [
-                [
-                    'patterns' => [
-                        Patterns::MATCH_NOCOMPRESS,
-                        Patterns::MATCH_STYLE,
-                        Patterns::MATCH_JSCRIPT,
-                        Patterns::MATCH_SCRIPT,
-                        Patterns::MATCH_PRE,
-                        Patterns::MATCH_TEXTAREA,
+        return new Parser(
+            [
+                'compressors' => [
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_NOCOMPRESS,
+                            Patterns::MATCH_STYLE,
+                            Patterns::MATCH_JSCRIPT,
+                            Patterns::MATCH_SCRIPT,
+                            Patterns::MATCH_PRE,
+                            Patterns::MATCH_TEXTAREA,
+                        ],
+                        'compressor' => new ReturnCompressor(),
                     ],
-                    'compressor' => new ReturnCompressor(),
                 ],
-            ],
-        ]);
+            ]
+        );
     }
 
     /**
@@ -50,31 +52,33 @@ class Factory
      */
     public static function construct()
     {
-        return new Parser([
-            'compressors' => [
-                [
-                    'patterns' => [
-                        Patterns::MATCH_NOCOMPRESS,
+        return new Parser(
+            [
+                'compressors' => [
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_NOCOMPRESS,
+                        ],
+                        'compressor' => new ReturnCompressor(),
                     ],
-                    'compressor' => new ReturnCompressor(),
-                ],
-                [
-                    'patterns' => [
-                        Patterns::MATCH_JSCRIPT,
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_JSCRIPT,
+                        ],
+                        'compressor' => new JSqueezeCompressor(),
                     ],
-                    'compressor' => new JSqueezeCompressor(),
-                ],
-                [
-                    'patterns' => [
-                        Patterns::MATCH_SCRIPT,
-                        Patterns::MATCH_STYLE,
-                        Patterns::MATCH_PRE,
-                        Patterns::MATCH_TEXTAREA,
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_SCRIPT,
+                            Patterns::MATCH_STYLE,
+                            Patterns::MATCH_PRE,
+                            Patterns::MATCH_TEXTAREA,
+                        ],
+                        'compressor' => new ReturnCompressor(),
                     ],
-                    'compressor' => new ReturnCompressor(),
                 ],
-            ],
-        ]);
+            ]
+        );
     }
 
     /**
@@ -82,35 +86,39 @@ class Factory
      */
     public static function constructSmallest()
     {
-        return new Parser([
-            'compressors' => [
-                [
-                    'patterns' => [
-                        Patterns::MATCH_NOCOMPRESS,
+        return new Parser(
+            [
+                'compressors' => [
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_NOCOMPRESS,
+                        ],
+                        'compressor' => new ReturnCompressor(),
                     ],
-                    'compressor' => new ReturnCompressor(),
-                ],
-                [
-                    'patterns' => [
-                        Patterns::MATCH_JSCRIPT,
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_JSCRIPT,
+                        ],
+                        'compressor' => new BestResultCompressor(
+                            [
+                                new JSqueezeCompressor(),
+                                new JSMinCompressor(),
+                                new JavaScriptPackerCompressor(),
+                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
+                            ]
+                        ),
                     ],
-                    'compressor' => new BestResultCompressor([
-                        new JSqueezeCompressor(),
-                        new JSMinCompressor(),
-                        new JavaScriptPackerCompressor(),
-                        new ReturnCompressor(), // Sometimes no compression can already be the smallest
-                    ]),
-                ],
-                [
-                    'patterns' => [
-                        Patterns::MATCH_SCRIPT,
-                        Patterns::MATCH_STYLE,
-                        Patterns::MATCH_PRE,
-                        Patterns::MATCH_TEXTAREA,
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_SCRIPT,
+                            Patterns::MATCH_STYLE,
+                            Patterns::MATCH_PRE,
+                            Patterns::MATCH_TEXTAREA,
+                        ],
+                        'compressor' => new ReturnCompressor(),
                     ],
-                    'compressor' => new ReturnCompressor(),
                 ],
-            ],
-        ]);
+            ]
+        );
     }
 }

@@ -57,9 +57,11 @@ class Tokenizer
      */
     public function parse($html)
     {
-        $tokens = new Tokens([
-            new Token('', $html, '', $this->defaultCompressor),
-        ]);
+        $tokens = new Tokens(
+            [
+                new Token('', $html, '', $this->defaultCompressor),
+            ]
+        );
 
         do {
             $compressor = array_shift($this->compressors);
