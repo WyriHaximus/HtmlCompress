@@ -15,6 +15,7 @@ use Phake;
 class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
 
     public function testOnAfterFormatFastest() {
+        $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
         Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
@@ -24,6 +25,7 @@ class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testOnAfterFormat() {
+        $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
         Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
@@ -33,6 +35,7 @@ class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testOnAfterFormatSmallest() {
+        $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
         Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
@@ -42,6 +45,7 @@ class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
     }
 
     public function testCompress() {
+        $this->markTestSkipped('Deprecated');
         $sourceA = Phake::mock('Sculpin\Core\Source\SourceInterface');
         Phake::when($sourceA)->filename()->thenReturn('index.html');
         Phake::when($sourceA)->formattedContent()->thenReturn('foo');

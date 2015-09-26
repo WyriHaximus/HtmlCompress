@@ -17,6 +17,7 @@ use WyriHaximus\HtmlCompress\Parser;
 /**
  * Class SculpinListener
  * @package WyriHaximus\HtmlCompress\Frameworks
+ * @deprecated use the package listed in the readme
  */
 class SculpinListener
 {

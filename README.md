@@ -28,26 +28,8 @@ $compressedHtml = $parser->compress($sourceHtml);
 
 ## Framework integration ##
 
-### Sculpin ###
-
-[Sculpin](https://sculpin.io/) is a static site generator based on Symfony. Adding the following to `app/config/sculpin_kernel.yml` will compress the generated HTML.
-
-```yml
-services:
-    wyrihaximus.html_compress.compress:
-        class: \WyriHaximus\HtmlCompress\Frameworks\SculpinListener
-        tags:
-            - {  name: kernel.event_listener, event: sculpin.core.after_format, method: onAfterFormatSmallest }
-```
-
-The `method` field has 3 possible values:
-* onAfterFormatFastest - For HTML compression only
-* onAfterFormat - For HTML and JavaScript compression
-* onAfterFormatSmallest - For HTML and JavaScript compression where it lets all known JavaScript minifiers compete who can produce the smallest result
-
-## require-dev ##
-
-As you might have noticed require-dev contains some `odd` entries. (`composer/composer`, `dflydev/embedded-composer-core` and `dflydev/embedded-composer-console`) They are for `SculpinListener` tests.
+* [CakePHP](https://github.com/WyriHaximus/MinifyHtml)
+* [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
 
 ## License ##
 
