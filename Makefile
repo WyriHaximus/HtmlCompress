@@ -4,7 +4,7 @@ travis: cs unit-travis
 init:
 	if [ ! -d vendor ]; then composer install; fi;
 
-phpcs: init
+cs: init
 	./vendor/bin/phpcs --standard=PSR2 src/
 
 unit: init
