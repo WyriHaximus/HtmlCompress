@@ -10,10 +10,32 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+
 abstract class AbstractVendorCompressorTest extends \PHPUnit_Framework_TestCase {
 
-    public function testCompress() {
+    /**
+     * @var CompressorInterface
+     */
+    protected $compressor;
+
+    /**
+     * Compressor class to instantiate $compressor
+     */
+    const COMPRESSOR = '';
+
+    protected function setUp()
+    {
         $compressor = static::COMPRESSOR;
-        $this->assertTrue(is_string((new $compressor)->compress('foo ')));
+        $this->compressor = new $compressor();
+    }
+
+    protected function tearDown()
+    {
+        $this->compressor = null;
+    }
+
+    public function testCompress() {
+        $this->assertTrue(is_string($this->compressor->compress('foo ')));
     }
 }
