@@ -79,6 +79,7 @@ class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_STYLE,
+                            Patterns::MATCH_STYLE_INLINE,
                         ],
                         'compressor' => new CssMinCompressor(),
                     ],
@@ -125,6 +126,7 @@ class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_STYLE,
+                            Patterns::MATCH_STYLE_INLINE,
                         ],
                         'compressor' => new CssMinCompressor(),
                     ],
