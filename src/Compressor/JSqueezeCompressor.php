@@ -22,7 +22,14 @@ class JSqueezeCompressor extends Compressor
      */
     protected function execute($string)
     {
-        $parser = new \JSqueeze();
+        // Try version 2.0 namespace first
+        $class = '\Patchwork\JSqueeze';
+        if (!class_exists($class)) {
+            // Otherwise use 1.0
+            $class = '\JSqueeze';
+        }
+        /** @var \Patchwork\JSqueeze|\JSqueeze $parser */
+        $parser = new $class();
         return $parser->squeeze($string);
     }
 }
