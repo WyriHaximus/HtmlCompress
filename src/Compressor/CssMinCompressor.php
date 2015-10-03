@@ -11,7 +11,7 @@ class CssMinCompressor extends Compressor
 {
     private $cssMin;
 
-    function __construct()
+    public function __construct()
     {
         $this->cssMin = new \CssMin();
     }
