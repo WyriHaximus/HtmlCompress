@@ -11,6 +11,8 @@
 namespace WyriHaximus\HtmlCompress;
 
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
+use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
+use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
@@ -70,11 +72,17 @@ class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_STYLE,
                             Patterns::MATCH_PRE,
                             Patterns::MATCH_TEXTAREA,
                         ],
                         'compressor' => new ReturnCompressor(),
+                    ],
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_STYLE,
+                            Patterns::MATCH_STYLE_INLINE,
+                        ],
+                        'compressor' => new CssMinCompressor(),
                     ],
                 ],
             ]
@@ -111,11 +119,23 @@ class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_STYLE,
                             Patterns::MATCH_PRE,
                             Patterns::MATCH_TEXTAREA,
                         ],
                         'compressor' => new ReturnCompressor(),
+                    ],
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_STYLE,
+                            Patterns::MATCH_STYLE_INLINE,
+                        ],
+                        'compressor' => new BestResultCompressor(
+                            [
+                                new CssMinCompressor(),
+                                new CssMinifierCompressor(),
+                                new ReturnCompressor(),
+                            ]
+                        ),
                     ],
                 ],
             ]
