@@ -26,10 +26,11 @@ $parser = \WyriHaximus\HtmlCompress\Factory::construct();
 $compressedHtml = $parser->compress($sourceHtml);
 ```
 
-## Framework integration ##
+## Integration ##
 
 * [CakePHP](https://github.com/WyriHaximus/MinifyHtml)
 * [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
+* [Twig](https://github.com/nochso/html-compress-twig)
 
 ## License ##
 
