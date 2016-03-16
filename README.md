@@ -31,6 +31,7 @@ $compressedHtml = $parser->compress($sourceHtml);
 * [CakePHP](https://github.com/WyriHaximus/MinifyHtml)
 * [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
 * [Twig](https://github.com/nochso/html-compress-twig)
+* [Neos CMS](https://github.com/Flownative/neos-compressor)
 
 ## License ##
 
