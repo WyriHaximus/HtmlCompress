@@ -25,7 +25,7 @@ class HtmlCompressor extends Compressor
         // Replace newlines, returns and tabs with spaces
         $string = str_replace(["\r", "\n", "\t"], ' ', $string);
         // Replace multiple spaces with a single space
-        $string = preg_replace('/(\s+)/m', ' ', $string);
+        $string = preg_replace('/(\s+)/mu', ' ', $string);
 
         // Remove spaces that are followed by either > or <
         $string = preg_replace('/ (>)/', '$1', $string);
