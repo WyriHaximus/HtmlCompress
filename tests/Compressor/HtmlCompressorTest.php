@@ -139,4 +139,22 @@ class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
+
+    public function providerSpecialCharacterEncoding() {
+        return [
+            [
+                "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
+                '<html><body>à</body></html>',
+            ]
+        ];
+    }
+
+    /**
+     * @dataProvider providerSpecialCharacterEncoding
+     */
+    public function testSpecialCharacterEncoding($input, $expected) {
+        $actual = $this->compressor->compress($input);
+        $this->assertSame($expected, $actual);
+    }
+
 }
