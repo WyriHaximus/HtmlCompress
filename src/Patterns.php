@@ -23,6 +23,7 @@ class Patterns
     const MATCH_STYLE_INLINE = '!(<[^>]* style=")(.*?)(")!is';
     // @codingStandardsIgnoreStart
     const MATCH_JSCRIPT      = '!(<script>|<script[^>]*type="text/javascript"[^>]*>|<script[^>]*type=\'text/javascript\'[^>]*>)(.*?)(</script>)!is';
+    const MATCH_LD_JSON      = '!(<script[^>]*type="application/ld+json"[^>]*>|<script[^>]*type=\'application/ld+json\'[^>]*>)(.*?)(</script>)!is';
     // @codingStandardsIgnoreEnd
     const MATCH_SCRIPT       = '!(<script[^>]*>?)(.*?)(</script>)!is';
     const MATCH_NOCOMPRESS   = '!(<nocompress>)(.*?)(</nocompress>)!is';
