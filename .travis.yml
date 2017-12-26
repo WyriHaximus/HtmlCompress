@@ -4,7 +4,6 @@ sudo: false
 ## Cache composer bits
 cache:
   directories:
-    - vendor
     - $HOME/.composer/cache
 
 ## PHP versions we test against
@@ -49,24 +48,14 @@ matrix:
     - php: hhvm
       env: dependencies=highest
 
-## Update composer and run the appropriate composer command
-before_script:
-  - composer self-update -q
-  - if [ -n "$GH_TOKEN" ]; then composer config github-oauth.github.com ${GH_TOKEN}; fi;
+## Run the appropriate composer command
+install:
   - if [ -z "$dependencies" ]; then composer install; fi;
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
-  - composer show -i
+  - composer show
 
 ## Run the actual test
 script: make travis
 
 after_script: make travis-coverage
-
-notifications:
-  webhooks:
-    urls:
-      - http://wyrihaximus.net/wyri_projects/wyri_projects/webhook/travisci.json
-    on_success: always
-    on_failure: always
-    on_start: true
