@@ -37,6 +37,7 @@ class Factory
                         'patterns' => [
                             Patterns::MATCH_NOCOMPRESS,
                             Patterns::MATCH_STYLE,
+                            Patterns::MATCH_LD_JSON,
                             Patterns::MATCH_JSCRIPT,
                             Patterns::MATCH_SCRIPT,
                             Patterns::MATCH_PRE,
@@ -62,6 +63,12 @@ class Factory
                             Patterns::MATCH_NOCOMPRESS,
                         ],
                         'compressor' => new ReturnCompressor(),
+                    ],
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_LD_JSON,
+                        ],
+                        'compressor' => new JSMinCompressor(),
                     ],
                     [
                         'patterns' => [
@@ -102,6 +109,18 @@ class Factory
                             Patterns::MATCH_NOCOMPRESS,
                         ],
                         'compressor' => new ReturnCompressor(),
+                    ],
+                    [
+                        'patterns' => [
+                            Patterns::MATCH_LD_JSON,
+                        ],
+                        'compressor' => new BestResultCompressor(
+                            [
+                                new JSMinCompressor(),
+                                new JavaScriptPackerCompressor(),
+                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
+                            ]
+                        ),
                     ],
                     [
                         'patterns' => [
