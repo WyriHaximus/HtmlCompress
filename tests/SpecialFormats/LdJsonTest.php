@@ -20,6 +20,15 @@ class LdJsonTest extends \PHPUnit_Framework_TestCase
             [
                 new Compressor\JSMinCompressor(),
             ],
+            [
+                new Compressor\JavaScriptPackerCompressor(),
+            ],
+            /*[ // This compressor results in invalid JSON
+                new Compressor\JSqueezeCompressor(),
+            ],*/
+            [
+                new Compressor\ReturnCompressor(),
+            ],
         ];
     }
 
@@ -33,7 +42,7 @@ class LdJsonTest extends \PHPUnit_Framework_TestCase
         $compressedInput = $compressor->compress($input);
         $compressedJson = $this->getJson($compressedInput);
 
-        self::assertSame($inputJson, $compressedJson);
+        self::assertSame($inputJson, $compressedJson, $compressedInput);
     }
 
     private function getJson($string)
