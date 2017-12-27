@@ -1,0 +1,18 @@
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org/",
+  "@type": "Product",
+  "name": "Yoast SEO for WordPress",
+  "image": "https://cdn-images.yoast.com/uploads/2010/10/Yoast_SEO_WP_plugin_FB.png",
+  "description": "Yoast SEO is the most complete WordPress SEO plugin. It handles the technical optimization of your site & assists with optimizing your content.",
+  "brand": {
+    "@type": "Thing",
+    "name": "Yoast"
+  },
+  "offers": {
+    "@type": "Offer",
+    "priceCurrency": "USD",
+    "price": "69.00"
+  }
+}
+</script>
