@@ -16,7 +16,7 @@ abstract class Compressor implements CompressorInterface
     {
         $result = $this->execute($source);
 
-        if (strlen($source) > strlen($result)) {
+        if (strlen($source) >= strlen($result)) {
             return $result;
         }
 
