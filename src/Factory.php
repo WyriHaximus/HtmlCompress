@@ -13,6 +13,7 @@ namespace WyriHaximus\HtmlCompress;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
@@ -121,6 +122,7 @@ class Factory
                                 new MMMJSCompressor(),
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
+                                new JShrinkCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),
@@ -135,6 +137,7 @@ class Factory
                                 new JSqueezeCompressor(),
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
+                                new JShrinkCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),

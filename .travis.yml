@@ -8,21 +8,16 @@ cache:
 
 ## PHP versions we test against
 php:
-  - 5.4
-  - 5.5
   - 5.6
   - 7.0
   - 7.1
   - 7.2
   - hhvm
+  - nightly
 
 ## Build matrix for lowest and highest possible targets
 matrix:
   include:
-    - php: 5.4
-      env: dependencies=lowest
-    - php: 5.5
-      env: dependencies=lowest
     - php: 5.6
       env: dependencies=lowest
     - php: 7.0
@@ -33,10 +28,8 @@ matrix:
       env: dependencies=lowest
     - php: hhvm
       env: dependencies=lowest
-    - php: 5.4
-      env: dependencies=highest
-    - php: 5.5
-      env: dependencies=highest
+    - php: nightly
+      env: dependencies=lowest
     - php: 5.6
       env: dependencies=highest
     - php: 7.0
@@ -46,11 +39,14 @@ matrix:
     - php: 7.2
       env: dependencies=highest
     - php: hhvm
+      env: dependencies=highest
+    - php: nightly
       env: dependencies=highest
 
 ## Run the appropriate composer command
 install:
   - if [ -z "$dependencies" ]; then composer install; fi;
+  - composer config --unset platform.php
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
   - composer show
