@@ -46,6 +46,7 @@ matrix:
 ## Run the appropriate composer command
 install:
   - if [ -z "$dependencies" ]; then composer install; fi;
+  - composer config --unset platform.php
   - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
   - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
   - composer show
