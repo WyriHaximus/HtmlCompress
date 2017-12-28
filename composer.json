@@ -19,13 +19,14 @@
         "meenie/javascript-packer": "1.1",
         "natxet/CssMin": "^3.0",
         "patchwork/jsqueeze": "~1.0|~2.0",
-        "phpunit/phpunit": "^4.0",
+        "tedivm/jshrink": "^1.3",
         "websharks/css-minifier": "150820"
     },
     "require-dev": {
         "phake/phake": "^1.0",
-        "vectorface/dunit": "^2.0",
-        "squizlabs/php_codesniffer": "^1.0"
+        "phpunit/phpunit": "^4.0",
+        "squizlabs/php_codesniffer": "^1.0",
+        "vectorface/dunit": "^2.0"
     },
     "autoload": {
         "psr-4": {
