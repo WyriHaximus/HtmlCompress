@@ -27,6 +27,9 @@ class LdJsonTest extends \PHPUnit_Framework_TestCase
                 new Compressor\JSqueezeCompressor(),
             ],*/
             [
+                new Compressor\MMMJSCompressor(),
+            ],
+            [
                 new Compressor\ReturnCompressor(),
             ],
             [
