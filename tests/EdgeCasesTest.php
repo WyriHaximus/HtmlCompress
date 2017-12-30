@@ -36,6 +36,11 @@ class EdgeCasesTest extends \PHPUnit_Framework_TestCase
      */
     public function testEdgeCase($dir)
     {
-        $this->assertSame(file_get_contents($dir . 'out.html'), Factory::constructSmallest()->compress(file_get_contents($dir . 'in.html')));
+        $in = file_get_contents($dir . 'in.html');
+        $out = file_get_contents($dir . 'out.html');
+
+        $result = Factory::constructSmallest()->compress($in);
+
+        $this->assertSame($out, $result);
     }
 }
