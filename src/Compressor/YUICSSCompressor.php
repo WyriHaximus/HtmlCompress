@@ -24,8 +24,12 @@ class YUICSSCompressor extends Compressor
      */
     protected function execute($string)
     {
-        $yui = new YUICompressor();
-        $yui->setType(YUICompressor::TYPE_CSS);
-        return $yui->compress($string);
+        try {
+            $yui = new YUICompressor();
+            $yui->setType(YUICompressor::TYPE_CSS);
+            return $yui->compress($string);
+        } catch (\Exception $exception) {
+            return $string;
+        }
     }
 }
