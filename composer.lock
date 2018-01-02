@@ -4,8 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "be19c4baf88114c7fd21d31d271105c2",
+    "content-hash": "e3e17407c213de7a7ed285c095b21478",
     "packages": [
+        {
+            "name": "jalle19/php-yui-compressor",
+            "version": "1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Jalle19/php-yui-compressor.git",
+                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Jalle19/php-yui-compressor/zipball/eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
+                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
+                "shasum": ""
+            },
+            "require": {
+                "nervo/yuicompressor": "2.4.*",
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "YUI": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "description": "A modern PHP wrapper for the YUI compressor",
+            "homepage": "https://github.com/Jalle19/php-yui-compressor",
+            "keywords": [
+                "JS",
+                "css",
+                "minify",
+                "yui"
+            ],
+            "time": "2014-06-03T12:02:11+00:00"
+        },
         {
             "name": "linkorb/jsmin-php",
             "version": "1.0.0",
@@ -255,6 +293,33 @@
                 "minify"
             ],
             "time": "2017-10-04T16:54:00+00:00"
+        },
+        {
+            "name": "nervo/yuicompressor",
+            "version": "2.4.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/nervo/yuicompressor.git",
+                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/nervo/yuicompressor/zipball/e6e3b215c3998cf6092613c002ae533ae75d7ada",
+                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada",
+                "shasum": ""
+            },
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD"
+            ],
+            "description": "YUI Compressor is an open source tool that supports the compression of both JavaScript and CSS files. The JavaScript compression removes comments and white-spaces as well as obfuscates local variables using the smallest possible variable name. CSS compression is done using a regular-expression-based CSS minifier.",
+            "homepage": "https://github.com/yui/yuicompressor",
+            "keywords": [
+                "java",
+                "yui"
+            ],
+            "time": "2013-09-13T10:26:14+00:00"
         },
         {
             "name": "patchwork/jsqueeze",
