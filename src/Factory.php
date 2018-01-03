@@ -102,9 +102,10 @@ class Factory
     }
 
     /**
+     * @param bool $externalCompressors When set to false only use pure PHP compressors.
      * @return Parser
      */
-    public static function constructSmallest()
+    public static function constructSmallest($externalCompressors = true)
     {
         return new Parser(
             [
@@ -141,7 +142,7 @@ class Factory
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
                                 new JShrinkCompressor(),
-                                new YUIJSCompressor(),
+                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),
@@ -164,7 +165,7 @@ class Factory
                                 new MMMCSSCompressor(),
                                 new CssMinCompressor(),
                                 new CssMinifierCompressor(),
-                                new YUICSSCompressor(),
+                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
                                 new ReturnCompressor(),
                             ]
                         ),
