@@ -11,22 +11,24 @@
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use Phake;
+use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
+use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
 /**
  * Class BestResultCompressor
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class BestResultCompressor extends \PHPUnit_Framework_TestCase {
+class BestResultCompressorTest extends \PHPUnit_Framework_TestCase {
 
     public function testCompress() {
         $input = 'abc';
-        $compressorA = Phake::partialMock('\WyriHaximus\HtmlCompress\Compressor\ReturnCompressor');
+        $compressorA = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressorA)->compress($input)->thenReturn('ab');
-        $compressorB = Phake::partialMock('\WyriHaximus\HtmlCompress\Compressor\ReturnCompressor');
+        $compressorB = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressorB)->compress($input)->thenReturn('abcd');
 
-        $compressor = new \WyriHaximus\HtmlCompress\Compressor\BestResultCompressor([
+        $compressor = new BestResultCompressor([
             $compressorA,
             $compressorB,
         ]);

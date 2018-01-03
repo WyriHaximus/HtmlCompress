@@ -11,6 +11,11 @@
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use Phake;
+use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
+use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+use WyriHaximus\HtmlCompress\Parser;
+use WyriHaximus\HtmlCompress\Patterns;
 
 /**
  * Class ParserTest
@@ -24,26 +29,26 @@ class ParserTest extends \PHPUnit_Framework_TestCase {
             'compressors' => [
                 [
                     'patterns' => [
-                        \WyriHaximus\HtmlCompress\Patterns::MATCH_JSCRIPT,
+                        Patterns::MATCH_JSCRIPT,
                     ],
-                    'compressor' => new \WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor(),
+                    'compressor' => new JSqueezeCompressor(),
                 ],
             ],
         ];
         $parser = new \WyriHaximus\HtmlCompress\Parser($options);
 
         $this->assertSame($options['compressors'], $parser->getCompressors());
-        $this->assertInstanceOf('\WyriHaximus\HtmlCompress\Compressor\HtmlCompressor', $parser->getDefaultCompressor());
+        $this->assertInstanceOf(HtmlCompressor::class, $parser->getDefaultCompressor());
     }
     public function testConstructNonDefaultDefaultCompressor() {
-        $defaultCompressor = new \WyriHaximus\HtmlCompress\Compressor\ReturnCompressor();
+        $defaultCompressor = new ReturnCompressor();
         $options = [
             'compressors' => [
                 [
                     'patterns' => [
-                        \WyriHaximus\HtmlCompress\Patterns::MATCH_JSCRIPT,
+                        Patterns::MATCH_JSCRIPT,
                     ],
-                    'compressor' => new \WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor(),
+                    'compressor' => new JSqueezeCompressor(),
                 ],
             ],
         ];
@@ -56,16 +61,16 @@ class ParserTest extends \PHPUnit_Framework_TestCase {
     public function testCompress() {
         $html = 'foo';
         $compressedHtml = 'bar';
-        $compressor = Phake::partialMock('\WyriHaximus\HtmlCompress\Compressor\ReturnCompressor');
+        $compressor = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressor)->compress($html)->thenReturn($compressedHtml);
 
-        $parser = Phake::partialMock('\WyriHaximus\HtmlCompress\Parser', [
+        $parser = Phake::partialMock(Parser::class, [
             'compressors' => [
                 [
                     'patterns' => [
-                        \WyriHaximus\HtmlCompress\Patterns::MATCH_JSCRIPT,
+                        Patterns::MATCH_JSCRIPT,
                     ],
-                    'compressor' => new \WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor(),
+                    'compressor' => new JSqueezeCompressor(),
                 ],
             ],
         ]);

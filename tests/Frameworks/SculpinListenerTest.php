@@ -11,37 +11,39 @@
 namespace WyriHaximus\HtmlCompress\Tests\Frameworks;
 
 use Phake;
+use WyriHaximus\HtmlCompress\Frameworks\SculpinListener;
+use WyriHaximus\HtmlCompress\Parser;
 
 class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
 
     public function testOnAfterFormatFastest() {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
-        $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
-        Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        $listener = Phake::mock(SculpinListener::class);
+        Phake::when($listener)->compress($this->isInstanceOf(Parser::class), $event);
         Phake::when($listener)->onAfterFormatFastest($event)->thenCallParent();
         $listener->onAfterFormatFastest($event);
-        Phake::verify($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
     public function testOnAfterFormat() {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
-        $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
-        Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        $listener = Phake::mock(SculpinListener::class);
+        Phake::when($listener)->compress($this->isInstanceOf(Parser::class), $event);
         Phake::when($listener)->onAfterFormat($event)->thenCallParent();
         $listener->onAfterFormat($event);
-        Phake::verify($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
     public function testOnAfterFormatSmallest() {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
-        $listener = Phake::mock('WyriHaximus\HtmlCompress\Frameworks\SculpinListener');
-        Phake::when($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        $listener = Phake::mock(SculpinListener::class);
+        Phake::when($listener)->compress($this->isInstanceOf(Parser::class), $event);
         Phake::when($listener)->onAfterFormatSmallest($event)->thenCallParent();
         $listener->onAfterFormatSmallest($event);
-        Phake::verify($listener)->compress($this->isInstanceOf('WyriHaximus\HtmlCompress\Parser'), $event);
+        Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
     public function testCompress() {

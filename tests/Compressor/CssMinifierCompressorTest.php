@@ -2,6 +2,8 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
+
 /**
  * CssMinifierCompressorTest
  *
@@ -9,7 +11,7 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
  */
 class CssMinifierCompressorTest extends AbstractVendorCompressorTest
 {
-    const COMPRESSOR = 'WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor';
+    const COMPRESSOR = CssMinifierCompressor::class;
 
     public function providerReturn()
     {

@@ -10,6 +10,8 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
+
 /**
  * Class HtmlCompressorTest
  *
@@ -17,10 +19,15 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
  */
 class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
 
+    /**
+     * @var HtmlCompressor
+     */
+    private $compressor;
+
     public function setUp() {
         parent::setUp();
 
-        $this->compressor = new \WyriHaximus\HtmlCompress\Compressor\HtmlCompressor();
+        $this->compressor = new HtmlCompressor();
     }
 
     public function tearDown() {

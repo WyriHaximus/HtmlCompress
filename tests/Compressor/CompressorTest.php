@@ -11,6 +11,7 @@
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use Phake;
+use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
 /**
  * Class CompressorTest
@@ -20,13 +21,13 @@ use Phake;
 class CompressorTest extends \PHPUnit_Framework_TestCase {
 
     public function testCompress() {
-        $compressor = Phake::partialMock('\WyriHaximus\HtmlCompress\Compressor\ReturnCompressor');
+        $compressor = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressor)->execute('foo ')->thenReturn('foo');
         $this->assertSame('foo', $compressor->compress('foo '));
     }
 
     public function testCompressLargerResult() {
-        $compressor = Phake::partialMock('\WyriHaximus\HtmlCompress\Compressor\ReturnCompressor');
+        $compressor = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressor)->execute('foo ')->thenReturn(' foo ');
         $this->assertSame('foo ', $compressor->compress('foo '));
     }
