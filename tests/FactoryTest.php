@@ -18,17 +18,27 @@ namespace WyriHaximus\HtmlCompress\Tests;
 class FactoryTest extends \PHPUnit_Framework_TestCase {
 
     public function testConstructFastest() {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest('<html><p> <span>foo bar</span> </p></html>html>');
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest();
         $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
     }
 
     public function testConstruct() {
-        $parser = \WyriHaximus\HtmlCompress\Factory::construct('<html><p> <span>foo bar</span> </p></html>html>');
+        $parser = \WyriHaximus\HtmlCompress\Factory::construct();
         $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
     }
 
-    public function testConstructSmallest() {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest('<html><p> <span>foo bar</span> </p></html>html>');
+    public function testConstructSmallestDefault() {
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
+        $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
+    }
+
+    public function testConstructSmallestNoExternal() {
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest(false);
+        $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
+    }
+
+    public function testConstructSmallestExternal() {
+        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest(true);
         $this->assertInstanceOf('WyriHaximus\HtmlCompress\Parser', $parser);
     }
 
