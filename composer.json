@@ -25,10 +25,7 @@
         "websharks/css-minifier": "150820"
     },
     "require-dev": {
-        "phpunit/phpunit": "^4.0",
-        "phake/phake": "^1.0",
-        "vectorface/dunit": "^2.0",
-        "squizlabs/php_codesniffer": "^1.0"
+        "api-clients/test-utilities": "^4.2"
     },
     "autoload": {
         "psr-4": {

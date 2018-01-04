@@ -2,11 +2,12 @@
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 use WyriHaximus\HtmlCompress\Token;
 use WyriHaximus\HtmlCompress\Tokens;
 
-class TokensTest extends \PHPUnit_Framework_TestCase
+class TokensTest extends TestCase
 {
     public function testReplace()
     {

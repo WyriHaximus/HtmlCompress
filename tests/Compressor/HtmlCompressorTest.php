@@ -10,6 +10,7 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
 /**
@@ -17,7 +18,7 @@ use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class HtmlCompressorTest extends \PHPUnit_Framework_TestCase {
+class HtmlCompressorTest extends TestCase {
 
     /**
      * @var HtmlCompressor

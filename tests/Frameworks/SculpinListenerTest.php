@@ -11,10 +11,11 @@
 namespace WyriHaximus\HtmlCompress\Tests\Frameworks;
 
 use Phake;
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Frameworks\SculpinListener;
 use WyriHaximus\HtmlCompress\Parser;
 
-class SculpinListenerTest extends \PHPUnit_Framework_TestCase {
+class SculpinListenerTest extends TestCase {
 
     public function testOnAfterFormatFastest() {
         $this->markTestSkipped('Deprecated');

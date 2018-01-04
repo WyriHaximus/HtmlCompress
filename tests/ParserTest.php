@@ -11,6 +11,7 @@
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use Phake;
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
@@ -22,7 +23,7 @@ use WyriHaximus\HtmlCompress\Patterns;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class ParserTest extends \PHPUnit_Framework_TestCase {
+class ParserTest extends TestCase {
 
     public function testConstruct() {
         $options = [

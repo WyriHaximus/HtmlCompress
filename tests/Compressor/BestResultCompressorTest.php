@@ -11,6 +11,7 @@
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use Phake;
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
@@ -19,7 +20,7 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class BestResultCompressorTest extends \PHPUnit_Framework_TestCase {
+class BestResultCompressorTest extends TestCase {
 
     public function testCompress() {
         $input = 'abc';

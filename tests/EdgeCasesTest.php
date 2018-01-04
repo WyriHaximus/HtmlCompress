@@ -10,6 +10,7 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Factory;
 
 /**
@@ -17,7 +18,7 @@ use WyriHaximus\HtmlCompress\Factory;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class EdgeCasesTest extends \PHPUnit_Framework_TestCase
+class EdgeCasesTest extends TestCase
 {
     public function providerEdgeCase()
     {

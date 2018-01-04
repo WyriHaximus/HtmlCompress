@@ -10,6 +10,7 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Parser;
 
 /**
@@ -17,7 +18,7 @@ use WyriHaximus\HtmlCompress\Parser;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class FactoryTest extends \PHPUnit_Framework_TestCase {
+class FactoryTest extends TestCase {
 
     public function testConstructFastest() {
         $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest();

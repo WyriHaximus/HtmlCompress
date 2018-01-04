@@ -10,6 +10,7 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Patterns;
 
 /**
@@ -17,7 +18,7 @@ use WyriHaximus\HtmlCompress\Patterns;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class PatternsTest extends \PHPUnit_Framework_TestCase {
+class PatternsTest extends TestCase {
 
     /**
      * Nasty long method, but this is the best way (I can think of) to do this

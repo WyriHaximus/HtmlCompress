@@ -10,9 +10,10 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
-abstract class AbstractVendorCompressorTest extends \PHPUnit_Framework_TestCase {
+abstract class AbstractVendorCompressorTest extends TestCase {
 
     /**
      * @var CompressorInterface

@@ -10,9 +10,10 @@
  */
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
+use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor;
 
-class LdJsonTest extends \PHPUnit_Framework_TestCase
+class LdJsonTest extends TestCase
 {
     public function javascriptCompressorProvider()
     {
