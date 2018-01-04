@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,12 +7,13 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress;
 
-use \WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
 /**
- * Class Parser
+ * Class Parser.
  *
  * @package WyriHaximus\HtmlCompress
  */
@@ -30,19 +30,7 @@ class Tokenizer
     protected $defaultCompressor;
 
     /**
-     * @param string $html
-     * @param array $compressors
-     * @param CompressorInterface $defaultCompressor
-     * @return array
-     */
-    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null)
-    {
-        $self = new self($compressors, $defaultCompressor);
-        return $self->parse($html)->getTokens();
-    }
-
-    /**
-     * @param array $compressors
+     * @param array               $compressors
      * @param CompressorInterface $defaultCompressor
      */
     public function __construct(array $compressors, CompressorInterface $defaultCompressor = null)
@@ -52,7 +40,20 @@ class Tokenizer
     }
 
     /**
-     * @param string $html
+     * @param  string              $html
+     * @param  array               $compressors
+     * @param  CompressorInterface $defaultCompressor
+     * @return array
+     */
+    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null)
+    {
+        $self = new self($compressors, $defaultCompressor);
+
+        return $self->parse($html)->getTokens();
+    }
+
+    /**
+     * @param  string $html
      * @return Tokens
      */
     public function parse($html)
@@ -72,8 +73,8 @@ class Tokenizer
     }
 
     /**
-     * @param Tokens $tokens
-     * @param array $compressor
+     * @param  Tokens $tokens
+     * @param  array  $compressor
      * @return Tokens
      */
     protected function split(Tokens $tokens, array $compressor)
@@ -86,9 +87,9 @@ class Tokenizer
     }
 
     /**
-     * @param Tokens $tokens
-     * @param string $pattern
-     * @param CompressorInterface $compressor
+     * @param  Tokens              $tokens
+     * @param  string              $pattern
+     * @param  CompressorInterface $compressor
      * @return Tokens
      */
     protected function walkTokens(Tokens $tokens, $pattern, CompressorInterface $compressor)
@@ -102,6 +103,7 @@ class Tokenizer
                     $newTokens = $this->walkBits($bits, $html, $compressor);
                     if ($newTokens->count() > 0) {
                         $tokens->replace($index, $newTokens);
+
                         return $this->walkTokens($tokens, $pattern, $compressor);
                     }
                 }
@@ -112,9 +114,9 @@ class Tokenizer
     }
 
     /**
-     * @param array $bits
-     * @param array $html
-     * @param CompressorInterface $compressor
+     * @param  array               $bits
+     * @param  array               $html
+     * @param  CompressorInterface $compressor
      * @return Tokens
      */
     protected function walkBits($bits, $html, $compressor)

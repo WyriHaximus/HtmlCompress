@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,34 +7,39 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
 /**
- * Class HtmlCompressorTest
+ * Class HtmlCompressorTest.
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class HtmlCompressorTest extends TestCase {
+class HtmlCompressorTest extends TestCase
+{
 
     /**
      * @var HtmlCompressor
      */
     private $compressor;
 
-    public function setUp() {
+    public function setUp()
+    {
         parent::setUp();
 
         $this->compressor = new HtmlCompressor();
     }
 
-    public function tearDown() {
+    public function tearDown()
+    {
         unset($this->compressor);
     }
 
-    public function providerNewLinesTabsReturns() {
+    public function providerNewLinesTabsReturns()
+    {
         return [
             [
               "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
@@ -47,20 +51,24 @@ class HtmlCompressorTest extends TestCase {
             ],
             [
               "<html><p>abc\r\ndef</p></html>",
-              '<html><p>abc def</p></html>'
-            ]
+              '<html><p>abc def</p></html>',
+            ],
         ];
     }
 
     /**
      * @dataProvider providerNewLinesTabsReturns
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testNewLinesTabsReturns($input, $expected) {
+    public function testNewLinesTabsReturns($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
 
-    public function providerMultipleSpaces() {
+    public function providerMultipleSpaces()
+    {
         return [
           [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
@@ -73,19 +81,23 @@ class HtmlCompressorTest extends TestCase {
           [
             "<html><body>  pre \r\n  suf\r\n  </body>",
             '<html><body> pre suf </body>',
-          ]
+          ],
         ];
     }
 
     /**
      * @dataProvider providerMultipleSpaces
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testMultipleSpaces($input, $expected) {
+    public function testMultipleSpaces($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
 
-    public function providerSpaceAfterGt() {
+    public function providerSpaceAfterGt()
+    {
         return [
           [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
@@ -100,16 +112,20 @@ class HtmlCompressorTest extends TestCase {
 
     /**
      * @dataProvider providerSpaceAfterGt
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testSpaceAfterGt($input, $expected) {
+    public function testSpaceAfterGt($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
 
-    public function providerSpaceBeforeLt() {
+    public function providerSpaceBeforeLt()
+    {
         return [
           [
-            "<html> <body>   <h1>hoi</h1></body> </html> ",
+            '<html> <body>   <h1>hoi</h1></body> </html> ',
             '<html><body><h1>hoi</h1></body></html>',
           ],
           [
@@ -121,13 +137,17 @@ class HtmlCompressorTest extends TestCase {
 
     /**
      * @dataProvider providerSpaceBeforeLt
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testSpaceBeforeLt($input, $expected) {
+    public function testSpaceBeforeLt($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
 
-    public function providerTrim() {
+    public function providerTrim()
+    {
         return [
           [
             '              ',
@@ -142,27 +162,33 @@ class HtmlCompressorTest extends TestCase {
 
     /**
      * @dataProvider providerTrim
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testTrim($input, $expected) {
+    public function testTrim($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
 
-    public function providerSpecialCharacterEncoding() {
+    public function providerSpecialCharacterEncoding()
+    {
         return [
             [
                 "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
                 '<html><body>à</body></html>',
-            ]
+            ],
         ];
     }
 
     /**
      * @dataProvider providerSpecialCharacterEncoding
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testSpecialCharacterEncoding($input, $expected) {
+    public function testSpecialCharacterEncoding($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
-
 }

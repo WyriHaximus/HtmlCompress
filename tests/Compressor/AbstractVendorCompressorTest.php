@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,22 +7,24 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
-abstract class AbstractVendorCompressorTest extends TestCase {
+abstract class AbstractVendorCompressorTest extends TestCase
+{
+
+    /**
+     * Compressor class to instantiate $compressor.
+     */
+    const COMPRESSOR = '';
 
     /**
      * @var CompressorInterface
      */
     protected $compressor;
-
-    /**
-     * Compressor class to instantiate $compressor
-     */
-    const COMPRESSOR = '';
 
     protected function setUp()
     {
@@ -36,7 +37,8 @@ abstract class AbstractVendorCompressorTest extends TestCase {
         $this->compressor = null;
     }
 
-    public function testCompress() {
+    public function testCompress()
+    {
         $this->assertTrue(is_string($this->compressor->compress('foo ')));
     }
 }

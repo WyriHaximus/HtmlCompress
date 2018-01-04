@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,34 +7,39 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
 /**
- * Class HtmlCompressorTest
+ * Class HtmlCompressorTest.
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class ReturnCompressorTest extends TestCase {
+class ReturnCompressorTest extends TestCase
+{
 
     /**
      * @var ReturnCompressor
      */
     private $compressor;
 
-    public function setUp() {
+    public function setUp()
+    {
         parent::setUp();
 
         $this->compressor = new ReturnCompressor();
     }
 
-    public function tearDown() {
+    public function tearDown()
+    {
         unset($this->compressor);
     }
 
-    public function providerReturn() {
+    public function providerReturn()
+    {
         return [
             [
               " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
@@ -50,8 +54,11 @@ class ReturnCompressorTest extends TestCase {
 
     /**
      * @dataProvider providerReturn
+     * @param mixed $input
+     * @param mixed $expected
      */
-    public function testReturn($input, $expected) {
+    public function testReturn($input, $expected)
+    {
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }

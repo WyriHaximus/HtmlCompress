@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 require dirname(__DIR__) . '/vendor/autoload.php';
 
 $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest();

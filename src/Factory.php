@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,15 +7,16 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress;
 
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
+use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\MMMCSSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
@@ -24,7 +24,7 @@ use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
 
 /**
- * Class Factory
+ * Class Factory.
  *
  * @package WyriHaximus\HtmlCompress
  */
@@ -102,7 +102,7 @@ class Factory
     }
 
     /**
-     * @param bool $externalCompressors When set to false only use pure PHP compressors.
+     * @param  bool   $externalCompressors When set to false only use pure PHP compressors.
      * @return Parser
      */
     public static function constructSmallest($externalCompressors = true)

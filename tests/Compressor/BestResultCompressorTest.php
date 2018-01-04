@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,6 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use Phake;
@@ -16,13 +16,14 @@ use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
 /**
- * Class BestResultCompressor
+ * Class BestResultCompressor.
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class BestResultCompressorTest extends TestCase {
-
-    public function testCompress() {
+class BestResultCompressorTest extends TestCase
+{
+    public function testCompress()
+    {
         $input = 'abc';
         $compressorA = Phake::partialMock(ReturnCompressor::class);
         Phake::when($compressorA)->compress($input)->thenReturn('ab');
@@ -40,5 +41,4 @@ class BestResultCompressorTest extends TestCase {
 
         $this->assertSame('ab', $actual);
     }
-
 }

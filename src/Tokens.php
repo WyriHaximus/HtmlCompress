@@ -1,4 +1,5 @@
-<?php
+<?php declare(strict_types=1);
+
 namespace WyriHaximus\HtmlCompress;
 
 class Tokens
@@ -40,6 +41,7 @@ class Tokens
         foreach ($this->tokens as $token) {
             $html .= $token->getCombinedHtml();
         }
+
         return $html;
     }
 

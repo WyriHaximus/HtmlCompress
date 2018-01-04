@@ -1,11 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
 
 /**
- * CssMinCompressorTest
+ * CssMinCompressorTest.
  *
  * @author Marcel Voigt <mv@noch.so>
  */
@@ -40,6 +40,8 @@ class CssMinCompressorTest extends AbstractVendorCompressorTest
 
     /**
      * @dataProvider providerReturn
+     * @param mixed $input
+     * @param mixed $expected
      */
     public function testReturn($input, $expected)
     {

@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,13 +7,14 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress;
 
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
 /**
- * Class Parser
+ * Class Parser.
  *
  * @package WyriHaximus\HtmlCompress
  */
@@ -31,7 +31,7 @@ class Parser
     protected $options;
 
     /**
-     * @param array $options
+     * @param array               $options
      * @param CompressorInterface $defaultCompressor
      */
     public function __construct(array $options, CompressorInterface $defaultCompressor = null)
@@ -45,7 +45,7 @@ class Parser
     }
 
     /**
-     * @param string $html
+     * @param  string $html
      * @return string
      */
     public function compress($html)
@@ -62,7 +62,7 @@ class Parser
     }
 
     /**
-     * @param string $html
+     * @param  string $html
      * @return array
      */
     public function tokenize($html)

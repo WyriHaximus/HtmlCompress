@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,10 +7,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 /**
- * Class JSqueezeCompressor
+ * Class JSqueezeCompressor.
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
@@ -30,6 +30,7 @@ class JSqueezeCompressor extends Compressor
         }
         /** @var \Patchwork\JSqueeze|\JSqueeze $parser */
         $parser = new $class();
+
         return $parser->squeeze($string);
     }
 }

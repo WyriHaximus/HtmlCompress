@@ -1,4 +1,5 @@
-<?php // @codeCoverageIgnoreStart
+<?php declare(strict_types=1);
+// @codeCoverageIgnoreStart
 
 /*
  * This file is part of HtmlCompress.
@@ -8,10 +9,11 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 /**
- * Interface CompressorInterface
+ * Interface CompressorInterface.
  * @package WyriHaximus\HtmlCompress\Compressor
  */
 interface CompressorInterface

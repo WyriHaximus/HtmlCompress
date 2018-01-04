@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,6 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Frameworks;
 
 use Sculpin\Core\Event\SourceSetEvent;
@@ -15,7 +15,7 @@ use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\HtmlCompress\Parser;
 
 /**
- * Class SculpinListener
+ * Class SculpinListener.
  * @package WyriHaximus\HtmlCompress\Frameworks
  * @deprecated use the package listed in the readme
  */
@@ -49,7 +49,7 @@ class SculpinListener
     }
 
     /**
-     * @param Parser $parser
+     * @param Parser         $parser
      * @param SourceSetEvent $event
      */
     protected function compress(Parser $parser, SourceSetEvent $event)
@@ -63,7 +63,8 @@ class SculpinListener
                     'html',
                     'md',
                     'markdown',
-                ]
+                ],
+                true
             )) {
                 $source->setFormattedContent($parser->compress($source->formattedContent()));
             }

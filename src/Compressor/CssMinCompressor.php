@@ -1,9 +1,9 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 /**
- * CssMinCompressor
+ * CssMinCompressor.
  *
  * @author Marcel Voigt <mv@noch.so>
  */

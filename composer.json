@@ -42,5 +42,62 @@
         "platform": {
             "php": "7.0"
         }
+    },
+    "scripts": {
+        "ensure-installed": "composer install --ansi -n -q",
+        "generate-resources": [
+            "@ensure-installed",
+            "api-client-resource-generator ./resources.yml"
+        ],
+        "cs": [
+            "@ensure-installed",
+            "php-cs-fixer fix --config=.php_cs --ansi --dry-run --diff --verbose --allow-risky=yes --show-progress=estimating"
+        ],
+        "cs-fix": [
+            "@ensure-installed",
+            "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
+        ],
+        "unit": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist"
+        ],
+        "unit-coverage": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+        ],
+        "lint-php": [
+            "@ensure-installed",
+            "parallel-lint --exclude vendor ."
+        ],
+        "qa-all": [
+            "@lint-php",
+            "@cs",
+            "@unit"
+        ],
+        "qa-all-coverage": [
+            "@lint-php",
+            "@cs",
+            "@unit-coverage"
+        ],
+        "qa-windows": [
+            "@lint-php",
+            "@cs",
+            "@unit"
+        ],
+        "qa-ci": [
+            "@unit"
+        ],
+        "qa-ci-extended": [
+            "@qa-all-coverage"
+        ],
+        "qa-ci-windows": [
+            "@qa-windows"
+        ],
+        "qa-contrib": [
+            "@qa-all"
+        ],
+        "ci-coverage": [
+            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+        ]
     }
 }

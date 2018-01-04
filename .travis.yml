@@ -1,52 +1,68 @@
 language: php
-sudo: false
 
 ## Cache composer bits
 cache:
   directories:
-    - $HOME/.composer/cache
-
-## PHP versions we test against
-php:
-  - 7.0
-  - 7.1
-  - 7.2
-  - hhvm
-  - nightly
+    - $HOME/.composer/cache/files
 
 ## Build matrix for lowest and highest possible targets
 matrix:
   include:
     - php: 7.0
-      env: dependencies=lowest
+      env:
+        - qaExtended=true
     - php: 7.1
-      env: dependencies=lowest
     - php: 7.2
-      env: dependencies=lowest
-    - php: hhvm
-      env: dependencies=lowest
+      env:
+        - dropPlatform=false
     - php: nightly
-      env: dependencies=lowest
+      env:
+        - dropPlatform=false
     - php: 7.0
-      env: dependencies=highest
+      env:
+        - dependencies=lowest
     - php: 7.1
-      env: dependencies=highest
+      env:
+        - dependencies=lowest
     - php: 7.2
-      env: dependencies=highest
-    - php: hhvm
-      env: dependencies=highest
+      env:
+        - dependencies=lowest
+        - dropPlatform=false
     - php: nightly
-      env: dependencies=highest
+      env:
+        - dependencies=lowest
+        - dropPlatform=false
+    - php: 7.0
+      env:
+        - dependencies=highest
+    - php: 7.1
+      env:
+        - dependencies=highest
+    - php: 7.2
+      env:
+        - dependencies=highest
+        - dropPlatform=false
+    - php: nightly
+      env:
+        - dependencies=highest
+        - dropPlatform=false
 
-## Run the appropriate composer command
+## Install or update dependencies
 install:
-  - if [ -z "$dependencies" ]; then composer install; fi;
-  - composer config --unset platform.php
-  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest -n; fi;
-  - if [ "$dependencies" = "highest" ]; then composer update -n; fi;
+  - composer validate
+  - if [ -z "$dropPlatform" ]; then composer config --unset platform.php; fi;
+  - if [ -z "$qaExtended" ]; then phpenv config-rm xdebug.ini || :; fi;
+  - if [ -z "$dependencies" ]; then composer install --prefer-dist; fi;
+  - if [ "$dependencies" = "lowest" ]; then composer update --prefer-lowest --prefer-dist -n; fi;
+  - if [ "$dependencies" = "highest" ]; then composer update --prefer-dist -n; fi;
   - composer show
+  - make generate-resources
+  - rm tests/Resource/* -Rfv
 
 ## Run the actual test
-script: make travis
+script:
+  - if [ -z "$qaExtended" ]; then make ci; fi;
+  - if [ "$qaExtended" = "true" ]; then make ci-extended; fi;
 
-after_script: make travis-coverage
+## Gather coverage and set it to coverage servers
+after_script: if [ "$qaExtended" = "true" ]; then make ci-coverage; fi;

@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,6 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests\Frameworks;
 
 use Phake;
@@ -15,9 +15,10 @@ use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Frameworks\SculpinListener;
 use WyriHaximus\HtmlCompress\Parser;
 
-class SculpinListenerTest extends TestCase {
-
-    public function testOnAfterFormatFastest() {
+class SculpinListenerTest extends TestCase
+{
+    public function testOnAfterFormatFastest()
+    {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock(SculpinListener::class);
@@ -27,7 +28,8 @@ class SculpinListenerTest extends TestCase {
         Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
-    public function testOnAfterFormat() {
+    public function testOnAfterFormat()
+    {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock(SculpinListener::class);
@@ -37,7 +39,8 @@ class SculpinListenerTest extends TestCase {
         Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
-    public function testOnAfterFormatSmallest() {
+    public function testOnAfterFormatSmallest()
+    {
         $this->markTestSkipped('Deprecated');
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
         $listener = Phake::mock(SculpinListener::class);
@@ -47,7 +50,8 @@ class SculpinListenerTest extends TestCase {
         Phake::verify($listener)->compress($this->isInstanceOf(Parser::class), $event);
     }
 
-    public function testCompress() {
+    public function testCompress()
+    {
         $this->markTestSkipped('Deprecated');
         $sourceA = Phake::mock('Sculpin\Core\Source\SourceInterface');
         Phake::when($sourceA)->filename()->thenReturn('index.html');
@@ -57,10 +61,10 @@ class SculpinListenerTest extends TestCase {
         Phake::when($sourceB)->filename()->thenReturn('robots.txt');
 
         $event = Phake::mock('Sculpin\Core\Event\SourceSetEvent');
-        Phake::when($event)->allSources()->thenReturn(array(
+        Phake::when($event)->allSources()->thenReturn([
             $sourceA,
-            $sourceB
-        ));
+            $sourceB,
+        ]);
 
         $listener = new \WyriHaximus\HtmlCompress\Frameworks\SculpinListener();
         $listener->onAfterFormatSmallest($event);
@@ -74,5 +78,4 @@ class SculpinListenerTest extends TestCase {
 
         Phake::verify($sourceB, Phake::never())->formattedContent();
     }
-
 }

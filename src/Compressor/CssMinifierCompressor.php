@@ -1,11 +1,11 @@
-<?php
+<?php declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 use WebSharks\CssMinifier\Core;
 
 /**
- * CssMinifierCompressor
+ * CssMinifierCompressor.
  *
  * @author Marcel Voigt <mv@noch.so>
  */

@@ -1,5 +1,4 @@
-<?php
-
+<?php declare(strict_types=1);
 /*
  * This file is part of HtmlCompress.
  *
@@ -8,24 +7,26 @@
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
  */
+
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Patterns;
 
 /**
- * Class PatternsTest
+ * Class PatternsTest.
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class PatternsTest extends TestCase {
-
+class PatternsTest extends TestCase
+{
     /**
-     * Nasty long method, but this is the best way (I can think of) to do this
+     * Nasty long method, but this is the best way (I can think of) to do this.
      *
      * @return array
      */
-    public function patternProvider() {
+    public function patternProvider()
+    {
         return [
             [
                 Patterns::MATCH_PRE,
@@ -1255,12 +1256,16 @@ class PatternsTest extends TestCase {
 
     /**
      * @dataProvider patternProvider
+     * @param mixed $pattern
+     * @param mixed $input
+     * @param mixed $expectedHtml
+     * @param mixed $expectedBits
      */
-    public function testPattern($pattern, $input, $expectedHtml, $expectedBits) {
+    public function testPattern($pattern, $input, $expectedHtml, $expectedBits)
+    {
         $html = preg_split($pattern, $input);
         preg_match_all($pattern, $input, $bits);
         $this->assertSame($expectedHtml, $html);
         $this->assertSame($expectedBits, $bits);
     }
-
 }
