@@ -25,7 +25,7 @@ class PatternsTest extends TestCase {
      *
      * @return array
      */
-    public function testPatternProvider() {
+    public function patternProvider() {
         return [
             [
                 Patterns::MATCH_PRE,
@@ -1254,7 +1254,7 @@ class PatternsTest extends TestCase {
     }
 
     /**
-     * @dataProvider testPatternProvider
+     * @dataProvider patternProvider
      */
     public function testPattern($pattern, $input, $expectedHtml, $expectedBits) {
         $html = preg_split($pattern, $input);
