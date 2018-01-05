@@ -48,7 +48,7 @@ class Parser
      * @param  string $html
      * @return string
      */
-    public function compress($html)
+    public function compress(string $html): string
     {
         $tokens = $this->tokenize($html);
 
@@ -65,15 +65,15 @@ class Parser
      * @param  string $html
      * @return array
      */
-    public function tokenize($html)
+    public function tokenize(string $html): array
     {
         return Tokenizer::tokenize($html, $this->getCompressors(), $this->getDefaultCompressor());
     }
 
     /**
-     * @return CompressorInterface|HtmlCompressor
+     * @return CompressorInterface
      */
-    public function getDefaultCompressor()
+    public function getDefaultCompressor(): CompressorInterface
     {
         return $this->defaultCompressor;
     }
@@ -81,7 +81,7 @@ class Parser
     /**
      * @return mixed
      */
-    public function getCompressors()
+    public function getCompressors(): array
     {
         return $this->options['compressors'];
     }

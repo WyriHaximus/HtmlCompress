@@ -16,7 +16,7 @@ class CssMinCompressor extends Compressor
         $this->cssMin = new \CssMin();
     }
 
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         // If there's no selector, this must be an inline CSS attribute
         if (strlen($string) > 0 && strpos($string, '{') === false) {
@@ -33,7 +33,7 @@ class CssMinCompressor extends Compressor
      *
      * @return string
      */
-    private function minifyInline($string)
+    private function minifyInline($string): string
     {
         // Get CssMin to compress inline CSS by adding and stripping a selector
         $mock = 'body{' . $string . '}';

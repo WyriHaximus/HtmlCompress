@@ -20,7 +20,7 @@ class JavaScriptPackerCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         $parser = new \JavaScriptPacker($string);
 

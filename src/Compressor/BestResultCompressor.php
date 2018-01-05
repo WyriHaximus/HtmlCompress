@@ -27,7 +27,7 @@ class BestResultCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         $result = $string;
         foreach ($this->compressors as $compressor) {

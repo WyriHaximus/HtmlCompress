@@ -45,7 +45,7 @@ class Tokenizer
      * @param  CompressorInterface $defaultCompressor
      * @return array
      */
-    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null)
+    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null): array
     {
         $self = new self($compressors, $defaultCompressor);
 
@@ -56,7 +56,7 @@ class Tokenizer
      * @param  string $html
      * @return Tokens
      */
-    public function parse($html)
+    public function parse($html): Tokens
     {
         $tokens = new Tokens(
             [
@@ -77,7 +77,7 @@ class Tokenizer
      * @param  array  $compressor
      * @return Tokens
      */
-    protected function split(Tokens $tokens, array $compressor)
+    protected function split(Tokens $tokens, array $compressor): Tokens
     {
         foreach ($compressor['patterns'] as $pattern) {
             $tokens = $this->walkTokens($tokens, $pattern, $compressor['compressor']);
@@ -92,7 +92,7 @@ class Tokenizer
      * @param  CompressorInterface $compressor
      * @return Tokens
      */
-    protected function walkTokens(Tokens $tokens, $pattern, CompressorInterface $compressor)
+    protected function walkTokens(Tokens $tokens, string $pattern, CompressorInterface $compressor): Tokens
     {
         foreach ($tokens->getTokens() as $index => $token) {
             if ($token->getCompressor() === $this->defaultCompressor) {
@@ -119,7 +119,7 @@ class Tokenizer
      * @param  CompressorInterface $compressor
      * @return Tokens
      */
-    protected function walkBits($bits, $html, $compressor)
+    protected function walkBits(array $bits, array $html, CompressorInterface $compressor): Tokens
     {
         $newTokens = [];
         $prepend = '';

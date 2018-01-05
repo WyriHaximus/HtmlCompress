@@ -22,8 +22,13 @@ class MMMJSCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
-        return (new JS($string))->minify();
+        $result = (new JS($string))->minify();
+        if (is_string($result)) {
+            return $result;
+        }
+
+        return $string;
     }
 }

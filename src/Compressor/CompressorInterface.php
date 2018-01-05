@@ -23,5 +23,5 @@ interface CompressorInterface
      *
      * @return string
      */
-    public function compress($string);
+    public function compress(string $string): string;
 }

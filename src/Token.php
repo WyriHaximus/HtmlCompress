@@ -24,7 +24,7 @@ class Token
     protected $html;
     protected $compressor;
 
-    public function __construct($prefix, $html, $suffix, CompressorInterface $compressor)
+    public function __construct(string $prefix, string $html, string $suffix, CompressorInterface $compressor)
     {
         $this->prefix = $prefix;
         $this->html = $html;
@@ -32,27 +32,27 @@ class Token
         $this->compressor = $compressor;
     }
 
-    public function getPrefix()
+    public function getPrefix(): string
     {
         return $this->prefix;
     }
 
-    public function getSuffix()
+    public function getSuffix(): string
     {
         return $this->suffix;
     }
 
-    public function getHtml()
+    public function getHtml(): string
     {
         return $this->html;
     }
 
-    public function getCombinedHtml()
+    public function getCombinedHtml(): string
     {
         return $this->getPrefix() . $this->getHtml() . $this->getSuffix();
     }
 
-    public function getCompressor()
+    public function getCompressor(): CompressorInterface
     {
         return $this->compressor;
     }

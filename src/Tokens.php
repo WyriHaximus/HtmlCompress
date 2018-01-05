@@ -15,10 +15,10 @@ class Tokens
     }
 
     /**
-     * @param $index
+     * @param int    $index
      * @param Tokens $tokens
      */
-    public function replace($index, Tokens $tokens)
+    public function replace(int $index, Tokens $tokens)
     {
         $this->tokens = array_merge(
             array_slice($this->tokens, 0, $index),
@@ -30,12 +30,12 @@ class Tokens
     /**
      * @return array|Token[]
      */
-    public function getTokens()
+    public function getTokens(): array
     {
         return $this->tokens;
     }
 
-    public function getHtml()
+    public function getHtml(): string
     {
         $html = '';
         foreach ($this->tokens as $token) {
@@ -45,7 +45,7 @@ class Tokens
         return $html;
     }
 
-    public function count()
+    public function count(): int
     {
         return count($this->tokens);
     }

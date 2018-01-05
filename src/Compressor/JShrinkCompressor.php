@@ -22,7 +22,7 @@ class JShrinkCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         try {
             return Minifier::minify($string);

@@ -33,7 +33,7 @@ class Factory
     /**
      * @return Parser
      */
-    public static function constructFastest()
+    public static function constructFastest(): Parser
     {
         return new Parser(
             [
@@ -58,7 +58,7 @@ class Factory
     /**
      * @return Parser
      */
-    public static function construct()
+    public static function construct(): Parser
     {
         return new Parser(
             [
@@ -105,7 +105,7 @@ class Factory
      * @param  bool   $externalCompressors When set to false only use pure PHP compressors.
      * @return Parser
      */
-    public static function constructSmallest($externalCompressors = true)
+    public static function constructSmallest(bool $externalCompressors = true): Parser
     {
         return new Parser(
             [

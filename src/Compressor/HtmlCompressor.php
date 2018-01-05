@@ -20,7 +20,7 @@ class HtmlCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         // Replace newlines, returns and tabs with spaces
         $string = str_replace(["\r", "\n", "\t"], ' ', $string);

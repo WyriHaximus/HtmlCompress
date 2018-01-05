@@ -22,7 +22,7 @@ class YUICSSCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         try {
             $yui = new YUICompressor();

@@ -20,7 +20,7 @@ class JSMinCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         try {
             return \JSMin::minify($string);

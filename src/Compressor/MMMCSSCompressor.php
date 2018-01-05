@@ -22,7 +22,7 @@ class MMMCSSCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         return (new CSS($string))->minify();
     }

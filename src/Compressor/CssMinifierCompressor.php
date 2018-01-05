@@ -11,7 +11,7 @@ use WebSharks\CssMinifier\Core;
  */
 class CssMinifierCompressor extends Compressor
 {
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         return Core::compress($string);
     }

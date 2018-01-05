@@ -20,7 +20,7 @@ class JSqueezeCompressor extends Compressor
     /**
      * {@inheritdoc}
      */
-    protected function execute($string)
+    protected function execute(string $string): string
     {
         // Try version 2.0 namespace first
         $class = '\Patchwork\JSqueeze';
