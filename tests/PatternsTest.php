@@ -18,7 +18,7 @@ use WyriHaximus\HtmlCompress\Patterns;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class PatternsTest extends TestCase
+final class PatternsTest extends TestCase
 {
     /**
      * Nasty long method, but this is the best way (I can think of) to do this.

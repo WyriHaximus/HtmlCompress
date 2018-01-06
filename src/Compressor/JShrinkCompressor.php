@@ -17,7 +17,7 @@ use JShrink\Minifier;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class JShrinkCompressor extends Compressor
+final class JShrinkCompressor extends Compressor
 {
     /**
      * {@inheritdoc}

@@ -15,7 +15,7 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class JSMinCompressor extends Compressor
+final class JSMinCompressor extends Compressor
 {
     /**
      * {@inheritdoc}

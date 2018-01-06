@@ -7,7 +7,7 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @author Marcel Voigt <mv@noch.so>
  */
-class CssMinCompressor extends Compressor
+final class CssMinCompressor extends Compressor
 {
     private $cssMin;
 

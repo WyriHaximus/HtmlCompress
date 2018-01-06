@@ -17,7 +17,7 @@ use YUI\Compressor as YUICompressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class YUICSSCompressor extends Compressor
+final class YUICSSCompressor extends Compressor
 {
     /**
      * {@inheritdoc}

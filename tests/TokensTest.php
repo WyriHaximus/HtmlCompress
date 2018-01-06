@@ -7,7 +7,7 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 use WyriHaximus\HtmlCompress\Token;
 use WyriHaximus\HtmlCompress\Tokens;
 
-class TokensTest extends TestCase
+final class TokensTest extends TestCase
 {
     public function testReplace()
     {

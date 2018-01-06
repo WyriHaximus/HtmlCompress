@@ -10,25 +10,40 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use Phake;
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
-use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
 /**
  * Class BestResultCompressor.
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class BestResultCompressorTest extends TestCase
+final class BestResultCompressorTest extends TestCase
 {
     public function testCompress()
     {
         $input = 'abc';
-        $compressorA = Phake::partialMock(ReturnCompressor::class);
-        Phake::when($compressorA)->compress($input)->thenReturn('ab');
-        $compressorB = Phake::partialMock(ReturnCompressor::class);
-        Phake::when($compressorB)->compress($input)->thenReturn('abcd');
+        $compressorA = new class() implements CompressorInterface {
+            public $called = false;
+
+            public function compress(string $string): string
+            {
+                $this->called = true;
+
+                return 'ab';
+            }
+        };
+        $compressorB = new class() implements CompressorInterface {
+            public $called = false;
+
+            public function compress(string $string): string
+            {
+                $this->called = true;
+
+                return 'abcd';
+            }
+        };
 
         $compressor = new BestResultCompressor([
             $compressorA,
@@ -36,8 +51,8 @@ class BestResultCompressorTest extends TestCase
         ]);
         $actual = $compressor->compress($input);
 
-        Phake::verify($compressorA)->compress('abc');
-        Phake::verify($compressorB)->compress('abc');
+        self::assertTrue($compressorA->called);
+        self::assertTrue($compressorB->called);
 
         $this->assertSame('ab', $actual);
     }

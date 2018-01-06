@@ -9,7 +9,7 @@ use WebSharks\CssMinifier\Core;
  *
  * @author Marcel Voigt <mv@noch.so>
  */
-class CssMinifierCompressor extends Compressor
+final class CssMinifierCompressor extends Compressor
 {
     protected function execute(string $string): string
     {

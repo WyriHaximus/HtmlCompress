@@ -17,7 +17,7 @@ use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Token
+final class Token
 {
     protected $prefix;
     protected $suffix;

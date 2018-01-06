@@ -10,7 +10,7 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
 
-class JavaScriptPackerCompressorTest extends AbstractVendorCompressorTest
+final class JavaScriptPackerCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = JavaScriptPackerCompressor::class;
 }

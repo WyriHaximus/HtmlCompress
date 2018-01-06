@@ -17,7 +17,7 @@ use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Tokenizer
+final class Tokenizer
 {
     /**
      * @var array

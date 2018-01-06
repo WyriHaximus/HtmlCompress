@@ -17,7 +17,7 @@ use MatthiasMullie\Minify\CSS;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class MMMCSSCompressor extends Compressor
+final class MMMCSSCompressor extends Compressor
 {
     /**
      * {@inheritdoc}

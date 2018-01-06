@@ -18,7 +18,7 @@ use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Parser
+final class Parser implements ParserInterface
 {
     /**
      * @var Compressor\CompressorInterface|Compressor\HtmlCompressor

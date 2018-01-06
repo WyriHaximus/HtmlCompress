@@ -17,7 +17,7 @@ use MatthiasMullie\Minify\JS;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-class MMMJSCompressor extends Compressor
+final class MMMJSCompressor extends Compressor
 {
     /**
      * {@inheritdoc}

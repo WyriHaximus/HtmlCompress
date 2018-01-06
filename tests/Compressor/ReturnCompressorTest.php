@@ -18,7 +18,7 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
  *
  * @package WyriHaximus\HtmlCompress\Tests\Compressor
  */
-class ReturnCompressorTest extends TestCase
+final class ReturnCompressorTest extends TestCase
 {
 
     /**

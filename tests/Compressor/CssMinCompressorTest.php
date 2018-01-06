@@ -9,7 +9,7 @@ use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
  *
  * @author Marcel Voigt <mv@noch.so>
  */
-class CssMinCompressorTest extends AbstractVendorCompressorTest
+final class CssMinCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = CssMinCompressor::class;
 

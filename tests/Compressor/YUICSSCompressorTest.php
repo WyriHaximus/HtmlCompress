@@ -10,7 +10,7 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
 
-class YUICSSCompressorTest extends AbstractVendorCompressorTest
+final class YUICSSCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = YUICSSCompressor::class;
 }

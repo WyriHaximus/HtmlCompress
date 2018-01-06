@@ -10,8 +10,8 @@
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
-use Phake;
 use PHPUnit\Framework\TestCase;
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
@@ -23,7 +23,7 @@ use WyriHaximus\HtmlCompress\Patterns;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class ParserTest extends TestCase
+final class ParserTest extends TestCase
 {
     public function testConstruct()
     {
@@ -66,10 +66,7 @@ class ParserTest extends TestCase
     {
         $html = 'foo';
         $compressedHtml = 'bar';
-        $compressor = Phake::partialMock(ReturnCompressor::class);
-        Phake::when($compressor)->compress($html)->thenReturn($compressedHtml);
-
-        $parser = Phake::partialMock(Parser::class, [
+        $options = [
             'compressors' => [
                 [
                     'patterns' => [
@@ -78,13 +75,20 @@ class ParserTest extends TestCase
                     'compressor' => new JSqueezeCompressor(),
                 ],
             ],
-        ]);
-        Phake::when($parser)->tokenize($html)->thenReturn([
-            [
-                'compressor' => $compressor,
-                'html' => $html,
-            ],
-        ]);
-        $this->assertSame($compressedHtml, $parser->compress($compressedHtml));
+        ];
+        $parser = new Parser($options, new class($compressedHtml) implements CompressorInterface {
+            private $compressedHtml;
+
+            public function __construct($compressedHtml)
+            {
+                $this->compressedHtml = $compressedHtml;
+            }
+
+            public function compress(string $string): string
+            {
+                return $this->compressedHtml;
+            }
+        });
+        $this->assertSame($compressedHtml, $parser->compress($html));
     }
 }

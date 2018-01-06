@@ -17,7 +17,7 @@ namespace WyriHaximus\HtmlCompress;
  *
  * @package WyriHaximus\HtmlCompress
  */
-class Patterns
+final class Patterns
 {
     const MATCH_PRE          = '!(<pre>|<pre[^>]*>?)(.*?)(</pre>)!is';
     const MATCH_TEXTAREA     = '!(<textarea>|<textarea[^>]*>?)(.*?)(</textarea>)!is';

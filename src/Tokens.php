@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-class Tokens
+final class Tokens
 {
     /**
      * @var Token[]

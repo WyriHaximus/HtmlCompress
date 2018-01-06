@@ -18,7 +18,7 @@ use WyriHaximus\HtmlCompress\Parser;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class FactoryTest extends TestCase
+final class FactoryTest extends TestCase
 {
     public function testConstructFastest()
     {

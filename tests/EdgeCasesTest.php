@@ -18,7 +18,7 @@ use WyriHaximus\HtmlCompress\Factory;
  *
  * @package WyriHaximus\HtmlCompress\Tests
  */
-class EdgeCasesTest extends TestCase
+final class EdgeCasesTest extends TestCase
 {
     public function providerEdgeCase()
     {

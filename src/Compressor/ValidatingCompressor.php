@@ -15,7 +15,7 @@ namespace WyriHaximus\HtmlCompress\Compressor;
  *
  * @package WyriHaximus\HtmlCompress\Compressor
  */
-final class BestResultCompressor extends Compressor
+class BestResultCompressor extends Compressor
 {
     protected $compressors = [];
 
