@@ -32,6 +32,7 @@ $compressedHtml = $parser->compress($sourceHtml);
 * [Neos CMS](https://github.com/Flownative/neos-compressor)
 * [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
 * [Twig](https://github.com/nochso/html-compress-twig)
+* [ReactPHP HTTP Middleware](https://github.com/WyriHaximus/reactphp-http-middleware-html-compress)
 
 ## License ##
 
