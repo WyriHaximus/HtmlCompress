@@ -196,7 +196,7 @@ final class HtmlCompressorTest extends TestCase
     {
         return [
             [
-                "<html><body><!-- HTML comment --></body></html>",
+                '<html><body><!-- HTML comment --></body></html>',
                 '<html><body></body></html>',
             ],
         ];
