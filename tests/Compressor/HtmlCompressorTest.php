@@ -191,4 +191,25 @@ final class HtmlCompressorTest extends TestCase
         $actual = $this->compressor->compress($input);
         $this->assertSame($expected, $actual);
     }
+
+    public function providerComments()
+    {
+        return [
+            [
+                '<html><body><!-- HTML comment --></body></html>',
+                '<html><body></body></html>',
+            ],
+        ];
+    }
+
+    /**
+     * @dataProvider providerComments
+     * @param mixed $input
+     * @param mixed $expected
+     */
+    public function testComments($input, $expected)
+    {
+        $actual = $this->compressor->compress($input);
+        $this->assertSame($expected, $actual);
+    }
 }

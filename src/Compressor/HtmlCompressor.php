@@ -33,6 +33,8 @@ final class HtmlCompressor extends Compressor
         $string = preg_replace('/(<) /', '$1', $string);
         // Remove spaces that are between > and <
         $string = preg_replace('/(>) (<)/', '>$2', $string);
+        // Remove comments
+        $string = preg_replace('/<!--[^]><!\[](.*?)[^\]]-->/s', '', $string);
 
         return trim($string);
     }
