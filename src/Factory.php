@@ -73,7 +73,7 @@ final class Factory
                         'patterns' => [
                             Patterns::MATCH_LD_JSON,
                         ],
-                        'compressor' => new JSMinCompressor(),
+                        'compressor' => new MMMJSCompressor(),
                     ],
                     [
                         'patterns' => [
@@ -120,16 +120,7 @@ final class Factory
                         'patterns' => [
                             Patterns::MATCH_LD_JSON,
                         ],
-                        'compressor' => new BestResultCompressor(
-                            [
-                                new MMMJSCompressor(),
-                                new JSMinCompressor(),
-                                new JavaScriptPackerCompressor(),
-                                new JShrinkCompressor(),
-                                new YUIJSCompressor(),
-                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
-                            ]
-                        ),
+                        'compressor' => new MMMJSCompressor(),
                     ],
                     [
                         'patterns' => [
@@ -142,7 +133,7 @@ final class Factory
                                 new JSMinCompressor(),
                                 new JavaScriptPackerCompressor(),
                                 new JShrinkCompressor(),
-                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
+                                $externalCompressors ? new YUIJSCompressor() : new ReturnCompressor(),
                                 new ReturnCompressor(), // Sometimes no compression can already be the smallest
                             ]
                         ),
