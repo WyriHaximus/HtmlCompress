@@ -1,12 +1,4 @@
 <?php declare(strict_types=1);
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace WyriHaximus\HtmlCompress;
 
@@ -23,16 +15,8 @@ use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
 
-/**
- * Class Factory.
- *
- * @package WyriHaximus\HtmlCompress
- */
 final class Factory
 {
-    /**
-     * @return Parser
-     */
     public static function constructFastest(): ParserInterface
     {
         return new Parser(
@@ -55,9 +39,6 @@ final class Factory
         );
     }
 
-    /**
-     * @return Parser
-     */
     public static function construct(): ParserInterface
     {
         return new Parser(
@@ -102,8 +83,8 @@ final class Factory
     }
 
     /**
-     * @param  bool   $externalCompressors When set to false only use pure PHP compressors.
-     * @return Parser
+     * @param  bool            $externalCompressors When set to false only use pure PHP compressors.
+     * @return ParserInterface
      */
     public static function constructSmallest(bool $externalCompressors = true): ParserInterface
     {

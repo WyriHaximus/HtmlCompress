@@ -9,6 +9,9 @@ final class Tokens
      */
     protected $tokens = [];
 
+    /**
+     * @param array|Token[] $tokens
+     */
     public function __construct(array $tokens = [])
     {
         $this->tokens = $tokens;
@@ -20,10 +23,10 @@ final class Tokens
      */
     public function replace(int $index, Tokens $tokens)
     {
-        $this->tokens = array_merge(
-            array_slice($this->tokens, 0, $index),
+        $this->tokens = \array_merge(
+            \array_slice($this->tokens, 0, $index),
             $tokens->getTokens(),
-            array_slice($this->tokens, $index + 1)
+            \array_slice($this->tokens, $index + 1)
         );
     }
 
@@ -47,6 +50,6 @@ final class Tokens
 
     public function count(): int
     {
-        return count($this->tokens);
+        return \count($this->tokens);
     }
 }
