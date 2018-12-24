@@ -6,13 +6,19 @@ use YUI\Compressor as YUICompressor;
 
 final class YUIJSCompressor extends Compressor
 {
+    /** @var YUICompressor */
+    private $yui;
+
+    public function __construct()
+    {
+        $this->yui = new YUICompressor();
+        $this->yui->setType(YUICompressor::TYPE_JS);
+    }
+
     protected function execute(string $string): string
     {
         try {
-            $yui = new YUICompressor();
-            $yui->setType(YUICompressor::TYPE_JS);
-
-            return $yui->compress($string);
+            return $this->yui->compress($string);
         } catch (\Exception $exception) {
             return $string;
         }
