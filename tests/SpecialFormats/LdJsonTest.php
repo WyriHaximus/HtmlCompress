@@ -7,7 +7,7 @@ use WyriHaximus\HtmlCompress\Compressor;
 
 final class LdJsonTest extends TestCase
 {
-    public function javascriptCompressorProvider()
+    public function javascriptCompressorProvider(): array
     {
         return [
             [
@@ -39,7 +39,7 @@ final class LdJsonTest extends TestCase
      */
     public function testLdJson(Compressor\CompressorInterface $compressor)
     {
-        $input = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'input' . DIRECTORY_SEPARATOR . 'ld.json.input');
+        $input = \file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'input' . DIRECTORY_SEPARATOR . 'ld.json.input');
         $inputJson = $this->getJson($input);
         $compressedInput = $compressor->compress($input);
         $compressedJson = $this->getJson($compressedInput);
@@ -53,6 +53,6 @@ final class LdJsonTest extends TestCase
         $end = strrpos($string, '}') + 1;
         $string = substr($string, $start, $end - $start);
 
-        return json_decode($string, true);
+        return \json_decode($string, true);
     }
 }

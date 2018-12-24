@@ -3,13 +3,12 @@
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use PHPUnit\Framework\TestCase;
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
 final class HtmlCompressorTest extends TestCase
 {
-    /**
-     * @var HtmlCompressor
-     */
+    /** @var CompressorInterface */
     private $compressor;
 
     public function setUp()
@@ -24,7 +23,7 @@ final class HtmlCompressorTest extends TestCase
         unset($this->compressor);
     }
 
-    public function providerNewLinesTabsReturns()
+    public function providerNewLinesTabsReturns(): array
     {
         return [
             [
@@ -53,7 +52,7 @@ final class HtmlCompressorTest extends TestCase
         $this->assertSame($expected, $actual);
     }
 
-    public function providerMultipleSpaces()
+    public function providerMultipleSpaces(): array
     {
         return [
           [

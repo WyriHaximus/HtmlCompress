@@ -3,37 +3,38 @@
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use PHPUnit\Framework\TestCase;
-use WyriHaximus\HtmlCompress\Parser;
+use WyriHaximus\HtmlCompress\Factory;
+use WyriHaximus\HtmlCompress\HtmlCompressor;
 
 final class FactoryTest extends TestCase
 {
     public function testConstructFastest()
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructFastest();
-        $this->assertInstanceOf(Parser::class, $parser);
+        $parser = Factory::constructFastest();
+        self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
     public function testConstruct()
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::construct();
-        $this->assertInstanceOf(Parser::class, $parser);
+        $parser = Factory::construct();
+        self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
     public function testConstructSmallestDefault()
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest();
-        $this->assertInstanceOf(Parser::class, $parser);
+        $parser = Factory::constructSmallest();
+        self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
     public function testConstructSmallestNoExternal()
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest(false);
-        $this->assertInstanceOf(Parser::class, $parser);
+        $parser = Factory::constructSmallest(false);
+        self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
     public function testConstructSmallestExternal()
     {
-        $parser = \WyriHaximus\HtmlCompress\Factory::constructSmallest(true);
-        $this->assertInstanceOf(Parser::class, $parser);
+        $parser = Factory::constructSmallest(true);
+        self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 }

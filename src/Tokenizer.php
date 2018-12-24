@@ -16,7 +16,7 @@ final class Tokenizer
      */
     private $defaultCompressor;
 
-    public function __construct(array $compressors, CompressorInterface $defaultCompressor = null)
+    public function __construct(array $compressors, CompressorInterface $defaultCompressor)
     {
         $this->compressors = $compressors;
         $this->defaultCompressor = $defaultCompressor;
@@ -28,11 +28,9 @@ final class Tokenizer
      * @param  CompressorInterface $defaultCompressor
      * @return array|Token[]
      */
-    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor = null): array
+    public static function tokenize($html, array $compressors, CompressorInterface $defaultCompressor): array
     {
-        $self = new self($compressors, $defaultCompressor);
-
-        return $self->parse($html)->getTokens();
+        return (new self($compressors, $defaultCompressor))->parse($html)->getTokens();
     }
 
     /**
@@ -55,7 +53,7 @@ final class Tokenizer
         return $tokens;
     }
 
-    protected function split(Tokens $tokens, array $compressor): Tokens
+    private function split(Tokens $tokens, array $compressor): Tokens
     {
         foreach ($compressor['patterns'] as $pattern) {
             $tokens = $this->walkTokens($tokens, $pattern, $compressor['compressor']);
@@ -64,7 +62,7 @@ final class Tokenizer
         return $tokens;
     }
 
-    protected function walkTokens(Tokens $tokens, string $pattern, CompressorInterface $compressor): Tokens
+    private function walkTokens(Tokens $tokens, string $pattern, CompressorInterface $compressor): Tokens
     {
         foreach ($tokens->getTokens() as $index => $token) {
             if ($token->getCompressor() === $this->defaultCompressor) {
@@ -91,7 +89,7 @@ final class Tokenizer
      * @param  CompressorInterface $compressor
      * @return Tokens
      */
-    protected function walkBits(array $bits, array $html, CompressorInterface $compressor): Tokens
+    private function walkBits(array $bits, array $html, CompressorInterface $compressor): Tokens
     {
         $newTokens = [];
         $prepend = '';

@@ -7,7 +7,7 @@ use WyriHaximus\HtmlCompress\Factory;
 
 final class EdgeCasesTest extends TestCase
 {
-    public function providerEdgeCase()
+    public function providerEdgeCase(): array
     {
         $baseDir = __DIR__ . DIRECTORY_SEPARATOR . 'EdgeCases' . DIRECTORY_SEPARATOR;
         $dirs = [];
@@ -25,8 +25,8 @@ final class EdgeCasesTest extends TestCase
      */
     public function testEdgeCase($dir)
     {
-        $in = file_get_contents($dir . 'in.html');
-        $out = file_get_contents($dir . 'out.html');
+        $in = \file_get_contents($dir . 'in.html');
+        $out = \file_get_contents($dir . 'out.html');
 
         $result = Factory::constructSmallest()->compress($in);
 
