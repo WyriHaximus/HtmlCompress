@@ -17,9 +17,9 @@ use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
 
 final class Factory
 {
-    public static function constructFastest(): ParserInterface
+    public static function constructFastest(): HtmlCompressorInterface
     {
-        return new Parser(
+        return new HtmlCompressor(
             [
                 'compressors' => [
                     [
@@ -39,9 +39,9 @@ final class Factory
         );
     }
 
-    public static function construct(): ParserInterface
+    public static function construct(): HtmlCompressorInterface
     {
-        return new Parser(
+        return new HtmlCompressor(
             [
                 'compressors' => [
                     [
@@ -83,12 +83,12 @@ final class Factory
     }
 
     /**
-     * @param  bool            $externalCompressors When set to false only use pure PHP compressors.
-     * @return ParserInterface
+     * @param  bool                    $externalCompressors When set to false only use pure PHP compressors.
+     * @return HtmlCompressorInterface
      */
-    public static function constructSmallest(bool $externalCompressors = true): ParserInterface
+    public static function constructSmallest(bool $externalCompressors = true): HtmlCompressorInterface
     {
-        return new Parser(
+        return new HtmlCompressor(
             [
                 'compressors' => [
                     [
