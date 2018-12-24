@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-class ValidatingCompressor extends Compressor
+final class ValidatingCompressor extends Compressor
 {
     /**
      * @var array|Compressor[]
