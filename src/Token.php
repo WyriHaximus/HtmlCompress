@@ -6,10 +6,10 @@ use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
 final class Token
 {
-    protected $prefix;
-    protected $suffix;
-    protected $html;
-    protected $compressor;
+    private $prefix;
+    private $suffix;
+    private $html;
+    private $compressor;
 
     public function __construct(string $prefix, string $html, string $suffix, CompressorInterface $compressor)
     {

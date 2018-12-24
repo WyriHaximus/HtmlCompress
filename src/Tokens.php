@@ -7,7 +7,7 @@ final class Tokens
     /**
      * @var Token[]
      */
-    protected $tokens = [];
+    private $tokens = [];
 
     /**
      * @param array|Token[] $tokens

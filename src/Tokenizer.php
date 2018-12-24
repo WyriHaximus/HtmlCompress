@@ -9,12 +9,12 @@ final class Tokenizer
     /**
      * @var array
      */
-    protected $compressors;
+    private $compressors;
 
     /**
      * @var Compressor\CompressorInterface
      */
-    protected $defaultCompressor;
+    private $defaultCompressor;
 
     public function __construct(array $compressors, CompressorInterface $defaultCompressor = null)
     {

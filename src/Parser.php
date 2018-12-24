@@ -10,12 +10,12 @@ final class Parser implements ParserInterface
     /**
      * @var Compressor\CompressorInterface|Compressor\HtmlCompressor
      */
-    protected $defaultCompressor;
+    private $defaultCompressor;
 
     /**
      * @var array
      */
-    protected $options;
+    private $options;
 
     public function __construct(array $options, CompressorInterface $defaultCompressor = null)
     {

@@ -7,7 +7,7 @@ final class ValidatingCompressor extends Compressor
     /**
      * @var array|Compressor[]
      */
-    protected $compressors = [];
+    private $compressors = [];
 
     /**
      * @param array|Compressor[] $compressors

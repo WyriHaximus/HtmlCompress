@@ -7,7 +7,7 @@ final class BestResultCompressor extends Compressor
     /**
      * @var array|Compressor[]
      */
-    protected $compressors = [];
+    private $compressors = [];
 
     /**
      * @param array|Compressor[] $compressors
