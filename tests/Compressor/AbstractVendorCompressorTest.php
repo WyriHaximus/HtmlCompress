@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use PHPUnit\Framework\TestCase;
+use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
 abstract class AbstractVendorCompressorTest extends TestCase

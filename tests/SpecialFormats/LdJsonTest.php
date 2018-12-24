@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
-use PHPUnit\Framework\TestCase;
+use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor;
 
 final class LdJsonTest extends TestCase

@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
-use PHPUnit\Framework\TestCase;
+use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 use WyriHaximus\HtmlCompress\Token;
 use WyriHaximus\HtmlCompress\Tokens;
