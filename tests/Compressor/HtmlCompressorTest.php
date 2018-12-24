@@ -1,26 +1,12 @@
 <?php declare(strict_types=1);
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use PHPUnit\Framework\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
-/**
- * Class HtmlCompressorTest.
- *
- * @package WyriHaximus\HtmlCompress\Tests\Compressor
- */
 final class HtmlCompressorTest extends TestCase
 {
-
     /**
      * @var HtmlCompressor
      */
@@ -43,15 +29,15 @@ final class HtmlCompressorTest extends TestCase
         return [
             [
               "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
-              '<html><body><h1>hoi</h1></body></html>',
+              '<html><body><h1>hoi</h1>',
             ],
             [
               "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html>",
-              '<html><h1>hoi</h1></html>',
+              '<html><h1>hoi</h1>',
             ],
             [
               "<html><p>abc\r\ndef</p></html>",
-              '<html><p>abc def</p></html>',
+              '<html><p>abc def',
             ],
         ];
     }
@@ -72,15 +58,23 @@ final class HtmlCompressorTest extends TestCase
         return [
           [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
-            '<html><body><h1>h oi</h1></body></html>',
+            '<html><body><h1>h oi</h1>',
           ],
           [
             '<html>   </html>',
-            '<html></html>',
+            '<html>',
           ],
           [
             "<html><body>  pre \r\n  suf\r\n  </body>",
-            '<html><body> pre suf </body>',
+            '<html><body> pre suf',
+          ],
+          [
+              '<span class="foo"><span title="bar"></span><span title="baz"></span><span title="bat"></span></span>',
+              '<span class=foo><span title=bar></span><span title=baz></span><span title=bat></span></span>',
+          ],
+          [
+              "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
+              '<html><head> <body><p class=foo id=text> foo </p> <br><ul><li><p class=foo>lall </ul>',
           ],
         ];
     }
@@ -101,11 +95,11 @@ final class HtmlCompressorTest extends TestCase
         return [
           [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
-            '<html><body><h1>hoi</h1></body></html>',
+            '<html><body><h1>hoi</h1>',
           ],
           [
             '<html>  a',
-            '<html> a',
+            '<html>  a',
           ],
         ];
     }
@@ -126,11 +120,11 @@ final class HtmlCompressorTest extends TestCase
         return [
           [
             '<html> <body>   <h1>hoi</h1></body> </html> ',
-            '<html><body><h1>hoi</h1></body></html>',
+            '<html><body><h1>hoi</h1>',
           ],
           [
             'a     <html>',
-            'a <html>',
+            'a     <html>',
           ],
         ];
     }
@@ -176,7 +170,7 @@ final class HtmlCompressorTest extends TestCase
         return [
             [
                 "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
-                '<html><body>à</body></html>',
+                '<html><body>à',
             ],
         ];
     }
@@ -197,7 +191,7 @@ final class HtmlCompressorTest extends TestCase
         return [
             [
                 '<html><body><!-- HTML comment --></body></html>',
-                '<html><body></body></html>',
+                '<html><body>',
             ],
         ];
     }

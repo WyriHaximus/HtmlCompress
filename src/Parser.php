@@ -1,23 +1,10 @@
 <?php declare(strict_types=1);
-/*
- * This file is part of HtmlCompress.
- *
- ** (c) 2014 Cees-Jan Kiewiet
- *
- * For the full copyright and license information, please view the LICENSE
- * file that was distributed with this source code.
- */
 
 namespace WyriHaximus\HtmlCompress;
 
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
-/**
- * Class Parser.
- *
- * @package WyriHaximus\HtmlCompress
- */
 final class Parser implements ParserInterface
 {
     /**
@@ -30,10 +17,6 @@ final class Parser implements ParserInterface
      */
     protected $options;
 
-    /**
-     * @param array               $options
-     * @param CompressorInterface $defaultCompressor
-     */
     public function __construct(array $options, CompressorInterface $defaultCompressor = null)
     {
         $this->options = $options;
@@ -44,43 +27,44 @@ final class Parser implements ParserInterface
         $this->defaultCompressor = $defaultCompressor;
     }
 
-    /**
-     * @param  string $html
-     * @return string
-     */
     public function compress(string $html): string
     {
         $tokens = $this->tokenize($html);
 
         $compressedHtml = '';
+        $useHtmlCompressor = false;
         do {
-            $token = array_shift($tokens);
-            $compressedHtml .= $token->getCompressor()->compress($token->getCombinedHtml());
-        } while (count($tokens) > 0);
+            $token = \array_shift($tokens);
+            $compressor = $token->getCompressor();
+            if ($compressor instanceof HtmlCompressor) {
+                $useHtmlCompressor = true;
+                $compressedHtml .= $token->getCombinedHtml();
+            } else {
+                $compressedHtml .= $compressor->compress($token->getCombinedHtml());
+            }
+        } while (\count($tokens) > 0);
+
+        if ($useHtmlCompressor === true) {
+            $compressedHtml = (new HtmlCompressor())->compress($compressedHtml);
+        }
 
         return $compressedHtml;
     }
 
     /**
-     * @param  string $html
-     * @return array
+     * @param  string        $html
+     * @return array|Token[]
      */
     public function tokenize(string $html): array
     {
         return Tokenizer::tokenize($html, $this->getCompressors(), $this->getDefaultCompressor());
     }
 
-    /**
-     * @return CompressorInterface
-     */
     public function getDefaultCompressor(): CompressorInterface
     {
         return $this->defaultCompressor;
     }
 
-    /**
-     * @return mixed
-     */
     public function getCompressors(): array
     {
         return $this->options['compressors'];
