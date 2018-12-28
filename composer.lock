@@ -469,16 +469,16 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.0.6",
+            "version": "3.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72"
+                "reference": "8031ec46a08e8d7ee0dcb5c7edd426c914d5385c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72",
-                "reference": "3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/8031ec46a08e8d7ee0dcb5c7edd426c914d5385c",
+                "reference": "8031ec46a08e8d7ee0dcb5c7edd426c914d5385c",
                 "shasum": ""
             },
             "require": {
@@ -487,7 +487,7 @@
                 "voku/simple_html_dom": "^4.1.7"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0"
+                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "autoload": {
@@ -514,7 +514,7 @@
                 "html",
                 "minifier"
             ],
-            "time": "2018-12-01T02:57:14+00:00"
+            "time": "2018-12-27T14:56:57+00:00"
         },
         {
             "name": "voku/simple_html_dom",
