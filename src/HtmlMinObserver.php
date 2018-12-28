@@ -74,6 +74,8 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             if ($compressed != $notCompressed) {
                                 $element->outerHtml = '<script>' . $compressed . '</script>';
                             }
+
+                            continue 2;
                         }
 
                     case Patterns::MATCH_SCRIPT:
@@ -88,7 +90,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                                 $element->outerHtml = '<script>' . $compressed . '</script>';
                             }
 
-                            break;
+                            break 2;
                         }
 
                     case Patterns::MATCH_STYLE:
