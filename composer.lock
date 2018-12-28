@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "f569e304a525ac066e2e20664d94b76b",
+    "content-hash": "86e5e668d277350486b2f46e5c205196",
     "packages": [
         {
             "name": "jalle19/php-yui-compressor",
@@ -469,25 +469,25 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.0.6",
+            "version": "3.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72"
+                "reference": "be34e5a9ebe82bb2b70ab6991153ada709ad3264"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72",
-                "reference": "3d4ae3b2f1f600293f8ea44688a5ff1e79d79c72",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/be34e5a9ebe82bb2b70ab6991153ada709ad3264",
+                "reference": "be34e5a9ebe82bb2b70ab6991153ada709ad3264",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "^4.1.7"
+                "voku/simple_html_dom": "^4.1.8"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0"
+                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "type": "library",
             "autoload": {
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2018-12-01T02:57:14+00:00"
+            "time": "2018-12-28T10:50:51+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.1.7",
+            "version": "4.1.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "935663ebc6917f4db45c7e613b5e8cb84cabac59"
+                "reference": "248c43102dc174fdc7a5aa97478c0293093dc884"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/935663ebc6917f4db45c7e613b5e8cb84cabac59",
-                "reference": "935663ebc6917f4db45c7e613b5e8cb84cabac59",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/248c43102dc174fdc7a5aa97478c0293093dc884",
+                "reference": "248c43102dc174fdc7a5aa97478c0293093dc884",
                 "shasum": ""
             },
             "require": {
@@ -538,7 +538,7 @@
                 "symfony/css-selector": "~3.0|~4.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~6.0"
+                "phpunit/phpunit": "~6.0 || ~7.0"
             },
             "suggest": {
                 "voku/portable-utf8": "~4.0"
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2018-10-17T19:23:47+00:00"
+            "time": "2018-12-28T11:10:50+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -3841,6 +3841,64 @@
             "time": "2017-04-12T14:14:56+00:00"
         },
         {
+            "name": "symfony/polyfill-ctype",
+            "version": "v1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/polyfill-ctype.git",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/polyfill-ctype/zipball/e3d826245268269cd66f8326bd8bc066687b4a19",
+                "reference": "e3d826245268269cd66f8326bd8bc066687b4a19",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Ctype\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                },
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "time": "2018-08-06T14:22:27+00:00"
+        },
+        {
             "name": "symfony/polyfill-mbstring",
             "version": "v1.10.0",
             "source": {
@@ -4208,20 +4266,21 @@
         },
         {
             "name": "webmozart/assert",
-            "version": "1.3.0",
+            "version": "1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/webmozart/assert.git",
-                "reference": "0df1908962e7a3071564e857d86874dad1ef204a"
+                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/0df1908962e7a3071564e857d86874dad1ef204a",
-                "reference": "0df1908962e7a3071564e857d86874dad1ef204a",
+                "url": "https://api.github.com/repos/webmozart/assert/zipball/83e253c8e0be5b0257b881e1827274667c5c17a9",
+                "reference": "83e253c8e0be5b0257b881e1827274667c5c17a9",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.3.3 || ^7.0"
+                "php": "^5.3.3 || ^7.0",
+                "symfony/polyfill-ctype": "^1.8"
             },
             "require-dev": {
                 "phpunit/phpunit": "^4.6",
@@ -4254,7 +4313,7 @@
                 "check",
                 "validate"
             ],
-            "time": "2018-01-29T19:49:41+00:00"
+            "time": "2018-12-25T11:19:39+00:00"
         }
     ],
     "aliases": [],

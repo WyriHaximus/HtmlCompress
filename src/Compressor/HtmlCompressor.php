@@ -18,4 +18,9 @@ final class HtmlCompressor extends Compressor
     {
         return $this->htmlMin->minify($string);
     }
+
+    public function getHtmlMin(): HtmlMin
+    {
+        return $this->htmlMin;
+    }
 }

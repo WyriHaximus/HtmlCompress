@@ -24,13 +24,10 @@ final class Factory
                 'compressors' => [
                     [
                         'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
                             Patterns::MATCH_STYLE,
                             Patterns::MATCH_LD_JSON,
                             Patterns::MATCH_JSCRIPT,
                             Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
                         ],
                         'compressor' => new ReturnCompressor(),
                     ],
@@ -46,12 +43,6 @@ final class Factory
                 'compressors' => [
                     [
                         'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
                             Patterns::MATCH_LD_JSON,
                         ],
                         'compressor' => new MMMJSCompressor(),
@@ -65,8 +56,6 @@ final class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
                         ],
                         'compressor' => new ReturnCompressor(),
                     ],
@@ -93,12 +82,6 @@ final class Factory
                 'compressors' => [
                     [
                         'patterns' => [
-                            Patterns::MATCH_NOCOMPRESS,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                    [
-                        'patterns' => [
                             Patterns::MATCH_LD_JSON,
                         ],
                         'compressor' => new MMMJSCompressor(),
@@ -122,8 +105,6 @@ final class Factory
                     [
                         'patterns' => [
                             Patterns::MATCH_SCRIPT,
-                            Patterns::MATCH_PRE,
-                            Patterns::MATCH_TEXTAREA,
                         ],
                         'compressor' => new ReturnCompressor(),
                     ],
