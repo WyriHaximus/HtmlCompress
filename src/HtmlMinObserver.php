@@ -23,7 +23,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
      * Receive dom elements before the minification.
      *
      * @param SimpleHtmlDom $element
-     * @param HtmlMin $htmlMin
+     * @param HtmlMin       $htmlMin
      */
     public function domElementBeforeMinification(SimpleHtmlDom $element, HtmlMin $htmlMin)
     {
@@ -53,6 +53,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             break 2;
                         }
 
+                        // no break
                     case Patterns::MATCH_JSCRIPT:
                         if (
                             $element->tag === Patterns::MATCH_JSCRIPT[0]
@@ -78,6 +79,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             continue 2;
                         }
 
+                        // no break
                     case Patterns::MATCH_SCRIPT:
                         if (
                             $element->tag === Patterns::MATCH_SCRIPT[0]
@@ -93,6 +95,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             break 2;
                         }
 
+                        // no break
                     case Patterns::MATCH_STYLE:
                         if (
                             $element->tag === Patterns::MATCH_STYLE[0]
@@ -108,6 +111,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             break 2;
                         }
 
+                        // no break
                     case Patterns::MATCH_STYLE_INLINE:
                         if (
                             $element->tag
@@ -127,7 +131,6 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                         }
 
                 }
-
             }
         }
     }
@@ -136,7 +139,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
      * Receive dom elements after the minification.
      *
      * @param SimpleHtmlDom $element
-     * @param HtmlMin $htmlMin
+     * @param HtmlMin       $htmlMin
      */
     public function domElementAfterMinification(SimpleHtmlDom $element, HtmlMin $htmlMin)
     {

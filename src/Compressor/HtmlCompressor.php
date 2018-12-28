@@ -14,13 +14,13 @@ final class HtmlCompressor extends Compressor
         $this->htmlMin = new HtmlMin();
     }
 
-    protected function execute(string $string): string
-    {
-        return $this->htmlMin->minify($string);
-    }
-
     public function getHtmlMin(): HtmlMin
     {
         return $this->htmlMin;
+    }
+
+    protected function execute(string $string): string
+    {
+        return $this->htmlMin->minify($string);
     }
 }
