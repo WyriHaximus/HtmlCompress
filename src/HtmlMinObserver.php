@@ -36,13 +36,13 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
 
                     case Patterns::MATCH_LD_JSON:
                         if (
-                            $element->tag === Patterns::MATCH_LD_JSON[0]
+                            $element->tag === Patterns::MATCH_LD_JSON['tag']
                             &&
-                            isset(Patterns::MATCH_LD_JSON[1])
+                            isset(Patterns::MATCH_LD_JSON['attributes'])
                             &&
-                            $element->hasAttribute(\array_keys(Patterns::MATCH_LD_JSON[1])[0]) === true
+                            $element->hasAttribute(\array_keys(Patterns::MATCH_LD_JSON['attributes'])[0]) === true
                             &&
-                            $element->getAttribute(\array_keys(Patterns::MATCH_LD_JSON[1])[0]) === \array_values(Patterns::MATCH_LD_JSON[1])[0]
+                            $element->getAttribute(\array_keys(Patterns::MATCH_LD_JSON['attributes'])[0]) === \array_values(Patterns::MATCH_LD_JSON['attributes'])[0]
                         ) {
                             $notCompressed = $element->innerHtml;
                             $compressed = $compressor->compress($notCompressed);
@@ -56,17 +56,17 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                         // no break
                     case Patterns::MATCH_JSCRIPT:
                         if (
-                            $element->tag === Patterns::MATCH_JSCRIPT[0]
+                            $element->tag === Patterns::MATCH_JSCRIPT['tag']
                             &&
-                            isset(Patterns::MATCH_JSCRIPT[1])
+                            isset(Patterns::MATCH_JSCRIPT['attributes'])
                             &&
                             (
-                                $element->hasAttribute(\array_keys(Patterns::MATCH_JSCRIPT[1])[0]) === false
+                                $element->hasAttribute(\array_keys(Patterns::MATCH_JSCRIPT['attributes'])[0]) === false
                                 ||
                                 (
-                                    $element->hasAttribute(\array_keys(Patterns::MATCH_JSCRIPT[1])[0]) === true
+                                    $element->hasAttribute(\array_keys(Patterns::MATCH_JSCRIPT['attributes'])[0]) === true
                                     &&
-                                    $element->getAttribute(\array_keys(Patterns::MATCH_JSCRIPT[1])[0]) === \array_values(Patterns::MATCH_JSCRIPT[1])[0]
+                                    $element->getAttribute(\array_keys(Patterns::MATCH_JSCRIPT['attributes'])[0]) === \array_values(Patterns::MATCH_JSCRIPT['attributes'])[0]
                                 )
                             )
                         ) {
@@ -88,11 +88,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
 
                         // no break
                     case Patterns::MATCH_SCRIPT:
-                        if (
-                            $element->tag === Patterns::MATCH_SCRIPT[0]
-                            &&
-                            !isset(Patterns::MATCH_SCRIPT[1])
-                        ) {
+                        if ($element->tag === Patterns::MATCH_SCRIPT['tag']) {
                             $notCompressed = $element->innerHtml;
                             $compressed = $compressor->compress($notCompressed);
                             if ($compressed != $notCompressed) {
@@ -111,11 +107,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
 
                         // no break
                     case Patterns::MATCH_STYLE:
-                        if (
-                            $element->tag === Patterns::MATCH_STYLE[0]
-                            &&
-                            !isset(Patterns::MATCH_STYLE[1])
-                        ) {
+                        if ($element->tag === Patterns::MATCH_STYLE['tag']) {
                             $notCompressed = $element->innerHtml;
                             $compressed = $compressor->compress($notCompressed);
                             if ($compressed != $notCompressed) {
@@ -128,17 +120,15 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                         // no break
                     case Patterns::MATCH_STYLE_INLINE:
                         if (
-                            $element->tag
+                            isset(Patterns::MATCH_STYLE_INLINE['attributes'][0])
                             &&
-                            isset(Patterns::MATCH_STYLE_INLINE[1][0])
-                            &&
-                            $element->hasAttribute(Patterns::MATCH_STYLE_INLINE[1][0])
+                            $element->hasAttribute(Patterns::MATCH_STYLE_INLINE['attributes'][0])
                         ) {
-                            $notCompressed = $element->getAttribute(Patterns::MATCH_STYLE_INLINE[1][0]);
+                            $notCompressed = $element->getAttribute(Patterns::MATCH_STYLE_INLINE['attributes'][0]);
                             $compressed = $compressor->compress($notCompressed);
                             if ($compressed != $notCompressed) {
                                 /** @noinspection UnusedFunctionResultInspection */
-                                $element->setAttribute(Patterns::MATCH_STYLE_INLINE[1][0], $compressed);
+                                $element->setAttribute(Patterns::MATCH_STYLE_INLINE['attributes'][0], $compressed);
                             }
 
                             break 2;
