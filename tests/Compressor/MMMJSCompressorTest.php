@@ -10,6 +10,9 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
 
+/**
+ * @internal
+ */
 final class MMMJSCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = MMMJSCompressor::class;

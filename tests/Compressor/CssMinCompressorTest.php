@@ -8,6 +8,8 @@ use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
  * CssMinCompressorTest.
  *
  * @author Marcel Voigt <mv@noch.so>
+ *
+ * @internal
  */
 final class CssMinCompressorTest extends AbstractVendorCompressorTest
 {
@@ -51,6 +53,6 @@ final class CssMinCompressorTest extends AbstractVendorCompressorTest
 
     public function testCompress()
     {
-        $this->assertTrue(is_string($this->compressor->compress('background-color: red;')));
+        $this->assertTrue(\is_string($this->compressor->compress('background-color: red;')));
     }
 }

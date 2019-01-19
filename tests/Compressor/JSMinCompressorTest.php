@@ -10,6 +10,9 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
 
+/**
+ * @internal
+ */
 final class JSMinCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = JSMinCompressor::class;

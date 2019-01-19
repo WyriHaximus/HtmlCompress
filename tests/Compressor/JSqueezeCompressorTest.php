@@ -10,6 +10,9 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
 use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 
+/**
+ * @internal
+ */
 final class JSqueezeCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = JSqueezeCompressor::class;

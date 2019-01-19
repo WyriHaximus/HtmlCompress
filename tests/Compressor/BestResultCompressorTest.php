@@ -6,6 +6,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 
+/**
+ * @internal
+ */
 final class BestResultCompressorTest extends TestCase
 {
     public function testCompress()
