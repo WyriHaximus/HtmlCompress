@@ -1,0 +1,8 @@
+# php (composer)
+vendor/
+
+# php (phpcs fixer)
+.php_cs.cache
+
+# ide
+.idea/

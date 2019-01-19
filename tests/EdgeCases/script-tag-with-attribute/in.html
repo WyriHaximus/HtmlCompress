@@ -1,0 +1,12 @@
+<!-- I know async & defer is not working with inline-scripts ;-) -->
+<script id="fake-async" async>
+    window.addEventListener('DOMContentLoaded', function() {
+        (function($) {
+            alert("Hello world!");
+        })(jQuery);
+    });
+</script>
+
+<!-- alert('Hello world!'); -->
+<script src="data:text/javascript;base64,YWxlcnQoJ0hlbGxvIHdvcmxkIScpOw=="
+        defer></script>

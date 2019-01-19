@@ -36,7 +36,7 @@ final class CompressorSmallestTest extends TestCase
                     var y = i + x;
                     console.log(y);
                 </script></html>',
-                '<html><script>;var i,x=0,y=i+x;console.log(y);</script>',
+                '<html><script>;var i,x=0,y=i+x;console.log(y)</script>',
             ],
         ];
     }
