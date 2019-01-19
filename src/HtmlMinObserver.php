@@ -73,7 +73,14 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             $notCompressed = $element->innerHtml;
                             $compressed = $compressor->compress($notCompressed);
                             if ($compressed != $notCompressed) {
-                                $element->outerHtml = '<script>' . $compressed . '</script>';
+                                $attributes = '';
+                                $elementAttributes = $element->getAllAttributes();
+                                if ($elementAttributes) {
+                                    foreach ($elementAttributes as $attributeName => $attributeValue) {
+                                        $attributes .= $attributeName . '="' . $attributeValue . '"';
+                                    }
+                                }
+                                $element->outerHtml = '<script ' . $attributes . '>' . $compressed . '</script>';
                             }
 
                             continue 2;
@@ -89,7 +96,14 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             $notCompressed = $element->innerHtml;
                             $compressed = $compressor->compress($notCompressed);
                             if ($compressed != $notCompressed) {
-                                $element->outerHtml = '<script>' . $compressed . '</script>';
+                                $attributes = '';
+                                $elementAttributes = $element->getAllAttributes();
+                                if ($elementAttributes) {
+                                    foreach ($elementAttributes as $attributeName => $attributeValue) {
+                                        $attributes .= $attributeName . '="' . $attributeValue . '"';
+                                    }
+                                }
+                                $element->outerHtml = '<script ' . $attributes . '>' . $compressed . '</script>';
                             }
 
                             break 2;
