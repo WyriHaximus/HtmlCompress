@@ -51,6 +51,6 @@ final class CssMinCompressorTest extends AbstractVendorCompressorTest
 
     public function testCompress()
     {
-        $this->assertTrue(is_string($this->compressor->compress('background-color: red;')));
+        $this->assertInternalType('string', $this->compressor->compress('background-color: red;'));
     }
 }
