@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7b690bbe15a13813962f0045df16406f",
+    "content-hash": "d8becb5da92f4c8d7ad3ad865f82a8d3",
     "packages": [
         {
             "name": "jalle19/php-yui-compressor",
@@ -469,22 +469,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.1.2",
+            "version": "3.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "f863b31be37bb36f01e7a58fb2364fe67fcbb381"
+                "reference": "12f6e07aaee4439446fb47fd07ae2c1ca3e1342e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/f863b31be37bb36f01e7a58fb2364fe67fcbb381",
-                "reference": "f863b31be37bb36f01e7a58fb2364fe67fcbb381",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/12f6e07aaee4439446fb47fd07ae2c1ca3e1342e",
+                "reference": "12f6e07aaee4439446fb47fd07ae2c1ca3e1342e",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "^4.1.10"
+                "voku/simple_html_dom": "^4.2.1"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2018-12-28T13:59:59+00:00"
+            "time": "2019-01-06T10:24:31+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.1.10",
+            "version": "4.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "248c43102dc174fdc7a5aa97478c0293093dc884"
+                "reference": "73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/248c43102dc174fdc7a5aa97478c0293093dc884",
-                "reference": "248c43102dc174fdc7a5aa97478c0293093dc884",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9",
+                "reference": "73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2018-12-28T11:10:50+00:00"
+            "time": "2019-01-06T07:50:30+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -1357,23 +1357,23 @@
         },
         {
             "name": "justinrainbow/json-schema",
-            "version": "5.2.7",
+            "version": "5.2.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/justinrainbow/json-schema.git",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23"
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/8560d4314577199ba51bf2032f02cd1315587c23",
-                "reference": "8560d4314577199ba51bf2032f02cd1315587c23",
+                "url": "https://api.github.com/repos/justinrainbow/json-schema/zipball/dcb6e1006bb5fd1e392b4daa68932880f37550d4",
+                "reference": "dcb6e1006bb5fd1e392b4daa68932880f37550d4",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.3"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.1",
+                "friendsofphp/php-cs-fixer": "~2.2.20",
                 "json-schema/json-schema-test-suite": "1.2.0",
                 "phpunit/phpunit": "^4.8.35"
             },
@@ -1419,7 +1419,7 @@
                 "json",
                 "schema"
             ],
-            "time": "2018-02-14T22:26:30+00:00"
+            "time": "2019-01-14T23:55:14+00:00"
         },
         {
             "name": "localheinz/composer-normalize",
@@ -2844,16 +2844,16 @@
         },
         {
             "name": "react/promise",
-            "version": "v2.7.0",
+            "version": "v2.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/reactphp/promise.git",
-                "reference": "f4edc2581617431aea50430749db55cc3fc031b3"
+                "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/reactphp/promise/zipball/f4edc2581617431aea50430749db55cc3fc031b3",
-                "reference": "f4edc2581617431aea50430749db55cc3fc031b3",
+                "url": "https://api.github.com/repos/reactphp/promise/zipball/31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
+                "reference": "31ffa96f8d2ed0341a57848cbb84d88b89dd664d",
                 "shasum": ""
             },
             "require": {
@@ -2886,7 +2886,7 @@
                 "promise",
                 "promises"
             ],
-            "time": "2018-06-13T15:59:06+00:00"
+            "time": "2019-01-07T21:25:54+00:00"
         },
         {
             "name": "react/promise-timer",

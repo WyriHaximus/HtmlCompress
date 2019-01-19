@@ -74,4 +74,6 @@ script:
   - if [ "$qaExtended" = "true" ]; then make ci-extended; fi;
 
 ## Gather coverage and set it to coverage servers
-after_script: if [ "$qaExtended" = "true" ]; then make ci-coverage; fi;
+after_script:
+  - if [ "$qaExtended" = "true" ]; then make ci-coverage; fi;
+  - php examples/benchmark.php
