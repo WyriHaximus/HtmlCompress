@@ -30,6 +30,6 @@ abstract class AbstractVendorCompressorTest extends TestCase
 
     public function testCompress()
     {
-        $this->assertTrue(\is_string($this->compressor->compress('foo ')));
+        $this->assertInternalType('string', $this->compressor->compress('foo '));
     }
 }
