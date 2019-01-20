@@ -13,7 +13,6 @@ final class JSqueezeCompressor extends Compressor
             $class = '\JSqueeze';
         }
         /** @var \JSqueeze|\Patchwork\JSqueeze $parser */
-        /** @psalm-suppress UndefinedClass */
         $parser = new $class();
 
         return $parser->squeeze($string);

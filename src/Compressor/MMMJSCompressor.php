@@ -8,6 +8,11 @@ final class MMMJSCompressor extends Compressor
 {
     protected function execute(string $string): string
     {
-        return (new JS())->add($string)->minify();
+        $result = (new JS())->add($string)->minify();
+        if (\is_string($result)) {
+            return $result;
+        }
+
+        return $string;
     }
 }
