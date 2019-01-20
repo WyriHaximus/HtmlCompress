@@ -11,6 +11,11 @@ final class MMMCSSCompressor extends Compressor
      */
     protected function execute(string $string): string
     {
-        return (new CSS())->add($string)->minify();
+        $result = (new CSS($string))->minify();
+        if (\is_string($result)) {
+            return $result;
+        }
+
+        return $string;
     }
 }
