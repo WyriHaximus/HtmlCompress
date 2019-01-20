@@ -4,6 +4,9 @@ namespace WyriHaximus\HtmlCompress\Compressor;
 
 final class CssMinCompressor extends Compressor
 {
+    /**
+     * @var \CssMin
+     */
     private $cssMin;
 
     public function __construct()

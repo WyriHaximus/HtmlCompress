@@ -5,6 +5,9 @@ namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor;
 
+/**
+ * @internal
+ */
 final class LdJsonTest extends TestCase
 {
     public function javascriptCompressorProvider(): array
@@ -39,7 +42,7 @@ final class LdJsonTest extends TestCase
      */
     public function testLdJson(Compressor\CompressorInterface $compressor)
     {
-        $input = \file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'input' . DIRECTORY_SEPARATOR . 'ld.json.input');
+        $input = \file_get_contents(__DIR__ . \DIRECTORY_SEPARATOR . 'input' . \DIRECTORY_SEPARATOR . 'ld.json.input');
         $inputJson = $this->getJson($input);
         $compressedInput = $compressor->compress($input);
         $compressedJson = $this->getJson($compressedInput);
@@ -49,9 +52,9 @@ final class LdJsonTest extends TestCase
 
     private function getJson($string)
     {
-        $start = strpos($string, '{');
-        $end = strrpos($string, '}') + 1;
-        $string = substr($string, $start, $end - $start);
+        $start = \strpos($string, '{');
+        $end = \strrpos($string, '}') + 1;
+        $string = \substr($string, $start, $end - $start);
 
         return \json_decode($string, true);
     }

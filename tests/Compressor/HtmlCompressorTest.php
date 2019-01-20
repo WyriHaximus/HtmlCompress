@@ -6,19 +6,22 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
 
+/**
+ * @internal
+ */
 final class HtmlCompressorTest extends TestCase
 {
     /** @var CompressorInterface */
     private $compressor;
 
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
         $this->compressor = new HtmlCompressor();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->compressor);
     }

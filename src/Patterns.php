@@ -4,9 +4,25 @@ namespace WyriHaximus\HtmlCompress;
 
 final class Patterns
 {
-    const MATCH_STYLE        = ['style'];
-    const MATCH_STYLE_INLINE = ['*', ['style']];
-    const MATCH_JSCRIPT      = ['script', ['type' => 'text/javascript']];
-    const MATCH_LD_JSON      = ['script', ['type' => 'application/ld+json']];
-    const MATCH_SCRIPT       = ['script'];
+    const MATCH_STYLE = [
+        'tag' => 'style',
+    ];
+
+    const MATCH_STYLE_INLINE = [
+        'attributes' => ['style'],
+    ];
+
+    const MATCH_JSCRIPT = [
+        'tag' => 'script',
+        'attributes' => ['type' => 'text/javascript'],
+    ];
+
+    const MATCH_LD_JSON = [
+        'tag' => 'script',
+        'attributes' => ['type' => 'application/ld+json'],
+    ];
+
+    const MATCH_SCRIPT = [
+        'tag' => 'script',
+    ];
 }

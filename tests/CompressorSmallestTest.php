@@ -6,6 +6,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
 use WyriHaximus\HtmlCompress\Factory;
 
+/**
+ * @internal
+ */
 final class CompressorSmallestTest extends TestCase
 {
     /**
@@ -13,14 +16,14 @@ final class CompressorSmallestTest extends TestCase
      */
     protected $compressor;
 
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
         $this->compressor = Factory::constructSmallest();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->compressor);
     }

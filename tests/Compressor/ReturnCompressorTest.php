@@ -5,6 +5,9 @@ namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
 
+/**
+ * @internal
+ */
 final class ReturnCompressorTest extends TestCase
 {
     /**
@@ -12,14 +15,14 @@ final class ReturnCompressorTest extends TestCase
      */
     private $compressor;
 
-    public function setUp()
+    protected function setUp()
     {
         parent::setUp();
 
         $this->compressor = new ReturnCompressor();
     }
 
-    public function tearDown()
+    protected function tearDown()
     {
         unset($this->compressor);
     }

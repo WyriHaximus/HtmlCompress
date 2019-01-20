@@ -6,6 +6,9 @@ use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 
+/**
+ * @internal
+ */
 final class FactoryTest extends TestCase
 {
     public function testConstructFastest()

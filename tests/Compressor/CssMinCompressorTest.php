@@ -8,6 +8,8 @@ use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
  * CssMinCompressorTest.
  *
  * @author Marcel Voigt <mv@noch.so>
+ *
+ * @internal
  */
 final class CssMinCompressorTest extends AbstractVendorCompressorTest
 {
