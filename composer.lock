@@ -469,22 +469,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.1.3",
+            "version": "3.1.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "12f6e07aaee4439446fb47fd07ae2c1ca3e1342e"
+                "reference": "70f0a6cf4ea1435a4134e5f99fceabe0f9b60f56"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/12f6e07aaee4439446fb47fd07ae2c1ca3e1342e",
-                "reference": "12f6e07aaee4439446fb47fd07ae2c1ca3e1342e",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/70f0a6cf4ea1435a4134e5f99fceabe0f9b60f56",
+                "reference": "70f0a6cf4ea1435a4134e5f99fceabe0f9b60f56",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "^4.2.1"
+                "voku/simple_html_dom": "~4.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-01-06T10:24:31+00:00"
+            "time": "2019-02-28T00:16:50+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.2.1",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9"
+                "reference": "422e1096bb87f093f7cc629b90e92804f5b35049"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9",
-                "reference": "73f2f5f90bb2452ff98c5cb7035c75e1cd6da9f9",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/422e1096bb87f093f7cc629b90e92804f5b35049",
+                "reference": "422e1096bb87f093f7cc629b90e92804f5b35049",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2019-01-06T07:50:30+00:00"
+            "time": "2019-02-28T00:01:58+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -1724,7 +1724,7 @@
                     "homepage": "http://blog.astrumfutura.com"
                 },
                 {
-                    "name": "Théo Fidry",
+                    "name": "Théo FIDRY",
                     "email": "theo.fidry@gmail.com"
                 }
             ],
@@ -2653,6 +2653,7 @@
                 "mock",
                 "xunit"
             ],
+            "abandoned": true,
             "time": "2018-08-09T05:50:03+00:00"
         },
         {
