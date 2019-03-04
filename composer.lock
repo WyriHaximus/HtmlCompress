@@ -469,22 +469,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.1.5",
+            "version": "3.1.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "cf323efe9b09f47018fe92aeb47d36c951121d7b"
+                "reference": "5c618c662bc1c86dd2cf2291a85bec7372aac122"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/cf323efe9b09f47018fe92aeb47d36c951121d7b",
-                "reference": "cf323efe9b09f47018fe92aeb47d36c951121d7b",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/5c618c662bc1c86dd2cf2291a85bec7372aac122",
+                "reference": "5c618c662bc1c86dd2cf2291a85bec7372aac122",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "^4.3.1"
+                "voku/simple_html_dom": "^4.3.3"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-02-28T07:57:12+00:00"
+            "time": "2019-03-04T08:15:51+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.3.1",
+            "version": "4.3.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "fc06c3547a59be66bda4feadf7465081462ef71c"
+                "reference": "3084547002a84268033f2a1d1414c8cde0c388d7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/fc06c3547a59be66bda4feadf7465081462ef71c",
-                "reference": "fc06c3547a59be66bda4feadf7465081462ef71c",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/3084547002a84268033f2a1d1414c8cde0c388d7",
+                "reference": "3084547002a84268033f2a1d1414c8cde0c388d7",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2019-02-28T07:36:20+00:00"
+            "time": "2019-03-04T08:10:15+00:00"
         },
         {
             "name": "websharks/css-minifier",
