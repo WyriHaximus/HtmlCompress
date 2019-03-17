@@ -14,14 +14,14 @@ final class HtmlCompressorTest extends TestCase
     /** @var CompressorInterface */
     private $compressor;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->compressor = new HtmlCompressor();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->compressor);
     }
@@ -49,10 +49,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testNewLinesTabsReturns($input, $expected)
+    public function testNewLinesTabsReturns($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerMultipleSpaces(): array
@@ -86,10 +86,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testMultipleSpaces($input, $expected)
+    public function testMultipleSpaces($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerSpaceAfterGt()
@@ -111,10 +111,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testSpaceAfterGt($input, $expected)
+    public function testSpaceAfterGt($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerSpaceBeforeLt()
@@ -136,10 +136,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testSpaceBeforeLt($input, $expected)
+    public function testSpaceBeforeLt($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerTrim()
@@ -161,10 +161,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testTrim($input, $expected)
+    public function testTrim($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerSpecialCharacterEncoding()
@@ -182,10 +182,10 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testSpecialCharacterEncoding($input, $expected)
+    public function testSpecialCharacterEncoding($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
     public function providerComments()
@@ -203,9 +203,9 @@ final class HtmlCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testComments($input, $expected)
+    public function testComments($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

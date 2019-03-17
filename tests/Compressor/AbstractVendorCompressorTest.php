@@ -17,19 +17,19 @@ abstract class AbstractVendorCompressorTest extends TestCase
      */
     protected $compressor;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         $compressor = static::COMPRESSOR;
         $this->compressor = new $compressor();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $this->compressor = null;
     }
 
-    public function testCompress()
+    public function testCompress(): void
     {
-        $this->assertInternalType('string', $this->compressor->compress('foo '));
+        self::assertIsString($this->compressor->compress('foo '));
     }
 }

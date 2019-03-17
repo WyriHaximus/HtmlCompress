@@ -26,7 +26,7 @@ final class EdgeCasesTest extends TestCase
      * @dataProvider providerEdgeCase
      * @param mixed $dir
      */
-    public function testEdgeCase($dir)
+    public function testEdgeCase($dir): void
     {
         $in = \file_get_contents($dir . 'in.html');
         $out = \file_get_contents($dir . 'out.html');

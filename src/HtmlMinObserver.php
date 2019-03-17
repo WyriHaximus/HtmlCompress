@@ -25,7 +25,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
      * @param SimpleHtmlDom $element
      * @param HtmlMin       $htmlMin
      */
-    public function domElementBeforeMinification(SimpleHtmlDom $element, HtmlMin $htmlMin)
+    public function domElementBeforeMinification(SimpleHtmlDom $element, HtmlMin $htmlMin): void
     {
         if (isset($this->options['compressors'])) {
             foreach ($this->options['compressors'] as $compressorTmp) {
@@ -145,7 +145,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
      * @param SimpleHtmlDom $element
      * @param HtmlMin       $htmlMin
      */
-    public function domElementAfterMinification(SimpleHtmlDom $element, HtmlMin $htmlMin)
+    public function domElementAfterMinification(SimpleHtmlDom $element, HtmlMin $htmlMin): void
     {
     }
 }

@@ -11,7 +11,7 @@ use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
  */
 final class BestResultCompressorTest extends TestCase
 {
-    public function testCompress()
+    public function testCompress(): void
     {
         $input = 'abc';
         $compressorA = new class() implements CompressorInterface {
@@ -44,6 +44,6 @@ final class BestResultCompressorTest extends TestCase
         self::assertTrue($compressorA->called);
         self::assertTrue($compressorB->called);
 
-        $this->assertSame('ab', $actual);
+        self::assertSame('ab', $actual);
     }
 }

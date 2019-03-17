@@ -16,14 +16,14 @@ final class CompressorSmallestTest extends TestCase
      */
     protected $compressor;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->compressor = Factory::constructSmallest();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->compressor);
     }
@@ -49,9 +49,9 @@ final class CompressorSmallestTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testJavaScript($input, $expected)
+    public function testJavaScript($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }
