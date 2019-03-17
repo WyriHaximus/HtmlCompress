@@ -2,9 +2,9 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
 use WyriHaximus\HtmlCompress\Factory;
+use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal

@@ -2,8 +2,8 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
-use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor;
+use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
