@@ -11,31 +11,31 @@ use WyriHaximus\HtmlCompress\HtmlCompressor;
  */
 final class FactoryTest extends TestCase
 {
-    public function testConstructFastest()
+    public function testConstructFastest(): void
     {
         $parser = Factory::constructFastest();
         self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
-    public function testConstruct()
+    public function testConstruct(): void
     {
         $parser = Factory::construct();
         self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
-    public function testConstructSmallestDefault()
+    public function testConstructSmallestDefault(): void
     {
         $parser = Factory::constructSmallest();
         self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
-    public function testConstructSmallestNoExternal()
+    public function testConstructSmallestNoExternal(): void
     {
         $parser = Factory::constructSmallest(false);
         self::assertInstanceOf(HtmlCompressor::class, $parser);
     }
 
-    public function testConstructSmallestExternal()
+    public function testConstructSmallestExternal(): void
     {
         $parser = Factory::constructSmallest(true);
         self::assertInstanceOf(HtmlCompressor::class, $parser);

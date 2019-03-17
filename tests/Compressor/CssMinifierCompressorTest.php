@@ -45,9 +45,9 @@ final class CssMinifierCompressorTest extends AbstractVendorCompressorTest
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testReturn($input, $expected)
+    public function testReturn($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

@@ -15,14 +15,14 @@ final class ReturnCompressorTest extends TestCase
      */
     private $compressor;
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->compressor = new ReturnCompressor();
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         unset($this->compressor);
     }
@@ -46,9 +46,9 @@ final class ReturnCompressorTest extends TestCase
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testReturn($input, $expected)
+    public function testReturn($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 }

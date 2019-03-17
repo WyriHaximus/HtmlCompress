@@ -40,7 +40,7 @@ final class LdJsonTest extends TestCase
     /**
      * @dataProvider javascriptCompressorProvider
      */
-    public function testLdJson(Compressor\CompressorInterface $compressor)
+    public function testLdJson(Compressor\CompressorInterface $compressor): void
     {
         $input = \file_get_contents(__DIR__ . \DIRECTORY_SEPARATOR . 'input' . \DIRECTORY_SEPARATOR . 'ld.json.input');
         $inputJson = $this->getJson($input);

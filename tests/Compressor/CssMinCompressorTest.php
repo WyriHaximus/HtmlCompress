@@ -45,14 +45,14 @@ final class CssMinCompressorTest extends AbstractVendorCompressorTest
      * @param mixed $input
      * @param mixed $expected
      */
-    public function testReturn($input, $expected)
+    public function testReturn($input, $expected): void
     {
         $actual = $this->compressor->compress($input);
-        $this->assertSame($expected, $actual);
+        self::assertSame($expected, $actual);
     }
 
-    public function testCompress()
+    public function testCompress(): void
     {
-        $this->assertInternalType('string', $this->compressor->compress('background-color: red;'));
+        self::assertIsString($this->compressor->compress('background-color: red;'));
     }
 }
