@@ -1,6 +1,10 @@
 {
     "name": "wyrihaximus/html-compress",
     "description": "Compress/minify your HTML",
+    "keywords": [
+        "html",
+        "compress"
+    ],
     "license": "MIT",
     "authors": [
         {
@@ -8,10 +12,6 @@
             "email": "ceesjank@gmail.com",
             "homepage": "http://wyrihaximus.net/"
         }
-    ],
-    "keywords": [
-        "html",
-        "compress"
     ],
     "require": {
         "php": "^7.2",
@@ -28,6 +28,12 @@
     "require-dev": {
         "wyrihaximus/test-utilities": "^1.2"
     },
+    "config": {
+        "platform": {
+            "php": "7.2"
+        },
+        "sort-packages": true
+    },
     "autoload": {
         "psr-4": {
             "WyriHaximus\\HtmlCompress\\": "src/"
@@ -38,17 +44,15 @@
             "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
         }
     },
-    "config": {
-        "platform": {
-            "php": "7.2"
-        },
-        "sort-packages": true
-    },
     "scripts": {
-        "ensure-installed": "composer install --ansi -n -q",
-        "generate-resources": [
-            "@ensure-installed",
-            "api-client-resource-generator ./resources.yml"
+        "post-install-cmd": [
+            "composer normalize"
+        ],
+        "post-update-cmd": [
+            "composer normalize"
+        ],
+        "ci-coverage": [
+            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
         ],
         "cs": [
             "@ensure-installed",
@@ -58,38 +62,37 @@
             "@ensure-installed",
             "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
         ],
-        "unit": [
+        "ensure-installed": "composer install --ansi -n -q",
+        "infection": [
             "@ensure-installed",
-            "phpunit --colors=always -c phpunit.xml.dist"
-        ],
-        "unit-coverage": [
-            "@ensure-installed",
-            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
+            "infection --ansi --threads=4"
         ],
         "lint-php": [
             "@ensure-installed",
             "parallel-lint --exclude vendor ."
         ],
         "qa-all": [
+            "composer validate --ansi",
+            "composer normalize --ansi",
             "@lint-php",
             "@cs",
+            "@stan",
             "@unit"
         ],
-        "qa-all-coverage": [
+        "qa-all-extended": [
+            "composer validate --ansi",
+            "composer normalize --ansi",
             "@lint-php",
             "@cs",
-            "@unit-coverage"
-        ],
-        "qa-windows": [
-            "@lint-php",
-            "@cs",
-            "@unit"
+            "@stan",
+            "@unit-coverage",
+            "@infection"
         ],
         "qa-ci": [
             "@unit"
         ],
         "qa-ci-extended": [
-            "@qa-all-coverage"
+            "@qa-all-extended"
         ],
         "qa-ci-windows": [
             "@qa-windows"
@@ -97,8 +100,23 @@
         "qa-contrib": [
             "@qa-all"
         ],
-        "ci-coverage": [
-            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
+        "qa-windows": [
+            "@lint-php",
+            "@cs",
+            "@stan",
+            "@unit"
+        ],
+        "stan": [
+            "@ensure-installed",
+            "phpstan analyse src tests --level max --ansi -c phpstan.neon"
+        ],
+        "unit": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist"
+        ],
+        "unit-coverage": [
+            "@ensure-installed",
+            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
         ]
     }
 }
