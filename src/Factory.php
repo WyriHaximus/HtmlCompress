@@ -91,15 +91,13 @@ final class Factory
                             Patterns::MATCH_JSCRIPT,
                         ],
                         'compressor' => new BestResultCompressor(
-                            [
-                                new MMMJSCompressor(),
-                                new JSqueezeCompressor(),
-                                new JSMinCompressor(),
-                                new JavaScriptPackerCompressor(),
-                                new JShrinkCompressor(),
-                                $externalCompressors ? new YUIJSCompressor() : new ReturnCompressor(),
-                                new ReturnCompressor(), // Sometimes no compression can already be the smallest
-                            ]
+                            new MMMJSCompressor(),
+                            new JSqueezeCompressor(),
+                            new JSMinCompressor(),
+                            new JavaScriptPackerCompressor(),
+                            new JShrinkCompressor(),
+                            $externalCompressors ? new YUIJSCompressor() : new ReturnCompressor(),
+                            new ReturnCompressor() // Sometimes no compression can already be the smallest
                         ),
                     ],
                     [
@@ -114,14 +112,12 @@ final class Factory
                             Patterns::MATCH_STYLE_INLINE,
                         ],
                         'compressor' => new BestResultCompressor(
-                            [
-                                new MMMCSSCompressor(),
-                                new CssMinCompressor(),
-                                new CssMinifierCompressor(),
-                                $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
-                                new ReturnCompressor(),
-                            ]
-                        ),
+                            new MMMCSSCompressor(),
+                            new CssMinCompressor(),
+                            new CssMinifierCompressor(),
+                            $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
+                            new ReturnCompressor(),
+                            ),
                     ],
                 ],
             ]

@@ -34,6 +34,12 @@ final class CssMinCompressor extends Compressor
         $mock = 'body{' . $string . '}';
         $minified = $this->execute($mock);
 
+        if ($minified === '') {
+            // Something went wrong, return initial input
+
+            return $string;
+        }
+
         return \substr($minified, 5, -1);
     }
 }

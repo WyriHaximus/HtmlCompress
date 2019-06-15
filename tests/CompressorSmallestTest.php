@@ -1,8 +1,7 @@
 <?php declare(strict_types=1);
 
-namespace WyriHaximus\HtmlCompress\Tests\Compressor;
+namespace WyriHaximus\HtmlCompress\Tests;
 
-use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\TestUtilities\TestCase;
 
@@ -11,36 +10,17 @@ use WyriHaximus\TestUtilities\TestCase;
  */
 final class CompressorSmallestTest extends TestCase
 {
-    /**
-     * @var JavaScriptPackerCompressor
-     */
-    protected $compressor;
-
-    protected function setUp(): void
+    public function providerJavaScript(): iterable
     {
-        parent::setUp();
-
-        $this->compressor = Factory::constructSmallest();
-    }
-
-    protected function tearDown(): void
-    {
-        unset($this->compressor);
-    }
-
-    public function providerJavaScript()
-    {
-        return [
-            [
-                '<html><script>
-                    var i;
-                    var x = 0;
-                    
-                    var y = i + x;
-                    console.log(y);
-                </script></html>',
-                '<html><script>;var i,x=0,y=i+x;console.log(y)</script>',
-            ],
+        yield [
+            '<html><script>
+                var i;
+                var x = 0;
+                
+                var y = i + x;
+                console.log(y);
+            </script></html>',
+            '<html><script>;var i,x=0,y=i+x;console.log(y)</script>',
         ];
     }
 
@@ -51,7 +31,7 @@ final class CompressorSmallestTest extends TestCase
      */
     public function testJavaScript($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = Factory::constructSmallest()->compress($input);
         self::assertSame($expected, $actual);
     }
 }

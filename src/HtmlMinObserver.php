@@ -75,7 +75,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             if ($compressed != $notCompressed) {
                                 $attributes = '';
                                 $elementAttributes = $element->getAllAttributes();
-                                if ($elementAttributes) {
+                                if ($elementAttributes !== null) {
                                     foreach ($elementAttributes as $attributeName => $attributeValue) {
                                         $attributes .= $attributeName . '="' . $attributeValue . '"';
                                     }
@@ -94,7 +94,7 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
                             if ($compressed != $notCompressed) {
                                 $attributes = '';
                                 $elementAttributes = $element->getAllAttributes();
-                                if ($elementAttributes) {
+                                if ($elementAttributes !== null) {
                                     foreach ($elementAttributes as $attributeName => $attributeValue) {
                                         $attributes .= $attributeName . '="' . $attributeValue . '"';
                                     }

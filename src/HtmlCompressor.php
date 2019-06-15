@@ -14,9 +14,7 @@ final class HtmlCompressor implements HtmlCompressorInterface
 
     public function __construct(array $options)
     {
-        $this->defaultCompressor = new DefaultCompressor();
-
-        $this->defaultCompressor->getHtmlMin()->attachObserverToTheDomLoop(new HtmlMinObserver($options));
+        $this->defaultCompressor = new DefaultCompressor($options);
     }
 
     public function compress(string $html): string
