@@ -1,6 +1,6 @@
 <?php declare(strict_types=1);
 
-use ApiClients\Tools\TestUtilities\PhpCsFixerConfig;
+use WyriHaximus\CsFixerConfig\PhpCsFixerConfig;
 use PhpCsFixer\Config;
 
 return (function (): Config

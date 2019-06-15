@@ -5,14 +5,11 @@ namespace WyriHaximus\HtmlCompress\Compressor;
 final class BestResultCompressor extends Compressor
 {
     /**
-     * @var array|Compressor[]
+     * @var CompressorInterface[]
      */
     private $compressors = [];
 
-    /**
-     * @param array|Compressor[] $compressors
-     */
-    public function __construct(array $compressors)
+    public function __construct(CompressorInterface ...$compressors)
     {
         $this->compressors = $compressors;
     }

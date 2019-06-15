@@ -2,45 +2,27 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use ApiClients\Tools\TestUtilities\TestCase;
-use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
+use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
  */
 final class HtmlCompressorTest extends TestCase
 {
-    /** @var CompressorInterface */
-    private $compressor;
-
-    protected function setUp(): void
+    public function providerNewLinesTabsReturns(): iterable
     {
-        parent::setUp();
-
-        $this->compressor = new HtmlCompressor();
-    }
-
-    protected function tearDown(): void
-    {
-        unset($this->compressor);
-    }
-
-    public function providerNewLinesTabsReturns(): array
-    {
-        return [
-            [
-              "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
-              '<html><body><h1>hoi</h1>',
-            ],
-            [
-              "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html>",
-              '<html><h1>hoi</h1>',
-            ],
-            [
-              "<html><p>abc\r\ndef</p></html>",
-              '<html><p>abc def',
-            ],
+        yield [
+          "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
+          '<html><body><h1>hoi</h1>',
+        ];
+        yield [
+          "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html>",
+          '<html><h1>hoi</h1>',
+        ];
+        yield [
+          "<html><p>abc\r\ndef</p></html>",
+          '<html><p>abc def',
         ];
     }
 
@@ -51,33 +33,31 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testNewLinesTabsReturns($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerMultipleSpaces(): array
+    public function providerMultipleSpaces(): iterable
     {
-        return [
-          [
+        yield [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
             '<html><body><h1>h oi</h1>',
-          ],
-          [
+        ];
+        yield [
             '<html>   </html>',
             '<html>',
-          ],
-          [
+        ];
+        yield [
             "<html><body>  pre \r\n  suf\r\n  </body>",
             '<html><body> pre suf',
-          ],
-          [
-              '<span class="foo"><span title="bar"></span><span title="baz"></span><span title="bat"></span></span>',
-              '<span class=foo><span title=bar></span><span title=baz></span><span title=bat></span></span>',
-          ],
-          [
-              "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
-              '<html><head> <body><p class=foo id=text> foo </p> <br><ul><li><p class=foo>lall </ul>',
-          ],
+        ];
+        yield [
+            '<span class="foo"><span title="bar"></span><span title="baz"></span><span title="bat"></span></span>',
+            '<span class=foo><span title=bar></span><span title=baz></span><span title=bat></span></span>',
+        ];
+        yield [
+            "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
+            '<html><head> <body><p class=foo id=text> foo </p> <br><ul><li><p class=foo>lall </ul>',
         ];
     }
 
@@ -88,21 +68,19 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testMultipleSpaces($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerSpaceAfterGt()
+    public function providerSpaceAfterGt(): iterable
     {
-        return [
-          [
+        yield [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
             '<html><body><h1>hoi</h1>',
-          ],
-          [
+        ];
+        yield [
             '<html>  a',
             '<html>  a',
-          ],
         ];
     }
 
@@ -113,21 +91,19 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpaceAfterGt($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerSpaceBeforeLt()
+    public function providerSpaceBeforeLt(): iterable
     {
-        return [
-          [
+        yield [
             '<html> <body>   <h1>hoi</h1></body> </html> ',
             '<html><body><h1>hoi</h1>',
-          ],
-          [
+        ];
+        yield [
             'a     <html>',
             'a     <html>',
-          ],
         ];
     }
 
@@ -138,21 +114,19 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpaceBeforeLt($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerTrim()
+    public function providerTrim(): iterable
     {
-        return [
-          [
+        yield [
             '              ',
             '',
-          ],
-          [
+        ];
+        yield [
             ' ',
             '',
-          ],
         ];
     }
 
@@ -163,17 +137,15 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testTrim($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerSpecialCharacterEncoding()
+    public function providerSpecialCharacterEncoding(): iterable
     {
-        return [
-            [
-                "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
-                '<html><body>à',
-            ],
+        yield [
+            "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
+            '<html><body>à',
         ];
     }
 
@@ -184,17 +156,15 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpecialCharacterEncoding($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    public function providerComments()
+    public function providerComments(): iterable
     {
-        return [
-            [
-                '<html><body><!-- HTML comment --></body></html>',
-                '<html><body>',
-            ],
+        yield [
+            '<html><body><!-- HTML comment --></body></html>',
+            '<html><body>',
         ];
     }
 
@@ -205,7 +175,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testComments($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new HtmlCompressor([]))->compress($input);
         self::assertSame($expected, $actual);
     }
 }

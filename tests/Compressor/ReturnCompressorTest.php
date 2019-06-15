@@ -2,42 +2,23 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
  */
 final class ReturnCompressorTest extends TestCase
 {
-    /**
-     * @var ReturnCompressor
-     */
-    private $compressor;
-
-    protected function setUp(): void
+    public function providerReturn(): iterable
     {
-        parent::setUp();
-
-        $this->compressor = new ReturnCompressor();
-    }
-
-    protected function tearDown(): void
-    {
-        unset($this->compressor);
-    }
-
-    public function providerReturn()
-    {
-        return [
-            [
-              " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
-              " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
-            ],
-            [
-              "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
-              "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
-            ],
+        yield 'spacing-at-the-start' => [
+          " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
+          " <html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
+        ];
+        yield 'spacing-in-the-middle' => [
+          "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
+          "<html>\r\t<h1>h            oi</h1>\r\n\t\r\n</html>",
         ];
     }
 
@@ -48,7 +29,7 @@ final class ReturnCompressorTest extends TestCase
      */
     public function testReturn($input, $expected): void
     {
-        $actual = $this->compressor->compress($input);
+        $actual = (new ReturnCompressor())->compress($input);
         self::assertSame($expected, $actual);
     }
 }

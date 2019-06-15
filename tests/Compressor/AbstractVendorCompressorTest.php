@@ -2,8 +2,8 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\TestUtilities\TestCase;
 
 abstract class AbstractVendorCompressorTest extends TestCase
 {
@@ -19,17 +19,14 @@ abstract class AbstractVendorCompressorTest extends TestCase
 
     protected function setUp(): void
     {
+        parent::setUp();
+
         $compressor = static::COMPRESSOR;
         $this->compressor = new $compressor();
     }
 
-    protected function tearDown(): void
-    {
-        $this->compressor = null;
-    }
-
     public function testCompress(): void
     {
-        self::assertIsString($this->compressor->compress('foo '));
+        self::assertStringContainsString('foo', $this->compressor->compress('foo '));
     }
 }

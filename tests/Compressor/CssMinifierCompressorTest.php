@@ -15,28 +15,26 @@ final class CssMinifierCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = CssMinifierCompressor::class;
 
-    public function providerReturn()
+    public function providerReturn(): iterable
     {
-        return [
-            [
-                'p { background-color: #ffffff; font-size: 1px; }',
-                'p{background-color: #FFF;font-size: 1px}',
-            ],
-            [
-                '/* comments */
-                p { background-color: #ffffff; font-size: 1px; }',
-                'p{background-color: #FFF;font-size: 1px}',
-            ],
-            [
-                'background-color: #FFFFFF ; ',
-                'background-color: #FFF;',
-            ],
-            [
-                'background-color: #FFFFFF; font-size: 14px
-                ;
-                ',
-                'background-color: #FFF;font-size: 14px;',
-            ],
+        yield [
+            'p { background-color: #ffffff; font-size: 1px; }',
+            'p{background-color: #FFF;font-size: 1px}',
+        ];
+        yield [
+            '/* comments */
+            p { background-color: #ffffff; font-size: 1px; }',
+            'p{background-color: #FFF;font-size: 1px}',
+        ];
+        yield [
+            'background-color: #FFFFFF ; ',
+            'background-color: #FFF;',
+        ];
+        yield [
+            'background-color: #FFFFFF; font-size: 14px
+            ;
+            ',
+            'background-color: #FFF;font-size: 14px;',
         ];
     }
 

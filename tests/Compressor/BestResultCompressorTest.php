@@ -2,9 +2,9 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use ApiClients\Tools\TestUtilities\TestCase;
 use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
@@ -15,6 +15,7 @@ final class BestResultCompressorTest extends TestCase
     {
         $input = 'abc';
         $compressorA = new class() implements CompressorInterface {
+            /** @var bool */
             public $called = false;
 
             public function compress(string $string): string
@@ -25,6 +26,7 @@ final class BestResultCompressorTest extends TestCase
             }
         };
         $compressorB = new class() implements CompressorInterface {
+            /** @var bool */
             public $called = false;
 
             public function compress(string $string): string
@@ -35,10 +37,7 @@ final class BestResultCompressorTest extends TestCase
             }
         };
 
-        $compressor = new BestResultCompressor([
-            $compressorA,
-            $compressorB,
-        ]);
+        $compressor = new BestResultCompressor($compressorA, $compressorB);
         $actual = $compressor->compress($input);
 
         self::assertTrue($compressorA->called);

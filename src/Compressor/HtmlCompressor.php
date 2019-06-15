@@ -3,15 +3,17 @@
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 use voku\helper\HtmlMin;
+use WyriHaximus\HtmlCompress\HtmlMinObserver;
 
 final class HtmlCompressor extends Compressor
 {
     /** @var HtmlMin */
     private $htmlMin;
 
-    public function __construct()
+    public function __construct(array $options)
     {
         $this->htmlMin = new HtmlMin();
+        $this->htmlMin->attachObserverToTheDomLoop(new HtmlMinObserver($options));
     }
 
     public function getHtmlMin(): HtmlMin

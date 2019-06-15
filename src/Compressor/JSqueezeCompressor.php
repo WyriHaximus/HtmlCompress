@@ -2,19 +2,12 @@
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
+use Patchwork\JSqueeze;
+
 final class JSqueezeCompressor extends Compressor
 {
     protected function execute(string $string): string
     {
-        // Try version 2.0 namespace first
-        $class = '\Patchwork\JSqueeze';
-        if (!\class_exists($class)) {
-            // otherwise use 1.0
-            $class = '\JSqueeze';
-        }
-        /** @var \JSqueeze|\Patchwork\JSqueeze $parser */
-        $parser = new $class();
-
-        return $parser->squeeze($string);
+        return (new JSqueeze())->squeeze($string);
     }
 }
