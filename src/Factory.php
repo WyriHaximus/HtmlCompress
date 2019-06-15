@@ -116,8 +116,8 @@ final class Factory
                             new CssMinCompressor(),
                             new CssMinifierCompressor(),
                             $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
-                            new ReturnCompressor(),
-                            ),
+                            new ReturnCompressor()
+                        ),
                     ],
                 ],
             ]
