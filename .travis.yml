@@ -57,6 +57,7 @@ install:
 script:
   - if [ -z "$qaExtended" ]; then make ci; fi;
   - if [ "$qaExtended" = "true" ]; then make ci-extended; fi;
+  - if [ "$qaExtended" = "true" ]; then cat infection-log.txt; fi;
 
 ## Gather coverage and set it to coverage servers
 after_script:
