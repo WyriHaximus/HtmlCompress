@@ -11,9 +11,8 @@ use WyriHaximus\TestUtilities\TestCase;
  */
 final class BestResultCompressorTest extends TestCase
 {
-    public function testCompress(): void
+    public function provideCompressors(): iterable
     {
-        $input = 'abc';
         $compressorA = new class() implements CompressorInterface {
             /** @var bool */
             public $called = false;
@@ -33,16 +32,52 @@ final class BestResultCompressorTest extends TestCase
             {
                 $this->called = true;
 
+                return 'efgh';
+            }
+        };
+        $compressorC = new class() implements CompressorInterface {
+            /** @var bool */
+            public $called = false;
+
+            public function compress(string $string): string
+            {
+                $this->called = true;
+
                 return 'abcd';
             }
         };
 
-        $compressor = new BestResultCompressor($compressorA, $compressorB);
+        $compressorD = new class() implements CompressorInterface {
+            /** @var bool */
+            public $called = false;
+
+            public function compress(string $string): string
+            {
+                $this->called = true;
+
+                return '';
+            }
+        };
+
+        yield ['ab', $compressorA, $compressorC, $compressorB];
+        yield ['ab', $compressorC, $compressorB, $compressorA];
+        yield ['ab', $compressorC, $compressorD, $compressorA];
+        yield ['abcd', $compressorC, $compressorB, $compressorB];
+    }
+
+    /**
+     * @dataProvider provideCompressors
+     */
+    public function testCompress(string $expectedOutput, CompressorInterface ...$compressors): void
+    {
+        $input = 'abcdefgh';
+        $compressor = new BestResultCompressor(...$compressors);
         $actual = $compressor->compress($input);
 
-        self::assertTrue($compressorA->called);
-        self::assertTrue($compressorB->called);
+        foreach ($compressors as $compressorX) {
+            self::assertTrue($compressorX->called);
+        }
 
-        self::assertSame('ab', $actual);
+        self::assertSame($expectedOutput, $actual);
     }
 }
