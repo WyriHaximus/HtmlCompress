@@ -1,0 +1,29 @@
+{
+    "timeout": 120,
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "infection-log.txt"
+    },
+     "mutators": {
+         "@default": true,
+         "IncrementInteger": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\HtmlMinObserver::domElementBeforeMinification"
+             ]
+         },
+         "Identical": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
+             ]
+         },
+         "LogicalAnd": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
+             ]
+         }
+     }
+}

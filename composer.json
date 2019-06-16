@@ -61,20 +61,12 @@
             "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
         ],
         "infection": [
-            "infection --ansi --threads=4"
+            "infection --ansi --min-msi=100 --min-covered-msi=100 --threads=4 --log-verbosity=all"
         ],
         "lint-php": [
             "parallel-lint --exclude vendor ."
         ],
         "qa-all": [
-            "composer validate --ansi",
-            "composer normalize --ansi",
-            "@lint-php",
-            "@cs",
-            "@stan",
-            "@unit"
-        ],
-        "qa-all-extended": [
             "composer validate --ansi",
             "composer normalize --ansi",
             "@lint-php",
@@ -87,7 +79,7 @@
             "@unit"
         ],
         "qa-ci-extended": [
-            "@qa-all-extended"
+            "@qa-all"
         ],
         "qa-ci-windows": [
             "@qa-windows"
