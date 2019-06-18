@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-final class BestResultCompressor extends Compressor
+final class SmallestResultCompressor extends Compressor
 {
     private const ZERO = 0;
 

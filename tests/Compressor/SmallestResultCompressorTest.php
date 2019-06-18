@@ -2,14 +2,14 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\HtmlCompress\Compressor\SmallestResultCompressor;
 use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
  */
-final class BestResultCompressorTest extends TestCase
+final class SmallestResultCompressorTest extends TestCase
 {
     public function provideCompressors(): iterable
     {
@@ -71,7 +71,7 @@ final class BestResultCompressorTest extends TestCase
     public function testCompress(string $expectedOutput, CompressorInterface ...$compressors): void
     {
         $input = 'abcdefgh';
-        $compressor = new BestResultCompressor(...$compressors);
+        $compressor = new SmallestResultCompressor(...$compressors);
         $actual = $compressor->compress($input);
 
         foreach ($compressors as $compressorX) {

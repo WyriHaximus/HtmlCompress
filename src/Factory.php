@@ -2,7 +2,6 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use WyriHaximus\HtmlCompress\Compressor\BestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
 use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
 use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
@@ -12,6 +11,7 @@ use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
 use WyriHaximus\HtmlCompress\Compressor\MMMCSSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
+use WyriHaximus\HtmlCompress\Compressor\SmallestResultCompressor;
 use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
 use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
 
@@ -19,21 +19,7 @@ final class Factory
 {
     public static function constructFastest(): HtmlCompressorInterface
     {
-        return new HtmlCompressor(
-            [
-                'compressors' => [
-                    [
-                        'patterns' => [
-                            Patterns::MATCH_STYLE,
-                            Patterns::MATCH_LD_JSON,
-                            Patterns::MATCH_JSCRIPT,
-                            Patterns::MATCH_SCRIPT,
-                        ],
-                        'compressor' => new ReturnCompressor(),
-                    ],
-                ],
-            ]
-        );
+        return new HtmlCompressor([]);
     }
 
     public static function construct(): HtmlCompressorInterface
@@ -90,7 +76,7 @@ final class Factory
                         'patterns' => [
                             Patterns::MATCH_JSCRIPT,
                         ],
-                        'compressor' => new BestResultCompressor(
+                        'compressor' => new SmallestResultCompressor(
                             new MMMJSCompressor(),
                             new JSqueezeCompressor(),
                             new JSMinCompressor(),
@@ -111,7 +97,7 @@ final class Factory
                             Patterns::MATCH_STYLE,
                             Patterns::MATCH_STYLE_INLINE,
                         ],
-                        'compressor' => new BestResultCompressor(
+                        'compressor' => new SmallestResultCompressor(
                             new MMMCSSCompressor(),
                             new CssMinCompressor(),
                             new CssMinifierCompressor(),
