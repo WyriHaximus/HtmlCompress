@@ -16,4 +16,11 @@ use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
 final class JShrinkCompressorTest extends AbstractVendorCompressorTest
 {
     const COMPRESSOR = JShrinkCompressor::class;
+
+    public function testException(): void
+    {
+        $input = "var a = '";
+        $output = $this->compressor->compress($input);
+        self::assertSame($input, $output);
+    }
 }
