@@ -16,11 +16,6 @@ final class HtmlCompressor extends Compressor
         $this->htmlMin->attachObserverToTheDomLoop(new HtmlMinObserver($options));
     }
 
-    public function getHtmlMin(): HtmlMin
-    {
-        return $this->htmlMin;
-    }
-
     protected function execute(string $string): string
     {
         return $this->htmlMin->minify($string);
