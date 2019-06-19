@@ -17,11 +17,7 @@ final class CssMinCompressor extends Compressor
     protected function execute(string $string): string
     {
         // If there's no selector, this must be an inline CSS attribute.
-        if (
-            \strlen($string) > 0
-            &&
-            \strpos($string, '{') === false
-        ) {
+        if (\strpos($string, '{') === false) {
             return $this->minifyInline($string);
         }
 

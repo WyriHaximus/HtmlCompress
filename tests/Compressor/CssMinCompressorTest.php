@@ -18,6 +18,10 @@ final class CssMinCompressorTest extends AbstractVendorCompressorTest
     public function providerReturn(): iterable
     {
         yield [
+            '',
+            '',
+        ];
+        yield [
             'p { background-color: #ffffff; font-size: 1px; }',
             'p{background-color:#ffffff;font-size:1px}',
         ];
