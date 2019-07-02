@@ -10,9 +10,10 @@
     },
      "mutators": {
          "@default": true,
-         "IncrementInteger": {
+         "ArrayItemRemoval": {
              "ignore": [
-                 "WyriHaximus\\HtmlCompress\\HtmlMinObserver::domElementBeforeMinification"
+                 "WyriHaximus\\HtmlCompress\\Factory::construct",
+                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
              ]
          },
          "Identical": {
@@ -23,6 +24,11 @@
          "LogicalAnd": {
              "ignore": [
                  "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
+             ]
+         },
+         "TrueValue": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
              ]
          }
      }
