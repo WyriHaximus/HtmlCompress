@@ -17,7 +17,10 @@ final class EdgeCasesTest extends TestCase
         $items = \glob(__DIR__ . \DIRECTORY_SEPARATOR . 'EdgeCases' . \DIRECTORY_SEPARATOR . '*', \GLOB_ONLYDIR);
         if ($items !== false) {
             foreach ($items as $item) {
-                $dirs[$item] = [$item . \DIRECTORY_SEPARATOR];
+                $item = $item;
+                $itemName = \explode(\DIRECTORY_SEPARATOR, $item);
+                $itemName = \array_pop($itemName);
+                $dirs[$itemName] = [$item . \DIRECTORY_SEPARATOR];
             }
         }
 
