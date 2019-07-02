@@ -2,11 +2,11 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use voku\helper\SimpleHtmlDom;
+use voku\helper\SimpleHtmlDomInterface;
 
 interface PatternInterface
 {
-    public function matches(SimpleHtmlDom $element): bool;
+    public function matches(SimpleHtmlDomInterface $element): bool;
 
-    public function compress(SimpleHtmlDom $element): void;
+    public function compress(SimpleHtmlDomInterface $element): void;
 }
