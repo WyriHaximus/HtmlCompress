@@ -34,7 +34,7 @@ final class ScriptTest extends TestCase
         parent::setUp();
 
         $this->simpleHtmlDom = HtmlDomParser::str_get_html(
-            '<script bier="stout" ale="indian">innerHtml</script>'
+            '<script>innerHtml</script>'
         )->getElementByTagName('script');
 
         $this->compressor = $this->prophesize(CompressorInterface::class);
@@ -89,7 +89,7 @@ final class ScriptTest extends TestCase
 
         self::assertSame('bla', $this->simpleHtmlDom->innerhtml);
         self::assertSame(
-            '<script bier="stout" ale="indian">bla</script>',
+            '<script>bla</script>',
             $this->simpleHtmlDom->outerHtml
         );
     }
