@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "b684a5ec94a20def00e8718284739a21",
+    "content-hash": "9851900d925edf97d82cab29172d3ff5",
     "packages": [
         {
             "name": "jalle19/php-yui-compressor",
