@@ -21,7 +21,7 @@
         "meenie/javascript-packer": "1.1",
         "natxet/cssmin": "^3.0.5",
         "patchwork/jsqueeze": "~2.0",
-        "t1st3/php-json-minify": "^0.6.2",
+        "t1st3/php-json-minify": "dev-fix-unknown-$rc-error as 0.6.3",
         "tedivm/jshrink": "^1.3",
         "voku/html-min": "^3.1.2",
         "websharks/css-minifier": "150820"
@@ -45,6 +45,12 @@
             "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
         }
     },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/WyriHaximus-labs/php-json-minify"
+        }
+    ],
     "scripts": {
         "post-install-cmd": [
             "composer normalize"
