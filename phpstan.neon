@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
-		- '#Access to an undefined property voku\\helper\\SimpleHtmlDom::\$innerHtml#'
-		- '#Access to an undefined property voku\\helper\\SimpleHtmlDom::\$outerHtml#'
+		- '#Access to an undefined property voku\\helper\\SimpleHtmlDomInterface::\$outerHtml#'
+		- '#Access to an undefined property WyriHaximus\\HtmlCompress\\Compressor\\CompressorInterface::\$called.#'
 	classesAllowedToBeExtended:
 		- WyriHaximus\HtmlCompress\Compressor\Compressor
 		- WyriHaximus\HtmlCompress\Tests\Compressor\AbstractVendorCompressorTest

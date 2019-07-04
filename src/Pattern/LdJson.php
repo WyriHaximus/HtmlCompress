@@ -1,0 +1,52 @@
+<?php declare(strict_types=1);
+
+namespace WyriHaximus\HtmlCompress\Pattern;
+
+use voku\helper\SimpleHtmlDomInterface;
+use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\HtmlCompress\PatternInterface;
+
+final class LdJson implements PatternInterface
+{
+    /** @var CompressorInterface */
+    private $compressor;
+
+    public function __construct(CompressorInterface $compressor)
+    {
+        $this->compressor = $compressor;
+    }
+
+    public function matches(SimpleHtmlDomInterface $element): bool
+    {
+        if ($element->tag !== 'script') {
+            return false;
+        }
+
+        foreach (['type' => 'application/ld+json'] as $name => $value) {
+            if ($element->hasAttribute($name) === false) {
+                return false;
+            }
+
+            if ($element->getAttribute($name) !== $value) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+
+    public function compress(SimpleHtmlDomInterface $element): void
+    {
+        $compressedInnerHtml = $this->compressor->compress($element->innerhtml);
+
+        if ($compressedInnerHtml === '') {
+            return;
+        }
+
+        if (\strlen($compressedInnerHtml) >= \strlen($element->innerhtml)) {
+            return;
+        }
+
+        $element->innerhtml = $compressedInnerHtml;
+    }
+}

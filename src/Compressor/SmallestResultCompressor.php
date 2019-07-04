@@ -2,8 +2,10 @@
 
 namespace WyriHaximus\HtmlCompress\Compressor;
 
-final class BestResultCompressor extends Compressor
+final class SmallestResultCompressor extends Compressor
 {
+    private const ZERO = 0;
+
     /**
      * @var CompressorInterface[]
      */
@@ -18,15 +20,19 @@ final class BestResultCompressor extends Compressor
     {
         $result = $string;
         foreach ($this->compressors as $compressor) {
+            $resultLength = \strlen($result);
             $currentResult = $compressor->compress($string);
+            $currentResultLength = \strlen($currentResult);
 
-            if (
-                \strlen($currentResult) < \strlen($result)
-                &&
-                \strlen($currentResult) > 0
-            ) {
-                $result = $currentResult;
+            if ($currentResultLength === self::ZERO) {
+                continue;
             }
+
+            if ($currentResultLength >= $resultLength) {
+                continue;
+            }
+
+            $result = $currentResult;
         }
 
         return $result;

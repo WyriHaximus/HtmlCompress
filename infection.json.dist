@@ -1,0 +1,35 @@
+{
+    "timeout": 120,
+    "source": {
+        "directories": [
+            "src"
+        ]
+    },
+    "logs": {
+        "text": "infection-log.txt"
+    },
+     "mutators": {
+         "@default": true,
+         "ArrayItemRemoval": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Factory::construct",
+                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
+             ]
+         },
+         "Identical": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
+             ]
+         },
+         "LogicalAnd": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
+             ]
+         },
+         "TrueValue": {
+             "ignore": [
+                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
+             ]
+         }
+     }
+}

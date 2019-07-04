@@ -2,27 +2,26 @@
 
 namespace WyriHaximus\HtmlCompress;
 
+use voku\helper\SimpleHtmlDom;
+
 final class Patterns
 {
-    const MATCH_STYLE = [
-        'tag' => 'style',
-    ];
+    /** @var PatternInterface[] */
+    private $patterns = [];
 
-    const MATCH_STYLE_INLINE = [
-        'attributes' => ['style'],
-    ];
+    public function __construct(PatternInterface ...$patterns)
+    {
+        $this->patterns = $patterns;
+    }
 
-    const MATCH_JSCRIPT = [
-        'tag' => 'script',
-        'attributes' => ['type' => 'text/javascript'],
-    ];
+    public function compress(SimpleHtmlDom $element): void
+    {
+        foreach ($this->patterns as $pattern) {
+            if ($pattern->matches($element) === true) {
+                $pattern->compress($element);
 
-    const MATCH_LD_JSON = [
-        'tag' => 'script',
-        'attributes' => ['type' => 'application/ld+json'],
-    ];
-
-    const MATCH_SCRIPT = [
-        'tag' => 'script',
-    ];
+                return;
+            }
+        }
+    }
 }

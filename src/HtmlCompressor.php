@@ -12,9 +12,9 @@ final class HtmlCompressor implements HtmlCompressorInterface
      */
     private $defaultCompressor;
 
-    public function __construct(array $options)
+    public function __construct(Patterns $patterns)
     {
-        $this->defaultCompressor = new DefaultCompressor($options);
+        $this->defaultCompressor = new DefaultCompressor($patterns);
     }
 
     public function compress(string $html): string

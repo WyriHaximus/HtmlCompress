@@ -2,19 +2,18 @@
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
-use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\TestUtilities\TestCase;
 
 /**
  * @internal
  */
-final class EdgeCasesTest extends TestCase
+final class HtmlMinObserverTest extends TestCase
 {
     public function providerEdgeCase(): array
     {
         $dirs = [];
 
-        $items = \glob(__DIR__ . \DIRECTORY_SEPARATOR . 'EdgeCases' . \DIRECTORY_SEPARATOR . '*', \GLOB_ONLYDIR);
+        $items = \glob(__DIR__ . \DIRECTORY_SEPARATOR . 'HtmlMinObserver' . \DIRECTORY_SEPARATOR . '*', \GLOB_ONLYDIR);
         if ($items !== false) {
             foreach ($items as $item) {
                 $item = $item;
@@ -38,9 +37,9 @@ final class EdgeCasesTest extends TestCase
         /** @var string $out */
         $out = \file_get_contents($dir . 'out.html');
 
-        $result = Factory::constructSmallest()->compress($in);
+        $result = (require $dir . 'compressor.php')->compress($in);
 
-        self::assertSame(\strlen($out), \strlen($result));
+//        self::assertSame(\strlen($out), \strlen($result));
         self::assertSame($out, $result);
     }
 }

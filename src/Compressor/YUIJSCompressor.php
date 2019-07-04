@@ -12,7 +12,6 @@ final class YUIJSCompressor extends Compressor
     public function __construct()
     {
         $this->yui = new YUICompressor();
-        $this->yui->setType(YUICompressor::TYPE_JS);
     }
 
     protected function execute(string $string): string

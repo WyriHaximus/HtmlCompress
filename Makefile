@@ -1,9 +1,6 @@
 all:
 	composer run-script qa-all --timeout=0
 
-all-extended:
-	composer run-script qa-all-extended --timeout=0
-
 ci:
 	composer run-script qa-ci --timeout=0
 

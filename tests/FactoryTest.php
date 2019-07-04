@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use function Safe\file_get_contents as safeFileGetContents;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\TestUtilities\TestCase;
@@ -13,31 +14,66 @@ final class FactoryTest extends TestCase
 {
     public function testConstructFastest(): void
     {
-        $parser = Factory::constructFastest();
-        self::assertInstanceOf(HtmlCompressor::class, $parser);
+        $compressor = Factory::constructFastest();
+        self::assertInstanceOf(HtmlCompressor::class, $compressor);
+
+        self::assertSame(
+            safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'fastest' . \DIRECTORY_SEPARATOR . 'out.html'),
+            $compressor->compress(
+                safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'fastest' . \DIRECTORY_SEPARATOR . 'in.html')
+            )
+        );
     }
 
     public function testConstruct(): void
     {
-        $parser = Factory::construct();
-        self::assertInstanceOf(HtmlCompressor::class, $parser);
+        $compressor = Factory::construct();
+        self::assertInstanceOf(HtmlCompressor::class, $compressor);
+
+        self::assertSame(
+            safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'normal' . \DIRECTORY_SEPARATOR . 'out.html'),
+            $compressor->compress(
+                safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'normal' . \DIRECTORY_SEPARATOR . 'in.html')
+            )
+        );
     }
 
     public function testConstructSmallestDefault(): void
     {
-        $parser = Factory::constructSmallest();
-        self::assertInstanceOf(HtmlCompressor::class, $parser);
+        $compressor = Factory::constructSmallest();
+        self::assertInstanceOf(HtmlCompressor::class, $compressor);
+
+        self::assertSame(
+            safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'out.html'),
+            $compressor->compress(
+                safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'in.html')
+            )
+        );
     }
 
     public function testConstructSmallestNoExternal(): void
     {
-        $parser = Factory::constructSmallest(false);
-        self::assertInstanceOf(HtmlCompressor::class, $parser);
+        $compressor = Factory::constructSmallest(false);
+        self::assertInstanceOf(HtmlCompressor::class, $compressor);
+
+        self::assertSame(
+            safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'out.html'),
+            $compressor->compress(
+                safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'in.html')
+            )
+        );
     }
 
     public function testConstructSmallestExternal(): void
     {
-        $parser = Factory::constructSmallest(true);
-        self::assertInstanceOf(HtmlCompressor::class, $parser);
+        $compressor = Factory::constructSmallest(true);
+        self::assertInstanceOf(HtmlCompressor::class, $compressor);
+
+        self::assertSame(
+            safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'out.html'),
+            $compressor->compress(
+                safeFileGetContents(__DIR__ . \DIRECTORY_SEPARATOR . 'Factory' . \DIRECTORY_SEPARATOR . 'smallest' . \DIRECTORY_SEPARATOR . 'in.html')
+            )
+        );
     }
 }
