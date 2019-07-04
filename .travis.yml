@@ -42,6 +42,8 @@ matrix:
       env:
         - dependencies=highest
         - dropPlatform=false
+  allow_failures:
+    - php: nightly
 
 ## Install or update dependencies
 install:
