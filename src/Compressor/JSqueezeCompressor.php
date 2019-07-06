@@ -8,6 +8,6 @@ final class JSqueezeCompressor extends Compressor
 {
     protected function execute(string $string): string
     {
-        return (new JSqueeze())->squeeze($string);
+        return (string)(new JSqueeze())->squeeze($string);
     }
 }
