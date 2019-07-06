@@ -66,11 +66,16 @@
         "lint-php": [
             "parallel-lint --exclude vendor ."
         ],
+        "psalm": [
+            "@ensure-installed",
+            "psalm --threads=32 --show-info=false"
+        ],
         "qa-all": [
             "composer validate --ansi",
             "@lint-php",
             "@cs",
             "@stan",
+            "@psalm",
             "@unit-coverage",
             "@infection"
         ],

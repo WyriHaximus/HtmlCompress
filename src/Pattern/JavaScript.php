@@ -39,19 +39,25 @@ final class JavaScript implements PatternInterface
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
-        $compressedInnerHtml = $this->compressor->compress($element->innerhtml);
+        /** @var string $innerHtml */
+        $innerHtml = $element->innerhtml;
+        $compressedInnerHtml = $this->compressor->compress($innerHtml);
 
         if ($compressedInnerHtml === '') {
             return;
         }
 
-        if (\strlen($compressedInnerHtml) >= \strlen($element->innerhtml)) {
+        if (\strlen($compressedInnerHtml) >= \strlen($innerHtml)) {
             return;
         }
 
         $attributes = '';
         $elementAttributes = $element->getAllAttributes();
         if ($elementAttributes !== null) {
+            /**
+             * @var string $attributeName
+             * @var string $attributeValue
+             */
             foreach ($elementAttributes as $attributeName => $attributeValue) {
                 $attributes .= $attributeName . '="' . $attributeValue . '"';
             }

@@ -11,6 +11,7 @@ final class MMMCSSCompressor extends Compressor
      */
     protected function execute(string $string): string
     {
+        /** @psalm-suppress TooManyArguments */
         return (new CSS($string))->minify();
     }
 }

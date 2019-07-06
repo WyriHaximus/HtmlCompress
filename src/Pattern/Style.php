@@ -23,13 +23,15 @@ final class Style implements PatternInterface
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
-        $compressedInnerHtml = $this->compressor->compress($element->innerhtml);
+        /** @var string $innerHtml */
+        $innerHtml = $element->innerhtml;
+        $compressedInnerHtml = $this->compressor->compress($innerHtml);
 
         if ($compressedInnerHtml === '') {
             return;
         }
 
-        if (\strlen($compressedInnerHtml) >= \strlen($element->innerhtml)) {
+        if (\strlen($compressedInnerHtml) >= \strlen($innerHtml)) {
             return;
         }
 

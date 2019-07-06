@@ -8,6 +8,6 @@ final class CssMinifierCompressor extends Compressor
 {
     protected function execute(string $string): string
     {
-        return Core::compress($string);
+        return (string)Core::compress($string);
     }
 }
