@@ -2,7 +2,9 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
-use WyriHaximus\HtmlCompress\Compressor;
+use WyriHaximus\Compress\CompressorInterface;
+use WyriHaximus\Compress\ReturnCompressor;
+use WyriHaximus\JsCompress\Compressor as JsCompressor;
 use WyriHaximus\TestUtilities\TestCase;
 
 /**
@@ -13,37 +15,37 @@ final class LdJsonTest extends TestCase
     public function javascriptCompressorProvider(): iterable
     {
         yield 'jsmin' => [
-            new Compressor\JSMinCompressor(),
+            new JsCompressor\JSMinCompressor(),
         ];
 
-        yield 'javascript-package' => [
-            new Compressor\JavaScriptPackerCompressor(),
-        ];
+        /*yield 'javascript-packer' => [ // This compressor results in invalid JSON
+            new JsCompressor\JavaScriptPackerCompressor(),
+        ];*/
 
         /*[ // This compressor results in invalid JSON
-            new Compressor\JSqueezeCompressor(),
+            new JsCompressor\JSqueezeCompressor(),
         ],*/
         yield 'mmjs' => [
-            new Compressor\MMMJSCompressor(),
+            new JsCompressor\MMMJSCompressor(),
         ];
 
         yield 'jshrink' => [
-            new Compressor\JShrinkCompressor(),
+            new JsCompressor\JShrinkCompressor(),
         ];
 
         yield 'yuijs' => [
-            new Compressor\YUIJSCompressor(),
+            new JsCompressor\YUIJSCompressor(),
         ];
 
         yield 'return' => [
-            new Compressor\ReturnCompressor(),
+            new ReturnCompressor(),
         ];
     }
 
     /**
      * @dataProvider javascriptCompressorProvider
      */
-    public function testLdJson(Compressor\CompressorInterface $compressor): void
+    public function testLdJson(CompressorInterface $compressor): void
     {
         /** @var string $input */
         $input = \file_get_contents(__DIR__ . \DIRECTORY_SEPARATOR . 'input' . \DIRECTORY_SEPARATOR . 'ld.json.input');

@@ -15,15 +15,10 @@
     ],
     "require": {
         "php": "^7.2",
-        "jalle19/php-yui-compressor": "^1.0",
-        "linkorb/jsmin-php": "1.0.0",
-        "matthiasmullie/minify": "^1.3",
-        "meenie/javascript-packer": "1.1",
-        "natxet/cssmin": "^3.0.5",
-        "patchwork/jsqueeze": "~2.0",
-        "tedivm/jshrink": "^1.3",
         "voku/html-min": "^3.1.8",
-        "websharks/css-minifier": "150820"
+        "wyrihaximus/compress": "^1.1",
+        "wyrihaximus/css-compress": "^1.0",
+        "wyrihaximus/js-compress": "^1.0"
     },
     "require-dev": {
         "wyrihaximus/test-utilities": "^1.2"

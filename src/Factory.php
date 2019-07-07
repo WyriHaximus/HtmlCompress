@@ -2,23 +2,15 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use WyriHaximus\HtmlCompress\Compressor\CssMinCompressor;
-use WyriHaximus\HtmlCompress\Compressor\CssMinifierCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JavaScriptPackerCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JShrinkCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSMinCompressor;
-use WyriHaximus\HtmlCompress\Compressor\JSqueezeCompressor;
-use WyriHaximus\HtmlCompress\Compressor\MMMCSSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\MMMJSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\ReturnCompressor;
-use WyriHaximus\HtmlCompress\Compressor\SmallestResultCompressor;
-use WyriHaximus\HtmlCompress\Compressor\YUICSSCompressor;
-use WyriHaximus\HtmlCompress\Compressor\YUIJSCompressor;
+use WyriHaximus\Compress\ReturnCompressor;
+use WyriHaximus\CssCompress\Factory as CssFactory;
 use WyriHaximus\HtmlCompress\Pattern\JavaScript;
 use WyriHaximus\HtmlCompress\Pattern\LdJson;
 use WyriHaximus\HtmlCompress\Pattern\Script;
 use WyriHaximus\HtmlCompress\Pattern\Style;
 use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
+use WyriHaximus\JsCompress\Compressor\MMMJSCompressor;
+use WyriHaximus\JsCompress\Factory as JsFactory;
 
 final class Factory
 {
@@ -29,7 +21,7 @@ final class Factory
 
     public static function construct(): HtmlCompressorInterface
     {
-        $styleCompressor = new CssMinCompressor();
+        $styleCompressor = CssFactory::construct();
 
         return new HtmlCompressor(
             new Patterns(
@@ -37,7 +29,7 @@ final class Factory
                     new MMMJSCompressor()
                 ),
                 new JavaScript(
-                    new MMMJSCompressor()
+                    JsFactory::construct()
                 ),
                 new Script(
                     new ReturnCompressor()
@@ -58,13 +50,7 @@ final class Factory
      */
     public static function constructSmallest(bool $externalCompressors = true): HtmlCompressorInterface
     {
-        $styleCompressor = new SmallestResultCompressor(
-            new MMMCSSCompressor(),
-            new CssMinCompressor(),
-            new CssMinifierCompressor(),
-            $externalCompressors ? new YUICSSCompressor() : new ReturnCompressor(),
-            new ReturnCompressor()
-        );
+        $styleCompressor = CssFactory::constructSmallest($externalCompressors);
 
         return new HtmlCompressor(
             new Patterns(
@@ -72,15 +58,7 @@ final class Factory
                     new MMMJSCompressor()
                 ),
                 new JavaScript(
-                    new SmallestResultCompressor(
-                        new MMMJSCompressor(),
-                        new JSqueezeCompressor(),
-                        new JSMinCompressor(),
-                        new JavaScriptPackerCompressor(),
-                        new JShrinkCompressor(),
-                        $externalCompressors ? new YUIJSCompressor() : new ReturnCompressor(),
-                        new ReturnCompressor() // Sometimes no compression can already be the smallest
-                    )
+                    JsFactory::constructSmallest($externalCompressors)
                 ),
                 new Script(
                     new ReturnCompressor()
