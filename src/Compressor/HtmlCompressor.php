@@ -3,10 +3,11 @@
 namespace WyriHaximus\HtmlCompress\Compressor;
 
 use voku\helper\HtmlMin;
+use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\HtmlMinObserver;
 use WyriHaximus\HtmlCompress\Patterns;
 
-final class HtmlCompressor extends Compressor
+final class HtmlCompressor implements CompressorInterface
 {
     /** @var HtmlMin */
     private $htmlMin;
@@ -17,7 +18,7 @@ final class HtmlCompressor extends Compressor
         $this->htmlMin->attachObserverToTheDomLoop(new HtmlMinObserver($patterns));
     }
 
-    protected function execute(string $string): string
+    public function compress(string $string): string
     {
         return $this->htmlMin->minify($string);
     }

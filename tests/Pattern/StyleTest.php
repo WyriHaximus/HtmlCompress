@@ -5,7 +5,7 @@ namespace WyriHaximus\HtmlCompress\Tests\Pattern;
 use Prophecy\Prophecy\ObjectProphecy;
 use voku\helper\HtmlDomParser;
 use voku\helper\SimpleHtmlDomInterface;
-use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Pattern\Style;
 use WyriHaximus\TestUtilities\TestCase;
 

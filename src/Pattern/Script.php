@@ -3,7 +3,7 @@
 namespace WyriHaximus\HtmlCompress\Pattern;
 
 use voku\helper\SimpleHtmlDomInterface;
-use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\PatternInterface;
 
 final class Script implements PatternInterface

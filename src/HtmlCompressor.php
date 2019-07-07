@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use WyriHaximus\HtmlCompress\Compressor\CompressorInterface;
+use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor as DefaultCompressor;
 
 final class HtmlCompressor implements HtmlCompressorInterface

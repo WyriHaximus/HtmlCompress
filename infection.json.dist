@@ -18,10 +18,7 @@
          },
          "CastString": {
              "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinifierCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JSqueezeCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JSMinCompressor::execute",
-                 "WyriHaximus\\HtmlCompress\\Compressor\\JavaScriptPackerCompressor::execute"
+                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinifierCompressor::execute"
              ]
          },
          "Identical": {
