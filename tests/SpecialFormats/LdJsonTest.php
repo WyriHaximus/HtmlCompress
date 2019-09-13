@@ -56,6 +56,9 @@ final class LdJsonTest extends TestCase
         self::assertSame($inputJson, $compressedJson, $compressedInput);
     }
 
+    /**
+     * @return mixed[]
+     */
     private function getJson(string $string): array
     {
         /** @var int $start */
