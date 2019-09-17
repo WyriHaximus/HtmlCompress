@@ -42,6 +42,5 @@ final class HtmlMinObserverTest extends TestCase
         $result = (require $dir . 'compressor.php')->compress($in);
 
         self::assertSame($out, $result);
-        self::assertSame(\strlen($out), \strlen($result));
     }
 }

@@ -43,6 +43,5 @@ final class EdgeCasesTest extends TestCase
         $result = Factory::constructSmallest()->compress($in);
 
         self::assertSame($out, $result);
-        self::assertSame(\strlen($out), \strlen($result));
     }
 }
