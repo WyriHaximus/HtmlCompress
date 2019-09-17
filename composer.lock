@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d6bf2da896b7cff7fcd8d37c87db3f8c",
+    "content-hash": "1b1c585c23b3a102391c703b316b15ed",
     "packages": [
         {
             "name": "jalle19/php-yui-compressor",
@@ -74,18 +74,18 @@
             "authors": [
                 {
                     "name": "Joost Faassen",
-                    "email": "j.faassen@linkorb.com",
-                    "role": "Packaging for Composer"
+                    "role": "Packaging for Composer",
+                    "email": "j.faassen@linkorb.com"
                 },
                 {
                     "name": "Ryan Grove",
-                    "email": "ryan@wonko.com",
-                    "role": "PHP port"
+                    "role": "PHP port",
+                    "email": "ryan@wonko.com"
                 },
                 {
                     "name": "Adam Gofort",
-                    "email": "aag@adamgoforth.com",
-                    "role": "Updates to the PHP port"
+                    "role": "Updates to the PHP port",
+                    "email": "aag@adamgoforth.com"
                 },
                 {
                     "name": "Douglas Crockford",
@@ -195,9 +195,9 @@
             "authors": [
                 {
                     "name": "Matthias Mullie",
+                    "role": "Developer",
                     "email": "pathconverter@mullie.eu",
-                    "homepage": "http://www.mullie.eu",
-                    "role": "Developer"
+                    "homepage": "http://www.mullie.eu"
                 }
             ],
             "description": "Relative path converter",
@@ -370,16 +370,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.3.2",
+            "version": "v4.3.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "105c98bb0c5d8635bea056135304bd8edcc42b4d"
+                "reference": "c6e5e2a00db768c92c3ae131532af4e1acc7bd03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/105c98bb0c5d8635bea056135304bd8edcc42b4d",
-                "reference": "105c98bb0c5d8635bea056135304bd8edcc42b4d",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/c6e5e2a00db768c92c3ae131532af4e1acc7bd03",
+                "reference": "c6e5e2a00db768c92c3ae131532af4e1acc7bd03",
                 "shasum": ""
             },
             "require": {
@@ -405,12 +405,12 @@
             ],
             "authors": [
                 {
-                    "name": "Jean-François Simon",
-                    "email": "jeanfrancois.simon@sensiolabs.com"
-                },
-                {
                     "name": "Fabien Potencier",
                     "email": "fabien@symfony.com"
+                },
+                {
+                    "name": "Jean-François Simon",
+                    "email": "jeanfrancois.simon@sensiolabs.com"
                 },
                 {
                     "name": "Symfony Community",
@@ -419,7 +419,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2019-01-16T21:53:39+00:00"
+            "time": "2019-08-20T14:07:54+00:00"
         },
         {
             "name": "tedivm/jshrink",
@@ -469,22 +469,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "3.1.8",
+            "version": "4.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "62a1f2af5e317b2f118bf2d63194e8462db38af2"
+                "reference": "d9297742c0056dfe40556c27b54a8a89ebe50b05"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/62a1f2af5e317b2f118bf2d63194e8462db38af2",
-                "reference": "62a1f2af5e317b2f118bf2d63194e8462db38af2",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/d9297742c0056dfe40556c27b54a8a89ebe50b05",
+                "reference": "d9297742c0056dfe40556c27b54a8a89ebe50b05",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "~4.5"
+                "voku/simple_html_dom": "~4.7.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-06-19T11:19:09+00:00"
+            "time": "2019-09-17T14:20:50+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.6.0",
+            "version": "4.7.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "f24249b7bfb04043728b4130a1d8792017cafb61"
+                "reference": "056c4c1546cffa689436306bfb8251dfdd525c15"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/f24249b7bfb04043728b4130a1d8792017cafb61",
-                "reference": "f24249b7bfb04043728b4130a1d8792017cafb61",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/056c4c1546cffa689436306bfb8251dfdd525c15",
+                "reference": "056c4c1546cffa689436306bfb8251dfdd525c15",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +535,7 @@
                 "ext-libxml": "*",
                 "ext-simplexml": "*",
                 "php": ">=7.0.0",
-                "symfony/css-selector": "~3.0|~4.0"
+                "symfony/css-selector": "~3.0 || ~4.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -555,14 +555,14 @@
             ],
             "authors": [
                 {
-                    "name": "Lars Moelleken",
-                    "homepage": "http://www.moelleken.org/",
-                    "role": "Developer"
-                },
-                {
                     "name": "dimabdc",
                     "email": "support@titor.ru",
                     "homepage": "http://github.com/dimabdc",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Lars Moelleken",
+                    "homepage": "http://www.moelleken.org/",
                     "role": "Developer"
                 }
             ],
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2019-07-01T07:59:39+00:00"
+            "time": "2019-09-17T14:13:41+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -606,18 +606,18 @@
             "authors": [
                 {
                     "name": "websharks",
-                    "homepage": "http://websharks-inc.com/",
-                    "role": "company"
+                    "role": "company",
+                    "homepage": "http://websharks-inc.com/"
                 },
                 {
                     "name": "jaswsinc",
-                    "homepage": "http://jaswsinc.com/",
-                    "role": "developer"
+                    "role": "developer",
+                    "homepage": "http://jaswsinc.com/"
                 },
                 {
                     "name": "raamdev",
-                    "homepage": "http://raam.org/",
-                    "role": "developer"
+                    "role": "developer",
+                    "homepage": "http://raam.org/"
                 }
             ],
             "description": "Compresses CSS.",
@@ -2376,9 +2376,9 @@
             "authors": [
                 {
                     "name": "Christian Weiske",
+                    "role": "Developer",
                     "email": "cweiske@cweiske.de",
-                    "homepage": "http://github.com/cweiske/jsonmapper/",
-                    "role": "Developer"
+                    "homepage": "http://github.com/cweiske/jsonmapper/"
                 }
             ],
             "description": "Map nested JSON structures onto PHP classes",
