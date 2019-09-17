@@ -10,6 +10,9 @@ use WyriHaximus\TestUtilities\TestCase;
  */
 final class EdgeCasesTest extends TestCase
 {
+    /**
+     * @return array[]
+     */
     public function providerEdgeCase(): array
     {
         $dirs = [];
@@ -17,7 +20,6 @@ final class EdgeCasesTest extends TestCase
         $items = \glob(__DIR__ . \DIRECTORY_SEPARATOR . 'EdgeCases' . \DIRECTORY_SEPARATOR . '*', \GLOB_ONLYDIR);
         if ($items !== false) {
             foreach ($items as $item) {
-                $item = $item;
                 $itemName = \explode(\DIRECTORY_SEPARATOR, $item);
                 $itemName = \array_pop($itemName);
                 $dirs[$itemName] = [$item . \DIRECTORY_SEPARATOR];
@@ -40,7 +42,6 @@ final class EdgeCasesTest extends TestCase
 
         $result = Factory::constructSmallest()->compress($in);
 
-        self::assertSame(\strlen($out), \strlen($result));
         self::assertSame($out, $result);
     }
 }

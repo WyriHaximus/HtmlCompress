@@ -2,19 +2,22 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use voku\helper\SimpleHtmlDom;
+use voku\helper\SimpleHtmlDomInterface;
 
 final class Patterns
 {
     /** @var PatternInterface[] */
     private $patterns = [];
 
+    /**
+     * @param PatternInterface ...$patterns
+     */
     public function __construct(PatternInterface ...$patterns)
     {
         $this->patterns = $patterns;
     }
 
-    public function compress(SimpleHtmlDom $element): void
+    public function compress(SimpleHtmlDomInterface $element): void
     {
         foreach ($this->patterns as $pattern) {
             if ($pattern->matches($element) === true) {

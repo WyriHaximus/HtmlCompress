@@ -90,7 +90,7 @@ final class ScriptTest extends TestCase
         self::assertSame('bla', $this->simpleHtmlDom->innerhtml);
         self::assertSame(
             '<script>bla</script>',
-            $this->simpleHtmlDom->outerHtml
+            $this->simpleHtmlDom->outerHtml()
         );
     }
 }

@@ -4,7 +4,8 @@ namespace WyriHaximus\HtmlCompress;
 
 use voku\helper\HtmlMin;
 use voku\helper\HtmlMinDomObserverInterface;
-use voku\helper\SimpleHtmlDom;
+use voku\helper\HtmlMinInterface;
+use voku\helper\SimpleHtmlDomInterface;
 
 final class HtmlMinObserver implements HtmlMinDomObserverInterface
 {
@@ -19,10 +20,10 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
     /**
      * Receive dom elements before the minification.
      *
-     * @param SimpleHtmlDom $element
-     * @param HtmlMin       $htmlMin
+     * @param SimpleHtmlDomInterface $element
+     * @param HtmlMinInterface       $htmlMin
      */
-    public function domElementBeforeMinification(SimpleHtmlDom $element, HtmlMin $htmlMin): void
+    public function domElementBeforeMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
     {
         $this->patterns->compress($element);
     }
@@ -30,10 +31,10 @@ final class HtmlMinObserver implements HtmlMinDomObserverInterface
     /**
      * Receive dom elements after the minification.
      *
-     * @param SimpleHtmlDom $element
-     * @param HtmlMin       $htmlMin
+     * @param SimpleHtmlDomInterface $element
+     * @param HtmlMinInterface       $htmlMin
      */
-    public function domElementAfterMinification(SimpleHtmlDom $element, HtmlMin $htmlMin): void
+    public function domElementAfterMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
     {
     }
 }

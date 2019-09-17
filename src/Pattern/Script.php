@@ -46,6 +46,6 @@ final class Script implements PatternInterface
                 $attributes .= $attributeName . '="' . $attributeValue . '"';
             }
         }
-        $element->outerHtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
+        $element->outerhtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
     }
 }

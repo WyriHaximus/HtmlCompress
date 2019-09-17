@@ -81,7 +81,7 @@ final class HtmlCompressorTest extends TestCase
         ];
         yield [
             '<html>  a',
-            '<html>  a',
+            '<html> a',
         ];
     }
 
@@ -103,8 +103,8 @@ final class HtmlCompressorTest extends TestCase
             '<html><body><h1>hoi</h1>',
         ];
         yield [
-            'a     <html>',
-            'a     <html>',
+            '<html>  a',
+            '<html> a',
         ];
     }
 

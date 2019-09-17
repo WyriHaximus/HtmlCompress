@@ -63,6 +63,6 @@ final class JavaScript implements PatternInterface
             }
         }
 
-        $element->outerHtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
+        $element->outerhtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
     }
 }

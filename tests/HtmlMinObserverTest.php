@@ -9,6 +9,9 @@ use WyriHaximus\TestUtilities\TestCase;
  */
 final class HtmlMinObserverTest extends TestCase
 {
+    /**
+     * @return array[]
+     */
     public function providerEdgeCase(): array
     {
         $dirs = [];
@@ -16,7 +19,6 @@ final class HtmlMinObserverTest extends TestCase
         $items = \glob(__DIR__ . \DIRECTORY_SEPARATOR . 'HtmlMinObserver' . \DIRECTORY_SEPARATOR . '*', \GLOB_ONLYDIR);
         if ($items !== false) {
             foreach ($items as $item) {
-                $item = $item;
                 $itemName = \explode(\DIRECTORY_SEPARATOR, $item);
                 $itemName = \array_pop($itemName);
                 $dirs[$itemName] = [$item . \DIRECTORY_SEPARATOR];
@@ -39,7 +41,6 @@ final class HtmlMinObserverTest extends TestCase
 
         $result = (require $dir . 'compressor.php')->compress($in);
 
-//        self::assertSame(\strlen($out), \strlen($result));
         self::assertSame($out, $result);
     }
 }
