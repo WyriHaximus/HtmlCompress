@@ -74,18 +74,18 @@
             "authors": [
                 {
                     "name": "Joost Faassen",
-                    "email": "j.faassen@linkorb.com",
-                    "role": "Packaging for Composer"
+                    "role": "Packaging for Composer",
+                    "email": "j.faassen@linkorb.com"
                 },
                 {
                     "name": "Ryan Grove",
-                    "email": "ryan@wonko.com",
-                    "role": "PHP port"
+                    "role": "PHP port",
+                    "email": "ryan@wonko.com"
                 },
                 {
                     "name": "Adam Gofort",
-                    "email": "aag@adamgoforth.com",
-                    "role": "Updates to the PHP port"
+                    "role": "Updates to the PHP port",
+                    "email": "aag@adamgoforth.com"
                 },
                 {
                     "name": "Douglas Crockford",
@@ -195,9 +195,9 @@
             "authors": [
                 {
                     "name": "Matthias Mullie",
+                    "role": "Developer",
                     "email": "pathconverter@mullie.eu",
-                    "homepage": "http://www.mullie.eu",
-                    "role": "Developer"
+                    "homepage": "http://www.mullie.eu"
                 }
             ],
             "description": "Relative path converter",
@@ -248,7 +248,7 @@
             "time": "2013-03-25T21:54:33+00:00"
         },
         {
-            "name": "natxet/CssMin",
+            "name": "natxet/cssmin",
             "version": "v3.0.6",
             "source": {
                 "type": "git",
@@ -469,16 +469,16 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.0.4",
+            "version": "4.0.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "d9297742c0056dfe40556c27b54a8a89ebe50b05"
+                "reference": "48460b460610dd12ffcf7e2d0956f2bb326b1e29"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/d9297742c0056dfe40556c27b54a8a89ebe50b05",
-                "reference": "d9297742c0056dfe40556c27b54a8a89ebe50b05",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/48460b460610dd12ffcf7e2d0956f2bb326b1e29",
+                "reference": "48460b460610dd12ffcf7e2d0956f2bb326b1e29",
                 "shasum": ""
             },
             "require": {
@@ -514,7 +514,7 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-09-17T14:20:50+00:00"
+            "time": "2019-09-19T00:36:51+00:00"
         },
         {
             "name": "voku/simple_html_dom",
@@ -6488,8 +6488,8 @@
             "authors": [
                 {
                     "name": "Arne Blankerts",
-                    "role": "Developer",
-                    "email": "arne@blankerts.de"
+                    "email": "arne@blankerts.de",
+                    "role": "Developer"
                 }
             ],
             "description": "A small library for converting tokenized PHP source code into XML and potentially other formats",
