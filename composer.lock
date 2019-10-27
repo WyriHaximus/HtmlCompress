@@ -74,18 +74,18 @@
             "authors": [
                 {
                     "name": "Joost Faassen",
-                    "role": "Packaging for Composer",
-                    "email": "j.faassen@linkorb.com"
+                    "email": "j.faassen@linkorb.com",
+                    "role": "Packaging for Composer"
                 },
                 {
                     "name": "Ryan Grove",
-                    "role": "PHP port",
-                    "email": "ryan@wonko.com"
+                    "email": "ryan@wonko.com",
+                    "role": "PHP port"
                 },
                 {
                     "name": "Adam Gofort",
-                    "role": "Updates to the PHP port",
-                    "email": "aag@adamgoforth.com"
+                    "email": "aag@adamgoforth.com",
+                    "role": "Updates to the PHP port"
                 },
                 {
                     "name": "Douglas Crockford",
@@ -195,9 +195,9 @@
             "authors": [
                 {
                     "name": "Matthias Mullie",
-                    "role": "Developer",
                     "email": "pathconverter@mullie.eu",
-                    "homepage": "http://www.mullie.eu"
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
                 }
             ],
             "description": "Relative path converter",
@@ -370,16 +370,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.3.4",
+            "version": "v4.3.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "c6e5e2a00db768c92c3ae131532af4e1acc7bd03"
+                "reference": "f4b3ff6a549d9ed28b2b0ecd1781bf67cf220ee9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/c6e5e2a00db768c92c3ae131532af4e1acc7bd03",
-                "reference": "c6e5e2a00db768c92c3ae131532af4e1acc7bd03",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/f4b3ff6a549d9ed28b2b0ecd1781bf67cf220ee9",
+                "reference": "f4b3ff6a549d9ed28b2b0ecd1781bf67cf220ee9",
                 "shasum": ""
             },
             "require": {
@@ -419,7 +419,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2019-08-20T14:07:54+00:00"
+            "time": "2019-10-02T08:36:26+00:00"
         },
         {
             "name": "tedivm/jshrink",
@@ -469,16 +469,16 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.0.5",
+            "version": "4.0.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "48460b460610dd12ffcf7e2d0956f2bb326b1e29"
+                "reference": "554df0fa72ba7b6e295113ca9fa6b5d8e718c2c7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/48460b460610dd12ffcf7e2d0956f2bb326b1e29",
-                "reference": "48460b460610dd12ffcf7e2d0956f2bb326b1e29",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/554df0fa72ba7b6e295113ca9fa6b5d8e718c2c7",
+                "reference": "554df0fa72ba7b6e295113ca9fa6b5d8e718c2c7",
                 "shasum": ""
             },
             "require": {
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-09-19T00:36:51+00:00"
+            "time": "2019-10-27T19:40:17+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.7.5",
+            "version": "4.7.6",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "056c4c1546cffa689436306bfb8251dfdd525c15"
+                "reference": "8d69cc296abb92352b6912ebf09494def7fe52d0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/056c4c1546cffa689436306bfb8251dfdd525c15",
-                "reference": "056c4c1546cffa689436306bfb8251dfdd525c15",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/8d69cc296abb92352b6912ebf09494def7fe52d0",
+                "reference": "8d69cc296abb92352b6912ebf09494def7fe52d0",
                 "shasum": ""
             },
             "require": {
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2019-09-17T14:13:41+00:00"
+            "time": "2019-10-20T12:04:20+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -2449,9 +2449,9 @@
             "authors": [
                 {
                     "name": "Christian Weiske",
-                    "role": "Developer",
                     "email": "cweiske@cweiske.de",
-                    "homepage": "http://github.com/cweiske/jsonmapper/"
+                    "homepage": "http://github.com/cweiske/jsonmapper/",
+                    "role": "Developer"
                 }
             ],
             "description": "Map nested JSON structures onto PHP classes",
