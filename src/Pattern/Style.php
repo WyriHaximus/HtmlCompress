@@ -41,7 +41,19 @@ final class Style implements PatternInterface
             return;
         }
 
-        $element->innerhtml = $compressedInnerHtml;
+        $attributes = '';
+        $elementAttributes = $element->getAllAttributes();
+        if ($elementAttributes !== null) {
+            /**
+             * @var string $attributeName
+             * @var string $attributeValue
+             */
+            foreach ($elementAttributes as $attributeName => $attributeValue) {
+                $attributes .= $attributeName . '="' . $attributeValue . '"';
+            }
+        }
+
+        $element->outerhtml = '<style ' . $attributes . '>' . $compressedInnerHtml . '</style>';
     }
 
     private function stripComments(string $contents): string
