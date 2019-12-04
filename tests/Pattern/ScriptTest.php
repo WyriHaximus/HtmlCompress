@@ -9,25 +9,15 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Pattern\Script;
 use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
+/** @internal */
 final class ScriptTest extends TestCase
 {
-    /**
-     * @var SimpleHtmlDomInterface
-     */
-    private $simpleHtmlDom;
+    private SimpleHtmlDomInterface $simpleHtmlDom;
 
-    /**
-     * @var ObjectProphecy|CompressorInterface
-     */
+    /** @var ObjectProphecy|CompressorInterface */
     private $compressor;
 
-    /**
-     * @var Script
-     */
-    private $script;
+    private Script $script;
 
     protected function setUp(): void
     {

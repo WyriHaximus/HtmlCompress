@@ -11,6 +11,7 @@ use WyriHaximus\HtmlCompress\Pattern\Style;
 use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
 use WyriHaximus\JsCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\JsCompress\Factory as JsFactory;
+use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class Factory
 {
@@ -45,10 +46,9 @@ final class Factory
     }
 
     /**
-     * @param  bool                    $externalCompressors When set to false only use pure PHP compressors.
-     * @return HtmlCompressorInterface
+     * @param  bool $externalCompressors When set to false only use pure PHP compressors.
      */
-    public static function constructSmallest(bool $externalCompressors = true): HtmlCompressorInterface
+    public static function constructSmallest(bool $externalCompressors = TRUE_): HtmlCompressorInterface
     {
         $styleCompressor = CssFactory::constructSmallest($externalCompressors);
 

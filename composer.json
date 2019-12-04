@@ -14,20 +14,29 @@
         }
     ],
     "require": {
-        "php": "^7.2",
-        "voku/html-min": "^4.0.7",
+        "php": "^7.4",
+        "thecodingmachine/safe": "^1.1",
+        "voku/html-min": "^4.1",
+        "voku/simple_html_dom": "^4.7",
         "wyrihaximus/compress": "^1.1",
+        "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^1.0.1",
         "wyrihaximus/js-compress": "^1.0"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^1.2"
+        "wyrihaximus/coding-standard": "^1.0",
+        "wyrihaximus/test-utilities": "^2.2"
     },
     "config": {
         "platform": {
-            "php": "7.2"
+            "php": "7.4"
         },
         "sort-packages": true
+    },
+    "extra": {
+        "unused": [
+            "slevomat/coding-standard"
+        ]
     },
     "autoload": {
         "psr-4": {
@@ -45,61 +54,6 @@
         ],
         "post-update-cmd": [
             "composer normalize"
-        ],
-        "ci-coverage": [
-            "if [ -f ./build/logs/clover.xml ]; then wget https://scrutinizer-ci.com/ocular.phar && php ocular.phar code-coverage:upload --format=php-clover ./build/logs/clover.xml; fi"
-        ],
-        "cs": [
-            "php-cs-fixer fix --config=.php_cs --ansi --dry-run --diff --verbose --allow-risky=yes --show-progress=estimating"
-        ],
-        "cs-fix": [
-            "php-cs-fixer fix --config=.php_cs --ansi --verbose --allow-risky=yes --show-progress=estimating"
-        ],
-        "infection": [
-            "infection --ansi --min-msi=100 --min-covered-msi=100 --threads=4"
-        ],
-        "lint-php": [
-            "parallel-lint --exclude vendor ."
-        ],
-        "psalm": [
-            "@ensure-installed",
-            "psalm --threads=32 --show-info=false"
-        ],
-        "qa-all": [
-            "composer validate --ansi",
-            "@lint-php",
-            "@cs",
-            "@stan",
-            "@psalm",
-            "@unit-coverage",
-            "@infection"
-        ],
-        "qa-ci": [
-            "@unit"
-        ],
-        "qa-ci-extended": [
-            "@qa-all"
-        ],
-        "qa-ci-windows": [
-            "@qa-windows"
-        ],
-        "qa-contrib": [
-            "@qa-all"
-        ],
-        "qa-windows": [
-            "@lint-php",
-            "@cs",
-            "@stan",
-            "@unit"
-        ],
-        "stan": [
-            "phpstan analyse src tests --level max --ansi -c phpstan.neon"
-        ],
-        "unit": [
-            "phpunit --colors=always -c phpunit.xml.dist"
-        ],
-        "unit-coverage": [
-            "phpunit --colors=always -c phpunit.xml.dist --coverage-text --coverage-html covHtml --coverage-clover ./build/logs/clover.xml"
         ]
     }
 }

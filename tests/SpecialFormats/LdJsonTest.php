@@ -2,25 +2,31 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
+use Generator;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\JsCompress\Compressor as JsCompressor;
 use WyriHaximus\TestUtilities\TestCase;
+use function Safe\file_get_contents;
+use function Safe\json_decode;
+use function Safe\substr;
+use function strpos;
+use function strrpos;
+use const DIRECTORY_SEPARATOR;
 
 /**
  * @internal
  */
 final class LdJsonTest extends TestCase
 {
-    public function javascriptCompressorProvider(): iterable
+    /**
+     * @return Generator<array<int, CompressorInterface>>
+     */
+    public function javascriptCompressorProvider(): Generator
     {
         yield 'jsmin' => [
             new JsCompressor\JSMinCompressor(),
         ];
-
-        /*yield 'javascript-packer' => [ // This compressor results in invalid JSON
-            new JsCompressor\JavaScriptPackerCompressor(),
-        ];*/
 
         /*[ // This compressor results in invalid JSON
             new JsCompressor\JSqueezeCompressor(),
@@ -47,11 +53,11 @@ final class LdJsonTest extends TestCase
      */
     public function testLdJson(CompressorInterface $compressor): void
     {
-        /** @var string $input */
-        $input = \file_get_contents(__DIR__ . \DIRECTORY_SEPARATOR . 'input' . \DIRECTORY_SEPARATOR . 'ld.json.input');
-        $inputJson = $this->getJson($input);
+        $input = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'input' . DIRECTORY_SEPARATOR . 'ld.json.input');
+
+        $inputJson       = $this->getJson($input);
         $compressedInput = $compressor->compress($input);
-        $compressedJson = $this->getJson($compressedInput);
+        $compressedJson  = $this->getJson($compressedInput);
 
         self::assertSame($inputJson, $compressedJson, $compressedInput);
     }
@@ -61,13 +67,10 @@ final class LdJsonTest extends TestCase
      */
     private function getJson(string $string): array
     {
-        /** @var int $start */
-        $start = \strpos($string, '{');
-        /** @var int $end */
-        $end = (int)\strrpos($string, '}') + 1;
-        /** @var string $string */
-        $string = \substr($string, $start, $end - $start);
+        $start  = (int) strpos($string, '{');
+        $end    = (int) strrpos($string, '}') + 1;
+        $string = substr($string, $start, $end - $start);
 
-        return \json_decode($string, true);
+        return json_decode($string, true);
     }
 }

@@ -9,25 +9,15 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Pattern\LdJson;
 use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
+/** @internal */
 final class LdJsonTest extends TestCase
 {
-    /**
-     * @var SimpleHtmlDomInterface
-     */
-    private $simpleHtmlDom;
+    private SimpleHtmlDomInterface $simpleHtmlDom;
 
-    /**
-     * @var ObjectProphecy|CompressorInterface
-     */
+    /** @var ObjectProphecy|CompressorInterface */
     private $compressor;
 
-    /**
-     * @var LdJson
-     */
-    private $ldJson;
+    private LdJson $ldJson;
 
     protected function setUp(): void
     {

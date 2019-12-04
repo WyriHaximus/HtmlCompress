@@ -1,0 +1,57 @@
+name: Continuous Integration
+on:
+  push:
+  pull_request:
+jobs:
+  composer-install:
+    strategy:
+      matrix:
+        php: [7.4]
+        composer: [lowest, current, highest]
+    runs-on: ubuntu-latest
+    container:
+      image: wyrihaximusnet/php:${{ matrix.php }}-zts-alpine3.11-dev-root
+    steps:
+      - uses: actions/checkout@v1
+      - name: Cache composer packages
+        uses: actions/cache@v1
+        with:
+          path: ./vendor/
+          key: ${{ matrix.composer }}-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+      - name: Install Dependencies
+        run: composer update --prefer-lowest --no-progress --ansi --no-interaction --prefer-dist
+        if: matrix.composer == 'lowest'
+      - name: Install Dependencies
+        run: composer install --ansi --no-progress --no-interaction --prefer-dist
+        if: matrix.composer == 'current'
+      - name: Install Dependencies
+        run: composer update --ansi --no-progress --no-interaction --prefer-dist
+        if: matrix.composer == 'highest'
+  qa:
+    strategy:
+      matrix:
+        php: [7.4]
+        composer: [lowest, current, highest]
+        qa: [lint, cs, stan, psalm, unit-ci, infection, composer-require-checker, composer-unused]
+    needs: composer-install
+    runs-on: ubuntu-latest
+    container:
+      image: wyrihaximusnet/php:${{ matrix.php }}-zts-alpine3.11-dev-root
+    steps:
+      - uses: actions/checkout@v1
+      - name: Cache composer packages
+        uses: actions/cache@v1
+        with:
+          path: ./vendor/
+          key: ${{ matrix.composer }}-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
+
+      - name: Install Dependencies
+        run: (test -f vendor && true ) || composer update --prefer-lowest --no-progress --ansi --no-interaction --prefer-dist
+        if: matrix.composer == 'lowest'
+      - name: Install Dependencies
+        run: (test -f vendor && true ) || composer install --ansi --no-progress --no-interaction --prefer-dist
+        if: matrix.composer == 'current'
+      - name: Install Dependencies
+        run: (test -f vendor && true ) || composer update --ansi --no-progress --no-interaction --prefer-dist
+        if: matrix.composer == 'highest'
+      - run: make ${{ matrix.qa }}

@@ -2,34 +2,27 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-
 use voku\helper\HtmlMinDomObserverInterface;
-use voku\helper\SimpleHtmlDomInterface;
 use voku\helper\HtmlMinInterface;
+use voku\helper\SimpleHtmlDomInterface;
 
 final class Patterns implements HtmlMinDomObserverInterface
 {
     /** @var PatternInterface[] */
-    private $patterns = [];
-	
-	/** @var HtmlMinInterface */
-    private $htmlMin;
+    private array $patterns = [];
 
     /**
-     * @param PatternInterface ...$patterns
+     * @param array<int, PatternInterface> $patterns
      */
     public function __construct(PatternInterface ...$patterns)
     {
         $this->patterns = $patterns;
-	}
-	
+    }
 
-	/**
-     * @param PatternInterface $pattern
-     */
-	public function add(PatternInterface $pattern){
-		$this->patterns[] = $pattern;
-	}
+    public function add(PatternInterface $pattern): void
+    {
+        $this->patterns[] = $pattern;
+    }
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
@@ -40,30 +33,20 @@ final class Patterns implements HtmlMinDomObserverInterface
                 return;
             }
         }
-	}
-	
-	/**
-     * Receive dom elements before the minification.
-     *
-     * @param SimpleHtmlDomInterface $element
-     * @param HtmlMinInterface       $htmlMin
-     */
-	public function domElementBeforeMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
-    {
-		$this->htmlMin = $htmlMin;
+    }
 
+    /**
+     * Receive dom elements before the minification.
+     */
+    public function domElementBeforeMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
+    {
         $this->compress($element);
     }
 
     /**
      * Receive dom elements after the minification.
-     *
-     * @param SimpleHtmlDomInterface $element
-     * @param HtmlMinInterface       $htmlMin
      */
     public function domElementAfterMinification(SimpleHtmlDomInterface $element, HtmlMinInterface $htmlMin): void
     {
-	}
-	
-	
+    }
 }
