@@ -33,6 +33,7 @@ $compressedHtml = $parser->compress($sourceHtml);
 * [Sculpin](https://github.com/WyriHaximus/html-compress-sculpin)
 * [Twig](https://github.com/nochso/html-compress-twig)
 * [ReactPHP HTTP Middleware](https://github.com/WyriHaximus/reactphp-http-middleware-html-compress)
+* [PSR-15 Middleware](https://github.com/middlewares/minifier)
 
 ## License ##
 
