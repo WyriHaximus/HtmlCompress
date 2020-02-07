@@ -58,7 +58,7 @@ final class HtmlCompressorTest extends TestCase
         ];
         yield [
             "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
-            '<html><head> <body><p class=foo id=text> foo </p> <br><ul><li><p class=foo>lall </ul>',
+            '<html><head> <body><p class=foo id=text> foo </p> <br> <ul><li><p class=foo>lall </ul>',
         ];
     }
 

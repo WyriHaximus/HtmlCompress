@@ -49,6 +49,18 @@ final class LdJson implements PatternInterface
             return;
         }
 
-        $element->innerhtml = $compressedInnerHtml;
+        $attributes = '';
+        $elementAttributes = $element->getAllAttributes();
+        if ($elementAttributes !== null) {
+            /**
+             * @var string $attributeName
+             * @var string $attributeValue
+             */
+            foreach ($elementAttributes as $attributeName => $attributeValue) {
+                $attributes .= $attributeName . '="' . $attributeValue . '"';
+            }
+        }
+
+        $element->outerhtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
     }
 }
