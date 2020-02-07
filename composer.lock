@@ -370,16 +370,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v4.4.1",
+            "version": "v4.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7"
+                "reference": "a167b1860995b926d279f9bb538f873e3bfa3465"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
-                "reference": "64acec7e0d67125e9f4656c68d4a38a42ab5a0b7",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/a167b1860995b926d279f9bb538f873e3bfa3465",
+                "reference": "a167b1860995b926d279f9bb538f873e3bfa3465",
                 "shasum": ""
             },
             "require": {
@@ -419,7 +419,7 @@
             ],
             "description": "Symfony CssSelector Component",
             "homepage": "https://symfony.com",
-            "time": "2019-10-12T00:35:04+00:00"
+            "time": "2020-01-04T13:00:46+00:00"
         },
         {
             "name": "tedivm/jshrink",
@@ -469,16 +469,16 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.0.7",
+            "version": "4.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "91add239139b8d8efd99f37f7b0b4a7960b4fa3e"
+                "reference": "f73514a9c9dfcef6d1b24043c1dcb6142c8e8cc3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/91add239139b8d8efd99f37f7b0b4a7960b4fa3e",
-                "reference": "91add239139b8d8efd99f37f7b0b4a7960b4fa3e",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/f73514a9c9dfcef6d1b24043c1dcb6142c8e8cc3",
+                "reference": "f73514a9c9dfcef6d1b24043c1dcb6142c8e8cc3",
                 "shasum": ""
             },
             "require": {
@@ -514,20 +514,20 @@
                 "html",
                 "minifier"
             ],
-            "time": "2019-11-18T15:47:00+00:00"
+            "time": "2020-02-06T23:10:13+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.7.9",
+            "version": "4.7.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "a5cbfbd6a19d5a6f9facd5e1e0050f6d60dfd4ec"
+                "reference": "9eba9460896bca215e1e1d8814dd4b90c45be85d"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/a5cbfbd6a19d5a6f9facd5e1e0050f6d60dfd4ec",
-                "reference": "a5cbfbd6a19d5a6f9facd5e1e0050f6d60dfd4ec",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/9eba9460896bca215e1e1d8814dd4b90c45be85d",
+                "reference": "9eba9460896bca215e1e1d8814dd4b90c45be85d",
                 "shasum": ""
             },
             "require": {
@@ -535,7 +535,7 @@
                 "ext-libxml": "*",
                 "ext-simplexml": "*",
                 "php": ">=7.0.0",
-                "symfony/css-selector": "~3.0 || ~4.0"
+                "symfony/css-selector": "~3.0 || ~4.0 || ~5.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -573,7 +573,7 @@
                 "dom",
                 "php dom"
             ],
-            "time": "2019-12-08T02:25:30+00:00"
+            "time": "2020-01-22T00:08:59+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -2084,6 +2084,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/composer-json-normalizer",
             "time": "2019-01-09T14:43:16+00:00"
         },
         {
@@ -2149,6 +2150,7 @@
                 "normalizer",
                 "plugin"
             ],
+            "abandoned": "ergebnis/composer-normalize",
             "time": "2019-09-07T10:12:23+00:00"
         },
         {
@@ -2252,6 +2254,7 @@
                 "json",
                 "normalizer"
             ],
+            "abandoned": "ergebnis/json-normalizer",
             "time": "2018-10-07T17:36:39+00:00"
         },
         {
