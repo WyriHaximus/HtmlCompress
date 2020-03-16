@@ -2,7 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
-use WyriHaximus\HtmlCompress\Compressor\HtmlCompressor;
+use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Patterns;
 use WyriHaximus\TestUtilities\TestCase;
 
