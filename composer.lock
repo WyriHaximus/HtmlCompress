@@ -607,22 +607,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.2.0",
+            "version": "4.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "d2da25afb8216238414eaa1f1e9472f140655289"
+                "reference": "fa912ebd0c2c338868af2e8a14436f5ad1af6e83"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/d2da25afb8216238414eaa1f1e9472f140655289",
-                "reference": "d2da25afb8216238414eaa1f1e9472f140655289",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/fa912ebd0c2c338868af2e8a14436f5ad1af6e83",
+                "reference": "fa912ebd0c2c338868af2e8a14436f5ad1af6e83",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "~4.7.12"
+                "voku/simple_html_dom": "~4.7.13"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -652,7 +652,7 @@
                 "html",
                 "minifier"
             ],
-            "time": "2020-03-05T23:43:01+00:00"
+            "time": "2020-03-22T22:20:41+00:00"
         },
         {
             "name": "voku/simple_html_dom",
@@ -1999,6 +1999,7 @@
             ],
             "description": "This tool check syntax of PHP files about 20x faster than serial check.",
             "homepage": "https://github.com/JakubOnderka/PHP-Parallel-Lint",
+            "abandoned": "php-parallel-lint/php-parallel-lint",
             "time": "2018-02-24T15:31:20+00:00"
         },
         {
@@ -4652,12 +4653,12 @@
             "version": "0.6.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/psalm/phpunit-psalm-plugin.git",
+                "url": "https://github.com/psalm/psalm-plugin-phpunit.git",
                 "reference": "93b6617829a973b26a6c7a5ddda2530434d6a78f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/psalm/phpunit-psalm-plugin/zipball/93b6617829a973b26a6c7a5ddda2530434d6a78f",
+                "url": "https://api.github.com/repos/psalm/psalm-plugin-phpunit/zipball/93b6617829a973b26a6c7a5ddda2530434d6a78f",
                 "reference": "93b6617829a973b26a6c7a5ddda2530434d6a78f",
                 "shasum": ""
             },
