@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress;
 
+use voku\helper\HtmlMin;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\CssCompress\Factory as CssFactory;
 use WyriHaximus\HtmlCompress\Pattern\JavaScript;
@@ -16,7 +17,7 @@ final class Factory
 {
     public static function constructFastest(): HtmlCompressorInterface
     {
-        return new HtmlCompressor(new Patterns());
+        return new HtmlCompressor(new HtmlMin(), new Patterns());
     }
 
     public static function construct(): HtmlCompressorInterface
@@ -24,6 +25,7 @@ final class Factory
         $styleCompressor = CssFactory::construct();
 
         return new HtmlCompressor(
+            new HtmlMin(),
             new Patterns(
                 new LdJson(
                     new MMMJSCompressor()
@@ -49,6 +51,7 @@ final class Factory
         $styleCompressor = CssFactory::constructSmallest();
 
         return new HtmlCompressor(
+            new HtmlMin(),
             new Patterns(
                 new LdJson(
                     new MMMJSCompressor()

@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Patterns;
 use WyriHaximus\TestUtilities\TestCase;
@@ -40,7 +41,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testNewLinesTabsReturns($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -83,7 +84,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testMultipleSpaces($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -111,7 +112,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpaceAfterGt($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -139,7 +140,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpaceBeforeLt($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -167,7 +168,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testTrim($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -190,7 +191,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testSpecialCharacterEncoding($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -213,7 +214,7 @@ final class HtmlCompressorTest extends TestCase
      */
     public function testComments($input, $expected): void
     {
-        $actual = (new HtmlCompressor(new Patterns()))->compress($input);
+        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 }
