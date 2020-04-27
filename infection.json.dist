@@ -8,33 +8,7 @@
     "logs": {
         "text": "infection-log.txt"
     },
-     "mutators": {
-         "@default": true,
-         "ArrayItemRemoval": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Factory::construct",
-                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
-             ]
-         },
-         "CastString": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinifierCompressor::execute"
-             ]
-         },
-         "Identical": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
-             ]
-         },
-         "LogicalAnd": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Compressor\\CssMinCompressor::execute"
-             ]
-         },
-         "TrueValue": {
-             "ignore": [
-                 "WyriHaximus\\HtmlCompress\\Factory::constructSmallest"
-             ]
-         }
-     }
+    "mutators": {
+        "@default": true
+    }
 }

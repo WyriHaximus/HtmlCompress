@@ -5,11 +5,11 @@ namespace WyriHaximus\HtmlCompress\Pattern;
 use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\PatternInterface;
+use function strlen;
 
 final class StyleAttribute implements PatternInterface
 {
-    /** @var CompressorInterface */
-    private $compressor;
+    private CompressorInterface $compressor;
 
     public function __construct(CompressorInterface $compressor)
     {
@@ -24,13 +24,13 @@ final class StyleAttribute implements PatternInterface
     public function compress(SimpleHtmlDomInterface $element): void
     {
         $uncompressedStyleAttribute = $element->getAttribute('style');
-        $compressedStyleAttribute = $this->compressor->compress($uncompressedStyleAttribute);
+        $compressedStyleAttribute   = $this->compressor->compress($uncompressedStyleAttribute);
 
         if ($compressedStyleAttribute === '') {
             return;
         }
 
-        if (\strlen($compressedStyleAttribute) >= \strlen($uncompressedStyleAttribute)) {
+        if (strlen($compressedStyleAttribute) >= strlen($uncompressedStyleAttribute)) {
             return;
         }
 

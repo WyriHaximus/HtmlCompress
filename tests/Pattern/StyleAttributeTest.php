@@ -9,25 +9,15 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
 use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
+/** @internal */
 final class StyleAttributeTest extends TestCase
 {
-    /**
-     * @var SimpleHtmlDomInterface
-     */
-    private $simpleHtmlDom;
+    private SimpleHtmlDomInterface $simpleHtmlDom;
 
-    /**
-     * @var ObjectProphecy|CompressorInterface
-     */
+    /** @var ObjectProphecy|CompressorInterface */
     private $compressor;
 
-    /**
-     * @var StyleAttribute
-     */
-    private $styleAttribute;
+    private StyleAttribute $styleAttribute;
 
     protected function setUp(): void
     {
