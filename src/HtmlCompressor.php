@@ -2,33 +2,32 @@
 
 namespace WyriHaximus\HtmlCompress;
 
-use voku\helper\HtmlMin as DefaultCompressor;
+use voku\helper\HtmlMin;
 
 final class HtmlCompressor implements HtmlCompressorInterface
 {
-    private DefaultCompressor $defaultCompressor;
+    private HtmlMin $htmlMin;
 
     private Patterns $patterns;
 
-    public function __construct(Patterns $patterns)
+    public function __construct(HtmlMin $htmlMin, Patterns $patterns)
     {
-        $this->defaultCompressor = new DefaultCompressor();
-        $this->patterns          = $patterns;
-        $this->compressor()->attachObserverToTheDomLoop($this->patterns); // Patterns $patters IS already a voku\helper\HtmlMinDomObserverInterface;
+        $this->htmlMin  = $htmlMin;
+        $this->patterns = $patterns;
+        $this->htmlMin->attachObserverToTheDomLoop($this->patterns);
     }
 
     public function compress(string $html): string
     {
-        return $this->compressor()->minify($html);
+        return $this->htmlMin->minify($html);
     }
 
-    public function compressor(): DefaultCompressor
+    public function withHtmlMin(HtmlMin $htmlMin): HtmlCompressorInterface
     {
-        return $this->defaultCompressor;
-    }
+        $clone          = clone $this;
+        $clone->htmlMin = $htmlMin;
+        $clone->htmlMin->attachObserverToTheDomLoop($clone->patterns);
 
-    public function patterns(): Patterns
-    {
-        return $this->patterns;
+        return $clone;
     }
 }

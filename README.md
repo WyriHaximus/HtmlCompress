@@ -22,9 +22,26 @@ composer require wyrihaximus/html-compress
 
 require dirname(__DIR__) . '/vendor/autoload.php';
 
-$parser = \WyriHaximus\HtmlCompress\Factory::construct();
+$parser = Factory::constructSmallest();
 $compressedHtml = $parser->compress($sourceHtml);
 ```
+
+## Advanced Usage ##
+
+All factory methods come with a `WithHtmlMin` variant allowing you to set options on the underlying `HtmlMin` instance:
+
+```php
+<?php
+
+require dirname(__DIR__) . '/vendor/autoload.php';
+
+$htmlMin = new HtmlMin();
+$htmlMin->doRemoveHttpPrefixFromAttributes();
+$htmlMin->doMakeSameDomainsLinksRelative(['example.com']);
+
+$parser = Factory::constructSmallest()->withHtmlMin($htmlMin);
+$compressedHtml = $parser->compress($sourceHtml);
+``` 
 
 ## Integration ##
 

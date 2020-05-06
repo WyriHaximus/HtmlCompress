@@ -2,6 +2,7 @@
 
 namespace WyriHaximus\HtmlCompress;
 
+use voku\helper\HtmlMin;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\CssCompress\Factory as CssFactory;
 use WyriHaximus\HtmlCompress\Pattern\JavaScript;
@@ -11,13 +12,12 @@ use WyriHaximus\HtmlCompress\Pattern\Style;
 use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
 use WyriHaximus\JsCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\JsCompress\Factory as JsFactory;
-use const WyriHaximus\Constants\Boolean\TRUE_;
 
 final class Factory
 {
     public static function constructFastest(): HtmlCompressorInterface
     {
-        return new HtmlCompressor(new Patterns());
+        return new HtmlCompressor(new HtmlMin(), new Patterns());
     }
 
     public static function construct(): HtmlCompressorInterface
@@ -25,6 +25,7 @@ final class Factory
         $styleCompressor = CssFactory::construct();
 
         return new HtmlCompressor(
+            new HtmlMin(),
             new Patterns(
                 new LdJson(
                     new MMMJSCompressor()
@@ -45,20 +46,18 @@ final class Factory
         );
     }
 
-    /**
-     * @param  bool $externalCompressors When set to false only use pure PHP compressors.
-     */
-    public static function constructSmallest(bool $externalCompressors = TRUE_): HtmlCompressorInterface
+    public static function constructSmallest(): HtmlCompressorInterface
     {
-        $styleCompressor = CssFactory::constructSmallest($externalCompressors);
+        $styleCompressor = CssFactory::constructSmallest();
 
         return new HtmlCompressor(
+            new HtmlMin(),
             new Patterns(
                 new LdJson(
                     new MMMJSCompressor()
                 ),
                 new JavaScript(
-                    JsFactory::constructSmallest($externalCompressors)
+                    JsFactory::constructSmallest()
                 ),
                 new Script(
                     new ReturnCompressor()

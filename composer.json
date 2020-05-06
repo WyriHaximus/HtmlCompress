@@ -16,8 +16,8 @@
     "require": {
         "php": "^7.4",
         "thecodingmachine/safe": "^1.1",
-        "voku/html-min": "^4.1",
-        "voku/simple_html_dom": "^4.7",
+        "voku/html-min": "^4.4.3",
+        "voku/simple_html_dom": "^4.7.17",
         "wyrihaximus/compress": "^1.1",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^1.0.1",
@@ -25,7 +25,7 @@
     },
     "require-dev": {
         "wyrihaximus/coding-standard": "^1.0",
-        "wyrihaximus/test-utilities": "^2.2"
+        "wyrihaximus/test-utilities": "^2.3"
     },
     "config": {
         "platform": {

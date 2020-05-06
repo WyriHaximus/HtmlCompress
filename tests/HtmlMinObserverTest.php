@@ -41,7 +41,8 @@ final class HtmlMinObserverTest extends TestCase
         $in  = file_get_contents($dir . 'in.html');
         $out = file_get_contents($dir . 'out.html');
 
-        $result = (require $dir . 'compressor.php')->compress($in);
+        $compressor = require $dir . 'compressor.php';
+        $result     = $compressor->compress($in);
 
         self::assertSame($out, $result);
     }
