@@ -3,6 +3,7 @@
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use function Safe\file_get_contents as safeFileGetContents;
+use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\TestUtilities\TestCase;
@@ -14,7 +15,7 @@ final class FactoryTest extends TestCase
 {
     public function testConstructFastest(): void
     {
-        $compressor = Factory::constructFastest();
+        $compressor = Factory::constructFastest()->withHtmlMin(new HtmlMin());
         self::assertInstanceOf(HtmlCompressor::class, $compressor);
 
         self::assertSame(
@@ -27,7 +28,7 @@ final class FactoryTest extends TestCase
 
     public function testConstruct(): void
     {
-        $compressor = Factory::construct();
+        $compressor = Factory::construct()->withHtmlMin(new HtmlMin());
         self::assertInstanceOf(HtmlCompressor::class, $compressor);
 
         self::assertSame(
@@ -40,7 +41,7 @@ final class FactoryTest extends TestCase
 
     public function testConstructSmallestDefault(): void
     {
-        $compressor = Factory::constructSmallest();
+        $compressor = Factory::constructSmallest()->withHtmlMin(new HtmlMin());
         self::assertInstanceOf(HtmlCompressor::class, $compressor);
 
         self::assertSame(
@@ -53,7 +54,7 @@ final class FactoryTest extends TestCase
 
     public function testConstructSmallestNoExternal(): void
     {
-        $compressor = Factory::constructSmallest(false);
+        $compressor = Factory::constructSmallest(false)->withHtmlMin(new HtmlMin());
         self::assertInstanceOf(HtmlCompressor::class, $compressor);
 
         self::assertSame(
@@ -66,7 +67,7 @@ final class FactoryTest extends TestCase
 
     public function testConstructSmallestExternal(): void
     {
-        $compressor = Factory::constructSmallest(true);
+        $compressor = Factory::constructSmallest(true)->withHtmlMin(new HtmlMin());
         self::assertInstanceOf(HtmlCompressor::class, $compressor);
 
         self::assertSame(
