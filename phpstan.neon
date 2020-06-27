@@ -1,6 +1,7 @@
 parameters:
 	ignoreErrors:
 		- '#use function Safe#'
+		- '#Call to an undefined method WyriHaximus\\HtmlCompress\\HtmlCompressorInterface::withHtmlMin().#'
 	classesAllowedToBeExtended:
 		- WyriHaximus\HtmlCompress\Compressor\Compressor
 		- WyriHaximus\HtmlCompress\Tests\Compressor\AbstractVendorCompressorTest
