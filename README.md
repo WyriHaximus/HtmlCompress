@@ -1,4 +1,4 @@
-HtmlCompress
+HtmlCompress  #Speed_up_your_Webpages
 ============
 
 [![Build Status](https://travis-ci.com/WyriHaximus/HtmlCompress.png)](https://travis-ci.comg/WyriHaximus/HtmlCompress)
