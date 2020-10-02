@@ -1,4 +1,4 @@
-HtmlCompress
+HtmlCompress - An Amazing Project
 ============
 
 [![Build Status](https://travis-ci.com/WyriHaximus/HtmlCompress.png)](https://travis-ci.comg/WyriHaximus/HtmlCompress)
