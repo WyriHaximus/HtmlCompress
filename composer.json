@@ -14,7 +14,7 @@
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.4 || ^8.0",
         "thecodingmachine/safe": "^1.1",
         "voku/html-min": "^4.4.3",
         "voku/simple_html_dom": "^4.7.17",
