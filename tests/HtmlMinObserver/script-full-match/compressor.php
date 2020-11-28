@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\HtmlCompressor;

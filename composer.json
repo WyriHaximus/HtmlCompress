@@ -24,12 +24,11 @@
         "wyrihaximus/js-compress": "^1.0"
     },
     "require-dev": {
-        "wyrihaximus/coding-standard": "^1.0",
-        "wyrihaximus/test-utilities": "^2.3"
+        "wyrihaximus/test-utilities": "^3.3.1"
     },
     "config": {
         "platform": {
-            "php": "7.4"
+            "php": "7.4.7"
         },
         "sort-packages": true
     },
