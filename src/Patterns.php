@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress;
 
@@ -8,12 +10,9 @@ use voku\helper\SimpleHtmlDomInterface;
 
 final class Patterns implements HtmlMinDomObserverInterface
 {
-    /** @var PatternInterface[] */
+    /** @var array<PatternInterface> */
     private array $patterns = [];
 
-    /**
-     * @param array<int, PatternInterface> $patterns
-     */
     public function __construct(PatternInterface ...$patterns)
     {
         $this->patterns = $patterns;
