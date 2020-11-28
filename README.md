@@ -1,7 +1,7 @@
 HtmlCompress
 ============
 
-[![Build Status](https://travis-ci.com/WyriHaximus/HtmlCompress.png)](https://travis-ci.comg/WyriHaximus/HtmlCompress)
+[![Build Status](https://travis-ci.com/WyriHaximus/HtmlCompress.png)](https://travis-ci.com/WyriHaximus/HtmlCompress)
 [![Latest Stable Version](https://poser.pugx.org/WyriHaximus/html-compress/v/stable.png)](https://packagist.org/packages/WyriHaximus/html-compress)
 [![Total Downloads](https://poser.pugx.org/WyriHaximus/html-compress/downloads.png)](https://packagist.org/packages/WyriHaximus/html-compress)
 [![Coverage Status](https://coveralls.io/repos/WyriHaximus/HtmlCompress/badge.png)](https://coveralls.io/r/WyriHaximus/HtmlCompress)
