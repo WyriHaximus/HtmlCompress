@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
@@ -6,7 +8,9 @@ use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\TestUtilities\TestCase;
+
 use function Safe\file_get_contents as safeFileGetContents;
+
 use const DIRECTORY_SEPARATOR;
 
 /**

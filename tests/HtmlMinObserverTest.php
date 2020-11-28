@@ -1,13 +1,17 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
 use Generator;
 use WyriHaximus\TestUtilities\TestCase;
+
 use function array_pop;
 use function explode;
 use function Safe\file_get_contents;
 use function Safe\glob;
+
 use const DIRECTORY_SEPARATOR;
 use const GLOB_ONLYDIR;
 

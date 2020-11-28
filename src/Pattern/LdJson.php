@@ -1,10 +1,13 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Pattern;
 
 use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\PatternInterface;
+
 use function strlen;
 
 final class LdJson implements PatternInterface

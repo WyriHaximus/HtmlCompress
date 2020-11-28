@@ -1,4 +1,6 @@
-<?php declare(strict_types=1);
+<?php
+
+declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
@@ -7,11 +9,13 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\JsCompress\Compressor as JsCompressor;
 use WyriHaximus\TestUtilities\TestCase;
+
 use function Safe\file_get_contents;
 use function Safe\json_decode;
 use function Safe\substr;
 use function strpos;
 use function strrpos;
+
 use const DIRECTORY_SEPARATOR;
 
 /**
