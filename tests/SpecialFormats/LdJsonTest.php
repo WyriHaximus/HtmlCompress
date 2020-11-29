@@ -32,15 +32,8 @@ final class LdJsonTest extends TestCase
             new JsCompressor\JSMinCompressor(),
         ];
 
-        /*[ // This compressor results in invalid JSON
-            new JsCompressor\JSqueezeCompressor(),
-        ],*/
         yield 'mmjs' => [
             new JsCompressor\MMMJSCompressor(),
-        ];
-
-        yield 'jshrink' => [
-            new JsCompressor\JShrinkCompressor(),
         ];
 
         yield 'yuijs' => [
