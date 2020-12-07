@@ -3,14 +3,25 @@ on:
   push:
   pull_request:
 jobs:
+  generate-versions-strategy:
+    name: Generate Versions
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.generate-versions-strategy.outputs.version }}
+    steps:
+      - uses: actions/checkout@v1
+      - id: generate-versions-strategy
+        uses: WyriHaximus/github-action-composer-php-versions-in-range@main
   composer-install:
+    needs:
+      - generate-versions-strategy
     strategy:
       matrix:
-        php: [7.4]
+        php: ${{ fromJson(needs.generate-versions-strategy.outputs.version) }}
         composer: [lowest, current, highest]
     runs-on: ubuntu-latest
     container:
-      image: wyrihaximusnet/php:${{ matrix.php }}-zts-alpine3.11-dev-root
+      image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
     steps:
       - uses: actions/checkout@v1
       - name: Cache composer packages
@@ -28,15 +39,17 @@ jobs:
         run: composer update --ansi --no-progress --no-interaction --prefer-dist
         if: matrix.composer == 'highest'
   qa:
+    needs:
+      - composer-install
+      - generate-versions-strategy
     strategy:
       matrix:
-        php: [7.4]
+        php: ${{ fromJson(needs.generate-versions-strategy.outputs.version) }}
         composer: [lowest, current, highest]
-        qa: [lint, cs, stan, psalm, unit-ci, infection, composer-require-checker, composer-unused]
-    needs: composer-install
+        qa: [lint, cs, stan, psalm, unit, infection, composer-require-checker, composer-unused]
     runs-on: ubuntu-latest
     container:
-      image: wyrihaximusnet/php:${{ matrix.php }}-zts-alpine3.11-dev-root
+      image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
     steps:
       - uses: actions/checkout@v1
       - name: Cache composer packages

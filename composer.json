@@ -16,12 +16,15 @@
     "require": {
         "php": "^7.4 || ^8.0",
         "thecodingmachine/safe": "^1.1",
-        "voku/html-min": "^4.4.3",
+        "voku/html-min": "^4.4.8",
         "voku/simple_html_dom": "^4.7.17",
         "wyrihaximus/compress": "^1.1",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^1.0.1",
-        "wyrihaximus/js-compress": "^1.0"
+        "wyrihaximus/js-compress": "^2.0.1"
+    },
+    "conflict": {
+        "voku/simple_html_dom": "<4.7.28"
     },
     "require-dev": {
         "wyrihaximus/test-utilities": "^3.3.1"
