@@ -543,16 +543,16 @@
         },
         {
             "name": "phar-io/version",
-            "version": "3.0.3",
+            "version": "3.0.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phar-io/version.git",
-                "reference": "726c026815142e4f8677b7cb7f2249c9ffb7ecae"
+                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phar-io/version/zipball/726c026815142e4f8677b7cb7f2249c9ffb7ecae",
-                "reference": "726c026815142e4f8677b7cb7f2249c9ffb7ecae",
+                "url": "https://api.github.com/repos/phar-io/version/zipball/e4782611070e50613683d2b9a57730e9a3ba5451",
+                "reference": "e4782611070e50613683d2b9a57730e9a3ba5451",
                 "shasum": ""
             },
             "require": {
@@ -588,9 +588,9 @@
             "description": "Library for handling version information and constraints",
             "support": {
                 "issues": "https://github.com/phar-io/version/issues",
-                "source": "https://github.com/phar-io/version/tree/3.0.3"
+                "source": "https://github.com/phar-io/version/tree/3.0.4"
             },
-            "time": "2020-11-30T09:21:21+00:00"
+            "time": "2020-12-13T23:18:30+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
@@ -3068,16 +3068,16 @@
         },
         {
             "name": "wyrihaximus/js-compress",
-            "version": "2.0.1",
+            "version": "2.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-js-compress.git",
-                "reference": "bb76035fe465cab07c893db7e0f25dabdbe6d876"
+                "reference": "81f2fbdd6a28b8997d3eb0dfb08899e7ff8a1da3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/bb76035fe465cab07c893db7e0f25dabdbe6d876",
-                "reference": "bb76035fe465cab07c893db7e0f25dabdbe6d876",
+                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/81f2fbdd6a28b8997d3eb0dfb08899e7ff8a1da3",
+                "reference": "81f2fbdd6a28b8997d3eb0dfb08899e7ff8a1da3",
                 "shasum": ""
             },
             "require": {
@@ -3085,9 +3085,9 @@
                 "linkorb/jsmin-php": "1.0.0",
                 "matthiasmullie/minify": "^1.3",
                 "meenie/javascript-packer": "1.1",
-                "php": "^7.2",
+                "php": "^7.4 || ^8.0",
                 "tedivm/jshrink": "^1.3",
-                "wyrihaximus/compress": "^1.1",
+                "wyrihaximus/compress": "^1.2",
                 "wyrihaximus/constants": "^1.6"
             },
             "require-dev": {
@@ -3117,7 +3117,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-js-compress/issues",
-                "source": "https://github.com/WyriHaximus/php-js-compress/tree/2.0.1"
+                "source": "https://github.com/WyriHaximus/php-js-compress/tree/2.0.2"
             },
             "funding": [
                 {
@@ -3125,7 +3125,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-07T15:48:33+00:00"
+            "time": "2020-12-08T22:46:49+00:00"
         }
     ],
     "packages-dev": [
