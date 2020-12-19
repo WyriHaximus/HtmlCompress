@@ -21,7 +21,7 @@
         "wyrihaximus/compress": "^1.1",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^1.0.1",
-        "wyrihaximus/js-compress": "^2.0.1 || ^3.0.0"
+        "wyrihaximus/js-compress": "^2.0.1 || ^3.0.0 || ^4.0.0"
     },
     "conflict": {
         "voku/simple_html_dom": "<4.7.28"
