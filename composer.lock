@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "469d71b6c7b8039341dede0bcf7116d4",
+    "content-hash": "d3206c475d75e7079c10ab617caca023",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -2347,6 +2347,56 @@
             "time": "2020-10-23T14:02:19+00:00"
         },
         {
+            "name": "tedivm/jshrink",
+            "version": "v1.3.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/JShrink.git",
+                "reference": "566e0c731ba4e372be2de429ef7d54f4faf4477a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tedious/JShrink/zipball/566e0c731ba4e372be2de429ef7d54f4faf4477a",
+                "reference": "566e0c731ba4e372be2de429ef7d54f4faf4477a",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6|^7.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "^2.8",
+                "php-coveralls/php-coveralls": "^1.1.0",
+                "phpunit/phpunit": "^6"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "JShrink": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Robert Hafner",
+                    "email": "tedivm@tedivm.com"
+                }
+            ],
+            "description": "Javascript Minifier built in PHP",
+            "homepage": "http://github.com/tedious/JShrink",
+            "keywords": [
+                "javascript",
+                "minifier"
+            ],
+            "support": {
+                "issues": "https://github.com/tedious/JShrink/issues",
+                "source": "https://github.com/tedious/JShrink/tree/master"
+            },
+            "time": "2019-06-28T18:11:46+00:00"
+        },
+        {
             "name": "thecodingmachine/safe",
             "version": "v1.3.3",
             "source": {
@@ -3018,16 +3068,16 @@
         },
         {
             "name": "wyrihaximus/js-compress",
-            "version": "3.0.0",
+            "version": "4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-js-compress.git",
-                "reference": "51fa38bc66145153a20492864a4c313dde91f6c6"
+                "reference": "7adb73778942480e0fd469a3634da63f3b1770e9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/51fa38bc66145153a20492864a4c313dde91f6c6",
-                "reference": "51fa38bc66145153a20492864a4c313dde91f6c6",
+                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/7adb73778942480e0fd469a3634da63f3b1770e9",
+                "reference": "7adb73778942480e0fd469a3634da63f3b1770e9",
                 "shasum": ""
             },
             "require": {
@@ -3036,6 +3086,7 @@
                 "matthiasmullie/minify": "^1.3",
                 "meenie/javascript-packer": "1.1",
                 "php": "^7.4 || ^8.0",
+                "tedivm/jshrink": "^1.3",
                 "wyrihaximus/compress": "^1.2",
                 "wyrihaximus/constants": "^1.6"
             },
@@ -3066,7 +3117,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-js-compress/issues",
-                "source": "https://github.com/WyriHaximus/php-js-compress/tree/3.0.0"
+                "source": "https://github.com/WyriHaximus/php-js-compress/tree/4.0.0"
             },
             "funding": [
                 {
@@ -3074,7 +3125,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-19T19:47:18+00:00"
+            "time": "2020-12-19T19:56:03+00:00"
         }
     ],
     "packages-dev": [
