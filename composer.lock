@@ -3988,40 +3988,38 @@
         },
         {
             "name": "ergebnis/composer-normalize",
-            "version": "2.11.0",
+            "version": "2.13.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/composer-normalize.git",
-                "reference": "fbe3173c54af8227a0915094f7c63d3c09f7b28b"
+                "reference": "1255dbc6acb55cb439ce871513b3877a43473a59"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/fbe3173c54af8227a0915094f7c63d3c09f7b28b",
-                "reference": "fbe3173c54af8227a0915094f7c63d3c09f7b28b",
+                "url": "https://api.github.com/repos/ergebnis/composer-normalize/zipball/1255dbc6acb55cb439ce871513b3877a43473a59",
+                "reference": "1255dbc6acb55cb439ce871513b3877a43473a59",
                 "shasum": ""
             },
             "require": {
-                "composer-plugin-api": "^2.0.0",
-                "ergebnis/json-normalizer": "~0.14.0",
+                "composer-plugin-api": "^1.1.0 || ^2.0.0",
+                "ergebnis/json-normalizer": "^1.0.2",
                 "ergebnis/json-printer": "^3.1.1",
                 "justinrainbow/json-schema": "^5.2.10",
                 "localheinz/diff": "^1.1.1",
                 "php": "^7.2 || ^8.0"
             },
             "require-dev": {
-                "composer/composer": "^2.0.0",
-                "composer/package-versions-deprecated": "^1.11.99",
+                "composer/composer": "^1.10.19 || ^2.0.8",
                 "ergebnis/license": "^1.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.5.1",
-                "ergebnis/phpstan-rules": "~0.15.2",
-                "ergebnis/test-util": "^1.3.0",
-                "jangregor/phpstan-prophecy": "~0.8.1",
-                "phpstan/extension-installer": "^1.0.5",
-                "phpstan/phpstan": "~0.12.52",
-                "phpstan/phpstan-deprecation-rules": "~0.12.5",
-                "phpstan/phpstan-phpunit": "~0.12.16",
-                "phpstan/phpstan-strict-rules": "~0.12.5",
-                "phpunit/phpunit": "^8.5.8",
+                "ergebnis/php-cs-fixer-config": "^2.10.0",
+                "ergebnis/phpstan-rules": "~0.15.3",
+                "ergebnis/test-util": "^1.4.0",
+                "phpstan/extension-installer": "^1.1.0",
+                "phpstan/phpstan": "~0.12.64",
+                "phpstan/phpstan-deprecation-rules": "~0.12.6",
+                "phpstan/phpstan-phpunit": "~0.12.17",
+                "phpstan/phpstan-strict-rules": "~0.12.7",
+                "phpunit/phpunit": "^8.5.13",
                 "psalm/plugin-phpunit": "~0.12.2",
                 "symfony/filesystem": "^5.1.8",
                 "vimeo/psalm": "^3.18.2"
@@ -4067,20 +4065,20 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-05T09:22:39+00:00"
+            "time": "2020-12-31T09:51:22+00:00"
         },
         {
             "name": "ergebnis/json-normalizer",
-            "version": "0.14.0",
+            "version": "1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/ergebnis/json-normalizer.git",
-                "reference": "4aad3594810d7477b5ea67a16544ad94ae374fc7"
+                "reference": "6da58f6b555959c07724181744664e732555d0be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/4aad3594810d7477b5ea67a16544ad94ae374fc7",
-                "reference": "4aad3594810d7477b5ea67a16544ad94ae374fc7",
+                "url": "https://api.github.com/repos/ergebnis/json-normalizer/zipball/6da58f6b555959c07724181744664e732555d0be",
+                "reference": "6da58f6b555959c07724181744664e732555d0be",
                 "shasum": ""
             },
             "require": {
@@ -4091,17 +4089,17 @@
             },
             "require-dev": {
                 "ergebnis/license": "^1.1.0",
-                "ergebnis/php-cs-fixer-config": "^2.5.1",
-                "ergebnis/phpstan-rules": "~0.15.2",
-                "ergebnis/test-util": "^1.3.0",
+                "ergebnis/php-cs-fixer-config": "^2.10.0",
+                "ergebnis/phpstan-rules": "~0.15.3",
+                "ergebnis/test-util": "^1.4.0",
                 "infection/infection": "~0.15.3",
                 "jangregor/phpstan-prophecy": "~0.8.1",
-                "phpstan/extension-installer": "^1.0.5",
-                "phpstan/phpstan": "~0.12.52",
-                "phpstan/phpstan-deprecation-rules": "~0.12.5",
-                "phpstan/phpstan-phpunit": "~0.12.16",
-                "phpstan/phpstan-strict-rules": "~0.12.5",
-                "phpunit/phpunit": "^8.5.8",
+                "phpstan/extension-installer": "^1.1.0",
+                "phpstan/phpstan": "~0.12.60",
+                "phpstan/phpstan-deprecation-rules": "~0.12.6",
+                "phpstan/phpstan-phpunit": "~0.12.17",
+                "phpstan/phpstan-strict-rules": "~0.12.7",
+                "phpunit/phpunit": "^8.5.13",
                 "psalm/plugin-phpunit": "~0.12.2",
                 "vimeo/psalm": "^3.18"
             },
@@ -4137,7 +4135,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-10-31T15:46:10+00:00"
+            "time": "2020-12-31T09:27:51+00:00"
         },
         {
             "name": "ergebnis/json-printer",
@@ -5081,6 +5079,46 @@
             "time": "2020-11-20T17:15:57+00:00"
         },
         {
+            "name": "jakobbuis/simple-slow-test-reporter",
+            "version": "v1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jakobbuis/simple-slow-test-reporter.git",
+                "reference": "7111cb24f4670ca455f5578710022311f78ef1c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jakobbuis/simple-slow-test-reporter/zipball/7111cb24f4670ca455f5578710022311f78ef1c4",
+                "reference": "7111cb24f4670ca455f5578710022311f78ef1c4",
+                "shasum": ""
+            },
+            "require": {
+                "phpunit/phpunit": "^9.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "SSTR\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jakob Buis",
+                    "email": "jakob@jakobbuis.nl"
+                }
+            ],
+            "description": "Reports slow tests in your PHPUnit testsuite",
+            "support": {
+                "issues": "https://github.com/jakobbuis/simple-slow-test-reporter/issues",
+                "source": "https://github.com/jakobbuis/simple-slow-test-reporter/tree/v1.0.0"
+            },
+            "time": "2020-12-26T16:20:53+00:00"
+        },
+        {
             "name": "jangregor/phpstan-prophecy",
             "version": "0.6.2",
             "source": {
@@ -5782,16 +5820,16 @@
         },
         {
             "name": "php-coveralls/php-coveralls",
-            "version": "v2.4.2",
+            "version": "v2.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/php-coveralls/php-coveralls.git",
-                "reference": "8a33ae229da63a0bd22dadae1512af663ce5e559"
+                "reference": "909381bd40a17ae6e9076051f0d73293c1c091af"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/8a33ae229da63a0bd22dadae1512af663ce5e559",
-                "reference": "8a33ae229da63a0bd22dadae1512af663ce5e559",
+                "url": "https://api.github.com/repos/php-coveralls/php-coveralls/zipball/909381bd40a17ae6e9076051f0d73293c1c091af",
+                "reference": "909381bd40a17ae6e9076051f0d73293c1c091af",
                 "shasum": ""
             },
             "require": {
@@ -5859,9 +5897,9 @@
             ],
             "support": {
                 "issues": "https://github.com/php-coveralls/php-coveralls/issues",
-                "source": "https://github.com/php-coveralls/php-coveralls/tree/v2.4.2"
+                "source": "https://github.com/php-coveralls/php-coveralls/tree/v2.4.3"
             },
-            "time": "2020-10-23T16:34:35+00:00"
+            "time": "2020-12-24T09:17:03+00:00"
         },
         {
             "name": "php-parallel-lint/php-console-color",
@@ -6852,27 +6890,27 @@
         },
         {
             "name": "roave/infection-static-analysis-plugin",
-            "version": "1.6.0",
+            "version": "1.7.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Roave/infection-static-analysis-plugin.git",
-                "reference": "4f2771c7750f450a8e144012ee77b4ad2da55394"
+                "reference": "d8e1351f995f6d1e6251ec526110e3382dd04ab5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Roave/infection-static-analysis-plugin/zipball/4f2771c7750f450a8e144012ee77b4ad2da55394",
-                "reference": "4f2771c7750f450a8e144012ee77b4ad2da55394",
+                "url": "https://api.github.com/repos/Roave/infection-static-analysis-plugin/zipball/d8e1351f995f6d1e6251ec526110e3382dd04ab5",
+                "reference": "d8e1351f995f6d1e6251ec526110e3382dd04ab5",
                 "shasum": ""
             },
             "require": {
                 "infection/infection": "0.20.2",
                 "ocramius/package-versions": "^1.9.0 || ^2.0.0",
                 "php": "~7.4.7|~8.0.0",
-                "vimeo/psalm": "^4.2.1"
+                "vimeo/psalm": "^4.3.2"
             },
             "require-dev": {
                 "doctrine/coding-standard": "^8.2.0",
-                "phpunit/phpunit": "^9.4.3"
+                "phpunit/phpunit": "^9.5.0"
             },
             "bin": [
                 "bin/roave-infection-static-analysis-plugin"
@@ -6896,9 +6934,9 @@
             "description": "Static analysis on top of mutation testing - prevents escaped mutants from being invalid according to static analysis",
             "support": {
                 "issues": "https://github.com/Roave/infection-static-analysis-plugin/issues",
-                "source": "https://github.com/Roave/infection-static-analysis-plugin/tree/1.6.0"
+                "source": "https://github.com/Roave/infection-static-analysis-plugin/tree/1.7.0"
             },
-            "time": "2020-11-27T23:23:33+00:00"
+            "time": "2021-01-04T10:34:30+00:00"
         },
         {
             "name": "roave/signature",
@@ -8480,16 +8518,16 @@
         },
         {
             "name": "vimeo/psalm",
-            "version": "4.3.1",
+            "version": "4.3.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/vimeo/psalm.git",
-                "reference": "2feba22a005a18bf31d4c7b9bdb9252c73897476"
+                "reference": "57b53ff26237074fdf5cbcb034f7da5172be4524"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/vimeo/psalm/zipball/2feba22a005a18bf31d4c7b9bdb9252c73897476",
-                "reference": "2feba22a005a18bf31d4c7b9bdb9252c73897476",
+                "url": "https://api.github.com/repos/vimeo/psalm/zipball/57b53ff26237074fdf5cbcb034f7da5172be4524",
+                "reference": "57b53ff26237074fdf5cbcb034f7da5172be4524",
                 "shasum": ""
             },
             "require": {
@@ -8521,15 +8559,14 @@
             "require-dev": {
                 "amphp/amp": "^2.4.2",
                 "bamarni/composer-bin-plugin": "^1.2",
-                "brianium/paratest": "^4.0.0",
+                "brianium/paratest": "^4.0||^6.0",
                 "ext-curl": "*",
-                "php": "^7.3|^8",
                 "phpdocumentor/reflection-docblock": "^5",
-                "phpmyadmin/sql-parser": "5.1.0",
+                "phpmyadmin/sql-parser": "5.1.0||dev-master",
                 "phpspec/prophecy": ">=1.9.0",
                 "phpunit/phpunit": "^9.0",
                 "psalm/plugin-phpunit": "^0.13",
-                "slevomat/coding-standard": "^5.0",
+                "slevomat/coding-standard": "^6.3.11",
                 "squizlabs/php_codesniffer": "^3.5",
                 "symfony/process": "^4.3",
                 "weirdan/prophecy-shim": "^1.0 || ^2.0"
@@ -8579,9 +8616,9 @@
             ],
             "support": {
                 "issues": "https://github.com/vimeo/psalm/issues",
-                "source": "https://github.com/vimeo/psalm/tree/4.3.1"
+                "source": "https://github.com/vimeo/psalm/tree/4.3.2"
             },
-            "time": "2020-12-03T16:44:10+00:00"
+            "time": "2020-12-29T17:37:09+00:00"
         },
         {
             "name": "webmozart/glob",
@@ -8768,27 +8805,28 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "3.3.3",
+            "version": "3.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "581a0d0416aa42b879cf660d13c4592e95f50cf6"
+                "reference": "b9e9680c63261e7e3a4fa910036772d85d582d65"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/581a0d0416aa42b879cf660d13c4592e95f50cf6",
-                "reference": "581a0d0416aa42b879cf660d13c4592e95f50cf6",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/b9e9680c63261e7e3a4fa910036772d85d582d65",
+                "reference": "b9e9680c63261e7e3a4fa910036772d85d582d65",
                 "shasum": ""
             },
             "require": {
                 "composer/composer": "^1.10.19",
-                "ergebnis/composer-normalize": "^2.11.0",
+                "ergebnis/composer-normalize": "^2.13.2",
                 "icanhazstring/composer-unused": "^0.7.5",
                 "infection/infection": "^0.20.1",
+                "jakobbuis/simple-slow-test-reporter": "^1.0",
                 "maglnet/composer-require-checker": "^2.1.0",
                 "nunomaduro/collision": "^5.1.0",
                 "php": "^8 || ^7.4",
-                "php-coveralls/php-coveralls": "^2.4.2",
+                "php-coveralls/php-coveralls": "^2.4.3",
                 "php-parallel-lint/php-console-highlighter": "^0.5",
                 "php-parallel-lint/php-parallel-lint": "^1.2.0",
                 "phpspec/prophecy": "^1.12.2",
@@ -8797,10 +8835,10 @@
                 "phpunit/phpunit": "^9.5.0",
                 "psalm/plugin-phpunit": "^0.15.0",
                 "roave/backward-compatibility-check": "^5.0.0",
-                "roave/infection-static-analysis-plugin": "^1.6.0",
+                "roave/infection-static-analysis-plugin": "^1.7.0",
                 "squizlabs/php_codesniffer": "^3.5.8",
                 "thecodingmachine/safe": "^1.3.3",
-                "vimeo/psalm": "^4.2.1",
+                "vimeo/psalm": "^4.3.2",
                 "wyrihaximus/coding-standard": "^2.2.0",
                 "wyrihaximus/phpstan-rules-wrapper": "^1.2.2"
             },
@@ -8815,6 +8853,7 @@
                     "friendsofphp/php-cs-fixer",
                     "icanhazstring/composer-unused",
                     "infection/infection",
+                    "jakobbuis/simple-slow-test-reporter",
                     "php-coveralls/php-coveralls",
                     "php-parallel-lint/php-console-highlighter",
                     "php-parallel-lint/php-parallel-lint",
@@ -8848,7 +8887,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.3.3"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.4.0"
             },
             "funding": [
                 {
@@ -8856,7 +8895,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-22T07:40:54+00:00"
+            "time": "2021-01-04T15:53:38+00:00"
         }
     ],
     "aliases": [],
