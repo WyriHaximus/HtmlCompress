@@ -11,7 +11,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - id: generate-versions-strategy
-        uses: WyriHaximus/github-action-composer-php-versions-in-range@main
+        uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
   composer-install:
     needs:
       - generate-versions-strategy
