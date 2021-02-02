@@ -6177,16 +6177,16 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "0.12.70",
+            "version": "0.12.71",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan.git",
-                "reference": "07f0ef37f5f876e8cee44cc8ea0ec3fe80d499ee"
+                "reference": "d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/07f0ef37f5f876e8cee44cc8ea0ec3fe80d499ee",
-                "reference": "07f0ef37f5f876e8cee44cc8ea0ec3fe80d499ee",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5",
+                "reference": "d508fa3b0ecc5fc91ac70c6c7ac2862f968ba2b5",
                 "shasum": ""
             },
             "require": {
@@ -6217,7 +6217,7 @@
             "description": "PHPStan - PHP Static Analysis Tool",
             "support": {
                 "issues": "https://github.com/phpstan/phpstan/issues",
-                "source": "https://github.com/phpstan/phpstan/tree/0.12.70"
+                "source": "https://github.com/phpstan/phpstan/tree/0.12.71"
             },
             "funding": [
                 {
@@ -6233,7 +6233,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-01-27T17:06:47+00:00"
+            "time": "2021-02-01T18:24:00+00:00"
         },
         {
             "name": "phpstan/phpstan-deprecation-rules",
@@ -8814,16 +8814,16 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "3.5.3",
+            "version": "3.5.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "8ec4fef66fd2b9a6c22a5ce9982314a7706b7b77"
+                "reference": "caaf046c65684f6e930b65bc6f84423128b7ef48"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/8ec4fef66fd2b9a6c22a5ce9982314a7706b7b77",
-                "reference": "8ec4fef66fd2b9a6c22a5ce9982314a7706b7b77",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/caaf046c65684f6e930b65bc6f84423128b7ef48",
+                "reference": "caaf046c65684f6e930b65bc6f84423128b7ef48",
                 "shasum": ""
             },
             "require": {
@@ -8840,7 +8840,7 @@
                 "php-parallel-lint/php-parallel-lint": "^1.2.0",
                 "phpspec/prophecy": "^1.12.2",
                 "phpspec/prophecy-phpunit": "^2.0.1",
-                "phpstan/phpstan": "^0.12.70",
+                "phpstan/phpstan": "^0.12.71",
                 "phpunit/phpunit": "^9.5.1",
                 "psalm/plugin-phpunit": "^0.15.1",
                 "roave/backward-compatibility-check": "^5.0.0",
@@ -8896,7 +8896,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.5.3"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.5.4"
             },
             "funding": [
                 {
@@ -8904,7 +8904,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-01-28T03:09:50+00:00"
+            "time": "2021-02-02T03:09:45+00:00"
         }
     ],
     "aliases": [],
