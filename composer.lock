@@ -8815,16 +8815,16 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "3.5.14",
+            "version": "3.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "239d0e6e479745d754d502b22c822369f099512a"
+                "reference": "6e9742506179704351900ee516737a6497e31066"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/239d0e6e479745d754d502b22c822369f099512a",
-                "reference": "239d0e6e479745d754d502b22c822369f099512a",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/6e9742506179704351900ee516737a6497e31066",
+                "reference": "6e9742506179704351900ee516737a6497e31066",
                 "shasum": ""
             },
             "require": {
@@ -8897,7 +8897,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.5.14"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/3.6.0"
             },
             "funding": [
                 {
@@ -8905,7 +8905,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-03-01T03:07:54+00:00"
+            "time": "2021-03-03T22:43:16+00:00"
         }
     ],
     "aliases": [],
