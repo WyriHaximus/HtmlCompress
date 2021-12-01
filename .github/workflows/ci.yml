@@ -43,6 +43,7 @@ jobs:
       - composer-install
       - generate-versions-strategy
     strategy:
+      fail-fast: false
       matrix:
         php: ${{ fromJson(needs.generate-versions-strategy.outputs.version) }}
         composer: [lowest, current, highest]

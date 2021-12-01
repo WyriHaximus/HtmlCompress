@@ -19,9 +19,9 @@ final class HtmlCompressor implements HtmlCompressorInterface
         $this->htmlMin->attachObserverToTheDomLoop($this->patterns);
     }
 
-    public function compress(string $html): string
+    public function compress(string $string): string
     {
-        return $this->htmlMin->minify($html);
+        return $this->htmlMin->minify($string);
     }
 
     public function withHtmlMin(HtmlMin $htmlMin): HtmlCompressorInterface

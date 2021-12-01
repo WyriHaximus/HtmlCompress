@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d3206c475d75e7079c10ab617caca023",
+    "content-hash": "c913e235b10e5dc6abf7c720bf2e55ea",
     "packages": [
         {
             "name": "doctrine/instantiator",
@@ -76,48 +76,6 @@
             "time": "2020-11-10T18:47:58+00:00"
         },
         {
-            "name": "jalle19/php-yui-compressor",
-            "version": "1.0.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Jalle19/php-yui-compressor.git",
-                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Jalle19/php-yui-compressor/zipball/eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
-                "reference": "eb88c4f7fd8d7c8bd15a1970611d67cca11f71a0",
-                "shasum": ""
-            },
-            "require": {
-                "nervo/yuicompressor": "2.4.*",
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-0": {
-                    "YUI": "lib/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-2-Clause"
-            ],
-            "description": "A modern PHP wrapper for the YUI compressor",
-            "homepage": "https://github.com/Jalle19/php-yui-compressor",
-            "keywords": [
-                "JS",
-                "css",
-                "minify",
-                "yui"
-            ],
-            "support": {
-                "issues": "https://github.com/Jalle19/php-yui-compressor/issues",
-                "source": "https://github.com/Jalle19/php-yui-compressor/tree/1.0.1"
-            },
-            "time": "2014-06-03T12:02:11+00:00"
-        },
-        {
             "name": "linkorb/jsmin-php",
             "version": "1.0.0",
             "source": {
@@ -180,16 +138,16 @@
         },
         {
             "name": "matthiasmullie/minify",
-            "version": "1.3.63",
+            "version": "1.3.66",
             "source": {
                 "type": "git",
                 "url": "https://github.com/matthiasmullie/minify.git",
-                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117"
+                "reference": "45fd3b0f1dfa2c965857c6d4a470bea52adc31a6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/9ba1b459828adc13430f4dd6c49dae4950dc4117",
-                "reference": "9ba1b459828adc13430f4dd6c49dae4950dc4117",
+                "url": "https://api.github.com/repos/matthiasmullie/minify/zipball/45fd3b0f1dfa2c965857c6d4a470bea52adc31a6",
+                "reference": "45fd3b0f1dfa2c965857c6d4a470bea52adc31a6",
                 "shasum": ""
             },
             "require": {
@@ -199,8 +157,8 @@
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "~2.0",
-                "matthiasmullie/scrapbook": "~1.0",
-                "phpunit/phpunit": "~4.8"
+                "matthiasmullie/scrapbook": "dev-master",
+                "phpunit/phpunit": ">=4.8"
             },
             "suggest": {
                 "psr/cache-implementation": "Cache implementation to use with Minify::cache"
@@ -238,9 +196,23 @@
             ],
             "support": {
                 "issues": "https://github.com/matthiasmullie/minify/issues",
-                "source": "https://github.com/matthiasmullie/minify/tree/1.3.63"
+                "source": "https://github.com/matthiasmullie/minify/tree/1.3.66"
             },
-            "time": "2020-01-21T20:21:08+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/[user1",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/matthiasmullie] # Replace with up to 4 GitHub Sponsors-enabled usernames e.g.",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/user2",
+                    "type": "github"
+                }
+            ],
+            "time": "2021-01-06T15:18:10+00:00"
         },
         {
             "name": "matthiasmullie/path-converter",
@@ -393,37 +365,6 @@
                 }
             ],
             "time": "2020-11-13T09:40:50+00:00"
-        },
-        {
-            "name": "nervo/yuicompressor",
-            "version": "2.4.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nervo/yuicompressor.git",
-                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nervo/yuicompressor/zipball/e6e3b215c3998cf6092613c002ae533ae75d7ada",
-                "reference": "e6e3b215c3998cf6092613c002ae533ae75d7ada",
-                "shasum": ""
-            },
-            "type": "library",
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD"
-            ],
-            "description": "YUI Compressor is an open source tool that supports the compression of both JavaScript and CSS files. The JavaScript compression removes comments and white-spaces as well as obfuscates local variables using the smallest possible variable name. CSS compression is done using a regular-expression-based CSS minifier.",
-            "homepage": "https://github.com/yui/yuicompressor",
-            "keywords": [
-                "java",
-                "yui"
-            ],
-            "support": {
-                "issues": "https://github.com/nervo/yuicompressor/issues",
-                "source": "https://github.com/nervo/yuicompressor/tree/master"
-            },
-            "time": "2013-09-13T10:26:14+00:00"
         },
         {
             "name": "nikic/php-parser",
@@ -2206,20 +2147,21 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.2.0",
+            "version": "v5.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256"
+                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256",
-                "reference": "b8d8eb06b0942e84a69e7acebc3e9c1e6e6e7256",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
+                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.2.5"
+                "php": ">=7.2.5",
+                "symfony/polyfill-php80": "^1.16"
             },
             "type": "library",
             "autoload": {
@@ -2248,10 +2190,10 @@
                     "homepage": "https://symfony.com/contributors"
                 }
             ],
-            "description": "Symfony CssSelector Component",
+            "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v5.2.0"
+                "source": "https://github.com/symfony/css-selector/tree/v5.4.0"
             },
             "funding": [
                 {
@@ -2267,7 +2209,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-10-28T21:31:18+00:00"
+            "time": "2021-09-09T08:06:01+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -2349,21 +2291,104 @@
             "time": "2021-02-19T12:13:01+00:00"
         },
         {
-            "name": "tedivm/jshrink",
-            "version": "v1.3.3",
+            "name": "symfony/polyfill-php80",
+            "version": "v1.23.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/tedious/JShrink.git",
-                "reference": "566e0c731ba4e372be2de429ef7d54f4faf4477a"
+                "url": "https://github.com/symfony/polyfill-php80.git",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/tedious/JShrink/zipball/566e0c731ba4e372be2de429ef7d54f4faf4477a",
-                "reference": "566e0c731ba4e372be2de429ef7d54f4faf4477a",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
                 "shasum": ""
             },
             "require": {
-                "php": "^5.6|^7.0"
+                "php": ">=7.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.23-dev"
+                },
+                "thanks": {
+                    "name": "symfony/polyfill",
+                    "url": "https://github.com/symfony/polyfill"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
+                "files": [
+                    "bootstrap.php"
+                ],
+                "classmap": [
+                    "Resources/stubs"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Ion Bazan",
+                    "email": "ion.bazan@gmail.com"
+                },
+                {
+                    "name": "Nicolas Grekas",
+                    "email": "p@tchwork.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
+            "homepage": "https://symfony.com",
+            "keywords": [
+                "compatibility",
+                "polyfill",
+                "portable",
+                "shim"
+            ],
+            "support": {
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-07-28T13:41:28+00:00"
+        },
+        {
+            "name": "tedivm/jshrink",
+            "version": "v1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/tedious/JShrink.git",
+                "reference": "0513ba1407b1f235518a939455855e6952a48bbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/tedious/JShrink/zipball/0513ba1407b1f235518a939455855e6952a48bbc",
+                "reference": "0513ba1407b1f235518a939455855e6952a48bbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.6|^7.0|^8.0"
             },
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "^2.8",
@@ -2394,9 +2419,15 @@
             ],
             "support": {
                 "issues": "https://github.com/tedious/JShrink/issues",
-                "source": "https://github.com/tedious/JShrink/tree/master"
+                "source": "https://github.com/tedious/JShrink/tree/v1.4.0"
             },
-            "time": "2019-06-28T18:11:46+00:00"
+            "funding": [
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/tedivm/jshrink",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2020-11-30T18:10:21+00:00"
         },
         {
             "name": "thecodingmachine/safe",
@@ -2713,16 +2744,16 @@
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.7.28",
+            "version": "4.7.30",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "78d5894c7f0facfb4fb6369af15b1a87baea958c"
+                "reference": "f2be14b8afa7d9a8e5fbc90d93541c23a2134876"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/78d5894c7f0facfb4fb6369af15b1a87baea958c",
-                "reference": "78d5894c7f0facfb4fb6369af15b1a87baea958c",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/f2be14b8afa7d9a8e5fbc90d93541c23a2134876",
+                "reference": "f2be14b8afa7d9a8e5fbc90d93541c23a2134876",
                 "shasum": ""
             },
             "require": {
@@ -2770,7 +2801,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/simple_html_dom/issues",
-                "source": "https://github.com/voku/simple_html_dom/tree/4.7.28"
+                "source": "https://github.com/voku/simple_html_dom/tree/4.7.30"
             },
             "funding": [
                 {
@@ -2790,7 +2821,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-17T23:30:43+00:00"
+            "time": "2021-11-25T05:03:35+00:00"
         },
         {
             "name": "webmozart/assert",
@@ -2963,6 +2994,56 @@
             "time": "2020-11-29T15:12:24+00:00"
         },
         {
+            "name": "wyrihaximus/compress-contracts",
+            "version": "1.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/WyriHaximus/php-compress-contracts.git",
+                "reference": "73386a44d0c3c7d672350fc39f183c4e2fa4410c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/WyriHaximus/php-compress-contracts/zipball/73386a44d0c3c7d672350fc39f183c4e2fa4410c",
+                "reference": "73386a44d0c3c7d672350fc39f183c4e2fa4410c",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^8 || ^7.4"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WyriHaximus\\Compress\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Cees-Jan Kiewiet",
+                    "email": "ceesjank@gmail.com",
+                    "homepage": "http://wyrihaximus.net/"
+                }
+            ],
+            "description": "Compress marker interface",
+            "keywords": [
+                "compress"
+            ],
+            "support": {
+                "issues": "https://github.com/WyriHaximus/php-compress-contracts/issues",
+                "source": "https://github.com/WyriHaximus/php-compress-contracts/tree/1.0.0"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/WyriHaximus",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-12-24T16:04:52+00:00"
+        },
+        {
             "name": "wyrihaximus/constants",
             "version": "1.6.0",
             "source": {
@@ -3014,29 +3095,33 @@
         },
         {
             "name": "wyrihaximus/css-compress",
-            "version": "1.1.0",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-css-compress.git",
-                "reference": "6391e1750524d2b9081c4d579975ccaa6d2f4bbb"
+                "reference": "a2c8b14f61b53cf057a218d56acfb90a8bed7bd9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-css-compress/zipball/6391e1750524d2b9081c4d579975ccaa6d2f4bbb",
-                "reference": "6391e1750524d2b9081c4d579975ccaa6d2f4bbb",
+                "url": "https://api.github.com/repos/WyriHaximus/php-css-compress/zipball/a2c8b14f61b53cf057a218d56acfb90a8bed7bd9",
+                "reference": "a2c8b14f61b53cf057a218d56acfb90a8bed7bd9",
                 "shasum": ""
             },
             "require": {
-                "jalle19/php-yui-compressor": "^1.0",
                 "matthiasmullie/minify": "^1.3",
                 "php": "^8 || ^7.4",
                 "thecodingmachine/safe": "^1.0 || ^0.1",
                 "tubalmartin/cssmin": "^4.1",
                 "websharks/css-minifier": "150820",
-                "wyrihaximus/compress": "^1.1",
+                "wyrihaximus/compress": "^1.1 || ^2.0",
+                "wyrihaximus/compress-contracts": "^1.0",
                 "wyrihaximus/constants": "^1.6"
             },
+            "conflict": {
+                "matthiasmullie/minify": "1.3.64"
+            },
             "require-dev": {
+                "wyrihaximus/compress-test-utilities": "^1.0",
                 "wyrihaximus/test-utilities": "^3.3.1"
             },
             "type": "library",
@@ -3063,7 +3148,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-css-compress/issues",
-                "source": "https://github.com/WyriHaximus/php-css-compress/tree/1.1.0"
+                "source": "https://github.com/WyriHaximus/php-css-compress/tree/2.0.0"
             },
             "funding": [
                 {
@@ -3071,33 +3156,34 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-11-29T16:58:59+00:00"
+            "time": "2021-11-30T20:37:08+00:00"
         },
         {
             "name": "wyrihaximus/js-compress",
-            "version": "4.0.0",
+            "version": "5.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-js-compress.git",
-                "reference": "7adb73778942480e0fd469a3634da63f3b1770e9"
+                "reference": "1cd2a1dae9ab8eebcbb151215ba124b4a05f28e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/7adb73778942480e0fd469a3634da63f3b1770e9",
-                "reference": "7adb73778942480e0fd469a3634da63f3b1770e9",
+                "url": "https://api.github.com/repos/WyriHaximus/php-js-compress/zipball/1cd2a1dae9ab8eebcbb151215ba124b4a05f28e1",
+                "reference": "1cd2a1dae9ab8eebcbb151215ba124b4a05f28e1",
                 "shasum": ""
             },
             "require": {
-                "jalle19/php-yui-compressor": "^1.0",
                 "linkorb/jsmin-php": "1.0.0",
                 "matthiasmullie/minify": "^1.3",
                 "meenie/javascript-packer": "1.1",
                 "php": "^7.4 || ^8.0",
                 "tedivm/jshrink": "^1.3",
-                "wyrihaximus/compress": "^1.2",
+                "wyrihaximus/compress": "^1.2 || ^2.0",
+                "wyrihaximus/compress-contracts": "^1.0",
                 "wyrihaximus/constants": "^1.6"
             },
             "require-dev": {
+                "wyrihaximus/compress-test-utilities": "^1.0",
                 "wyrihaximus/test-utilities": "^3.3.1"
             },
             "type": "library",
@@ -3124,7 +3210,7 @@
             ],
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-js-compress/issues",
-                "source": "https://github.com/WyriHaximus/php-js-compress/tree/4.0.0"
+                "source": "https://github.com/WyriHaximus/php-js-compress/tree/5.0.0"
             },
             "funding": [
                 {
@@ -3132,7 +3218,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2020-12-19T19:56:03+00:00"
+            "time": "2021-11-30T20:37:18+00:00"
         }
     ],
     "packages-dev": [
@@ -8229,89 +8315,6 @@
                 }
             ],
             "time": "2021-02-19T12:13:01+00:00"
-        },
-        {
-            "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.1"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-main": "1.23-dev"
-                },
-                "thanks": {
-                    "name": "symfony/polyfill",
-                    "url": "https://github.com/symfony/polyfill"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
-                "files": [
-                    "bootstrap.php"
-                ],
-                "classmap": [
-                    "Resources/stubs"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Ion Bazan",
-                    "email": "ion.bazan@gmail.com"
-                },
-                {
-                    "name": "Nicolas Grekas",
-                    "email": "p@tchwork.com"
-                },
-                {
-                    "name": "Symfony Community",
-                    "homepage": "https://symfony.com/contributors"
-                }
-            ],
-            "description": "Symfony polyfill backporting some PHP 8.0+ features to lower PHP versions",
-            "homepage": "https://symfony.com",
-            "keywords": [
-                "compatibility",
-                "polyfill",
-                "portable",
-                "shim"
-            ],
-            "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
-            },
-            "funding": [
-                {
-                    "url": "https://symfony.com/sponsor",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/fabpot",
-                    "type": "github"
-                },
-                {
-                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
-                    "type": "tidelift"
-                }
-            ],
-            "time": "2021-07-28T13:41:28+00:00"
         },
         {
             "name": "symfony/polyfill-php81",

@@ -36,10 +36,6 @@ final class LdJsonTest extends TestCase
             new JsCompressor\MMMJSCompressor(),
         ];
 
-        yield 'yuijs' => [
-            new JsCompressor\YUIJSCompressor(),
-        ];
-
         yield 'return' => [
             new ReturnCompressor(),
         ];
