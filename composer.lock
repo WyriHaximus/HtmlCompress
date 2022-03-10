@@ -241,16 +241,16 @@
         },
         {
             "name": "symfony/css-selector",
-            "version": "v5.4.0",
+            "version": "v5.4.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/css-selector.git",
-                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc"
+                "reference": "b0a190285cd95cb019237851205b8140ef6e368e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/css-selector/zipball/44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
-                "reference": "44b933f98bb4b5220d10bed9ce5662f8c2d13dcc",
+                "url": "https://api.github.com/repos/symfony/css-selector/zipball/b0a190285cd95cb019237851205b8140ef6e368e",
+                "reference": "b0a190285cd95cb019237851205b8140ef6e368e",
                 "shasum": ""
             },
             "require": {
@@ -287,7 +287,7 @@
             "description": "Converts CSS selectors to XPath expressions",
             "homepage": "https://symfony.com",
             "support": {
-                "source": "https://github.com/symfony/css-selector/tree/v5.4.0"
+                "source": "https://github.com/symfony/css-selector/tree/v5.4.3"
             },
             "funding": [
                 {
@@ -303,20 +303,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-09-09T08:06:01+00:00"
+            "time": "2022-01-02T09:53:40+00:00"
         },
         {
             "name": "symfony/polyfill-php80",
-            "version": "v1.23.1",
+            "version": "v1.25.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/polyfill-php80.git",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be"
+                "reference": "4407588e0d3f1f52efb65fbe92babe41f37fe50c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/1100343ed1a92e3a38f9ae122fc0eb21602547be",
-                "reference": "1100343ed1a92e3a38f9ae122fc0eb21602547be",
+                "url": "https://api.github.com/repos/symfony/polyfill-php80/zipball/4407588e0d3f1f52efb65fbe92babe41f37fe50c",
+                "reference": "4407588e0d3f1f52efb65fbe92babe41f37fe50c",
                 "shasum": ""
             },
             "require": {
@@ -333,12 +333,12 @@
                 }
             },
             "autoload": {
-                "psr-4": {
-                    "Symfony\\Polyfill\\Php80\\": ""
-                },
                 "files": [
                     "bootstrap.php"
                 ],
+                "psr-4": {
+                    "Symfony\\Polyfill\\Php80\\": ""
+                },
                 "classmap": [
                     "Resources/stubs"
                 ]
@@ -370,7 +370,7 @@
                 "shim"
             ],
             "support": {
-                "source": "https://github.com/symfony/polyfill-php80/tree/v1.23.1"
+                "source": "https://github.com/symfony/polyfill-php80/tree/v1.25.0"
             },
             "funding": [
                 {
@@ -386,7 +386,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-07-28T13:41:28+00:00"
+            "time": "2022-03-04T08:16:47+00:00"
         },
         {
             "name": "tedivm/jshrink",
@@ -642,22 +642,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.4.8",
+            "version": "4.4.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "4f700584abd70b308b7d06b8e4cfcc31711faaf9"
+                "reference": "530ad1f90e946b09a2209d351a879226a4f45c44"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/4f700584abd70b308b7d06b8e4cfcc31711faaf9",
-                "reference": "4f700584abd70b308b7d06b8e4cfcc31711faaf9",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/530ad1f90e946b09a2209d351a879226a4f45c44",
+                "reference": "530ad1f90e946b09a2209d351a879226a4f45c44",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "~4.7.23"
+                "voku/simple_html_dom": "~4.8.4"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -689,7 +689,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/HtmlMin/issues",
-                "source": "https://github.com/voku/HtmlMin/tree/master"
+                "source": "https://github.com/voku/HtmlMin/tree/4.4.9"
             },
             "funding": [
                 {
@@ -705,20 +705,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2020-08-11T22:13:23+00:00"
+            "time": "2022-03-09T15:31:11+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.7.30",
+            "version": "4.8.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "f2be14b8afa7d9a8e5fbc90d93541c23a2134876"
+                "reference": "9a54495dfa8cfa16266c606d30cb008395cf1498"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/f2be14b8afa7d9a8e5fbc90d93541c23a2134876",
-                "reference": "f2be14b8afa7d9a8e5fbc90d93541c23a2134876",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/9a54495dfa8cfa16266c606d30cb008395cf1498",
+                "reference": "9a54495dfa8cfa16266c606d30cb008395cf1498",
                 "shasum": ""
             },
             "require": {
@@ -726,7 +726,7 @@
                 "ext-libxml": "*",
                 "ext-simplexml": "*",
                 "php": ">=7.0.0",
-                "symfony/css-selector": "~3.0 || ~4.0 || ~5.0"
+                "symfony/css-selector": "~3.0 || ~4.0 || ~5.0 || ~6.0"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0 || ~9.0"
@@ -766,7 +766,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/simple_html_dom/issues",
-                "source": "https://github.com/voku/simple_html_dom/tree/4.7.30"
+                "source": "https://github.com/voku/simple_html_dom/tree/4.8.4"
             },
             "funding": [
                 {
@@ -786,7 +786,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2021-11-25T05:03:35+00:00"
+            "time": "2022-03-01T09:15:58+00:00"
         },
         {
             "name": "websharks/css-minifier",
@@ -9281,5 +9281,5 @@
     "platform-overrides": {
         "php": "7.4.7"
     },
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.2.0"
 }
