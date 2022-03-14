@@ -642,22 +642,22 @@
         },
         {
             "name": "voku/html-min",
-            "version": "4.4.9",
+            "version": "4.4.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/HtmlMin.git",
-                "reference": "530ad1f90e946b09a2209d351a879226a4f45c44"
+                "reference": "aa1fa0b8f526102f6af66ebf7c972533b049c445"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/530ad1f90e946b09a2209d351a879226a4f45c44",
-                "reference": "530ad1f90e946b09a2209d351a879226a4f45c44",
+                "url": "https://api.github.com/repos/voku/HtmlMin/zipball/aa1fa0b8f526102f6af66ebf7c972533b049c445",
+                "reference": "aa1fa0b8f526102f6af66ebf7c972533b049c445",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
                 "php": ">=7.0.0",
-                "voku/simple_html_dom": "~4.8.4"
+                "voku/simple_html_dom": "~4.8.5"
             },
             "require-dev": {
                 "phpunit/phpunit": "~6.0 || ~7.0"
@@ -689,7 +689,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/HtmlMin/issues",
-                "source": "https://github.com/voku/HtmlMin/tree/4.4.9"
+                "source": "https://github.com/voku/HtmlMin/tree/4.4.10"
             },
             "funding": [
                 {
@@ -705,20 +705,20 @@
                     "type": "patreon"
                 }
             ],
-            "time": "2022-03-09T15:31:11+00:00"
+            "time": "2022-03-13T22:49:29+00:00"
         },
         {
             "name": "voku/simple_html_dom",
-            "version": "4.8.4",
+            "version": "4.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/voku/simple_html_dom.git",
-                "reference": "9a54495dfa8cfa16266c606d30cb008395cf1498"
+                "reference": "77df6b0bd33845f61ec8b07328c463b725bdfced"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/9a54495dfa8cfa16266c606d30cb008395cf1498",
-                "reference": "9a54495dfa8cfa16266c606d30cb008395cf1498",
+                "url": "https://api.github.com/repos/voku/simple_html_dom/zipball/77df6b0bd33845f61ec8b07328c463b725bdfced",
+                "reference": "77df6b0bd33845f61ec8b07328c463b725bdfced",
                 "shasum": ""
             },
             "require": {
@@ -766,7 +766,7 @@
             ],
             "support": {
                 "issues": "https://github.com/voku/simple_html_dom/issues",
-                "source": "https://github.com/voku/simple_html_dom/tree/4.8.4"
+                "source": "https://github.com/voku/simple_html_dom/tree/4.8.5"
             },
             "funding": [
                 {
@@ -786,7 +786,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2022-03-01T09:15:58+00:00"
+            "time": "2022-03-13T22:36:51+00:00"
         },
         {
             "name": "websharks/css-minifier",
