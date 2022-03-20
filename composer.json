@@ -30,6 +30,13 @@
         "wyrihaximus/test-utilities": "^3.7.6"
     },
     "config": {
+        "allow-plugins": {
+            "composer/package-versions-deprecated": true,
+            "dealerdirect/phpcodesniffer-composer-installer": true,
+            "ergebnis/composer-normalize": true,
+            "icanhazstring/composer-unused": true,
+            "infection/extension-installer": true
+        },
         "platform": {
             "php": "7.4.7"
         },
