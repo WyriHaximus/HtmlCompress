@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "088704df0b1875f3399fbe1e4c7c791c",
+    "content-hash": "5a8b453ae33fb3f2ff07afd479e17578",
     "packages": [
         {
             "name": "linkorb/jsmin-php",

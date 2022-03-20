@@ -19,6 +19,7 @@
         "voku/html-min": "^4.4.8",
         "voku/simple_html_dom": "^4.7.17",
         "wyrihaximus/compress": "^1.1 || ^2.0",
+        "wyrihaximus/compress-contracts": "^1",
         "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^2",
         "wyrihaximus/js-compress": "^5"
