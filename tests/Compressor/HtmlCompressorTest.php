@@ -36,12 +36,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerNewLinesTabsReturns
      */
-    public function testNewLinesTabsReturns($input, $expected): void
+    public function testNewLinesTabsReturns(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -79,12 +76,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerMultipleSpaces
      */
-    public function testMultipleSpaces($input, $expected): void
+    public function testMultipleSpaces(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -107,12 +101,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerSpaceAfterGt
      */
-    public function testSpaceAfterGt($input, $expected): void
+    public function testSpaceAfterGt(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -135,12 +126,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerSpaceBeforeLt
      */
-    public function testSpaceBeforeLt($input, $expected): void
+    public function testSpaceBeforeLt(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -163,12 +151,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerTrim
      */
-    public function testTrim($input, $expected): void
+    public function testTrim(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -186,12 +171,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerSpecialCharacterEncoding
      */
-    public function testSpecialCharacterEncoding($input, $expected): void
+    public function testSpecialCharacterEncoding(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -209,12 +191,9 @@ final class HtmlCompressorTest extends TestCase
     }
 
     /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
      * @dataProvider providerComments
      */
-    public function testComments($input, $expected): void
+    public function testComments(mixed $input, mixed $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);

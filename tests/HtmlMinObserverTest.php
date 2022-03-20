@@ -36,11 +36,9 @@ final class HtmlMinObserverTest extends TestCase
     }
 
     /**
-     * @param mixed $dir
-     *
      * @dataProvider providerEdgeCase
      */
-    public function testEdgeCase($dir): void
+    public function testEdgeCase(mixed $dir): void
     {
         $in  = file_get_contents($dir . 'in.html');
         $out = file_get_contents($dir . 'out.html');

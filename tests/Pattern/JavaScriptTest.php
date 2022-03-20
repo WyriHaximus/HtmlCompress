@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests\Pattern;
 
-use Prophecy\Prophecy\ObjectProphecy;
 use voku\helper\HtmlDomParser;
 use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
@@ -16,8 +15,7 @@ final class JavaScriptTest extends TestCase
 {
     private SimpleHtmlDomInterface $simpleHtmlDom;
 
-    /** @var ObjectProphecy|CompressorInterface */
-    private $compressor;
+    private ObjectProphecy|CompressorInterface $compressor;
 
     private JavaScript $javaScript;
 
