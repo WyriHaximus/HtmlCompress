@@ -1,11 +1,11 @@
 {
     "name": "wyrihaximus/html-compress",
     "description": "Compress/minify your HTML",
+    "license": "MIT",
     "keywords": [
         "html",
         "compress"
     ],
-    "license": "MIT",
     "authors": [
         {
             "name": "Cees-Jan Kiewiet",
@@ -15,7 +15,7 @@
     ],
     "require": {
         "php": "^7.4 || ^8.0",
-        "thecodingmachine/safe": "^1.1",
+        "thecodingmachine/safe": "^1.1 || ^2.2",
         "voku/html-min": "^4.4.8",
         "voku/simple_html_dom": "^4.7.17",
         "wyrihaximus/compress": "^1.1 || ^2.0",
@@ -24,11 +24,21 @@
         "wyrihaximus/css-compress": "^2",
         "wyrihaximus/js-compress": "^5"
     },
+    "require-dev": {
+        "wyrihaximus/test-utilities": "^3.7.6"
+    },
     "conflict": {
         "voku/simple_html_dom": "<4.7.28"
     },
-    "require-dev": {
-        "wyrihaximus/test-utilities": "^3.7.6"
+    "autoload": {
+        "psr-4": {
+            "WyriHaximus\\HtmlCompress\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
+        }
     },
     "config": {
         "allow-plugins": {
@@ -47,16 +57,6 @@
         "unused": [
             "slevomat/coding-standard"
         ]
-    },
-    "autoload": {
-        "psr-4": {
-            "WyriHaximus\\HtmlCompress\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
-        }
     },
     "scripts": {
         "post-install-cmd": [
