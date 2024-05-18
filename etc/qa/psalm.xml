@@ -1,18 +1,19 @@
 <?xml version="1.0"?>
 <psalm
-    totallyTyped="false"
+    errorLevel="1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns="https://getpsalm.org/schema/config"
-    xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
+    xsi:schemaLocation="https://getpsalm.org/schema/config ../../vendor/vimeo/psalm/config.xsd"
 >
     <projectFiles>
-        <directory name="src"/>
+        <directory name="../../src"/>
         <ignoreFiles>
-            <directory name="vendor"/>
+            <directory name="../../vendor"/>
         </ignoreFiles>
     </projectFiles>
 
     <issueHandlers>
+
         <LessSpecificReturnType errorLevel="error"/>
 
         <!-- level 3 issues - slightly lazy code writing, but provably low false-negatives -->
@@ -49,4 +50,10 @@
 
         <InvalidStringClass errorLevel="error"/>
     </issueHandlers>
-<plugins><pluginClass class="Psalm\PhpUnitPlugin\Plugin"/></plugins></psalm>
+    <plugins>
+        <pluginClass class="Psalm\PhpUnitPlugin\Plugin"/>
+        <pluginClass class="Orklah\PsalmInsaneComparison\Plugin"/>
+        <pluginClass class="Psalm\MockeryPlugin\Plugin"/>
+        <pluginClass class="Psl\Psalm\Plugin"/>
+    </plugins>
+</psalm>

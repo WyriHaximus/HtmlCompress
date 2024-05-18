@@ -30,21 +30,21 @@ final class Factory
             new HtmlMin(),
             new Patterns(
                 new LdJson(
-                    new MMMJSCompressor()
+                    new MMMJSCompressor(),
                 ),
                 new JavaScript(
-                    JsFactory::construct()
+                    JsFactory::construct(),
                 ),
                 new Script(
-                    new ReturnCompressor()
+                    new ReturnCompressor(),
                 ),
                 new Style(
-                    $styleCompressor
+                    $styleCompressor,
                 ),
                 new StyleAttribute(
-                    $styleCompressor
-                )
-            )
+                    $styleCompressor,
+                ),
+            ),
         );
     }
 
@@ -56,21 +56,21 @@ final class Factory
             new HtmlMin(),
             new Patterns(
                 new LdJson(
-                    new MMMJSCompressor()
+                    new MMMJSCompressor(),
                 ),
                 new JavaScript(
-                    JsFactory::constructSmallest()
+                    JsFactory::constructSmallest(),
                 ),
                 new Script(
-                    new ReturnCompressor()
+                    new ReturnCompressor(),
                 ),
                 new Style(
-                    $styleCompressor
+                    $styleCompressor,
                 ),
                 new StyleAttribute(
-                    $styleCompressor
-                )
-            )
+                    $styleCompressor,
+                ),
+            ),
         );
     }
 }

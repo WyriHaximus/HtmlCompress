@@ -8,14 +8,10 @@ use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
+/** @internal */
 final class HtmlCompressorTest extends TestCase
 {
-    /**
-     * @test
-     */
+    /** @test */
     public function withHtmlMin(): void
     {
         $compressor = Factory::constructFastest();

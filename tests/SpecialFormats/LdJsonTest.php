@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests\SpecialFormats;
 
-use Generator;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\Compress\ReturnCompressor;
 use WyriHaximus\JsCompress\Compressor as JsCompressor;
@@ -12,26 +11,18 @@ use WyriHaximus\TestUtilities\TestCase;
 
 use function Safe\file_get_contents;
 use function Safe\json_decode;
-use function Safe\substr;
 use function strpos;
 use function strrpos;
+use function substr;
 
 use const DIRECTORY_SEPARATOR;
 
-/**
- * @internal
- */
+/** @internal */
 final class LdJsonTest extends TestCase
 {
-    /**
-     * @return Generator<array<int, CompressorInterface>>
-     */
-    public function javascriptCompressorProvider(): Generator
+    /** @return iterable<array<int, CompressorInterface>> */
+    public static function javascriptCompressorProvider(): iterable
     {
-        yield 'jsmin' => [
-            new JsCompressor\JSMinCompressor(),
-        ];
-
         yield 'mmjs' => [
             new JsCompressor\MMMJSCompressor(),
         ];
@@ -41,9 +32,7 @@ final class LdJsonTest extends TestCase
         ];
     }
 
-    /**
-     * @dataProvider javascriptCompressorProvider
-     */
+    /** @dataProvider javascriptCompressorProvider */
     public function testLdJson(CompressorInterface $compressor): void
     {
         $input = file_get_contents(__DIR__ . DIRECTORY_SEPARATOR . 'input' . DIRECTORY_SEPARATOR . 'ld.json.input');
@@ -55,15 +44,14 @@ final class LdJsonTest extends TestCase
         self::assertSame($inputJson, $compressedJson, $compressedInput);
     }
 
-    /**
-     * @return mixed[]
-     */
+    /** @return array<mixed> */
     private function getJson(string $string): array
     {
         $start  = (int) strpos($string, '{');
         $end    = (int) strrpos($string, '}') + 1;
         $string = substr($string, $start, $end - $start);
 
+        /** @phpstan-ignore-next-line */
         return json_decode($string, true);
     }
 }

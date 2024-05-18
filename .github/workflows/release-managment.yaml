@@ -1,0 +1,26 @@
+name: Release Management
+on:
+  pull_request:
+    types:
+      - opened
+      - labeled
+      - unlabeled
+      - synchronize
+      - reopened
+      - milestoned
+      - demilestoned
+      - ready_for_review
+  milestone:
+    types:
+      - closed
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+jobs:
+  release-managment:
+    name: Create Release
+    uses: WyriHaximus/github-workflows/.github/workflows/package-release-managment.yaml@main
+    with:
+      milestone: ${{ github.event.milestone.title }}
+      description: ${{ github.event.milestone.title }}

@@ -1,13 +1,20 @@
 {
-    "timeout": 120,
+    "timeout": 1800,
     "source": {
         "directories": [
             "src"
         ]
     },
     "logs": {
-        "text": "infection-log.txt"
+        "text": "./var/infection.log",
+        "summary": "./var/infection-summary.log",
+        "json": "./var/infection.json",
+        "perMutator": "./var/infection-per-mutator.md",
+        "github": true
     },
+    "minMsi": 100,
+    "minCoveredMsi": 100,
+    "ignoreMsiWithNoMutations": true,
     "mutators": {
         "@default": true,
         "MethodCallRemoval": {
@@ -22,5 +29,8 @@
                 "WyriHaximus\\HtmlCompress\\Patterns::compress"
             ]
         }
+    },
+    "phpUnit": {
+        "configDir": "./etc/qa/"
     }
 }

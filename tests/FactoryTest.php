@@ -13,9 +13,7 @@ use function Safe\file_get_contents as safeFileGetContents;
 
 use const DIRECTORY_SEPARATOR;
 
-/**
- * @internal
- */
+/** @internal */
 final class FactoryTest extends TestCase
 {
     public function testConstructFastest(): void
@@ -26,8 +24,8 @@ final class FactoryTest extends TestCase
         self::assertSame(
             safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'fastest' . DIRECTORY_SEPARATOR . 'out.html'),
             $compressor->compress(
-                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'fastest' . DIRECTORY_SEPARATOR . 'in.html')
-            )
+                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'fastest' . DIRECTORY_SEPARATOR . 'in.html'),
+            ),
         );
     }
 
@@ -39,8 +37,8 @@ final class FactoryTest extends TestCase
         self::assertSame(
             safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'normal' . DIRECTORY_SEPARATOR . 'out.html'),
             $compressor->compress(
-                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'normal' . DIRECTORY_SEPARATOR . 'in.html')
-            )
+                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'normal' . DIRECTORY_SEPARATOR . 'in.html'),
+            ),
         );
     }
 
@@ -52,8 +50,8 @@ final class FactoryTest extends TestCase
         self::assertSame(
             safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'smallest' . DIRECTORY_SEPARATOR . 'out.html'),
             $compressor->compress(
-                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'smallest' . DIRECTORY_SEPARATOR . 'in.html')
-            )
+                safeFileGetContents(__DIR__ . DIRECTORY_SEPARATOR . 'Factory' . DIRECTORY_SEPARATOR . 'smallest' . DIRECTORY_SEPARATOR . 'in.html'),
+            ),
         );
     }
 }

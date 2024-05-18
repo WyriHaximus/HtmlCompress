@@ -12,11 +12,8 @@ use function strlen;
 
 final class JavaScript implements PatternInterface
 {
-    private CompressorInterface $compressor;
-
-    public function __construct(CompressorInterface $compressor)
+    public function __construct(private CompressorInterface $compressor)
     {
-        $this->compressor = $compressor;
     }
 
     public function matches(SimpleHtmlDomInterface $element): bool

@@ -9,15 +9,11 @@ use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Patterns;
 use WyriHaximus\TestUtilities\TestCase;
 
-/**
- * @internal
- */
+/** @internal */
 final class HtmlCompressorTest extends TestCase
 {
-    /**
-     * @return string[][]
-     */
-    public function providerNewLinesTabsReturns(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerNewLinesTabsReturns(): iterable
     {
         yield [
             "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
@@ -35,22 +31,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerNewLinesTabsReturns
-     */
-    public function testNewLinesTabsReturns($input, $expected): void
+    /** @dataProvider providerNewLinesTabsReturns */
+    public function testNewLinesTabsReturns(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerMultipleSpaces(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerMultipleSpaces(): iterable
     {
         yield [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
@@ -78,22 +67,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerMultipleSpaces
-     */
-    public function testMultipleSpaces($input, $expected): void
+    /** @dataProvider providerMultipleSpaces */
+    public function testMultipleSpaces(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerSpaceAfterGt(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerSpaceAfterGt(): iterable
     {
         yield [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
@@ -106,22 +88,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerSpaceAfterGt
-     */
-    public function testSpaceAfterGt($input, $expected): void
+    /** @dataProvider providerSpaceAfterGt */
+    public function testSpaceAfterGt(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerSpaceBeforeLt(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerSpaceBeforeLt(): iterable
     {
         yield [
             '<html> <body>   <h1>hoi</h1></body> </html> ',
@@ -134,22 +109,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerSpaceBeforeLt
-     */
-    public function testSpaceBeforeLt($input, $expected): void
+    /** @dataProvider providerSpaceBeforeLt */
+    public function testSpaceBeforeLt(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerTrim(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerTrim(): iterable
     {
         yield [
             '              ',
@@ -162,22 +130,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerTrim
-     */
-    public function testTrim($input, $expected): void
+    /** @dataProvider providerTrim */
+    public function testTrim(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerSpecialCharacterEncoding(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerSpecialCharacterEncoding(): iterable
     {
         yield [
             "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
@@ -185,22 +146,15 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerSpecialCharacterEncoding
-     */
-    public function testSpecialCharacterEncoding($input, $expected): void
+    /** @dataProvider providerSpecialCharacterEncoding */
+    public function testSpecialCharacterEncoding(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
     }
 
-    /**
-     * @return string[][]
-     */
-    public function providerComments(): iterable
+    /** @return iterable<array<string>> */
+    public static function providerComments(): iterable
     {
         yield [
             '<html><body><!-- HTML comment --></body></html>',
@@ -208,13 +162,8 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /**
-     * @param mixed $input
-     * @param mixed $expected
-     *
-     * @dataProvider providerComments
-     */
-    public function testComments($input, $expected): void
+    /** @dataProvider providerComments */
+    public function testComments(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);

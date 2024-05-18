@@ -14,18 +14,17 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0",
-        "thecodingmachine/safe": "^1.1 || ^2.2",
-        "voku/html-min": "^4.4.8",
-        "voku/simple_html_dom": "^4.7.17",
-        "wyrihaximus/compress": "^1.1 || ^2.0",
+        "php": "^8.2",
+        "thecodingmachine/safe": "^2.2",
+        "voku/html-min": "^4.5.0",
+        "voku/simple_html_dom": "^4.8.8",
+        "wyrihaximus/compress": "^2.0",
         "wyrihaximus/compress-contracts": "^1",
-        "wyrihaximus/constants": "^1.5",
         "wyrihaximus/css-compress": "^2",
         "wyrihaximus/js-compress": "^5"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^3.7.6"
+        "wyrihaximus/test-utilities": "^6.0.7"
     },
     "conflict": {
         "voku/simple_html_dom": "<4.7.28"
@@ -49,21 +48,18 @@
             "infection/extension-installer": true
         },
         "platform": {
-            "php": "7.4.7"
+            "php": "8.2.13"
         },
         "sort-packages": true
     },
-    "extra": {
-        "unused": [
-            "slevomat/coding-standard"
-        ]
-    },
     "scripts": {
         "post-install-cmd": [
-            "composer normalize"
+            "composer normalize",
+            "composer update --lock --no-scripts"
         ],
         "post-update-cmd": [
-            "composer normalize"
+            "composer normalize",
+            "composer update --lock --no-scripts"
         ]
     }
 }
