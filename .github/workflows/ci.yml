@@ -9,7 +9,7 @@ jobs:
     outputs:
       version: ${{ steps.generate-versions-strategy.outputs.version }}
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - id: generate-versions-strategy
         uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
   composer-install:
@@ -23,7 +23,7 @@ jobs:
     container:
       image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Cache composer packages
         uses: actions/cache@v1
         with:
@@ -52,7 +52,7 @@ jobs:
     container:
       image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@v4
       - name: Cache composer packages
         uses: actions/cache@v1
         with:
