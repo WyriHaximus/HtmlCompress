@@ -12,7 +12,7 @@ return new HtmlCompressor(
     new HtmlMin(),
     new Patterns(
         new LdJson(
-            new MMMJSCompressor()
-        )
-    )
+            new MMMJSCompressor(),
+        ),
+    ),
 );

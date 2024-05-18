@@ -10,11 +10,8 @@ use voku\helper\SimpleHtmlDomInterface;
 
 final class HtmlMinObserver implements HtmlMinDomObserverInterface
 {
-    private Patterns $patterns;
-
-    public function __construct(Patterns $patterns)
+    public function __construct(private Patterns $patterns)
     {
-        $this->patterns = $patterns;
     }
 
     /**

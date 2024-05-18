@@ -1,18 +1,4 @@
-# php (composer)
+var/*
+!var/.gitkeep
 vendor/
-
-# php (phpunit)
-.phpunit.result.cache
-
-# php (phpcs fixer)
-.php_cs.cache
-
-# php (infection)
-infection-log.txt
-
-# ide
-.idea/
-
-# ci
-covHtml/
-build/logs/
+etc/qa/.phpunit.result.cache

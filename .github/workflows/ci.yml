@@ -1,71 +1,17 @@
 name: Continuous Integration
 on:
   push:
+    branches:
+      - 'main'
+      - 'master'
+      - 'refs/heads/v[0-9]+.[0-9]+.[0-9]+'
   pull_request:
+## This workflow needs the `pull-request` permissions to work for the package diffing
+## Refs: https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#permissions
+permissions:
+  pull-requests: write
+  contents: read
 jobs:
-  generate-versions-strategy:
-    name: Generate Versions
-    runs-on: ubuntu-latest
-    outputs:
-      version: ${{ steps.generate-versions-strategy.outputs.version }}
-    steps:
-      - uses: actions/checkout@v1
-      - id: generate-versions-strategy
-        uses: WyriHaximus/github-action-composer-php-versions-in-range@v1
-  composer-install:
-    needs:
-      - generate-versions-strategy
-    strategy:
-      matrix:
-        php: ${{ fromJson(needs.generate-versions-strategy.outputs.version) }}
-        composer: [lowest, current, highest]
-    runs-on: ubuntu-latest
-    container:
-      image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
-    steps:
-      - uses: actions/checkout@v1
-      - name: Cache composer packages
-        uses: actions/cache@v1
-        with:
-          path: ./vendor/
-          key: ${{ matrix.composer }}-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-      - name: Install Dependencies
-        run: composer update --prefer-lowest --no-progress --ansi --no-interaction --prefer-dist
-        if: matrix.composer == 'lowest'
-      - name: Install Dependencies
-        run: composer install --ansi --no-progress --no-interaction --prefer-dist
-        if: matrix.composer == 'current'
-      - name: Install Dependencies
-        run: composer update --ansi --no-progress --no-interaction --prefer-dist
-        if: matrix.composer == 'highest'
-  qa:
-    needs:
-      - composer-install
-      - generate-versions-strategy
-    strategy:
-      fail-fast: false
-      matrix:
-        php: ${{ fromJson(needs.generate-versions-strategy.outputs.version) }}
-        composer: [lowest, current, highest]
-        qa: [lint, cs, stan, psalm, unit, infection, composer-require-checker, composer-unused]
-    runs-on: ubuntu-latest
-    container:
-      image: wyrihaximusnet/php:${{ matrix.php }}-nts-buster-dev-root
-    steps:
-      - uses: actions/checkout@v1
-      - name: Cache composer packages
-        uses: actions/cache@v1
-        with:
-          path: ./vendor/
-          key: ${{ matrix.composer }}-${{ matrix.php }}-${{ hashFiles('**/composer.lock') }}
-
-      - name: Install Dependencies
-        run: (test -f vendor && true ) || composer update --prefer-lowest --no-progress --ansi --no-interaction --prefer-dist
-        if: matrix.composer == 'lowest'
-      - name: Install Dependencies
-        run: (test -f vendor && true ) || composer install --ansi --no-progress --no-interaction --prefer-dist
-        if: matrix.composer == 'current'
-      - name: Install Dependencies
-        run: (test -f vendor && true ) || composer update --ansi --no-progress --no-interaction --prefer-dist
-        if: matrix.composer == 'highest'
-      - run: make ${{ matrix.qa }}
+  ci:
+    name: Continuous Integration
+    uses: WyriHaximus/github-workflows/.github/workflows/package.yaml@main

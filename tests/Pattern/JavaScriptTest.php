@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests\Pattern;
 
-use Prophecy\Prophecy\ObjectProphecy;
+use Mockery;
 use voku\helper\HtmlDomParser;
 use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
@@ -16,8 +16,7 @@ final class JavaScriptTest extends TestCase
 {
     private SimpleHtmlDomInterface $simpleHtmlDom;
 
-    /** @var ObjectProphecy|CompressorInterface */
-    private $compressor;
+    private Mockery\MockInterface&CompressorInterface $compressor;
 
     private JavaScript $javaScript;
 
@@ -27,41 +26,35 @@ final class JavaScriptTest extends TestCase
 
         $this->simpleHtmlDom = HtmlDomParser::str_get_html('<span>innerHtml</span>')->getElementByTagName('span');
 
-        $this->compressor = $this->prophesize(CompressorInterface::class);
+        $this->compressor = Mockery::mock(CompressorInterface::class);
 
-        $this->javaScript = new JavaScript($this->compressor->reveal());
+        $this->javaScript = new JavaScript($this->compressor);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function emptyCompressResultIsIgnored(): void
     {
-        $this->compressor->compress('innerHtml')->shouldBeCalled()->willReturn('');
+        $this->compressor->expects('compress')->with('innerHtml')->andReturn('');
 
         $this->javaScript->compress($this->simpleHtmlDom);
 
         self::assertSame('innerHtml', $this->simpleHtmlDom->innerhtml);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function biggerOutputThenInputCompressResultIsIgnored(): void
     {
-        $this->compressor->compress('innerHtml')->shouldBeCalled()->willReturn('aaaaaaaaaaaaaaaaaaaaaaa');
+        $this->compressor->expects('compress')->with('innerHtml')->andReturn('aaaaaaaaaaaaaaaaaaaaaaa');
 
         $this->javaScript->compress($this->simpleHtmlDom);
 
         self::assertSame('innerHtml', $this->simpleHtmlDom->innerhtml);
     }
 
-    /**
-     * @test
-     */
+    /** @test */
     public function sameSizedOutputThenInputCompressResultIsIgnored(): void
     {
-        $this->compressor->compress('innerHtml')->shouldBeCalled()->willReturn('htmlInner');
+        $this->compressor->expects('compress')->with('innerHtml')->andReturn('htmlInner');
 
         $this->javaScript->compress($this->simpleHtmlDom);
 

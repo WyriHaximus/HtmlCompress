@@ -1,10 +1,17 @@
-# Ignoring files for distribution archives
-examples/ export-ignore
+# Ignoring files for distribution archieves
+.github/ export-ignore
+etc/ export-ignore
 tests/ export-ignore
-.travis.yml export-ignore
-.gitignore export-ignore
+var/ export-ignore
+.devcontainer.json export-ignore
+.editorconfig export-ignore
 .gitattributes export-ignore
-.coveralls.yml export-ignore
-.php_cs export-ignore
-.scrutinizer.yml export-ignore
-phpunit.xml.dist export-ignore
+.gitignore export-ignore
+CONTRIBUTING.md export-ignore
+composer.lock export-ignore
+infection.json.dist export-ignore
+Makefile export-ignore
+README.md export-ignore
+
+# Diffing
+*.php diff=php

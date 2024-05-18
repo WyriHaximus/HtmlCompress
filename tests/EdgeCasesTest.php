@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
-use Generator;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\TestUtilities\TestCase;
 
@@ -16,15 +15,11 @@ use function Safe\glob;
 use const DIRECTORY_SEPARATOR;
 use const GLOB_ONLYDIR;
 
-/**
- * @internal
- */
+/** @internal */
 final class EdgeCasesTest extends TestCase
 {
-    /**
-     * @return Generator<array<int, string>>
-     */
-    public function providerEdgeCase(): Generator
+    /** @return iterable<array<int, string>> */
+    public static function providerEdgeCase(): iterable
     {
         $items = glob(__DIR__ . DIRECTORY_SEPARATOR . 'EdgeCases' . DIRECTORY_SEPARATOR . '*', GLOB_ONLYDIR);
 
@@ -36,12 +31,8 @@ final class EdgeCasesTest extends TestCase
         }
     }
 
-    /**
-     * @param mixed $dir
-     *
-     * @dataProvider providerEdgeCase
-     */
-    public function testEdgeCase($dir): void
+    /** @dataProvider providerEdgeCase */
+    public function testEdgeCase(mixed $dir): void
     {
         $in  = file_get_contents($dir . 'in.html');
         $out = file_get_contents($dir . 'out.html');

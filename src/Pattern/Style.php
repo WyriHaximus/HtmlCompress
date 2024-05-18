@@ -8,9 +8,9 @@ use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\PatternInterface;
 
-use function Safe\substr;
 use function strlen;
 use function strpos;
+use function substr;
 
 final class Style implements PatternInterface
 {
@@ -19,11 +19,8 @@ final class Style implements PatternInterface
     private const CSS_COMMENT_OPEN_LENGTH = 4;
     private const CSS_COMMENT_CLOSE       = '-->';
 
-    private CompressorInterface $compressor;
-
-    public function __construct(CompressorInterface $compressor)
+    public function __construct(private CompressorInterface $compressor)
     {
-        $this->compressor = $compressor;
     }
 
     public function matches(SimpleHtmlDomInterface $element): bool
