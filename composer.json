@@ -25,7 +25,7 @@
         "wyrihaximus/js-compress": "^5"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^3.7.6"
+        "wyrihaximus/test-utilities": "^3.7.6 || ^6.0.0"
     },
     "conflict": {
         "voku/simple_html_dom": "<4.7.28"
