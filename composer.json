@@ -26,9 +26,6 @@
     "require-dev": {
         "wyrihaximus/test-utilities": "^6.0.7"
     },
-    "conflict": {
-        "voku/simple_html_dom": "<4.7.28"
-    },
     "autoload": {
         "psr-4": {
             "WyriHaximus\\HtmlCompress\\": "src/"
