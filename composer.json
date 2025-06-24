@@ -15,7 +15,6 @@
     ],
     "require": {
         "php": "^8.3",
-        "thecodingmachine/safe": "^2.2 || ^3.0",
         "voku/html-min": "^4.5.1",
         "voku/simple_html_dom": "^4.8.9",
         "wyrihaximus/compress": "^2.0",
@@ -24,7 +23,8 @@
         "wyrihaximus/js-compress": "^5"
     },
     "require-dev": {
-        "wyrihaximus/test-utilities": "^6.0.7"
+        "wyrihaximus/makefiles": "^0.4.3",
+        "wyrihaximus/test-utilities": "^7.5.1"
     },
     "autoload": {
         "psr-4": {
@@ -42,10 +42,12 @@
             "dealerdirect/phpcodesniffer-composer-installer": true,
             "ergebnis/composer-normalize": true,
             "icanhazstring/composer-unused": true,
-            "infection/extension-installer": true
+            "infection/extension-installer": true,
+            "phpstan/extension-installer": true,
+            "wyrihaximus/makefiles": true
         },
         "platform": {
-            "php": "8.2.13"
+            "php": "8.3.13"
         },
         "sort-packages": true
     },

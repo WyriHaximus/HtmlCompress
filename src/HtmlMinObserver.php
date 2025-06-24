@@ -8,8 +8,9 @@ use voku\helper\HtmlMinDomObserverInterface;
 use voku\helper\HtmlMinInterface;
 use voku\helper\SimpleHtmlDomInterface;
 
-final class HtmlMinObserver implements HtmlMinDomObserverInterface
+final readonly class HtmlMinObserver implements HtmlMinDomObserverInterface
 {
+    /** @phpstan-ignore shipmonk.deadMethod */
     public function __construct(private Patterns $patterns)
     {
     }

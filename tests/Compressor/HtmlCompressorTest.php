@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests\Compressor;
 
+use PHPUnit\Framework\Attributes\DataProvider;
+use PHPUnit\Framework\Attributes\Test;
 use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\HtmlCompressor;
 use WyriHaximus\HtmlCompress\Patterns;
 use WyriHaximus\TestUtilities\TestCase;
 
-/** @internal */
 final class HtmlCompressorTest extends TestCase
 {
     /** @return iterable<array<string>> */
@@ -31,8 +32,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerNewLinesTabsReturns */
-    public function testNewLinesTabsReturns(string $input, string $expected): void
+    #[DataProvider('providerNewLinesTabsReturns')]
+    #[Test]
+    public function newLinesTabsReturns(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -63,12 +65,13 @@ final class HtmlCompressorTest extends TestCase
 
         yield [
             "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
-            '<html><head> <body><p class=foo id=text> foo </p> <br> <ul><li><p class=foo>lall </ul>',
+            '<html><head> <body><p id=text class=foo> foo </p> <br> <ul><li><p class=foo>lall </ul>',
         ];
     }
 
-    /** @dataProvider providerMultipleSpaces */
-    public function testMultipleSpaces(string $input, string $expected): void
+    #[DataProvider('providerMultipleSpaces')]
+    #[Test]
+    public function multipleSpaces(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -88,8 +91,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerSpaceAfterGt */
-    public function testSpaceAfterGt(string $input, string $expected): void
+    #[DataProvider('providerSpaceAfterGt')]
+    #[Test]
+    public function spaceAfterGt(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -109,8 +113,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerSpaceBeforeLt */
-    public function testSpaceBeforeLt(string $input, string $expected): void
+    #[DataProvider('providerSpaceBeforeLt')]
+    #[Test]
+    public function spaceBeforeLt(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -130,8 +135,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerTrim */
-    public function testTrim(string $input, string $expected): void
+    #[DataProvider('providerTrim')]
+    #[Test]
+    public function trim(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -146,8 +152,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerSpecialCharacterEncoding */
-    public function testSpecialCharacterEncoding(string $input, string $expected): void
+    #[DataProvider('providerSpecialCharacterEncoding')]
+    #[Test]
+    public function specialCharacterEncoding(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);
@@ -162,8 +169,9 @@ final class HtmlCompressorTest extends TestCase
         ];
     }
 
-    /** @dataProvider providerComments */
-    public function testComments(string $input, string $expected): void
+    #[DataProvider('providerComments')]
+    #[Test]
+    public function comments(string $input, string $expected): void
     {
         $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
         self::assertSame($expected, $actual);

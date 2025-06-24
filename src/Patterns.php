@@ -8,25 +8,20 @@ use voku\helper\HtmlMinDomObserverInterface;
 use voku\helper\HtmlMinInterface;
 use voku\helper\SimpleHtmlDomInterface;
 
-final class Patterns implements HtmlMinDomObserverInterface
+final readonly class Patterns implements HtmlMinDomObserverInterface
 {
     /** @var array<PatternInterface> */
-    private array $patterns = [];
+    private array $patterns;
 
     public function __construct(PatternInterface ...$patterns)
     {
         $this->patterns = $patterns;
     }
 
-    public function add(PatternInterface $pattern): void
-    {
-        $this->patterns[] = $pattern;
-    }
-
     public function compress(SimpleHtmlDomInterface $element): void
     {
         foreach ($this->patterns as $pattern) {
-            if ($pattern->matches($element) === true) {
+            if ($pattern->matches($element)) {
                 $pattern->compress($element);
 
                 return;

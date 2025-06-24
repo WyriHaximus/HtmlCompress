@@ -8,16 +8,17 @@ use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\PatternInterface;
 
+use function str_starts_with;
 use function strlen;
 use function strpos;
 use function substr;
 
-final class Style implements PatternInterface
+final readonly class Style implements PatternInterface
 {
-    private const ZERO                    = 0;
-    private const CSS_COMMENT_OPEN        = '<!--';
-    private const CSS_COMMENT_OPEN_LENGTH = 4;
-    private const CSS_COMMENT_CLOSE       = '-->';
+    private const int ZERO                    = 0;
+    private const string CSS_COMMENT_OPEN     = '<!--';
+    private const int CSS_COMMENT_OPEN_LENGTH = 4;
+    private const string CSS_COMMENT_CLOSE    = '-->';
 
     public function __construct(private CompressorInterface $compressor)
     {
@@ -58,7 +59,7 @@ final class Style implements PatternInterface
 
     private function stripComments(string $contents): string
     {
-        if (strpos($contents, self::CSS_COMMENT_OPEN) === self::ZERO) {
+        if (str_starts_with($contents, self::CSS_COMMENT_OPEN)) {
             $contents = substr($contents, self::CSS_COMMENT_OPEN_LENGTH);
         }
 

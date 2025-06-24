@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace WyriHaximus\HtmlCompress\Tests\Pattern;
 
 use Mockery;
+use Override;
+use PHPUnit\Framework\Attributes\Test;
 use voku\helper\HtmlDomParser;
 use voku\helper\SimpleHtmlDomInterface;
 use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\HtmlCompress\Pattern\JavaScript;
 use WyriHaximus\TestUtilities\TestCase;
 
-/** @internal */
 final class JavaScriptTest extends TestCase
 {
     private SimpleHtmlDomInterface $simpleHtmlDom;
@@ -20,6 +21,7 @@ final class JavaScriptTest extends TestCase
 
     private JavaScript $javaScript;
 
+    #[Override]
     protected function setUp(): void
     {
         parent::setUp();
@@ -31,7 +33,7 @@ final class JavaScriptTest extends TestCase
         $this->javaScript = new JavaScript($this->compressor);
     }
 
-    /** @test */
+    #[Test]
     public function emptyCompressResultIsIgnored(): void
     {
         $this->compressor->expects('compress')->with('innerHtml')->andReturn('');
@@ -41,7 +43,7 @@ final class JavaScriptTest extends TestCase
         self::assertSame('innerHtml', $this->simpleHtmlDom->innerhtml);
     }
 
-    /** @test */
+    #[Test]
     public function biggerOutputThenInputCompressResultIsIgnored(): void
     {
         $this->compressor->expects('compress')->with('innerHtml')->andReturn('aaaaaaaaaaaaaaaaaaaaaaa');
@@ -51,7 +53,7 @@ final class JavaScriptTest extends TestCase
         self::assertSame('innerHtml', $this->simpleHtmlDom->innerhtml);
     }
 
-    /** @test */
+    #[Test]
     public function sameSizedOutputThenInputCompressResultIsIgnored(): void
     {
         $this->compressor->expects('compress')->with('innerHtml')->andReturn('htmlInner');
