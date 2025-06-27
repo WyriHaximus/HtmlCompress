@@ -10,7 +10,7 @@ use WyriHaximus\HtmlCompress\PatternInterface;
 
 use function strlen;
 
-final class JavaScript implements PatternInterface
+final readonly class JavaScript implements PatternInterface
 {
     public function __construct(private CompressorInterface $compressor)
     {

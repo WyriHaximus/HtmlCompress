@@ -1,2 +1,11 @@
-includes:
-	- ../../vendor/wyrihaximus/test-utilities/rules.neon
+#parameters:
+#	ignoreErrors:
+#		-
+#			identifier: shipmonk.checkedExceptionInYieldingMethod
+#			path: ../../src/CallalbleTileLocator.php
+#		-
+#			identifier: shipmonk.checkedExceptionInYieldingMethod
+#			path: ../../tests/Provider.php
+#		-
+#			identifier: shipmonk.deadMethod
+#			path: ../../tests/Provider.php

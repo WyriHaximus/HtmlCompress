@@ -6,8 +6,6 @@ namespace WyriHaximus\HtmlCompress;
 
 use voku\helper\HtmlMin;
 
-use function trim;
-
 final class HtmlCompressor implements HtmlCompressorInterface
 {
     public function __construct(private HtmlMin $htmlMin, private Patterns $patterns)
@@ -17,7 +15,7 @@ final class HtmlCompressor implements HtmlCompressorInterface
 
     public function compress(string $string): string
     {
-        return trim($this->htmlMin->minify($string));
+        return $this->htmlMin->minify($string);
     }
 
     public function withHtmlMin(HtmlMin $htmlMin): HtmlCompressorInterface

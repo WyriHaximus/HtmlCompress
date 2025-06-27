@@ -4,14 +4,14 @@ declare(strict_types=1);
 
 namespace WyriHaximus\HtmlCompress\Tests;
 
+use PHPUnit\Framework\Attributes\Test;
 use voku\helper\HtmlMin;
 use WyriHaximus\HtmlCompress\Factory;
 use WyriHaximus\TestUtilities\TestCase;
 
-/** @internal */
 final class HtmlCompressorTest extends TestCase
 {
-    /** @test */
+    #[Test]
     public function withHtmlMin(): void
     {
         $compressor = Factory::constructFastest();
