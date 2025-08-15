@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c1e9e23558230745e8a46920393f77d6",
+    "content-hash": "2681800e689d1dfd295a90add8ea43ac",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -10015,16 +10015,16 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "7.5.1",
+            "version": "7.5.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "109aad527356644389fefe1c50ff7b878fb94415"
+                "reference": "807d823b4ba0797431cbf68a14a37abd94ea3a3b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/109aad527356644389fefe1c50ff7b878fb94415",
-                "reference": "109aad527356644389fefe1c50ff7b878fb94415",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/807d823b4ba0797431cbf68a14a37abd94ea3a3b",
+                "reference": "807d823b4ba0797431cbf68a14a37abd94ea3a3b",
                 "shasum": ""
             },
             "require": {
@@ -10041,18 +10041,18 @@
                 "php-parallel-lint/php-parallel-lint": "^1.4.0",
                 "phpstan/phpstan": "^2.1.17",
                 "phpunit/phpunit": "^12.2.2",
-                "rector/rector": "^2.0.18",
+                "rector/rector": "^2.1.0",
                 "roave/backward-compatibility-check": "^8.14.0",
-                "squizlabs/php_codesniffer": "^3.13.1",
-                "wyrihaximus/coding-standard": "^2.20.1",
-                "wyrihaximus/phpstan-rules-wrapper": "^10.14.0"
+                "squizlabs/php_codesniffer": "^3.13.2",
+                "wyrihaximus/coding-standard": "^2.20.2",
+                "wyrihaximus/phpstan-rules-wrapper": "^10.15.0"
             },
             "conflict": {
                 "composer/pcre": "<3.3.2",
                 "wyrihaximus/makefiles": "<0.4.0"
             },
             "require-dev": {
-                "wyrihaximus/makefiles": "^0.4.2"
+                "wyrihaximus/makefiles": "^0.4.3"
             },
             "suggest": {
                 "wyrihaximus/async-test-utilities": "The recommended addition to this package when building ReactPHP packages and projects.",
@@ -10084,7 +10084,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/7.5.1"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/7.5.2"
             },
             "funding": [
                 {
@@ -10092,7 +10092,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-06-13T16:20:32+00:00"
+            "time": "2025-07-05T17:45:17+00:00"
         },
         {
             "name": "yamadashy/phpstan-friendly-formatter",
