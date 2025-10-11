@@ -1,4 +1,9 @@
-#parameters:
+parameters:
+	level: max
+	paths:
+		- ../../etc
+		- ../../src
+		- ../../tests
 #	ignoreErrors:
 #		-
 #			identifier: shipmonk.checkedExceptionInYieldingMethod

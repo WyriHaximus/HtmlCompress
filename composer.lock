@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c2b4e6cc4be5c47a294e4636d7d478ff",
+    "content-hash": "3066a44036b6ccc3c8f6049d5f318a62",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -9458,25 +9458,28 @@
         },
         {
             "name": "wyrihaximus/makefiles",
-            "version": "0.5.0",
+            "version": "0.7.8",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/Makefiles.git",
-                "reference": "5717bc0de6496a12734cf3f2de20859a692297f0"
+                "reference": "81933813817269f1be55d86789d4d305fb9d0b3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/5717bc0de6496a12734cf3f2de20859a692297f0",
-                "reference": "5717bc0de6496a12734cf3f2de20859a692297f0",
+                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/81933813817269f1be55d86789d4d305fb9d0b3c",
+                "reference": "81933813817269f1be55d86789d4d305fb9d0b3c",
                 "shasum": ""
             },
             "require": {
                 "composer-plugin-api": "^2",
-                "ext-json": "^8.3",
-                "php": "^8.3"
+                "ext-json": "^8.4",
+                "php": "^8.4"
+            },
+            "conflict": {
+                "infection/infection": "<0.31.3"
             },
             "require-dev": {
-                "wyrihaximus/test-utilities": "^7.5.2"
+                "wyrihaximus/test-utilities": "^8.5.0"
             },
             "type": "composer-plugin",
             "extra": {
@@ -9497,10 +9500,10 @@
                     "email": "ceesjank@gmail.com"
                 }
             ],
-            "description": "🛠️ Test utilities for api-clients packages",
+            "description": "🧱 Makefile building blocks",
             "support": {
                 "issues": "https://github.com/WyriHaximus/Makefiles/issues",
-                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.5.0"
+                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.7.8"
             },
             "funding": [
                 {
@@ -9508,7 +9511,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-08-15T05:34:56+00:00"
+            "time": "2025-10-10T09:26:47+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
