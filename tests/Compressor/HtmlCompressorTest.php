@@ -36,7 +36,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function newLinesTabsReturns(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -73,7 +73,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function multipleSpaces(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -95,7 +95,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function spaceAfterGt(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -117,7 +117,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function spaceBeforeLt(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -139,7 +139,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function trim(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -156,7 +156,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function specialCharacterEncoding(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 
@@ -173,7 +173,7 @@ final class HtmlCompressorTest extends TestCase
     #[Test]
     public function comments(string $input, string $expected): void
     {
-        $actual = (new HtmlCompressor(new HtmlMin(), new Patterns()))->compress($input);
+        $actual = new HtmlCompressor(new HtmlMin(), new Patterns())->compress($input);
         self::assertSame($expected, $actual);
     }
 }

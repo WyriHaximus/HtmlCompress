@@ -23,7 +23,7 @@
     "wyrihaximus/js-compress": "^5 || ^6"
   },
   "require-dev": {
-    "wyrihaximus/makefiles": "^0.5.0",
+    "wyrihaximus/makefiles": "^0.7.8",
     "wyrihaximus/test-utilities": "^8.5.0"
   },
   "autoload": {
