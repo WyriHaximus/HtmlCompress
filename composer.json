@@ -1,64 +1,63 @@
 {
-    "name": "wyrihaximus/html-compress",
-    "description": "Compress/minify your HTML",
-    "license": "MIT",
-    "keywords": [
-        "html",
-        "compress"
-    ],
-    "authors": [
-        {
-            "name": "Cees-Jan Kiewiet",
-            "email": "ceesjank@gmail.com",
-            "homepage": "http://wyrihaximus.net/"
-        }
-    ],
-    "require": {
-        "php": "^8.3",
-        "voku/html-min": "^4.5.1",
-        "voku/simple_html_dom": "^4.8.9",
-        "wyrihaximus/compress": "^2.0",
-        "wyrihaximus/compress-contracts": "^1",
-        "wyrihaximus/css-compress": "^2",
-        "wyrihaximus/js-compress": "^5 || ^6"
-    },
-    "require-dev": {
-        "wyrihaximus/makefiles": "^0.5.0",
-        "wyrihaximus/test-utilities": "^7.5.1"
-    },
-    "autoload": {
-        "psr-4": {
-            "WyriHaximus\\HtmlCompress\\": "src/"
-        }
-    },
-    "autoload-dev": {
-        "psr-4": {
-            "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
-        }
-    },
-    "config": {
-        "allow-plugins": {
-            "composer/package-versions-deprecated": true,
-            "dealerdirect/phpcodesniffer-composer-installer": true,
-            "ergebnis/composer-normalize": true,
-            "icanhazstring/composer-unused": true,
-            "infection/extension-installer": true,
-            "phpstan/extension-installer": true,
-            "wyrihaximus/makefiles": true
-        },
-        "platform": {
-            "php": "8.3.13"
-        },
-        "sort-packages": true
-    },
-    "scripts": {
-        "post-install-cmd": [
-            "composer normalize",
-            "composer update --lock --no-scripts"
-        ],
-        "post-update-cmd": [
-            "composer normalize",
-            "composer update --lock --no-scripts"
-        ]
+  "name": "wyrihaximus/html-compress",
+  "description": "Compress/minify your HTML",
+  "license": "MIT",
+  "keywords": [
+    "html",
+    "compress"
+  ],
+  "authors": [
+    {
+      "name": "Cees-Jan Kiewiet",
+      "email": "ceesjank@gmail.com",
+      "homepage": "http://wyrihaximus.net/"
     }
+  ],
+  "require": {
+    "php": "^8.4",
+    "voku/html-min": "^4.5.1",
+    "voku/simple_html_dom": "^4.8.9",
+    "wyrihaximus/compress": "^2.0",
+    "wyrihaximus/compress-contracts": "^1",
+    "wyrihaximus/css-compress": "^2",
+    "wyrihaximus/js-compress": "^5 || ^6"
+  },
+  "require-dev": {
+    "wyrihaximus/makefiles": "^0.5.0",
+    "wyrihaximus/test-utilities": "^8.5.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "WyriHaximus\\HtmlCompress\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "WyriHaximus\\HtmlCompress\\Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/package-versions-deprecated": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "icanhazstring/composer-unused": true,
+      "infection/extension-installer": true,
+      "phpstan/extension-installer": true,
+      "wyrihaximus/makefiles": true,
+      "wyrihaximus/test-utilities": true
+    },
+    "platform": {
+      "php": "8.4.13"
+    },
+    "sort-packages": true
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "make on-install-or-update || true"
+    ],
+    "post-update-cmd": [
+      "make on-install-or-update || true"
+    ]
+  }
 }
