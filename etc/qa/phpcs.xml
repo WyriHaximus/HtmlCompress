@@ -6,6 +6,7 @@
     <arg name="cache" value="../../var/.phpcs.cache" /> <!-- cache the results and don't commit them -->
     <arg value="np" /> <!-- n = ignore warnings, p = show progress -->
 
+    <file>../../etc</file>
     <file>../../src</file>
     <file>../../tests</file>
 
