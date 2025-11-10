@@ -1,6 +1,10 @@
+# Set the default behavior, in case people don't have core.autocrlf set.
+* text eol=lf
+
 # Ignoring files for distribution archieves
 .github/ export-ignore
 etc/ export-ignore
+examples/ export-ignore
 tests/ export-ignore
 var/ export-ignore
 .devcontainer.json export-ignore
@@ -9,7 +13,6 @@ var/ export-ignore
 .gitignore export-ignore
 CONTRIBUTING.md export-ignore
 composer.lock export-ignore
-infection.json.dist export-ignore
 Makefile export-ignore
 README.md export-ignore
 
