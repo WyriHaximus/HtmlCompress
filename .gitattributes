@@ -3,7 +3,8 @@
 
 # Ignoring files for distribution archieves
 .github/ export-ignore
-etc/ export-ignore
+etc/ci/ export-ignore
+etc/qa/ export-ignore
 examples/ export-ignore
 tests/ export-ignore
 var/ export-ignore
