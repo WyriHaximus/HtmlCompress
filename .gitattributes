@@ -1,6 +1,17 @@
 # Set the default behavior, in case people don't have core.autocrlf set.
 * text eol=lf
 
+# These files are binary and should be left untouched
+# (binary is a macro for -text -diff)
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.webp binary
+*.bmp binary
+*.ttf binary
+
 # Ignoring files for distribution archieves
 .github/ export-ignore
 etc/ci/ export-ignore
