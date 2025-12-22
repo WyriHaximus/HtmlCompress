@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c09906cccb4c888f89501e8d855e0b80",
+    "content-hash": "2cadcbb945be7260e1c9ab338db923df",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -9461,16 +9461,16 @@
         },
         {
             "name": "wyrihaximus/makefiles",
-            "version": "0.7.15",
+            "version": "0.7.16",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/Makefiles.git",
-                "reference": "ff6af9e36ff4f5605523586f6964f13f9ea778de"
+                "reference": "2628d098eb9c628e18c7d7b7e822a66c7c144775"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/ff6af9e36ff4f5605523586f6964f13f9ea778de",
-                "reference": "ff6af9e36ff4f5605523586f6964f13f9ea778de",
+                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/2628d098eb9c628e18c7d7b7e822a66c7c144775",
+                "reference": "2628d098eb9c628e18c7d7b7e822a66c7c144775",
                 "shasum": ""
             },
             "require": {
@@ -9506,7 +9506,7 @@
             "description": "🧱 Makefile building blocks",
             "support": {
                 "issues": "https://github.com/WyriHaximus/Makefiles/issues",
-                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.7.15"
+                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.7.16"
             },
             "funding": [
                 {
@@ -9514,7 +9514,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-20T14:30:01+00:00"
+            "time": "2025-12-22T16:36:23+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-rules-wrapper",
