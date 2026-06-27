@@ -30,7 +30,6 @@ final class EdgeCasesTest extends TestCase
         $items = glob(__DIR__ . DIRECTORY_SEPARATOR . 'EdgeCases' . DIRECTORY_SEPARATOR . '*', GLOB_ONLYDIR);
 
         if (! is_array($items)) {
-            /** @phpstan-ignore shipmonk.checkedExceptionInYieldingMethod */
             throw new RuntimeException('Could not read test set directories');
         }
 
