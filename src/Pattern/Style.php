@@ -26,13 +26,11 @@ final readonly class Style implements PatternInterface
 
     public function matches(SimpleHtmlDomInterface $element): bool
     {
-        /** @psalm-suppress NoInterfaceProperties */
         return $element->tag === 'style';
     }
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
-        /** @psalm-suppress NoInterfaceProperties */
         $innerHtml           = $element->innerhtml;
         $innerHtml           = $this->stripComments($innerHtml);
         $compressedInnerHtml = $this->compressor->compress($innerHtml);
@@ -53,7 +51,6 @@ final readonly class Style implements PatternInterface
             }
         }
 
-        /** @psalm-suppress NoInterfaceProperties */
         $element->outerhtml = '<style ' . $attributes . '>' . $compressedInnerHtml . '</style>';
     }
 

@@ -2,7 +2,7 @@
     "timeout": 1800,
     "source": {
         "directories": [
-            "src"
+            "../../src"
         ]
     },
     "logs": {

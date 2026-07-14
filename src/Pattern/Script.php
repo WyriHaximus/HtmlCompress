@@ -18,13 +18,11 @@ final readonly class Script implements PatternInterface
 
     public function matches(SimpleHtmlDomInterface $element): bool
     {
-        /** @psalm-suppress NoInterfaceProperties */
         return $element->tag === 'script';
     }
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
-        /** @psalm-suppress NoInterfaceProperties */
         $innerHtml           = $element->innerhtml;
         $compressedInnerHtml = $this->compressor->compress($innerHtml);
 
@@ -44,7 +42,6 @@ final readonly class Script implements PatternInterface
             }
         }
 
-        /** @psalm-suppress NoInterfaceProperties */
         $element->outerhtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
     }
 }

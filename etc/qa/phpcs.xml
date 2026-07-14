@@ -7,6 +7,7 @@
     <arg value="np" /> <!-- n = ignore warnings, p = show progress -->
 
     <file>../../etc</file>
+    <file>../../examples</file>
     <file>../../src</file>
     <file>../../tests</file>
 

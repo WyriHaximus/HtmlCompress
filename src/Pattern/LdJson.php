@@ -18,7 +18,6 @@ final readonly class LdJson implements PatternInterface
 
     public function matches(SimpleHtmlDomInterface $element): bool
     {
-        /** @psalm-suppress NoInterfaceProperties */
         if ($element->tag !== 'script') {
             return false;
         }
@@ -38,7 +37,6 @@ final readonly class LdJson implements PatternInterface
 
     public function compress(SimpleHtmlDomInterface $element): void
     {
-        /** @psalm-suppress NoInterfaceProperties */
         $innerHtml           = $element->innerhtml;
         $compressedInnerHtml = $this->compressor->compress($innerHtml);
 
@@ -58,7 +56,6 @@ final readonly class LdJson implements PatternInterface
             }
         }
 
-        /** @psalm-suppress NoInterfaceProperties */
         $element->outerhtml = '<script ' . $attributes . '>' . $compressedInnerHtml . '</script>';
     }
 }

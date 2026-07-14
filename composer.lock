@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "9a34f82c75959a538e215b8b33123bda",
+    "content-hash": "1caa992a72b27a9bfe9bd4ef651bd49c",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -9848,16 +9848,16 @@
         },
         {
             "name": "wyrihaximus/makefiles",
-            "version": "0.7.16",
+            "version": "0.12.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/Makefiles.git",
-                "reference": "2628d098eb9c628e18c7d7b7e822a66c7c144775"
+                "reference": "cbb98ce358e8886a3c5d982b01fc478677ba8ef2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/2628d098eb9c628e18c7d7b7e822a66c7c144775",
-                "reference": "2628d098eb9c628e18c7d7b7e822a66c7c144775",
+                "url": "https://api.github.com/repos/WyriHaximus/Makefiles/zipball/cbb98ce358e8886a3c5d982b01fc478677ba8ef2",
+                "reference": "cbb98ce358e8886a3c5d982b01fc478677ba8ef2",
                 "shasum": ""
             },
             "require": {
@@ -9866,14 +9866,19 @@
                 "php": "^8.4"
             },
             "conflict": {
-                "infection/infection": "<0.31.3"
+                "infection/infection": "<0.32.0"
             },
             "require-dev": {
-                "wyrihaximus/test-utilities": "^8.8.0"
+                "wyrihaximus/test-utilities": "^13.3.0"
             },
             "type": "composer-plugin",
             "extra": {
-                "class": "WyriHaximus\\Makefiles\\Composer\\Installer"
+                "class": "WyriHaximus\\Makefiles\\Composer\\Installer",
+                "wyrihaximus": {
+                    "supported-features": {
+                        "composer-plugin": true
+                    }
+                }
             },
             "autoload": {
                 "psr-4": {
@@ -9893,7 +9898,7 @@
             "description": "🧱 Makefile building blocks",
             "support": {
                 "issues": "https://github.com/WyriHaximus/Makefiles/issues",
-                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.7.16"
+                "source": "https://github.com/WyriHaximus/Makefiles/tree/0.12.3"
             },
             "funding": [
                 {
@@ -9901,7 +9906,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2025-12-22T16:36:23+00:00"
+            "time": "2026-07-02T10:01:48+00:00"
         },
         {
             "name": "wyrihaximus/phpstan-no-safe",

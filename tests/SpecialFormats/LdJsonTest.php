@@ -59,7 +59,9 @@ final class LdJsonTest extends TestCase
         $end    = (int) strrpos($string, '}') + 1;
         $string = substr($string, $start, $end - $start);
 
-        /** @phpstan-ignore-next-line */
-        return json_decode($string, true);
+        $jsonArray = json_decode($string, true);
+        self::assertIsArray($jsonArray);
+
+        return $jsonArray;
     }
 }
