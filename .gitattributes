@@ -15,6 +15,7 @@
 # Ignoring files for distribution archieves
 .github/ export-ignore
 etc/ci/ export-ignore
+etc/dev-app/ export-ignore
 etc/qa/ export-ignore
 examples/ export-ignore
 tests/ export-ignore
