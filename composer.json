@@ -15,8 +15,8 @@
   ],
   "require": {
     "php": "^8.4",
-    "voku/html-min": "^4.5.1",
-    "voku/simple_html_dom": "^4.8.9 || ^5.0.0",
+    "voku/html-min": "^5.0.0",
+    "voku/simple_html_dom": "^5.0.0",
     "wyrihaximus/compress": "^2.0",
     "wyrihaximus/compress-contracts": "^1",
     "wyrihaximus/css-compress": "^2",
