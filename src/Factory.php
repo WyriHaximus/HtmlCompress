@@ -15,6 +15,7 @@ use WyriHaximus\HtmlCompress\Pattern\StyleAttribute;
 use WyriHaximus\JsCompress\Compressor\MMMJSCompressor;
 use WyriHaximus\JsCompress\Factory as JsFactory;
 
+/** @api */
 final class Factory
 {
     public static function constructFastest(): HtmlCompressorInterface
