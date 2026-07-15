@@ -18,17 +18,17 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             "<html>\r\t<body>\n\t\t<h1>hoi</h1>\r\n\t</body>\r\n</html>",
-            '<html><body><h1>hoi</h1>',
+            '<body><h1>hoi</h1>',
         ];
 
         yield [
             "<html>\r\t<h1>hoi</h1>\r\n\t\r\n</html>",
-            '<html><h1>hoi</h1>',
+            '<h1>hoi</h1>',
         ];
 
         yield [
             "<html><p>abc\r\ndef</p></html>",
-            '<html><p>abc def',
+            '<p>abc def',
         ];
     }
 
@@ -45,17 +45,17 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             '<html>  <body>          <h1>h  oi</h1>                         </body></html>',
-            '<html><body><h1>h oi</h1>',
+            '<body><h1>h oi</h1>',
         ];
 
         yield [
             '<html>   </html>',
-            '<html>',
+            '',
         ];
 
         yield [
             "<html><body>  pre \r\n  suf\r\n  </body>",
-            '<html><body> pre suf',
+            '<body> pre suf',
         ];
 
         yield [
@@ -65,7 +65,7 @@ final class HtmlCompressorTest extends TestCase
 
         yield [
             "<html>\n    <head>     </head>\n    <body>\n      <p id=\"text\" class=\"foo\">\n        foo\n      </p>  <br />  <ul > <li> <p class=\"foo\">lall</p> </li></ul>\n    </body>\n    </html>",
-            '<html><head> <body><p id=text class=foo> foo </p> <br> <ul><li><p class=foo>lall </ul>',
+            '<head><body><p class=foo id=text> foo </p> <br> <ul><li><p class=foo>lall</p> </ul>',
         ];
     }
 
@@ -82,12 +82,12 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             '<html> <body> <h1>hoi</h1>   </body> </html>',
-            '<html><body><h1>hoi</h1>',
+            '<body><h1>hoi</h1>',
         ];
 
         yield [
             '<html>  a',
-            '<html> a',
+            'a',
         ];
     }
 
@@ -104,12 +104,12 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             '<html> <body>   <h1>hoi</h1></body> </html> ',
-            '<html><body><h1>hoi</h1>',
+            '<body><h1>hoi</h1>',
         ];
 
         yield [
             '<html>  a',
-            '<html> a',
+            'a',
         ];
     }
 
@@ -148,7 +148,7 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             "<html>\r\n\t<body>\xc3\xa0</body>\r\n\t</html>",
-            '<html><body>à',
+            'à',
         ];
     }
 
@@ -165,7 +165,7 @@ final class HtmlCompressorTest extends TestCase
     {
         yield [
             '<html><body><!-- HTML comment --></body></html>',
-            '<html><body>',
+            '',
         ];
     }
 

@@ -11,7 +11,6 @@ use WyriHaximus\Compress\CompressorInterface;
 use WyriHaximus\TestUtilities\TestCase;
 
 use function array_pop;
-use function assert;
 use function explode;
 use function file_get_contents;
 use function glob;
@@ -55,9 +54,9 @@ final class HtmlMinObserverTest extends TestCase
             throw new RuntimeException('Could not read compress expected test output');
         }
 
+        /** @var CompressorInterface $compressor */
         $compressor = require $dir . 'compressor.php';
-        assert($compressor instanceof CompressorInterface);
-        $result = $compressor->compress($in);
+        $result     = $compressor->compress($in);
 
         self::assertSame($out, $result);
     }
