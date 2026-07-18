@@ -6,37 +6,22 @@ Fork, then clone the repo:
 
     git clone git@github.com:your-username/HtmlCompress.git
 
-Set up your machine:
+Install dependencies:
 
-    composer install
+    make install
 
-Make sure the tests pass:
+Work on the contribution and check if it passes all QA checks with:
 
-    make unit
+    make
 
-Make sure the tests pass on all supported PHP versions (requires docker):
-
-    make dunit
-
-Make your change. Add tests for your change. Make the tests pass:
-
-    make dunit && make unit
-    
-Before committing and submitting your pull request make sure it passes PSR2 coding style, unit tests pass and pass on all supported PHP versions:
+If some of the PHPStan or other checks are to strict or intimidating that is fine, finish what you want to contribute and I'll help you with those, but please make the following command passes. It runs a subset of everything:
 
     make contrib
 
+You can list all the contrib commands with:
+
+    make help-contrib
+
 Push to your fork and [submit a pull request][pr].
 
-[pr]: https://help.github.com/articles/creating-a-pull-request/
-
-At this point you're waiting on me. I like to at least comment on pull requests
-within a day or two. I may suggest some changes or improvements or alternatives.
-
-Some things that will increase the chance that your pull request is accepted:
-
-* Write tests.
-* Follow PSR2 (travis will also check for this).
-* Write a [good commit message][commit].
-
-[commit]: http://chris.beams.io/posts/git-commit/
+[pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request
