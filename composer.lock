@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "5a8bb8e675685f3c08d0de3a93476197",
+    "content-hash": "6812bdf751535e63c6c1fe89384a2df8",
     "packages": [
         {
             "name": "matthiasmullie/minify",
@@ -5288,16 +5288,16 @@
         },
         {
             "name": "rector/rector",
-            "version": "2.5.8",
+            "version": "2.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/rectorphp/rector.git",
-                "reference": "861c77fd2a6d45317a401f4e0b617f947e8b6f96"
+                "reference": "24ef17c06737a6272806c5cca32b860449efe1ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/rectorphp/rector/zipball/861c77fd2a6d45317a401f4e0b617f947e8b6f96",
-                "reference": "861c77fd2a6d45317a401f4e0b617f947e8b6f96",
+                "url": "https://api.github.com/repos/rectorphp/rector/zipball/24ef17c06737a6272806c5cca32b860449efe1ba",
+                "reference": "24ef17c06737a6272806c5cca32b860449efe1ba",
                 "shasum": ""
             },
             "require": {
@@ -5336,7 +5336,7 @@
             ],
             "support": {
                 "issues": "https://github.com/rectorphp/rector/issues",
-                "source": "https://github.com/rectorphp/rector/tree/2.5.8"
+                "source": "https://github.com/rectorphp/rector/tree/2.6.0"
             },
             "funding": [
                 {
@@ -5344,7 +5344,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-27T06:19:16+00:00"
+            "time": "2026-08-03T09:01:59+00:00"
         },
         {
             "name": "revolt/event-loop",
@@ -10160,16 +10160,16 @@
         },
         {
             "name": "wyrihaximus/test-utilities",
-            "version": "13.5.0",
+            "version": "13.5.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/WyriHaximus/php-test-utilities.git",
-                "reference": "6290c6c641937145123e080ca7929460c95dc468"
+                "reference": "688dcc6482e739e535e1daef11b7b689665cbf1a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/6290c6c641937145123e080ca7929460c95dc468",
-                "reference": "6290c6c641937145123e080ca7929460c95dc468",
+                "url": "https://api.github.com/repos/WyriHaximus/php-test-utilities/zipball/688dcc6482e739e535e1daef11b7b689665cbf1a",
+                "reference": "688dcc6482e739e535e1daef11b7b689665cbf1a",
                 "shasum": ""
             },
             "require": {
@@ -10187,7 +10187,7 @@
                 "php-parallel-lint/php-parallel-lint": "^1.4.0",
                 "phpstan/phpstan": "^2.2.7",
                 "phpunit/phpunit": "^13.2.6",
-                "rector/rector": "^2.5.8",
+                "rector/rector": "^2.6.0",
                 "roave/backward-compatibility-check": "^8.19.0",
                 "squizlabs/php_codesniffer": "^4.0.1",
                 "wyrihaximus/coding-standard": "^4.2.0",
@@ -10235,7 +10235,7 @@
             "description": "🛠️ Test utilities for api-clients packages",
             "support": {
                 "issues": "https://github.com/WyriHaximus/php-test-utilities/issues",
-                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/13.5.0"
+                "source": "https://github.com/WyriHaximus/php-test-utilities/tree/13.5.1"
             },
             "funding": [
                 {
@@ -10243,7 +10243,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-07-30T06:25:42+00:00"
+            "time": "2026-08-03T15:22:38+00:00"
         },
         {
             "name": "yamadashy/phpstan-friendly-formatter",
