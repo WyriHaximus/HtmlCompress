@@ -1,0 +1,9 @@
+verbose = "warn"
+no_progress = true
+timeout = 120
+max_retries = 6
+retry_wait_time = 3
+exclude_path = ["^var/", "^vendor/", "^\\.git/"]
+
+[hosts."docs.github.com"]
+headers = { Accept-Encoding = "zstd, br, gzip, deflate" }

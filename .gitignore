@@ -2,3 +2,9 @@ var/*
 !var/.gitkeep
 vendor/
 etc/qa/.phpunit.result.cache
+etc/qa/vale/**
+!etc/qa/vale/styles/
+!etc/qa/vale/styles/config/
+!etc/qa/vale/styles/config/vocabularies/
+!etc/qa/vale/styles/config/vocabularies/WyriHaximus/
+!etc/qa/vale/styles/config/vocabularies/WyriHaximus/accept.txt
