@@ -62,7 +62,7 @@ final readonly class Style implements PatternInterface
 
         $pos = strpos($contents, self::CSS_COMMENT_CLOSE);
         if ($pos !== false) {
-            $contents = substr($contents, self::ZERO, $pos);
+            return substr($contents, self::ZERO, $pos);
         }
 
         return $contents;
