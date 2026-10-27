@@ -29,5 +29,6 @@
                 "WyriHaximus\\HtmlCompress\\Patterns::compress"
             ]
         }
-    }
+    },
+    "threads": 64
 }

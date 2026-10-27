@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use WyriHaximus\HtmlCompress\Factory;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $parser = Factory::constructSmallest();
 $sites  = [
