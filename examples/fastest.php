@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 use WyriHaximus\HtmlCompress\Factory;
 
-require dirname(__DIR__) . '/vendor/autoload.php';
+require __DIR__ . '/../vendor/autoload.php';
 
 $parser = Factory::constructFastest();
 echo $parser->compress("<html>\r\n\t<body>\r\n\t\t<h1>Title</h1>\r\n\t<script>\r\n\t\talert(' iqeugfo wef we');\r\n\t</script>\r\n\t</body>\r\n</html>\r\n"), PHP_EOL;
