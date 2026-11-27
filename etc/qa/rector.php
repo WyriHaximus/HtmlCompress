@@ -2,6 +2,6 @@
 
 declare(strict_types=1);
 
-use WyriHaximus\TestUtilities\RectorConfig;
+use WyriHaximus\RectorPHP\RectorConfig;
 
 return RectorConfig::configure(dirname(__DIR__, 2));

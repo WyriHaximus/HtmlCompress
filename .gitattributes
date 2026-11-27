@@ -34,3 +34,6 @@ README.md export-ignore
 
 # Diffing
 *.php diff=php
+*.yaml diff=yaml
+*.yml diff=yaml
+*.json5 diff=json
